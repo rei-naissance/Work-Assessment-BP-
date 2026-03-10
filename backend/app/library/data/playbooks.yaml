@@ -1,0 +1,669 @@
+playbook_fire:
+  title: "Fire Emergency Playbook"
+  section: 3
+  category: playbook
+  overview: "Complete response protocol for fire emergencies. Life safety is the absolute priority."
+  severity: "CRITICAL"
+  key_principle: "Get out, stay out. No possession is worth a life."
+
+  phases:
+    phase_1_immediate:
+      title: "Phase 1: Immediate Actions (0-5 minutes)"
+      priority: "LIFE SAFETY — evacuate first, everything else second"
+      actions:
+        - step: "ALERT everyone"
+          details: "Yell 'FIRE!' loudly. Activate smoke alarms if manual pull stations available."
+        - step: "EVACUATE immediately"
+          details: "Use nearest exit. Do NOT stop for phones, wallets, pets (if not immediately accessible)."
+        - step: "CHECK doors before opening"
+          details: "Feel door with back of hand. If hot, use alternate exit."
+        - step: "STAY LOW if smoke present"
+          details: "Crawl under smoke. Cleaner air is near the floor."
+        - step: "CLOSE doors behind you"
+          details: "Closed doors slow fire spread by up to 900 degrees."
+        - step: "GO TO meeting point"
+          details: "Designated location: [FIRE_MEETING_POINT]"
+        - step: "CALL 911 from outside"
+          details: "Give address: [HOME_ADDRESS]. State 'house fire' and number of occupants."
+        - step: "ACCOUNT for everyone"
+          details: "Do headcount. Inform firefighters immediately if anyone is missing."
+      do_not:
+        - "Re-enter the building for any reason"
+        - "Use elevators"
+        - "Open windows unless trapped and signaling for help"
+        - "Attempt to fight fire unless small, contained, and you have clear exit"
+      if_trapped:
+        - "Close door to room, seal cracks with towels or sheets"
+        - "Call 911 — give exact room location"
+        - "Go to window, signal with flashlight or light fabric"
+        - "If must escape from height, lower yourself to reduce fall distance"
+
+    phase_2_stabilization:
+      title: "Phase 2: Stabilization (5-60 minutes)"
+      location: "Stay at safe distance from structure"
+      actions:
+        - step: "Wait for fire department"
+          details: "Do not approach structure. Direct firefighters to hydrant location if asked."
+        - step: "Provide information to responders"
+          details: "Number of occupants, anyone unaccounted for, location of gas/propane, pets inside."
+        - step: "Contact emergency contacts"
+          details: "Primary: [PRIMARY_CONTACT_NAME] — [PRIMARY_CONTACT_PHONE]"
+        - step: "Arrange immediate shelter"
+          details: "Neighbor, family, hotel. Red Cross may assist for significant fires."
+        - step: "Secure pets"
+          details: "If evacuated, keep contained. Contact neighbor or board if needed."
+      do_not:
+        - "Enter structure until fire department declares it safe"
+        - "Turn utilities back on"
+        - "Move or discard anything — preserve for investigation and insurance"
+
+    phase_3_recovery:
+      title: "Phase 3: Recovery (24-72 hours)"
+      actions:
+        - step: "Get fire department clearance"
+          details: "Obtain written clearance before re-entry. Request copy of fire report."
+        - step: "Contact insurance IMMEDIATELY"
+          details: "Provider: [INSURANCE_PROVIDER] — Claim line: [INSURANCE_CLAIM_PHONE]"
+          details_2: "Policy number: [INSURANCE_POLICY_NUMBER]"
+        - step: "Document everything"
+          details: "Photograph/video all damage before cleanup. Create detailed inventory of losses."
+        - step: "Secure the property"
+          details: "Board up openings. Change locks if keys were inside. Notify police for patrol."
+        - step: "Arrange professional assessment"
+          details: "Structural engineer for significant damage. Do NOT assume structure is safe."
+        - step: "Begin insurance claim process"
+          details: "Keep ALL receipts for temporary housing, food, clothing, supplies."
+        - step: "Contact restoration company"
+          details: "For smoke/water damage cleanup. Insurance may have preferred vendors."
+        - step: "Notify utilities"
+          details: "Gas, electric, water may need inspection before restoration."
+      insurance_tips:
+        - "Do not discard damaged items until adjuster approves"
+        - "Make emergency repairs only — document with photos and receipts"
+        - "Keep a detailed log of all communications with insurance"
+        - "You have the right to choose your own contractor"
+
+  prevention_checklist:
+    - "Test smoke detectors monthly, replace batteries twice yearly"
+    - "Fire extinguisher on each level: kitchen, garage, near bedrooms"
+    - "Clear 3-foot zone around space heaters"
+    - "Never leave cooking unattended"
+    - "Clean dryer lint trap every load, vent duct annually"
+    - "Store flammables away from heat sources"
+    - "Practice evacuation route with household twice yearly"
+
+  contacts:
+    - "Emergency: 911"
+    - "Insurance: [INSURANCE_PROVIDER] — [INSURANCE_CLAIM_PHONE]"
+    - "Primary Contact: [PRIMARY_CONTACT_NAME] — [PRIMARY_CONTACT_PHONE]"
+    - "Fire Restoration: [RESTORATION_COMPANY] — [RESTORATION_PHONE]"
+
+
+playbook_water_leak:
+  title: "Water Leak / Flood Emergency Playbook"
+  section: 3
+  category: playbook
+  overview: "Response protocol for water intrusion from plumbing failures, appliance leaks, or flooding."
+  severity: "URGENT"
+  key_principle: "Stop the water. Kill the power near water. Then contain and document."
+
+  regional_note: "Southeast humidity accelerates mold growth. 24-48 hour window before mold colonizes."
+
+  phases:
+    phase_1_immediate:
+      title: "Phase 1: Immediate Actions (0-10 minutes)"
+      priority: "SAFETY FIRST — electricity + water = electrocution hazard"
+      actions:
+        - step: "ASSESS electrical hazard"
+          details: "If water is near outlets, light switches, or appliances — go to breaker panel FIRST"
+        - step: "SHUT OFF electricity to affected area"
+          details: "Breaker panel location: [ELECTRICAL_PANEL_LOCATION]"
+          details_2: "If unsure which breaker, shut off main breaker"
+        - step: "SHUT OFF water supply"
+          details: "Main shutoff: [WATER_SHUTOFF_LOCATION]"
+          details_2: "Turn clockwise until fully closed"
+        - step: "IDENTIFY source if possible"
+          details: "Supply line burst? Appliance failure? Roof leak? Sewer backup?"
+        - step: "STOP the flow"
+          details: "For supply line: shutoff stops it. For drain backup: stop using water."
+        - step: "MOVE valuables"
+          details: "Electronics, documents, photos, heirlooms — get them to dry area immediately"
+        - step: "PHOTOGRAPH damage"
+          details: "Document water level, damage extent BEFORE starting cleanup"
+      source_specific:
+        burst_pipe:
+          - "Main shutoff will stop water"
+          - "Open faucets at lowest point to drain system"
+          - "Note location of break for plumber"
+        water_heater:
+          - "Shutoff valve on cold inlet pipe (top of tank)"
+          - "If gas unit, turn gas valve to OFF"
+          - "Do not drain until pressure released"
+        washing_machine:
+          - "Shutoff valves behind unit (red=hot, blue=cold)"
+          - "Unplug machine"
+          - "Check hoses for failure point"
+        toilet_overflow:
+          - "Shutoff valve behind/below toilet"
+          - "If sewage, treat as biohazard — minimize contact"
+          - "Do not flush again"
+        roof_leak:
+          - "Cannot stop at source during rain"
+          - "Place buckets/containers to collect water"
+          - "Poke small drain hole in ceiling bulge to control release point"
+
+    phase_2_stabilization:
+      title: "Phase 2: Stabilization (10-60 minutes)"
+      actions:
+        - step: "Begin water extraction"
+          details: "Wet-dry vacuum, mops, towels. Remove standing water as fast as possible."
+        - step: "Start air movement"
+          details: "Fans pointed at wet areas. Open windows if humidity outside is lower."
+        - step: "Run dehumidifier"
+          details: "Target humidity below 50%. Empty reservoir frequently."
+        - step: "Remove wet materials"
+          details: "Pull up saturated carpet padding (carpet may be salvageable, padding is not)."
+          details_2: "Remove wet items from closets and cabinets."
+        - step: "Call plumber"
+          details: "[PLUMBER_NAME] — [PLUMBER_PHONE]"
+        - step: "Document damage for insurance"
+          details: "Video walkthrough narrating damage. Save samples of damaged materials."
+      do_not:
+        - "Use regular household vacuum on water (electrocution risk)"
+        - "Leave wet carpet padding in place"
+        - "Turn HVAC to heat if ducts are wet (spreads mold)"
+        - "Discard items before documenting"
+
+    phase_3_recovery:
+      title: "Phase 3: Recovery (24-72 hours)"
+      critical_timeline: "Mold begins colonizing within 24-48 hours in Southeast humidity"
+      actions:
+        - step: "Continue drying for 48-72 hours minimum"
+          details: "Do not stop fans/dehumidifiers until moisture readings are normal"
+        - step: "Check for hidden moisture"
+          details: "Behind baseboards, inside walls, under flooring. Moisture meter recommended."
+        - step: "Monitor for mold"
+          details: "Musty smell, visible growth, discoloration. Appears within 2-14 days."
+        - step: "File insurance claim"
+          details: "Provider: [INSURANCE_PROVIDER] — [INSURANCE_CLAIM_PHONE]"
+          details_2: "Provide photos, video, detailed description"
+        - step: "Get repair estimates"
+          details: "Plumber for cause. Contractor for damage. Keep all quotes."
+        - step: "Professional restoration if extensive"
+          details: "For large areas (>10 sq ft wet drywall), call restoration company"
+        - step: "Replace damaged materials"
+          details: "Wet drywall, insulation, carpet padding must be replaced"
+      insurance_tips:
+        - "Water damage from sudden events (burst pipe) usually covered"
+        - "Gradual leaks and maintenance issues often NOT covered"
+        - "Flood damage requires separate flood insurance policy"
+        - "Document everything — photos, receipts, contractor communications"
+
+  prevention_checklist:
+    - "Know shutoff locations and test valves annually"
+    - "Replace washing machine hoses every 5 years (use braided stainless)"
+    - "Inspect under sinks monthly for drips or corrosion"
+    - "Install water leak sensors near water heater, washing machine, sinks"
+    - "Check water pressure — over 80 PSI stresses pipes"
+    - "Insulate pipes in unconditioned spaces"
+
+  contacts:
+    - "Plumber: [PLUMBER_NAME] — [PLUMBER_PHONE]"
+    - "Insurance: [INSURANCE_PROVIDER] — [INSURANCE_CLAIM_PHONE]"
+    - "Water Restoration: [RESTORATION_COMPANY] — [RESTORATION_PHONE]"
+
+
+playbook_power_outage:
+  title: "Power Outage Playbook"
+  section: 3
+  category: playbook
+  overview: "Response protocol for power failures from utility outages, storms, or electrical faults."
+  severity: "MODERATE to URGENT (depends on duration and conditions)"
+  key_principle: "Assess scope, protect food and electronics, ensure safety for vulnerable occupants."
+
+  phases:
+    phase_1_immediate:
+      title: "Phase 1: Immediate Actions (0-15 minutes)"
+      actions:
+        - step: "ASSESS scope of outage"
+          details: "Look outside — are neighbors' lights on? Check multiple rooms."
+        - step: "CHECK breaker panel"
+          details: "Location: [ELECTRICAL_PANEL_LOCATION]"
+          substeps:
+            - "Look for tripped breaker (handle in middle position)"
+            - "Reset by flipping fully OFF, then ON"
+            - "If main breaker is tripped, reset it"
+            - "If breaker keeps tripping — leave OFF, electrical fault exists"
+        - step: "If neighborhood-wide, report outage"
+          details: "Power company: [POWER_COMPANY] — [POWER_COMPANY_PHONE]"
+          details_2: "Check utility outage map for restoration estimate"
+        - step: "UNPLUG sensitive electronics"
+          details: "Computers, TVs, gaming systems — prevents surge damage on restoration"
+        - step: "Turn OFF major appliances"
+          details: "AC, electric stove, dryer — reduces surge load when power returns"
+        - step: "LEAVE one light switch ON"
+          details: "So you know when power is restored"
+        - step: "LOCATE emergency supplies"
+          details: "Flashlights, batteries, radio, phone chargers"
+      safety_first:
+        - "Use flashlights, not candles (fire risk)"
+        - "Do not run generator indoors or in garage — CO poisoning"
+        - "Do not open freezer/fridge unnecessarily"
+
+    phase_2_stabilization:
+      title: "Phase 2: Stabilization (15 minutes - 4 hours)"
+      actions:
+        - step: "Protect food"
+          details: "Keep fridge/freezer CLOSED"
+          substeps:
+            - "Refrigerator stays cold ~4 hours"
+            - "Full freezer stays frozen ~48 hours"
+            - "Half-full freezer ~24 hours"
+        - step: "Check on vulnerable occupants"
+          details: "Elderly, young children, those with medical equipment"
+        - step: "If generator available, deploy safely"
+          location: "[GENERATOR_LOCATION]"
+          fuel_type: "[GENERATOR_FUEL_TYPE]"
+          rules:
+            - "NEVER run indoors or in garage"
+            - "Place 20+ feet from home, exhaust away from windows/doors"
+            - "Connect appliances directly to generator OR use transfer switch"
+            - "Never connect generator directly to home wiring without transfer switch"
+        - step: "Manage temperature"
+          summer: "Close blinds, open windows if cooler outside, stay hydrated"
+          winter: "Close off unused rooms, use blankets, avoid using gas stove for heat (CO risk)"
+        - step: "Preserve phone battery"
+          details: "Reduce screen brightness, close apps, use car charger if needed"
+
+    phase_3_recovery:
+      title: "Phase 3: Extended Outage & Restoration"
+      extended_outage:
+        threshold: "4+ hours, or extreme temperatures"
+        actions:
+          - step: "Consider relocation"
+            details: "If unsafe temperatures, go to friend/family, hotel, cooling/warming center"
+          - step: "Prepare for food loss"
+            details: "If 4+ hours: use perishables first. If 24+ hours: freezer items at risk."
+          - step: "Maintain water supply"
+            details: "If on well pump, fill containers and bathtub while water remains"
+          - step: "Keep vehicles fueled"
+            details: "Gas stations may be without power in widespread outage"
+      when_power_returns:
+        - step: "Wait 5 minutes before reconnecting"
+          details: "Power may be unstable initially"
+        - step: "Reconnect appliances one at a time"
+          details: "Prevents overloading circuits"
+        - step: "Check refrigerator/freezer"
+          details: "If food above 40°F for 2+ hours, discard. When in doubt, throw it out."
+        - step: "Reset devices"
+          details: "Clocks, thermostats, timers, alarms, garage door opener"
+        - step: "Test sump pump"
+          details: "Pour water in pit to verify operation"
+        - step: "Check for damage"
+          details: "Surge damage to electronics may not be immediately apparent"
+
+  food_safety_chart:
+    refrigerator:
+      safe_time: "4 hours with door closed"
+      at_risk_items: "Dairy, meat, eggs, leftovers"
+      discard_if: "Above 40°F for more than 2 hours"
+    freezer:
+      full_safe_time: "48 hours"
+      half_full_safe_time: "24 hours"
+      check_method: "If ice crystals still present, can be refrozen"
+      discard_if: "Thawed and above 40°F"
+
+  contacts:
+    - "Power Company: [POWER_COMPANY] — [POWER_COMPANY_PHONE]"
+    - "Electrician: [ELECTRICIAN_NAME] — [ELECTRICIAN_PHONE]"
+    - "Neighbor: [TRUSTED_NEIGHBOR_NAME] — [TRUSTED_NEIGHBOR_PHONE]"
+
+
+playbook_hvac_failure:
+  title: "HVAC Failure Playbook"
+  section: 3
+  category: playbook
+  overview: "Response protocol for heating or cooling system failures."
+  severity: "MODERATE to URGENT (temperature-dependent)"
+  key_principle: "Basic troubleshooting first. Protect occupants from temperature extremes."
+
+  regional_note: "Southeast summers: AC failure is urgent. Indoor temps can exceed 90°F within hours."
+
+  phases:
+    phase_1_immediate:
+      title: "Phase 1: Immediate Troubleshooting (0-15 minutes)"
+      basic_checks:
+        - step: "CHECK thermostat"
+          substeps:
+            - "Is it set correctly? (Heat vs Cool vs Off)"
+            - "Is temperature set below/above current room temp appropriately?"
+            - "Replace batteries if display is blank or dim"
+            - "Try setting 5 degrees beyond current temp to trigger system"
+        - step: "CHECK power to system"
+          substeps:
+            - "Breaker panel: Look for HVAC/AC/Furnace breaker — reset if tripped"
+            - "Breaker location: [ELECTRICAL_PANEL_LOCATION]"
+            - "Outdoor unit disconnect: check if switch is ON"
+        - step: "CHECK air filter"
+          filter_location: "[HVAC_FILTER_LOCATION]"
+          filter_size: "[HVAC_FILTER_SIZE]"
+          details: "Clogged filter can cause system shutdown. Replace if dirty."
+        - step: "CHECK outdoor unit (AC/Heat Pump)"
+          substeps:
+            - "Is fan running?"
+            - "Is unit clear of debris, leaves, vegetation?"
+            - "Is ice buildup present? (indicates refrigerant or airflow issue)"
+        - step: "CHECK condensate drain (cooling mode)"
+          details: "Clogged drain triggers safety shutoff. Look for water near indoor unit."
+      common_fixes:
+        - "Dirty filter → Replace filter"
+        - "Tripped breaker → Reset breaker (if trips again, call pro)"
+        - "Thermostat batteries → Replace batteries"
+        - "Clogged condensate → Clear drain line with wet-dry vac"
+
+    phase_2_stabilization:
+      title: "Phase 2: Stabilization While Awaiting Repair"
+      cooling_failure:
+        actions:
+          - "Close blinds and curtains, especially south/west facing"
+          - "Open windows if outdoor temp is lower than indoor"
+          - "Use portable fans or ceiling fans"
+          - "Stay hydrated — water, not alcohol or caffeine"
+          - "Relocate to lowest level (heat rises)"
+          - "Take cool showers"
+          - "Go to cooled public space if indoor temp exceeds 85°F"
+        danger_signs:
+          - "Indoor temp above 90°F"
+          - "Elderly, young children, or those with health conditions struggling"
+          - "Anyone showing heat exhaustion signs (heavy sweating, weakness, nausea)"
+      heating_failure:
+        actions:
+          - "Close off unused rooms, hang blankets over doorways"
+          - "Use safe portable space heaters (keep 3ft from combustibles)"
+          - "Open curtains during sunny hours, close at night"
+          - "Layer clothing and use blankets"
+          - "Gather household in one room to share body heat"
+          - "Do NOT use gas oven/stove for heat (CO poisoning risk)"
+        danger_signs:
+          - "Indoor temp below 50°F"
+          - "Vulnerable occupants (elderly, infants) struggling"
+          - "Anyone showing hypothermia signs (shivering, confusion, slurred speech)"
+
+    phase_3_recovery:
+      title: "Phase 3: Professional Repair"
+      actions:
+        - step: "Call HVAC technician"
+          details: "[HVAC_NAME] — [HVAC_PHONE]"
+        - step: "Describe symptoms clearly"
+          include: "What you observed, what you already checked, how long system has been down"
+        - step: "Get diagnosis and estimate before authorizing repair"
+          details: "For repairs over $500, consider getting second opinion"
+        - step: "Ask about cause and prevention"
+          details: "Understanding why it failed helps prevent recurrence"
+      after_repair:
+        - "Ask technician to explain what was fixed"
+        - "Get receipt with detailed description of work"
+        - "Mark calendar for next maintenance date"
+        - "Replace filter if not done recently"
+      replacement_considerations:
+        age_threshold: "15+ years for AC, 20+ for furnace"
+        signs_of_end_of_life:
+          - "Frequent repairs (2+ per year)"
+          - "Rising energy bills"
+          - "Uneven heating/cooling"
+          - "System runs constantly without reaching set temperature"
+        get_estimates: "If repair exceeds 50% of replacement cost, consider replacing"
+
+  prevention_checklist:
+    - "Replace filter every 1-3 months: [HVAC_FILTER_SIZE]"
+    - "Schedule professional maintenance twice yearly (spring and fall)"
+    - "Keep outdoor unit clear — 2ft clearance on all sides"
+    - "Clear condensate drain line annually (pour vinegar solution)"
+    - "Seal duct leaks in unconditioned spaces"
+
+  contacts:
+    - "HVAC Technician: [HVAC_NAME] — [HVAC_PHONE]"
+    - "Power Company: [POWER_COMPANY] — [POWER_COMPANY_PHONE]"
+
+
+playbook_storm:
+  title: "Severe Storm Playbook"
+  section: 3
+  category: playbook
+  overview: "Response protocol for severe weather including thunderstorms, high winds, and heavy rain."
+  severity: "VARIABLE — depends on storm type and intensity"
+  key_principle: "Preparation before the storm. Shelter during. Assessment after."
+
+  regional_note: "Southeast NC: Primary threats are severe thunderstorms, occasional hurricanes, and rare tornadoes. Heavy rain flooding is common."
+
+  phases:
+    phase_1_preparation:
+      title: "Phase 1: Before the Storm (When warning issued)"
+      timeline: "Begin when severe weather is forecast (12-48 hours out)"
+      actions:
+        - step: "MONITOR weather alerts"
+          details: "NOAA weather radio, local news, phone alerts"
+          know_the_difference:
+            watch: "Conditions favorable — be prepared"
+            warning: "Event occurring or imminent — take action"
+        - step: "SECURE outdoor items"
+          details: "Bring inside or anchor: furniture, grills, trash cans, decorations, potted plants"
+        - step: "PROTECT windows"
+          details: "Close blinds/curtains. If high winds expected, close storm shutters if available."
+        - step: "CLEAR drains and gutters"
+          details: "Ensure water can flow away from foundation"
+        - step: "CHARGE devices"
+          details: "Phones, tablets, battery banks, flashlights"
+        - step: "FILL vehicles with gas"
+          details: "Gas stations may lose power or run out during/after storm"
+        - step: "GATHER emergency supplies"
+          details: "Water, food, medications, flashlights, radio, first aid kit"
+        - step: "KNOW your safe room"
+          details: "Interior room on lowest floor, away from windows. [SAFE_ROOM_LOCATION]"
+        - step: "PHOTOGRAPH property"
+          details: "Pre-storm photos help with insurance claims"
+      if_flooding_possible:
+        - "Move valuables to upper floors"
+        - "Know flood evacuation routes"
+        - "Do NOT wait until water is rising to evacuate"
+
+    phase_2_during:
+      title: "Phase 2: During the Storm"
+      actions:
+        - step: "STAY INDOORS"
+          details: "Away from windows, skylights, glass doors"
+        - step: "MONITOR alerts continuously"
+          details: "Conditions can change rapidly"
+        - step: "If tornado warning"
+          details: "Go to safe room immediately: [SAFE_ROOM_LOCATION]"
+          substeps:
+            - "Lowest floor, interior room, no windows"
+            - "Get under sturdy furniture"
+            - "Protect head and neck"
+            - "Stay until all-clear given"
+        - step: "If flooding"
+          details: "Move to higher ground BEFORE water reaches you"
+          substeps:
+            - "NEVER walk through moving water (6 inches can knock you down)"
+            - "NEVER drive through flooded roads (2 feet floats a car)"
+            - "If trapped in vehicle, get out only if water is rising inside"
+        - step: "If power fails"
+          details: "See Power Outage Playbook"
+        - step: "Stay away from electrical equipment"
+          details: "Lightning can travel through wiring"
+      do_not:
+        - "Go outside during storm"
+        - "Use landline phone during lightning"
+        - "Touch plumbing during lightning"
+        - "Drive unless absolutely necessary"
+
+    phase_3_recovery:
+      title: "Phase 3: After the Storm"
+      wait_for_all_clear: "Do not assume storm is over. Wait for official all-clear."
+      assessment_actions:
+        - step: "CHECK for injuries"
+          details: "Household members first, then check on neighbors"
+        - step: "ASSESS property from outside first"
+          details: "Look for structural damage, downed lines, leaning trees before entering"
+        - step: "CHECK for gas leaks"
+          details: "If you smell gas, leave immediately. See Gas Leak Playbook."
+        - step: "DOCUMENT all damage"
+          details: "Photograph and video everything before cleanup"
+        - step: "INSPECT roof"
+          details: "Use binoculars from ground if possible. Note missing shingles, visible damage."
+        - step: "CHECK for water intrusion"
+          details: "Attic, ceilings, windows, basement"
+        - step: "REPORT damage to insurance"
+          details: "[INSURANCE_PROVIDER] — [INSURANCE_CLAIM_PHONE]"
+      hazards_to_avoid:
+        - "Downed power lines — assume ALL are live, stay 35+ feet away"
+        - "Standing water — may be electrically charged or contaminated"
+        - "Damaged trees — may fall without warning"
+        - "Damaged structures — may be unstable"
+      cleanup_priorities:
+        - "Make temporary repairs to prevent further damage (tarps on roof)"
+        - "Remove water/moisture to prevent mold (48-hour window)"
+        - "Clear debris from walkways and drains"
+        - "Document everything for insurance before discarding"
+
+  emergency_supplies_checklist:
+    - "Water: 1 gallon per person per day, 3-day minimum"
+    - "Non-perishable food: 3-day supply"
+    - "Flashlights and extra batteries"
+    - "Battery or hand-crank radio"
+    - "First aid kit"
+    - "Medications: 7-day supply"
+    - "Phone chargers and battery bank"
+    - "Cash in small bills"
+    - "Important documents in waterproof container"
+
+  contacts:
+    - "Emergency: 911"
+    - "Power Company: [POWER_COMPANY] — [POWER_COMPANY_PHONE]"
+    - "Insurance: [INSURANCE_PROVIDER] — [INSURANCE_CLAIM_PHONE]"
+    - "Neighbor: [TRUSTED_NEIGHBOR_NAME] — [TRUSTED_NEIGHBOR_PHONE]"
+
+
+playbook_security:
+  title: "Security Incident Playbook"
+  section: 3
+  category: playbook
+  overview: "Response protocol for break-ins, intrusions, suspicious activity, and lockouts."
+  severity: "CRITICAL if intrusion in progress, MODERATE for after-the-fact discovery"
+  key_principle: "Personal safety first. Never confront an intruder. Let police handle it."
+
+  phases:
+    phase_1_immediate:
+      title: "Phase 1: Immediate Response"
+      scenario_intrusion_in_progress:
+        title: "IF YOU SUSPECT SOMEONE IS IN YOUR HOME"
+        priority: "DO NOT ENTER. Your safety is more important than your property."
+        actions:
+          - step: "DO NOT ENTER"
+            details: "If arriving home and something seems wrong (door ajar, window broken)"
+          - step: "LEAVE immediately if already inside"
+            details: "Do not confront, investigate, or try to trap the intruder"
+          - step: "GO TO safe location"
+            details: "Neighbor's house, car (locked, drive away), public space"
+          - step: "CALL 911"
+            details: "Give address: [HOME_ADDRESS]"
+            details_2: "Describe what you observed: entry point, sounds, vehicles"
+          - step: "WAIT for police"
+            details: "Do not re-enter until police clear the home"
+        warning_signs:
+          - "Door ajar or forced open"
+          - "Broken window"
+          - "Unfamiliar vehicle in driveway"
+          - "Lights on/off unexpectedly"
+          - "Sounds of movement inside"
+          - "Your pets acting unusually fearful"
+
+      scenario_discovered_break_in:
+        title: "IF YOU DISCOVER A BREAK-IN AFTER THE FACT"
+        actions:
+          - step: "Do NOT touch anything"
+            details: "Preserve evidence for police"
+          - step: "LEAVE the property"
+            details: "Intruder may still be inside or nearby"
+          - step: "CALL 911"
+            details: "Report the break-in. Police will clear the home."
+          - step: "WAIT outside"
+            details: "Do not enter until police confirm it's safe"
+          - step: "MAKE a list"
+            details: "Start noting what appears missing or disturbed while waiting"
+
+      scenario_alarm_triggered:
+        title: "IF YOUR ALARM IS TRIGGERED"
+        actions:
+          - step: "If home, assess quickly"
+            details: "Is it a false alarm (pet, family member, wind)?"
+          - step: "If unsure or confirmed intrusion"
+            details: "Evacuate, call 911"
+          - step: "If false alarm"
+            details: "Disarm system. Cancel with monitoring company to avoid dispatch."
+            details_2: "Monitoring company: [ALARM_COMPANY] — [ALARM_COMPANY_PHONE]"
+        alarm_panel_location: "[ALARM_PANEL_LOCATION]"
+        alarm_code: "[ALARM_CODE]"
+
+    phase_2_documentation:
+      title: "Phase 2: After Police Clear the Scene"
+      actions:
+        - step: "FILE police report"
+          details: "Get report number — required for insurance claims"
+        - step: "DOCUMENT everything"
+          substeps:
+            - "Photograph all damage (doors, windows, locks)"
+            - "Photograph disturbed areas"
+            - "Make detailed list of missing items with estimated values"
+            - "Include serial numbers if available"
+        - step: "NOTIFY insurance"
+          details: "[INSURANCE_PROVIDER] — [INSURANCE_CLAIM_PHONE]"
+          details_2: "Provide police report number"
+        - step: "SECURE the property"
+          substeps:
+            - "Board up broken doors/windows"
+            - "Change locks if keys were stolen or accessible"
+            - "Locksmith: [LOCKSMITH_NAME] — [LOCKSMITH_PHONE]"
+        - step: "CHECK security footage"
+          details: "Download and preserve any recordings"
+        - step: "NOTIFY neighbors"
+          details: "Warn them to be vigilant. Ask if they saw anything."
+
+    phase_3_recovery:
+      title: "Phase 3: Recovery & Prevention"
+      immediate_security:
+        - "Change all locks"
+        - "Update alarm codes"
+        - "Check that all windows lock properly"
+        - "Replace damaged doors with solid-core"
+      security_upgrades:
+        - "Add motion-sensor exterior lights"
+        - "Install/upgrade security cameras"
+        - "Add door reinforcement kit (strike plate, hinge shields)"
+        - "Consider monitored alarm system if not present"
+        - "Add glass break sensors to windows"
+        - "Install smart doorbell camera"
+      long_term:
+        - "Vary your routine if possible"
+        - "Use timers on interior lights when away"
+        - "Stop mail/packages when traveling"
+        - "Join neighborhood watch or alert system"
+
+  lockout_procedure:
+    title: "Locked Out of Home"
+    steps:
+      - "Check all doors and windows (some may be unlocked)"
+      - "Check for hidden key: [HIDDEN_KEY_LOCATION]"
+      - "Contact household member with key"
+      - "Call locksmith: [LOCKSMITH_NAME] — [LOCKSMITH_PHONE]"
+      - "Have ID ready to prove residency"
+    do_not:
+      - "Break a window (expensive, dangerous, may trigger alarm)"
+      - "Try to pick the lock (may damage it, looks suspicious)"
+
+  contacts:
+    - "Emergency: 911"
+    - "Alarm Company: [ALARM_COMPANY] — [ALARM_COMPANY_PHONE]"
+    - "Locksmith: [LOCKSMITH_NAME] — [LOCKSMITH_PHONE]"
+    - "Insurance: [INSURANCE_PROVIDER] — [INSURANCE_CLAIM_PHONE]"
+    - "Neighbor: [TRUSTED_NEIGHBOR_NAME] — [TRUSTED_NEIGHBOR_PHONE]"

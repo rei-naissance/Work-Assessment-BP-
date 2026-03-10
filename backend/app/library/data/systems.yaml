@@ -1,0 +1,3255 @@
+# =============================================================================
+# SYSTEMS.YAML — Feature-Specific Home Systems Maintenance
+# =============================================================================
+# Premium actionable guides for homes with specific features/systems
+# Each module includes: overview, maintenance schedule, DIY steps, safety, pro thresholds
+# =============================================================================
+
+pool_care:
+  title: "Pool Maintenance Guide"
+  feature: has_pool
+  section: 5
+  category: systems
+  overview: "Complete pool maintenance program to keep water safe, equipment running, and surfaces protected. Regular care prevents costly repairs and health hazards."
+
+  your_pool_info:
+    type: "[POOL_TYPE]"  # inground, above-ground, saltwater, chlorine
+    volume: "[POOL_GALLONS] gallons"
+    equipment_location: "[POOL_EQUIPMENT_LOCATION]"
+    main_drain: "[POOL_DRAIN_LOCATION]"
+
+  weekly_maintenance:
+    title: "Weekly Tasks (During Swim Season)"
+    tasks:
+      - task: "Test water chemistry"
+        details: "pH (7.2-7.6), chlorine (1-3 ppm), alkalinity (80-120 ppm)"
+        tools: "Test strips or liquid test kit"
+      - task: "Skim surface debris"
+        details: "Remove leaves, bugs, and floating debris"
+      - task: "Empty skimmer baskets"
+        location: "[SKIMMER_BASKET_LOCATION]"
+      - task: "Empty pump strainer basket"
+        location: "[PUMP_STRAINER_LOCATION]"
+      - task: "Brush walls and tile line"
+        details: "Prevents algae buildup and calcium deposits"
+      - task: "Vacuum pool floor"
+        details: "Manual or automatic — check cleaner operation"
+      - task: "Check water level"
+        details: "Should be at middle of skimmer opening"
+
+  monthly_maintenance:
+    - "Shock the pool (super-chlorinate) — do at dusk, not midday"
+    - "Clean filter per type: backwash (sand/DE) or rinse (cartridge)"
+    - "Inspect pump for leaks, unusual noise, or reduced flow"
+    - "Check automatic cleaner for wear — replace worn parts"
+    - "Lubricate O-rings on pump lid and filter"
+    - "Test and calibrate automatic chemical feeder if equipped"
+
+  seasonal_tasks:
+    spring_opening:
+      - "Remove and clean cover — store dry to prevent mold"
+      - "Reinstall ladders, rails, and accessories"
+      - "Prime and start pump — check for air leaks"
+      - "Shock pool heavily — may need multiple treatments"
+      - "Run filter 24 hours until water clears"
+      - "Balance all chemicals before swimming"
+    fall_closing:
+      - "Balance water chemistry one final time"
+      - "Lower water level below skimmer"
+      - "Blow out plumbing lines with shop vac or compressor"
+      - "Add winterizing chemicals"
+      - "Install winter plugs in return jets"
+      - "Install and secure pool cover"
+      - "Shut off pump, filter, heater at breakers"
+
+  chemical_safety:
+    - "NEVER mix different pool chemicals — can cause toxic gas or explosion"
+    - "Add chemicals to water, never water to chemicals"
+    - "Store chemicals in cool, dry place away from sunlight"
+    - "Keep chlorine and acid separated by at least 10 feet"
+    - "Wear gloves and eye protection when handling chemicals"
+    - "Wash hands thoroughly after pool maintenance"
+
+  troubleshooting:
+    green_water:
+      cause: "Algae bloom — low chlorine, high pH, or poor circulation"
+      fix: "Shock heavily, brush walls, run filter 24/7 until clear, backwash frequently"
+    cloudy_water:
+      cause: "Poor filtration, high pH, or calcium buildup"
+      fix: "Check filter pressure, balance pH, use clarifier if needed"
+    pump_losing_prime:
+      cause: "Air leak in suction line, low water level, or clogged impeller"
+      fix: "Check lid O-ring, water level, and skimmer baskets first"
+    high_chlorine_demand:
+      cause: "Organic contamination or stabilizer (CYA) too low"
+      fix: "Test CYA level, consider partial drain/refill if over 100 ppm"
+
+  diy_vs_pro:
+    diy_tasks:
+      - "Weekly testing and chemical adjustments"
+      - "Skimming, brushing, vacuuming"
+      - "Filter cleaning and backwashing"
+      - "Basic equipment inspection"
+      - "Winterizing (with proper research)"
+    call_pro:
+      - "Pump motor replacement or electrical issues"
+      - "Heater repair or gas line work"
+      - "Leak detection and repair"
+      - "Major equipment installation"
+      - "Replastering or liner replacement"
+      - "Opening/closing if unfamiliar with process"
+
+  regional_note: "Southeast humidity accelerates algae growth — may need more frequent shocking. Hurricane season: lower water level, remove loose items, do NOT drain pool (hydrostatic pressure can pop it out of ground)."
+
+  contacts:
+    pool_service: "[POOL_SERVICE_NAME] — [POOL_SERVICE_PHONE]"
+    equipment_warranty: "[POOL_EQUIPMENT_WARRANTY_INFO]"
+
+# -----------------------------------------------------------------------------
+
+garage_maintenance:
+  title: "Garage Door & Workspace Maintenance"
+  feature: has_garage
+  section: 5
+  category: systems
+  overview: "Garage door is the largest moving part in your home and a major security point. Regular maintenance prevents costly repairs and dangerous failures."
+
+  your_garage_info:
+    door_type: "[GARAGE_DOOR_TYPE]"  # sectional, roll-up, swing-out
+    opener_brand: "[GARAGE_OPENER_BRAND]"
+    opener_location: "[GARAGE_OPENER_LOCATION]"
+    manual_release: "[GARAGE_MANUAL_RELEASE_LOCATION]"
+
+  monthly_tasks:
+    - task: "Test auto-reverse safety"
+      how: "Place 2x4 flat on floor in door path. Door must reverse when it contacts the board."
+      warning: "If door doesn't reverse, DO NOT USE until fixed — this is a critical safety feature"
+    - task: "Test photo-eye sensors"
+      how: "Wave object through beam while door is closing — should reverse immediately"
+      location: "Sensors are [GARAGE_SENSOR_HEIGHT] from floor on each side"
+    - task: "Visual inspection"
+      check: "Cables, springs, rollers, hinges for wear or damage"
+    - task: "Listen for unusual sounds"
+      concern: "Grinding, scraping, or popping indicates problem"
+
+  biannual_maintenance:
+    title: "Every 6 Months"
+    tasks:
+      - task: "Lubricate moving parts"
+        parts: "Rollers, hinges, springs, bearing plates"
+        use: "White lithium grease or silicone spray — NOT WD-40"
+        avoid: "Don't lubricate the track — causes buildup"
+      - task: "Tighten hardware"
+        check: "Bracket bolts, hinge screws, track mounting"
+      - task: "Check weatherstripping"
+        location: "Bottom seal and side/top seals"
+        replace_if: "Cracked, brittle, or gaps visible"
+      - task: "Test manual release"
+        how: "Pull red cord, lift door manually — should move freely"
+      - task: "Check door balance"
+        how: "Disconnect opener, lift door halfway — should stay in place"
+        warning: "If door falls or rises, springs need adjustment (CALL PRO)"
+
+  annual_tasks:
+    - "Inspect springs for rust, gaps, or elongation"
+    - "Check cables for fraying or wear"
+    - "Clean and lubricate chain or belt drive"
+    - "Test wall button and remote batteries"
+    - "Update opener code if sharing with service providers"
+
+  safety_warnings:
+    - icon: "⚠️"
+      warning: "NEVER attempt to adjust or replace torsion springs yourself"
+      reason: "Under extreme tension — can cause serious injury or death"
+    - icon: "⚠️"
+      warning: "Do not stand under a moving garage door"
+    - icon: "⚠️"
+      warning: "Keep fingers away from section joints when door is moving"
+    - icon: "⚠️"
+      warning: "Extension springs should have safety cables through them"
+
+  workspace_maintenance:
+    - "Keep clear path from door to house entry for emergency exit"
+    - "Store flammables (gas cans, solvents) in approved containers away from ignition sources"
+    - "Install GFCI outlets for power tools — required by code"
+    - "Ensure adequate lighting — minimum 50 lumens per square foot for workspace"
+    - "Keep fire extinguisher accessible: [GARAGE_EXTINGUISHER_LOCATION]"
+    - "Never run vehicle in closed garage — CO poisoning risk"
+
+  diy_vs_pro:
+    diy_safe:
+      - "Lubrication of rollers, hinges"
+      - "Tightening loose hardware"
+      - "Replacing weatherstripping"
+      - "Testing safety features"
+      - "Replacing remote batteries"
+      - "Cleaning tracks"
+    call_pro_immediately:
+      - "ANY spring work (torsion or extension)"
+      - "Cable replacement"
+      - "Door off track"
+      - "Opener motor failure"
+      - "Panel replacement"
+      - "Door balance problems"
+
+  contacts:
+    garage_door_service: "[GARAGE_DOOR_SERVICE] — [GARAGE_DOOR_PHONE]"
+
+# -----------------------------------------------------------------------------
+
+basement_care:
+  title: "Basement Care & Waterproofing"
+  feature: has_basement
+  section: 5
+  category: systems
+  overview: "Basements are prone to moisture problems that lead to mold, structural damage, and unhealthy air quality. Proactive monitoring prevents disasters."
+
+  your_basement_info:
+    type: "[BASEMENT_TYPE]"  # finished, unfinished, partial, walkout
+    sump_pump: "[SUMP_PUMP_LOCATION]"
+    floor_drain: "[BASEMENT_FLOOR_DRAIN_LOCATION]"
+    dehumidifier: "[DEHUMIDIFIER_LOCATION]"
+    water_entry_history: "[KNOWN_WATER_ENTRY_POINTS]"
+
+  weekly_monitoring:
+    - task: "Check humidity level"
+      target: "Keep below 50% — ideally 30-50%"
+      tool: "Hygrometer: [HYGROMETER_LOCATION]"
+    - task: "Visual inspection after rain"
+      check: "Walls, floor, window wells for dampness or stains"
+    - task: "Check dehumidifier"
+      action: "Empty reservoir or verify drain line is clear"
+    - task: "Sniff test"
+      concern: "Musty smell indicates moisture problem even if not visible"
+
+  monthly_tasks:
+    - task: "Inspect foundation walls"
+      look_for: "New cracks, efflorescence (white mineral deposits), damp spots"
+    - task: "Check window wells"
+      ensure: "Drains are clear, no debris accumulation"
+    - task: "Test sump pump"
+      how: "Pour 5 gallons water into pit — pump should activate and drain"
+      location: "[SUMP_PUMP_LOCATION]"
+    - task: "Clean dehumidifier filter"
+      how: "Rinse or vacuum per manufacturer instructions"
+
+  seasonal_tasks:
+    spring:
+      - "Inspect after snowmelt for water intrusion signs"
+      - "Clear debris from window well drains"
+      - "Check grading around foundation — soil should slope away"
+      - "Verify downspouts discharge 6+ feet from foundation"
+    fall:
+      - "Seal any new foundation cracks before freeze"
+      - "Insulate exposed pipes to prevent freezing"
+      - "Test sump pump and backup battery"
+      - "Clear gutters to prevent overflow near foundation"
+
+  water_intrusion_response:
+    immediate_steps:
+      - "1. Identify source if visible (wall crack, floor joint, window)"
+      - "2. Move valuables and electronics to dry area"
+      - "3. If significant water, check sump pump operation"
+      - "4. Use wet-dry vacuum to remove standing water"
+      - "5. Set up fans and dehumidifier to dry area"
+      - "6. Document with photos for insurance if applicable"
+    call_pro_if:
+      - "Water entering through multiple locations"
+      - "Pump cannot keep up with water volume"
+      - "Sewage backup (DO NOT touch — biohazard)"
+      - "Foundation crack is widening"
+      - "Water damage exceeds small area"
+
+  crack_assessment:
+    hairline_cracks:
+      description: "Very thin, stable cracks in concrete"
+      action: "Monitor for changes, seal with hydraulic cement or epoxy"
+      concern_level: "Low — usually cosmetic"
+    horizontal_cracks:
+      description: "Cracks running horizontally along wall"
+      action: "CALL STRUCTURAL ENGINEER IMMEDIATELY"
+      concern_level: "HIGH — indicates foundation pressure/failure"
+    stair_step_cracks:
+      description: "Cracks following mortar joints in block walls"
+      action: "Monitor closely, consult professional if growing"
+      concern_level: "Moderate to High — potential structural issue"
+    vertical_cracks:
+      description: "Cracks running top to bottom"
+      action: "Usually settling — seal and monitor"
+      concern_level: "Low to Moderate"
+
+  humidity_control:
+    - "Run dehumidifier continuously in humid months (May-September in Southeast)"
+    - "Ensure dryer vents to outside, not into basement"
+    - "Don't hang wet laundry in basement"
+    - "Use vapor barrier on dirt floors"
+    - "Consider basement ventilation fan if persistently damp"
+
+  storage_best_practices:
+    - "Store items on shelving, minimum 4 inches off floor"
+    - "Use plastic bins instead of cardboard boxes"
+    - "Keep stored items 12 inches from walls"
+    - "Don't store irreplaceable items in basement"
+    - "Elevate appliances if flooding history exists"
+
+  diy_vs_pro:
+    diy_tasks:
+      - "Sealing hairline cracks with hydraulic cement"
+      - "Applying waterproof paint to walls"
+      - "Improving exterior grading"
+      - "Extending downspouts"
+      - "Testing and maintaining sump pump"
+    call_pro:
+      - "Horizontal or stair-step foundation cracks"
+      - "Interior French drain installation"
+      - "Exterior waterproofing membrane"
+      - "Sump pump installation or major repair"
+      - "Mold remediation over 10 sq ft"
+
+  regional_note: "Southeast: Heavy summer thunderstorms can overwhelm drainage. Battery backup for sump pump is essential — power outages often coincide with storms. Clay soil common in Piedmont region holds water against foundation."
+
+  contacts:
+    waterproofing_contractor: "[WATERPROOFING_COMPANY] — [WATERPROOFING_PHONE]"
+    structural_engineer: "[STRUCTURAL_ENGINEER] — [STRUCTURAL_PHONE]"
+    mold_remediation: "[MOLD_COMPANY] — [MOLD_PHONE]"
+
+# -----------------------------------------------------------------------------
+
+attic_care:
+  title: "Attic Inspection & Insulation"
+  feature: has_attic
+  section: 5
+  category: systems
+  overview: "Attic conditions directly impact energy efficiency, roof longevity, and indoor air quality. Proper ventilation and insulation prevent ice dams, moisture damage, and high energy bills."
+
+  your_attic_info:
+    access_location: "[ATTIC_ACCESS_LOCATION]"
+    insulation_type: "[INSULATION_TYPE]"  # fiberglass batts, blown-in, spray foam
+    insulation_depth: "[INSULATION_DEPTH] inches"
+    ventilation_type: "[VENTILATION_TYPE]"  # ridge/soffit, gable vents, powered
+
+  safety_first:
+    - icon: "⚠️"
+      warning: "Walk ONLY on joists or boards laid across joists"
+      reason: "Ceiling drywall will not support your weight"
+    - icon: "⚠️"
+      warning: "Wear N95 mask and long sleeves"
+      reason: "Insulation fibers irritate lungs and skin"
+    - icon: "⚠️"
+      warning: "Use battery-powered light, not work light"
+      reason: "Hot bulbs near insulation = fire risk"
+    - icon: "⚠️"
+      warning: "Summer attics can exceed 140°F"
+      action: "Inspect early morning or wait for cooler weather"
+
+  biannual_inspection:
+    title: "Check Every 6 Months (Spring & Fall)"
+    checklist:
+      - item: "Roof sheathing"
+        look_for: "Dark stains, mold, daylight through boards, water marks"
+        indicates: "Roof leak or condensation problem"
+      - item: "Insulation condition"
+        look_for: "Compression, gaps, wet spots, displaced areas"
+        indicates: "Reduced R-value, possible moisture intrusion"
+      - item: "Ventilation"
+        check: "Soffit vents unblocked, ridge/gable vents clear"
+        indicates: "Blocked vents cause moisture buildup and ice dams"
+      - item: "Pest evidence"
+        look_for: "Droppings, nesting materials, chew marks, dead insects"
+        indicates: "Active infestation requiring treatment"
+      - item: "Electrical"
+        check: "Junction boxes covered, no damaged wires"
+        indicates: "Fire hazard if issues found"
+      - item: "HVAC equipment (if present)"
+        check: "Ductwork connections tight, no condensation on unit"
+
+  insulation_guidelines:
+    recommended_r_value: "R-38 to R-60 for Southeast US (Zone 3-4)"
+    depth_equivalents:
+      fiberglass_batts: "10-16 inches for R-38 to R-60"
+      blown_fiberglass: "13-20 inches for R-38 to R-60"
+      blown_cellulose: "10-16 inches for R-38 to R-60"
+    common_problems:
+      - "Insulation pushed aside for storage — restore coverage"
+      - "Insulation blocking soffit vents — install baffles"
+      - "Insulation too thin — add more layers"
+      - "Insulation compressed — loses R-value, needs replacement"
+
+  ventilation_requirements:
+    rule: "1 sq ft of vent area per 150 sq ft of attic floor (or 1:300 with vapor barrier)"
+    balance: "Intake (soffit) and exhaust (ridge/gable) should be roughly equal"
+    signs_of_poor_ventilation:
+      - "Frost or moisture on roof sheathing in winter"
+      - "Extremely hot attic in summer (significantly hotter than outside)"
+      - "Ice dams forming at roof edge"
+      - "Mold or mildew on wood surfaces"
+    do_not:
+      - "Cover soffit vents with insulation"
+      - "Mix powered vents with ridge vents (causes short-circuiting)"
+      - "Seal attic completely — ventilation is required"
+
+  diy_vs_pro:
+    diy_tasks:
+      - "Visual inspections from access point"
+      - "Installing soffit baffles"
+      - "Adding blown-in insulation (rental equipment available)"
+      - "Sealing air leaks around penetrations"
+      - "Adding weatherstripping to attic hatch"
+    call_pro:
+      - "Mold remediation"
+      - "Spray foam insulation"
+      - "Roof leak repairs"
+      - "Adding ventilation (cutting new vents)"
+      - "Removing old vermiculite insulation (may contain asbestos)"
+      - "Pest removal and exclusion"
+
+  energy_tip: "Air sealing before adding insulation provides biggest bang for buck. Seal around: light fixtures, plumbing penetrations, chimney chase, attic hatch, ductwork boots."
+
+  regional_note: "Southeast: Focus on summer heat management — radiant barrier can reduce cooling costs 5-10%. Less concern about ice dams than northern regions, but attic moisture from humid air is common."
+
+  contacts:
+    insulation_contractor: "[INSULATION_COMPANY] — [INSULATION_PHONE]"
+    roofer: "[ROOFER_NAME] — [ROOFER_PHONE]"
+
+# -----------------------------------------------------------------------------
+
+fireplace_care:
+  title: "Fireplace & Chimney Maintenance"
+  feature: has_fireplace
+  section: 5
+  category: systems
+  overview: "Fireplaces require annual professional inspection to prevent chimney fires and carbon monoxide poisoning. Creosote buildup is the #1 cause of chimney fires."
+
+  your_fireplace_info:
+    type: "[FIREPLACE_TYPE]"  # wood-burning, gas, electric, pellet
+    chimney_type: "[CHIMNEY_TYPE]"  # masonry, metal flue, direct vent
+    damper_location: "[DAMPER_LOCATION]"
+    gas_shutoff: "[FIREPLACE_GAS_SHUTOFF]"
+    last_inspection: "[LAST_CHIMNEY_INSPECTION_DATE]"
+
+  before_each_use:
+    - task: "Open damper fully"
+      how: "Lever or handle at [DAMPER_LOCATION] — verify open by looking up flue"
+    - task: "Check for obstructions"
+      how: "Shine flashlight up flue — look for debris, nests, or blockage"
+    - task: "Verify draft"
+      how: "Light match near opening — smoke should draw upward"
+    - task: "Position fireplace screen"
+      purpose: "Prevents sparks from escaping into room"
+    - task: "Clear combustibles"
+      rule: "Nothing flammable within 3 feet of fireplace opening"
+
+  annual_requirements:
+    - task: "Professional chimney inspection"
+      when: "Before first use each fall — schedule in August/September"
+      includes: "Level 1 inspection, cleaning if needed, damper check"
+      cost_range: "$150-300 for inspection, $150-400 for cleaning"
+    - task: "Chimney cap inspection"
+      check: "Screen intact, cap secure, no rust or damage"
+    - task: "Exterior chimney inspection"
+      check: "Mortar joints, crown, flashing at roofline"
+    - task: "Carbon monoxide detector test"
+      location: "[CO_DETECTOR_LOCATIONS]"
+
+  wood_burning_guidelines:
+    fuel_selection:
+      use: "Seasoned hardwood (oak, maple, ash) — dried 6-12 months"
+      avoid:
+        - "Green (freshly cut) wood — creates excessive creosote"
+        - "Softwoods (pine, cedar) — burn fast, spark heavily"
+        - "Treated lumber — toxic fumes"
+        - "Painted or stained wood — toxic fumes"
+        - "Cardboard, trash, magazines — fire hazard, toxic fumes"
+    how_to_tell_seasoned:
+      - "Darker color with cracks on ends"
+      - "Lightweight compared to green wood"
+      - "Sounds hollow when pieces knocked together"
+      - "Bark peeling or loose"
+
+  ash_disposal:
+    - "1. Let ashes cool for 24-48 hours in fireplace"
+    - "2. Scoop into METAL container with tight lid"
+    - "3. Add small amount of water to ensure no embers"
+    - "4. Store container OUTSIDE, away from house and combustibles"
+    - "5. Wait another 48 hours before disposal in trash"
+    - "WARNING: Ashes can retain burning embers for days — many house fires start from improper ash disposal"
+
+  gas_fireplace_specific:
+    annual_tasks:
+      - "Professional inspection of gas valve and connections"
+      - "Check pilot light and thermocouple"
+      - "Clean glass with approved fireplace glass cleaner"
+      - "Inspect artificial logs for damage or deterioration"
+      - "Test remote control batteries"
+    safety:
+      - "Never use if you smell gas — shut off valve, ventilate, call gas company"
+      - "Keep glass doors closed during operation — glass gets extremely hot"
+      - "Gas shutoff location: [FIREPLACE_GAS_SHUTOFF]"
+
+  warning_signs:
+    call_chimney_professional:
+      - "Strong odor from fireplace when not in use"
+      - "Smoke entering room instead of going up chimney"
+      - "Visible creosote flakes falling into firebox"
+      - "Stains on ceiling or walls near chimney"
+      - "Cracked or damaged flue tiles (visible during inspection)"
+      - "White staining on exterior chimney (efflorescence)"
+    emergency:
+      - "Chimney fire (roaring sound, dense smoke, intense heat)"
+      - "Action: Get everyone out, call 911, do NOT put water on fire"
+
+  diy_vs_pro:
+    diy_tasks:
+      - "Ash removal and disposal"
+      - "Cleaning fireplace interior (firebox)"
+      - "Testing damper operation"
+      - "Visual inspection of chimney cap from ground"
+      - "Replacing fireplace screen"
+    always_call_pro:
+      - "Chimney cleaning/sweeping"
+      - "Annual inspection"
+      - "Gas line or valve work"
+      - "Flue liner repair or replacement"
+      - "Crown or cap repair"
+      - "Damper repair or replacement"
+
+  regional_note: "Southeast: Shorter burning season means creosote stays moist longer — increases corrosion risk. Annual inspection still essential even with light use. Humidity can cause damper rust — check operation each fall."
+
+  contacts:
+    chimney_sweep: "[CHIMNEY_SWEEP_NAME] — [CHIMNEY_SWEEP_PHONE]"
+    gas_company: "[GAS_COMPANY] — [GAS_COMPANY_PHONE]"
+
+# -----------------------------------------------------------------------------
+
+septic_system:
+  title: "Septic System Care"
+  feature: has_septic
+  section: 5
+  category: systems
+  overview: "Septic systems require careful use and regular pumping to avoid costly failures. A well-maintained system lasts 25-30 years; a neglected one can fail in under 10."
+
+  your_system_info:
+    tank_location: "[SEPTIC_TANK_LOCATION]"
+    tank_size: "[SEPTIC_TANK_SIZE] gallons"
+    drain_field_location: "[DRAIN_FIELD_LOCATION]"
+    last_pumped: "[LAST_SEPTIC_PUMPING_DATE]"
+    pumping_company: "[SEPTIC_COMPANY] — [SEPTIC_PHONE]"
+    access_lids: "[SEPTIC_ACCESS_DESCRIPTION]"
+
+  pumping_schedule:
+    guideline: "Every 3-5 years depending on household size and tank size"
+    factors:
+      - "More occupants = pump more frequently"
+      - "Garbage disposal use increases solids — pump every 2-3 years"
+      - "Water softener backwash adds volume — may need more frequent pumping"
+    record_keeping: "Keep pumping receipts — needed for home sale disclosure"
+
+  daily_use_rules:
+    flush_only:
+      - "Human waste"
+      - "Toilet paper (regular, not 'flushable' wipes)"
+    never_flush:
+      - "Flushable wipes (they don't break down)"
+      - "Feminine hygiene products"
+      - "Diapers or baby wipes"
+      - "Cotton balls, swabs, dental floss"
+      - "Cat litter (even 'flushable' types)"
+      - "Medications (dispose at pharmacy take-back)"
+      - "Grease or cooking oil"
+      - "Paints, solvents, chemicals"
+      - "Cigarette butts"
+
+  protect_drain_field:
+    do:
+      - "Keep accurate diagram of drain field location"
+      - "Maintain grass cover over field"
+      - "Divert surface water away from field"
+      - "Mark field boundaries before any excavation"
+    do_not:
+      - "Drive vehicles over drain field"
+      - "Park on drain field"
+      - "Build structures over field"
+      - "Plant trees or shrubs within 30 feet (roots damage pipes)"
+      - "Install sprinklers over field"
+      - "Cover with concrete, asphalt, or plastic"
+
+  water_conservation:
+    why: "Excessive water overwhelms the system and prevents proper treatment"
+    tips:
+      - "Fix leaky faucets and running toilets immediately"
+      - "Spread laundry loads throughout the week"
+      - "Use high-efficiency fixtures (toilets, showerheads)"
+      - "Don't drain hot tubs or pools into septic"
+      - "Limit garbage disposal use — compost instead"
+
+  warning_signs:
+    early_warning:
+      - "Slow drains throughout house (not just one fixture)"
+      - "Gurgling sounds in plumbing"
+      - "Sewage odor inside or outside"
+      - "Wet spots or unusually green grass over drain field"
+    serious_problems:
+      - "Sewage backup in lowest drains"
+      - "Standing water over drain field"
+      - "System alarm sounding (if equipped)"
+      - "Action: Stop using water, call septic professional immediately"
+
+  additives_truth:
+    not_recommended: "Most septic additives are unnecessary and some are harmful"
+    reason: "Normal bacterial action from waste is sufficient for proper operation"
+    harmful: "Chemical additives can kill beneficial bacteria and push solids to drain field"
+    exception: "After heavy antibiotic use, a bacterial additive may help restore balance"
+
+  diy_vs_pro:
+    diy_tasks:
+      - "Water conservation practices"
+      - "Monitoring for warning signs"
+      - "Maintaining grass over drain field"
+      - "Diverting surface water"
+      - "Keeping records"
+    always_call_pro:
+      - "Pumping (required by law in most areas)"
+      - "Inspections"
+      - "Locating buried tank or field"
+      - "Any repairs"
+      - "Adding risers for easier access"
+
+  inspection_requirements:
+    when_needed:
+      - "At home purchase (required by most lenders)"
+      - "Every 3 years (recommended)"
+      - "Before adding bedrooms or bathrooms"
+      - "If warning signs appear"
+    what_it_includes:
+      - "Locate and uncover tank"
+      - "Measure scum and sludge layers"
+      - "Check for leaks and structural damage"
+      - "Evaluate drain field condition"
+      - "Test baffles and outlets"
+
+  regional_note: "Southeast clay soils drain slowly — may require larger drain field or alternative system. High water table areas may need mound system. Heavy rains can temporarily saturate drain field — reduce water use during extended rain."
+
+  contacts:
+    septic_service: "[SEPTIC_COMPANY] — [SEPTIC_PHONE]"
+    county_health: "[COUNTY_HEALTH_DEPT] — [HEALTH_DEPT_PHONE]"
+
+# -----------------------------------------------------------------------------
+
+well_water:
+  title: "Well Water System Maintenance"
+  feature: has_well_water
+  section: 5
+  category: systems
+  overview: "Private wells require owner maintenance and testing — no utility company monitors your water quality. Annual testing and proper wellhead protection keep your water safe."
+
+  your_well_info:
+    well_location: "[WELL_LOCATION]"
+    well_depth: "[WELL_DEPTH] feet"
+    pump_type: "[WELL_PUMP_TYPE]"  # submersible, jet, hand
+    pressure_tank_location: "[PRESSURE_TANK_LOCATION]"
+    treatment_system: "[WATER_TREATMENT_DESCRIPTION]"
+    last_water_test: "[LAST_WELL_TEST_DATE]"
+
+  annual_testing:
+    required_tests:
+      - test: "Total Coliform Bacteria"
+        why: "Indicates possible contamination from surface water or sewage"
+        action_if_positive: "Shock chlorinate well, retest, investigate source"
+      - test: "Nitrates"
+        why: "From fertilizers or septic — dangerous for infants"
+        safe_level: "Below 10 mg/L"
+      - test: "pH Level"
+        why: "Affects corrosion of pipes and effectiveness of treatment"
+        ideal_range: "6.5 - 8.5"
+    recommended_tests:
+      - "Hardness (affects appliances and soap efficiency)"
+      - "Iron and manganese (staining, taste)"
+      - "Lead (especially in older homes with lead pipes)"
+    test_more_often_if:
+      - "Pregnant woman or infant in household"
+      - "Recurring GI illness in household"
+      - "Change in taste, odor, or appearance"
+      - "Nearby land use changes (construction, agriculture)"
+      - "After flooding or heavy rains"
+    where_to_test: "[LOCAL_WATER_TESTING_LAB]"
+
+  monthly_checks:
+    - task: "Check pressure gauge"
+      normal: "40-60 psi typical, should match pressure switch settings"
+      location: "[PRESSURE_GAUGE_LOCATION]"
+    - task: "Listen for pump short-cycling"
+      concern: "Pump turning on/off frequently indicates waterlogged tank or leak"
+    - task: "Visual well cap inspection"
+      check: "Cap secure, no cracks, vent screen intact"
+    - task: "Monitor water usage"
+      concern: "Unexplained increase may indicate leak"
+
+  quarterly_tasks:
+    - task: "Inspect pressure tank"
+      check: "No rust, condensation, or leaks"
+    - task: "Check pressure switch contacts"
+      look_for: "Burning or pitting on contacts"
+    - task: "Maintain treatment systems"
+      includes: "Change filters, check salt levels in softener, UV bulb status"
+
+  wellhead_protection:
+    distance_requirements:
+      - "Septic tank: minimum 50 feet"
+      - "Septic drain field: minimum 100 feet"
+      - "Petroleum tanks: minimum 50 feet"
+      - "Livestock areas: minimum 50 feet"
+      - "Pesticide/fertilizer storage: minimum 100 feet"
+    physical_protection:
+      - "Sanitary well cap with vermin-proof screen"
+      - "Casing extends 6-12 inches above ground"
+      - "Ground slopes away from well"
+      - "No puddles or standing water near well"
+      - "Concrete pad around well if subject to traffic"
+
+  pressure_tank_maintenance:
+    purpose: "Maintains pressure and prevents pump short-cycling"
+    check_air_pressure:
+      how: "Turn off pump, drain tank, check with tire gauge on air valve"
+      setting: "2 psi below pump cut-in pressure (typically 28-38 psi)"
+    waterlogged_signs:
+      - "Pump cycles frequently (more than 6x per hour with normal use)"
+      - "Pressure fluctuates rapidly"
+      - "Tank feels heavy/full when pump is off"
+    replacement: "Bladder tanks typically last 10-15 years"
+
+  warning_signs:
+    water_quality:
+      - "Change in taste, color, or odor"
+      - "Staining on fixtures (red = iron, black = manganese)"
+      - "Slippery or soapy feeling (high sodium)"
+      - "Rotten egg smell (hydrogen sulfide or bacteria)"
+    system_problems:
+      - "No water or very low pressure"
+      - "Pump runs continuously"
+      - "Pump short-cycles (on/off rapidly)"
+      - "Sputtering or air in water lines"
+      - "Circuit breaker tripping"
+
+  diy_vs_pro:
+    diy_tasks:
+      - "Visual inspections"
+      - "Checking pressure gauge"
+      - "Adjusting pressure tank air charge"
+      - "Replacing treatment system filters"
+      - "Shock chlorination (with proper research)"
+    call_pro:
+      - "Pump replacement or repair"
+      - "Pressure switch problems"
+      - "Well contamination issues"
+      - "Casing or seal repairs"
+      - "Water quality problems requiring investigation"
+      - "Electrical troubleshooting"
+
+  emergency_no_water:
+    steps:
+      - "1. Check circuit breaker for well pump"
+      - "2. Check pressure switch — may need manual reset"
+      - "3. Check pressure gauge — zero may indicate pump failure"
+      - "4. Listen at well cap — no sound may mean pump failure"
+      - "5. If pump running but no water — may be well recovery issue or pump problem"
+      - "6. Call well service: [WELL_SERVICE] — [WELL_SERVICE_PHONE]"
+
+  regional_note: "Southeast Piedmont: Wells in fractite rock may have lower yields. Iron and manganese common — consider treatment if staining occurs. Test after hurricanes/flooding — contamination risk increases. Some areas have naturally occurring radon in groundwater."
+
+  contacts:
+    well_service: "[WELL_SERVICE] — [WELL_SERVICE_PHONE]"
+    water_testing_lab: "[WATER_TESTING_LAB] — [TESTING_LAB_PHONE]"
+    health_department: "[COUNTY_HEALTH_DEPT] — [HEALTH_DEPT_PHONE]"
+
+# -----------------------------------------------------------------------------
+
+solar_panels:
+  title: "Solar Panel System Care"
+  feature: has_solar
+  section: 5
+  category: systems
+  overview: "Solar systems require minimal maintenance but regular monitoring ensures optimal performance. Catching problems early protects your investment and energy savings."
+
+  your_system_info:
+    system_size: "[SOLAR_SYSTEM_SIZE] kW"
+    panel_count: "[SOLAR_PANEL_COUNT] panels"
+    panel_location: "[SOLAR_PANEL_LOCATION]"  # roof, ground mount
+    inverter_location: "[INVERTER_LOCATION]"
+    inverter_type: "[INVERTER_TYPE]"  # string, micro, hybrid
+    monitoring_system: "[SOLAR_MONITORING_SYSTEM]"
+    installer: "[SOLAR_INSTALLER] — [SOLAR_INSTALLER_PHONE]"
+    install_date: "[SOLAR_INSTALL_DATE]"
+
+  monitoring_routine:
+    daily_automatic:
+      - "Check monitoring app for daily production"
+      - "Compare to expected output for weather conditions"
+      - "Note any alerts or error messages"
+    monthly_review:
+      - "Compare month-over-month production"
+      - "Check for consistent underperformance"
+      - "Review utility bill for expected savings"
+    what_to_watch:
+      - "Sudden drop in production (more than 20%)"
+      - "One or more panels producing zero"
+      - "Inverter error codes or offline status"
+      - "Gradual decline over time (may indicate soiling or degradation)"
+
+  cleaning_guidelines:
+    frequency: "1-2 times per year (or more in dusty/pollen-heavy areas)"
+    best_time: "Early morning when panels are cool, or on overcast day"
+    method:
+      - "1. Rinse with garden hose (no pressure washer)"
+      - "2. If needed, use soft brush with telescoping handle"
+      - "3. Use plain water or mild soap solution"
+      - "4. Rinse thoroughly"
+    do_not:
+      - "Use pressure washer (damages panels and seals)"
+      - "Use abrasive cleaners or brushes"
+      - "Walk on panels"
+      - "Clean in direct sun (thermal shock risk)"
+      - "Use hard water if possible (mineral deposits)"
+    safety: "If panels are not reachable from ground, hire professional"
+
+  visual_inspection:
+    quarterly:
+      - item: "Panel surfaces"
+        look_for: "Cracks, chips, discoloration, hot spots"
+      - item: "Wiring and connections"
+        look_for: "Exposed wires, animal damage, loose connections"
+      - item: "Mounting hardware"
+        look_for: "Rust, loose bolts, lifted flashing"
+      - item: "Shading"
+        look_for: "New tree growth blocking panels"
+      - item: "Debris"
+        look_for: "Leaves, branches, bird nests"
+
+  inverter_maintenance:
+    check_regularly:
+      - "Green status light (indicates normal operation)"
+      - "Error codes on display"
+      - "Fan running (for string inverters)"
+      - "No unusual noises or burning smell"
+    location_care:
+      - "Keep area around inverter clear (12 inches minimum)"
+      - "Ensure ventilation is not blocked"
+      - "Protect from direct water spray"
+    lifespan: "String inverters: 10-15 years, Microinverters: 20-25 years"
+
+  tree_management:
+    - "Survey shading morning, midday, and afternoon"
+    - "Even partial shading significantly reduces output"
+    - "Trim trees before they shade panels"
+    - "Consider seasonal sun angle — winter sun is lower"
+    - "Maintain clear southern exposure (in Northern Hemisphere)"
+
+  warranty_tracking:
+    typical_warranties:
+      - "Panels: 25-year performance warranty (guaranteed output)"
+      - "Inverter: 10-25 year warranty depending on type"
+      - "Installation/workmanship: 1-10 years depending on installer"
+    keep_records:
+      - "Installation contract and permits"
+      - "Warranty certificates"
+      - "Monitoring account credentials"
+      - "Production data history"
+    claim_process: "Contact installer first, then manufacturer if needed"
+
+  grid_connection:
+    know_your_setup:
+      - "Net metering agreement terms"
+      - "Utility interconnection requirements"
+      - "Annual true-up or settlement date"
+    utility_contact: "[UTILITY_COMPANY] — [UTILITY_SOLAR_DEPARTMENT]"
+
+  diy_vs_pro:
+    diy_tasks:
+      - "Monitoring production data"
+      - "Ground-level panel cleaning"
+      - "Visual inspections (from ground)"
+      - "Trimming nearby vegetation"
+      - "Resetting inverter (per manufacturer instructions)"
+    call_pro:
+      - "Roof-level cleaning or inspection"
+      - "Electrical troubleshooting"
+      - "Inverter replacement"
+      - "Panel replacement"
+      - "Mounting hardware repairs"
+      - "Any work requiring DC disconnect"
+
+  safety_warnings:
+    - icon: "⚠️"
+      warning: "Solar panels produce DC electricity when exposed to light"
+      implication: "System is always energized during daylight — cannot be fully shut off"
+    - icon: "⚠️"
+      warning: "Do not attempt electrical repairs yourself"
+    - icon: "⚠️"
+      warning: "In fire emergency, inform firefighters of solar panels"
+
+  regional_note: "Southeast: Pollen season (March-May) may require additional cleaning. Hurricane preparation: systems are designed to withstand high winds, but document condition before and after storms. Summer storms may temporarily reduce production — not a system problem."
+
+  contacts:
+    solar_installer: "[SOLAR_INSTALLER] — [SOLAR_INSTALLER_PHONE]"
+    inverter_support: "[INVERTER_MANUFACTURER] — [INVERTER_SUPPORT_PHONE]"
+
+# -----------------------------------------------------------------------------
+
+sprinkler_system:
+  title: "Irrigation & Sprinkler System"
+  feature: has_sprinklers
+  section: 5
+  category: systems
+  overview: "Automated irrigation saves water when properly maintained but wastes thousands of gallons when neglected. Seasonal adjustment and regular inspections maximize efficiency."
+
+  your_system_info:
+    controller_location: "[IRRIGATION_CONTROLLER_LOCATION]"
+    main_shutoff: "[IRRIGATION_MAIN_SHUTOFF]"
+    zone_count: "[IRRIGATION_ZONE_COUNT] zones"
+    zone_map: "[IRRIGATION_ZONE_MAP_LOCATION]"
+    backflow_preventer: "[BACKFLOW_PREVENTER_LOCATION]"
+    rain_sensor: "[RAIN_SENSOR_LOCATION]"
+
+  spring_startup:
+    title: "Annual Spring Activation (March-April)"
+    steps:
+      - step: "1. Inspect backflow preventer"
+        action: "Check for winter damage, ensure valves are closed"
+      - step: "2. Slowly open main water supply"
+        action: "Turn gradually to prevent water hammer"
+        location: "[IRRIGATION_MAIN_SHUTOFF]"
+      - step: "3. Pressurize system slowly"
+        action: "Open backflow valves one at a time"
+      - step: "4. Run each zone manually"
+        action: "Walk the zone, inspect every head"
+        check: "Coverage, spray pattern, leaks, clogs"
+      - step: "5. Adjust heads as needed"
+        action: "Clean clogged nozzles, adjust spray arcs, raise sunken heads"
+      - step: "6. Check rain sensor operation"
+        action: "Test per manufacturer instructions"
+      - step: "7. Program controller"
+        action: "Set spring schedule — typically 2-3 days/week"
+
+  monthly_maintenance:
+    - task: "Inspect one zone per week (rotate through all zones monthly)"
+      check: "Spray patterns, head condition, coverage gaps"
+    - task: "Check controller display"
+      verify: "Correct date/time, no error messages, battery backup working"
+    - task: "Observe a full cycle"
+      look_for: "Runoff, dry spots, overspray on hardscape"
+    - task: "Check rain sensor"
+      verify: "Activates after rain, resets when dry"
+    - task: "Monitor water bill"
+      concern: "Unexpected increase may indicate leak"
+
+  seasonal_adjustments:
+    spring:
+      frequency: "2-3 days per week"
+      notes: "Increase gradually as temperatures rise"
+    summer:
+      frequency: "3-4 days per week (or as needed)"
+      notes: "Water deeply, less frequently — promotes deep roots"
+      best_time: "Early morning (4-6 AM) — reduces evaporation and disease"
+    fall:
+      frequency: "1-2 days per week"
+      notes: "Reduce as temperatures cool and growth slows"
+    winter:
+      frequency: "Off or monthly deep watering (depends on climate)"
+      notes: "Winterize system before first freeze"
+
+  watering_best_practices:
+    - "Water early morning — 4-6 AM ideal"
+    - "Avoid watering midday — up to 50% lost to evaporation"
+    - "Don't water late evening — promotes fungal disease"
+    - "Adjust for rain — skip cycle or reduce runtime after rainfall"
+    - "Water deeply but infrequently — promotes deep root growth"
+    - "Check soil moisture before watering — may not need scheduled cycle"
+
+  winterization:
+    title: "Fall Winterization (Before First Freeze)"
+    steps:
+      - step: "1. Shut off water supply"
+        location: "[IRRIGATION_MAIN_SHUTOFF]"
+      - step: "2. Turn controller to 'off' or 'rain' mode"
+        note: "Leave power on to preserve programming"
+      - step: "3. Open drain valves"
+        location: "[DRAIN_VALVE_LOCATIONS]"
+      - step: "4. Blow out lines with compressed air"
+        spec: "50-80 PSI maximum — higher pressure damages components"
+        method: "Start with farthest zone, work toward controller"
+        note: "Run each zone until no water visible (about 2 minutes)"
+      - step: "5. Insulate backflow preventer"
+        method: "Cover with insulation bag or wrap"
+      - step: "6. Insulate above-ground pipes"
+    warning: "Water left in lines will freeze and crack pipes, fittings, and heads"
+
+  troubleshooting:
+    head_not_popping_up:
+      causes: "Clogged nozzle, debris in head, low pressure"
+      fix: "Clean or replace head, check for leaks upstream"
+    low_pressure_zone:
+      causes: "Leak in line, too many heads on zone, valve problem"
+      fix: "Check for wet spots indicating leak, inspect valve"
+    dead_spots:
+      causes: "Clogged nozzle, head turned wrong direction, spacing too wide"
+      fix: "Clean nozzle, adjust head, consider adding head"
+    runoff:
+      causes: "Watering too long, soil compaction, wrong head type"
+      fix: "Split into multiple shorter cycles, aerate lawn, adjust output"
+    controller_not_running:
+      check: "Power, blown fuse, tripped GFCI, backup battery"
+
+  water_conservation:
+    - "Install rain sensor if not equipped — [RAIN_SENSOR_LOCATION]"
+    - "Consider smart controller with weather-based adjustments"
+    - "Use drip irrigation for beds — reduces water use 50%+"
+    - "Audit system annually — fix leaks and adjust coverage"
+    - "Match precipitation rates across zones"
+    - "Follow local watering restrictions: [LOCAL_WATERING_RULES]"
+
+  diy_vs_pro:
+    diy_tasks:
+      - "Head cleaning and adjustment"
+      - "Replacing sprinkler heads"
+      - "Programming controller"
+      - "Monthly inspections"
+      - "Installing rain sensor"
+    call_pro:
+      - "Spring startup (if unfamiliar)"
+      - "Winterization / blowout"
+      - "Valve repairs"
+      - "Main line repairs"
+      - "Backflow preventer testing (required annually in some areas)"
+      - "Adding new zones"
+
+  regional_note: "Southeast: Humid climate may allow less frequent watering than arid regions. Summer afternoon thunderstorms — use rain sensor to skip unnecessary cycles. Check local watering restrictions — many areas limit days/hours."
+
+  contacts:
+    irrigation_service: "[IRRIGATION_COMPANY] — [IRRIGATION_PHONE]"
+    backflow_tester: "[BACKFLOW_TESTER] — [BACKFLOW_PHONE]"
+
+# -----------------------------------------------------------------------------
+
+security_system:
+  title: "Security System Maintenance"
+  feature: has_security_system
+  section: 5
+  category: systems
+  overview: "Security systems only protect you if properly maintained and monitored. Regular testing ensures equipment works when you need it most."
+
+  your_system_info:
+    provider: "[SECURITY_PROVIDER]"
+    monitoring_service: "[MONITORING_COMPANY] — [MONITORING_PHONE]"
+    panel_location: "[SECURITY_PANEL_LOCATION]"
+    master_code: "[MASTER_CODE_LOCATION_REFERENCE]"  # Don't store actual code here
+    duress_code: "[DURESS_CODE_INFO]"
+    zones:
+      - "[ZONE_1_DESCRIPTION]"
+      - "[ZONE_2_DESCRIPTION]"
+      - "[ZONE_3_DESCRIPTION]"
+
+  monthly_testing:
+    alarm_test:
+      - step: "1. Call monitoring company to put system in test mode"
+        phone: "[MONITORING_PHONE]"
+      - step: "2. Test each sensor"
+        method: "Open/close each door, walk past each motion sensor"
+      - step: "3. Verify panel shows activation for each zone"
+      - step: "4. Trigger the alarm using a sensor"
+      - step: "5. Call monitoring to confirm they received signal"
+      - step: "6. Take system out of test mode"
+    camera_check:
+      - "Verify all cameras recording"
+      - "Check image quality (clean lenses if cloudy)"
+      - "Confirm motion detection triggers properly"
+      - "Review storage — delete old footage if needed"
+    door_lock_test:
+      - "Test all smart locks — manual and app control"
+      - "Replace batteries if low indicator shows"
+      - "Verify auto-lock timing works"
+
+  battery_maintenance:
+    panel_backup:
+      type: "Sealed lead-acid (typical)"
+      lifespan: "3-5 years"
+      check: "Panel should show battery status — replace when low"
+      location: "[PANEL_BATTERY_LOCATION]"
+    sensor_batteries:
+      type: "CR123A or AA (varies by sensor)"
+      lifespan: "3-5 years"
+      replacement: "Replace immediately when low battery alert appears"
+    keypad_batteries:
+      type: "Varies by model"
+      check: "Backlight dimming may indicate low battery"
+    smart_lock_batteries:
+      type: "AA or lithium (varies by model)"
+      lifespan: "6-12 months depending on usage"
+      sign: "Slow response or warning beeps indicate low battery"
+
+  code_management:
+    best_practices:
+      - "Change codes annually at minimum"
+      - "Change immediately when service providers or residents leave"
+      - "Don't use easily guessed codes (1234, birthdays, address numbers)"
+      - "Give temporary codes to service providers — revoke after use"
+      - "Know your duress code and when to use it"
+    duress_code_info: "Entering duress code appears to disarm but secretly alerts monitoring of emergency"
+    code_log: "Keep secure record of who has which codes"
+
+  camera_maintenance:
+    monthly:
+      - "Clean lenses with microfiber cloth"
+      - "Check mounting — tighten if loose"
+      - "Verify field of view covers intended area"
+      - "Test night vision operation"
+    quarterly:
+      - "Update firmware if available"
+      - "Check storage capacity and retention settings"
+      - "Review and adjust motion sensitivity zones"
+      - "Trim vegetation blocking camera views"
+    annually:
+      - "Deep clean housing and mounts"
+      - "Check cable connections for weathering"
+      - "Consider upgrades if technology has improved significantly"
+
+  monitoring_service:
+    verify_current:
+      - "Emergency contact list is up to date"
+      - "Address on file is correct"
+      - "Phone numbers for callbacks are current"
+      - "Dispatch instructions reflect your preferences"
+    know_your_plan:
+      - "What does monitoring include? (break-in, fire, CO, medical)"
+      - "Response time guarantee"
+      - "False alarm fees from local police"
+      - "Contract terms and cancellation policy"
+
+  false_alarm_prevention:
+    common_causes:
+      - "Low sensor batteries"
+      - "Pets triggering motion sensors"
+      - "Loose doors or windows"
+      - "Balloons, fans, or HVAC vents near motion sensors"
+      - "User error (forgetting to disarm)"
+    prevention:
+      - "Use pet-immune motion sensors if you have pets"
+      - "Install sensors properly per manufacturer instructions"
+      - "Replace batteries proactively"
+      - "Educate all household members on proper use"
+    if_false_alarm: "Cancel immediately if accidental — avoid police dispatch fees"
+
+  smart_home_integration:
+    - "Regularly update app and firmware"
+    - "Use strong, unique passwords for security accounts"
+    - "Enable two-factor authentication"
+    - "Secure Wi-Fi network with WPA3 if available"
+    - "Regularly audit connected devices and user access"
+
+  diy_vs_pro:
+    diy_tasks:
+      - "Monthly testing routines"
+      - "Battery replacement"
+      - "Code changes"
+      - "Camera lens cleaning"
+      - "Updating emergency contact info"
+    call_pro:
+      - "Adding new sensors or zones"
+      - "Panel replacement or upgrade"
+      - "Wiring issues"
+      - "Monitoring setup changes"
+      - "Troubleshooting false alarms you can't resolve"
+
+  emergency_procedures:
+    actual_alarm:
+      - "If safe, determine if real emergency"
+      - "If false alarm, enter code to cancel, call monitoring immediately"
+      - "If real emergency, evacuate and call 911"
+      - "Do not investigate suspicious entry yourself"
+    power_outage:
+      - "System runs on backup battery (typically 4-24 hours)"
+      - "Cellular backup maintains monitoring if phone line is down"
+    if_compromised:
+      - "Change all codes immediately"
+      - "Contact monitoring to reset panic codes"
+      - "Review access logs if system supports"
+
+  contacts:
+    monitoring_service: "[MONITORING_COMPANY] — [MONITORING_PHONE]"
+    installation_support: "[SECURITY_INSTALLER] — [INSTALLER_PHONE]"
+    police_non_emergency: "[LOCAL_POLICE_NON_EMERGENCY]"
+
+# -----------------------------------------------------------------------------
+
+hvac_central_air:
+  title: "Central Air Conditioning Maintenance"
+  feature: hvac_central_air
+  section: 5
+  category: systems
+  overview: "Central AC is your biggest energy consumer in summer. Regular maintenance extends equipment life, improves efficiency, and prevents costly breakdowns during heat waves."
+
+  your_system_info:
+    indoor_unit: "[INDOOR_UNIT_LOCATION]"
+    outdoor_unit: "[OUTDOOR_UNIT_LOCATION]"
+    filter_location: "[AC_FILTER_LOCATION]"
+    filter_size: "[AC_FILTER_SIZE]"
+    thermostat: "[THERMOSTAT_LOCATION]"
+    system_age: "[AC_SYSTEM_AGE] years"
+    refrigerant_type: "[REFRIGERANT_TYPE]"
+
+  monthly_tasks:
+    - task: "Replace or clean air filter"
+      frequency: "Every 1-3 months (monthly during heavy use)"
+      location: "[AC_FILTER_LOCATION]"
+      size: "[AC_FILTER_SIZE]"
+      tip: "Hold up to light — if you can't see through it, replace it"
+    - task: "Check thermostat operation"
+      verify: "System responds to temperature changes"
+    - task: "Inspect condensate drain"
+      location: "[CONDENSATE_DRAIN_LOCATION]"
+      check: "Water flowing freely, no algae buildup"
+    - task: "Listen for unusual sounds"
+      concern: "Grinding, squealing, or banging indicates problem"
+
+  seasonal_maintenance:
+    spring_startup:
+      - "Replace filter before first use"
+      - "Clear debris from outdoor unit (leaves, grass, mulch)"
+      - "Trim vegetation — maintain 2-foot clearance around condenser"
+      - "Verify thermostat is set to cooling mode"
+      - "Test system — should cool within 15 minutes"
+      - "Schedule professional tune-up if not done in past year"
+    summer_ongoing:
+      - "Change filter monthly during heavy use"
+      - "Clear condensate drain monthly (pour cup of bleach/water mix)"
+      - "Keep outdoor unit clear of grass clippings and debris"
+      - "Monitor for ice on refrigerant lines (indicates problem)"
+    fall_shutdown:
+      - "Run system one last time to verify operation"
+      - "Replace filter"
+      - "Consider covering top of outdoor unit (NOT sides — traps moisture)"
+      - "Remove hoses from outdoor faucets near condenser"
+
+  professional_maintenance:
+    frequency: "Annually — schedule in spring before cooling season"
+    what_they_check:
+      - "Refrigerant levels and pressure"
+      - "Electrical connections and amp draw"
+      - "Coil cleaning (evaporator and condenser)"
+      - "Blower motor and belt condition"
+      - "Thermostat calibration"
+      - "Ductwork inspection"
+      - "Overall system efficiency"
+    cost_range: "$75-200 for standard tune-up"
+
+  efficiency_tips:
+    - "Set thermostat to 78°F when home, higher when away"
+    - "Use ceiling fans to feel 4°F cooler without lowering thermostat"
+    - "Close blinds on sunny windows during afternoon"
+    - "Don't close more than 20% of vents — restricts airflow"
+    - "Seal duct leaks — can lose 20-30% of cooled air"
+    - "Upgrade to programmable or smart thermostat"
+
+  warning_signs:
+    call_hvac_tech:
+      - "System not cooling (runs but no cold air)"
+      - "Ice on refrigerant lines or outdoor unit"
+      - "Water leaking from indoor unit"
+      - "Unusual odors when system runs"
+      - "Electric bills suddenly spike"
+      - "System short-cycling (turning on/off frequently)"
+      - "Warm air from some vents, cold from others"
+
+  diy_vs_pro:
+    diy_tasks:
+      - "Filter replacement"
+      - "Clearing debris from outdoor unit"
+      - "Cleaning condensate drain"
+      - "Programming thermostat"
+      - "Checking air flow from vents"
+    call_pro:
+      - "Any refrigerant work"
+      - "Electrical troubleshooting"
+      - "Coil cleaning (requires disassembly)"
+      - "Strange noises or smells"
+      - "System not cooling properly"
+      - "Annual tune-up"
+
+  regional_note: "Southeast: Heavy cooling season (April-October) means filters may need monthly replacement. Humidity control important — ensure system is sized properly to dehumidify. Clean condensate drain frequently — algae grows fast in humidity."
+
+  contacts:
+    hvac_service: "[HVAC_COMPANY] — [HVAC_PHONE]"
+    filter_supplier: "[FILTER_SUPPLIER]"
+
+# -----------------------------------------------------------------------------
+
+hvac_heat_pump:
+  title: "Heat Pump System Care"
+  feature: hvac_heat_pump
+  section: 5
+  category: systems
+  overview: "Heat pumps provide both heating and cooling efficiently, but require year-round maintenance. Understanding defrost cycles and auxiliary heat prevents unnecessary service calls."
+
+  your_system_info:
+    outdoor_unit: "[HEAT_PUMP_OUTDOOR_LOCATION]"
+    indoor_unit: "[HEAT_PUMP_INDOOR_LOCATION]"
+    filter_location: "[HP_FILTER_LOCATION]"
+    filter_size: "[HP_FILTER_SIZE]"
+    auxiliary_heat: "[AUX_HEAT_TYPE]"  # electric strips, gas furnace
+    emergency_heat: "[EMERGENCY_HEAT_INSTRUCTIONS]"
+
+  monthly_tasks:
+    - task: "Replace or clean air filter"
+      frequency: "Monthly during heavy use seasons"
+      note: "Heat pumps run more hours than AC-only systems — filter clogs faster"
+    - task: "Inspect outdoor unit"
+      check: "Clear of debris, snow, ice (beyond normal defrost)"
+    - task: "Check thermostat operation"
+      verify: "Switches between heating/cooling modes properly"
+    - task: "Listen for unusual sounds"
+      normal: "Whooshing during defrost is normal"
+      concern: "Grinding, banging, or constant running"
+
+  seasonal_maintenance:
+    spring:
+      - "Switch thermostat to cooling mode"
+      - "Clean or replace filter"
+      - "Clear debris from outdoor unit"
+      - "Schedule professional tune-up"
+    summer:
+      - "Monthly filter changes"
+      - "Monitor for ice on lines (indicates refrigerant issue)"
+      - "Keep outdoor unit clear"
+    fall:
+      - "Switch thermostat to heating mode"
+      - "Clean or replace filter"
+      - "Clear fallen leaves from outdoor unit"
+      - "Test heating operation before cold weather"
+    winter:
+      - "Monthly filter changes (heat pump works harder)"
+      - "Keep outdoor unit clear of snow and ice"
+      - "Understand defrost cycle (normal operation)"
+      - "Know when auxiliary heat activates"
+
+  defrost_cycle:
+    what_it_is: "Normal process where system melts ice from outdoor coil"
+    what_happens:
+      - "Outdoor fan stops"
+      - "System switches briefly to cooling mode"
+      - "Steam may rise from outdoor unit"
+      - "You may feel cool air from vents briefly"
+    duration: "Usually 1-10 minutes, several times per day in cold weather"
+    when_to_worry:
+      - "Defrost runs constantly (more than 15 minutes)"
+      - "Ice builds up and doesn't melt"
+      - "System stays in defrost mode"
+
+  auxiliary_heat:
+    purpose: "Supplements heat pump when outdoor temp is too low for efficient operation"
+    typical_activation: "Below 35-40°F depending on system and settings"
+    cost_impact: "Aux heat uses 2-3x more energy than heat pump mode"
+    normal: "Brief aux heat cycles during very cold weather or after defrost"
+    concern: "Aux heat running constantly — call HVAC tech"
+
+  emergency_heat:
+    what_it_is: "Forces system to use auxiliary heat only, bypasses heat pump"
+    when_to_use: "ONLY if heat pump is damaged and you need heat"
+    cost: "Very expensive — 2-3x normal heating costs"
+    do_not: "Use as regular heating mode"
+
+  professional_maintenance:
+    frequency: "Twice yearly — spring AND fall (runs both seasons)"
+    includes:
+      - "Refrigerant check"
+      - "Defrost cycle verification"
+      - "Reversing valve operation"
+      - "Auxiliary heat test"
+      - "Coil cleaning"
+      - "Electrical checks"
+
+  diy_vs_pro:
+    diy_tasks:
+      - "Filter replacement"
+      - "Keeping outdoor unit clear"
+      - "Basic thermostat operation"
+      - "Snow/ice removal from unit base"
+    call_pro:
+      - "Ice buildup that doesn't clear"
+      - "System not heating or cooling"
+      - "Constant auxiliary heat operation"
+      - "Strange noises or burning smell"
+      - "Refrigerant issues"
+      - "Bi-annual maintenance"
+
+  regional_note: "Southeast: Heat pumps are ideal for mild winters. Rarely need auxiliary heat except during brief cold snaps. If aux heat runs often, system may be undersized or have refrigerant issue."
+
+  contacts:
+    hvac_service: "[HVAC_COMPANY] — [HVAC_PHONE]"
+
+# -----------------------------------------------------------------------------
+
+hvac_radiant:
+  title: "Radiant Heating System Care"
+  feature: hvac_radiant
+  section: 5
+  category: systems
+  overview: "Radiant heating provides comfortable, even warmth but requires different maintenance than forced-air systems. Boiler care and zone valve maintenance are key."
+
+  your_system_info:
+    boiler_location: "[BOILER_LOCATION]"
+    system_type: "[RADIANT_TYPE]"  # hydronic (hot water), electric, steam
+    fuel_type: "[BOILER_FUEL_TYPE]"
+    expansion_tank: "[EXPANSION_TANK_LOCATION]"
+    zone_valves: "[ZONE_VALVE_LOCATIONS]"
+    thermostat_zones: "[RADIANT_ZONES_DESCRIPTION]"
+
+  seasonal_startup:
+    title: "Fall Heating Season Startup"
+    steps:
+      - step: "1. Check boiler pressure gauge"
+        normal: "12-15 psi when cold (check manufacturer spec)"
+        location: "[PRESSURE_GAUGE_LOCATION]"
+      - step: "2. Inspect expansion tank"
+        check: "Should feel empty when system is cold"
+      - step: "3. Bleed air from radiators/zones"
+        how: "Open bleeder valve until water flows steadily"
+        start_with: "Highest radiators first"
+      - step: "4. Check glycol/antifreeze levels"
+        if_applicable: "Closed-loop systems only"
+      - step: "5. Test each zone"
+        verify: "All zones heat when thermostat calls"
+      - step: "6. Listen for unusual sounds"
+        normal: "Quiet water flow"
+        concern: "Banging, gurgling, or hissing"
+
+  monthly_tasks:
+    - task: "Check boiler pressure"
+      normal: "12-15 psi cold, 15-20 psi hot"
+      low_pressure: "May need to add water — indicates leak"
+      high_pressure: "Relief valve may be releasing — call pro"
+    - task: "Listen to system operation"
+      check: "Even heating, no air sounds"
+    - task: "Inspect for leaks"
+      locations: "Around boiler, zone valves, connections"
+    - task: "Check zone temperatures"
+      verify: "All zones reaching setpoint"
+
+  bleeding_radiators:
+    when_needed:
+      - "Cold spots at top of radiator"
+      - "Gurgling or hissing sounds"
+      - "Radiator not heating fully"
+      - "After adding water to system"
+    how_to:
+      - "1. Turn off boiler (let system cool if very hot)"
+      - "2. Locate bleeder valve on radiator (usually top corner)"
+      - "3. Hold container under valve"
+      - "4. Open valve with radiator key or flathead screwdriver"
+      - "5. Let air escape until water flows steadily"
+      - "6. Close valve — do not overtighten"
+      - "7. Check boiler pressure — may need to add water"
+    tip: "Bleed highest radiators first, work down"
+
+  boiler_maintenance:
+    annual_professional:
+      - "Combustion analysis (gas/oil boilers)"
+      - "Burner cleaning and adjustment"
+      - "Heat exchanger inspection"
+      - "Safety controls testing"
+      - "Efficiency measurement"
+      - "System flush (if needed)"
+    owner_checks:
+      - "Keep area around boiler clear (24\" minimum)"
+      - "Check for soot or burn marks (indicates combustion problem)"
+      - "Verify pilot light (if applicable)"
+      - "Listen for normal operation sounds"
+
+  radiant_floor_specific:
+    advantages: "No radiators, even heat, quiet"
+    maintenance:
+      - "No furniture blocking floor areas for long periods"
+      - "Check manifold connections annually"
+      - "Maintain glycol concentration in closed systems"
+    warning_signs:
+      - "Cold spots in floor"
+      - "Visible damage to tubing (if exposed)"
+      - "Moisture around manifold"
+
+  warning_signs:
+    call_professional:
+      - "No heat from any zone"
+      - "Boiler pressure constantly dropping"
+      - "Boiler pressure constantly rising"
+      - "Relief valve discharging water"
+      - "Burning smell or soot marks"
+      - "Pilot light won't stay lit"
+      - "Banging or hammering sounds"
+
+  diy_vs_pro:
+    diy_tasks:
+      - "Bleeding radiators"
+      - "Adding water to system (small amounts)"
+      - "Checking pressure gauge"
+      - "Adjusting zone thermostats"
+      - "Keeping boiler area clear"
+    call_pro:
+      - "Annual service and tune-up"
+      - "Pressure problems (high or low)"
+      - "No heat to zones"
+      - "Leaks anywhere in system"
+      - "Strange sounds or smells"
+      - "Pilot light issues"
+      - "System flush"
+
+  contacts:
+    hvac_boiler_service: "[BOILER_SERVICE] — [BOILER_SERVICE_PHONE]"
+
+# -----------------------------------------------------------------------------
+
+hvac_window_unit:
+  title: "Window AC Unit Maintenance"
+  feature: hvac_window_unit
+  section: 5
+  category: systems
+  overview: "Window AC units require regular cleaning for efficiency and to prevent mold. Proper installation and seasonal storage extend unit life significantly."
+
+  your_units:
+    - location: "[WINDOW_AC_LOCATION_1]"
+      size: "[BTU_RATING_1] BTU"
+    - location: "[WINDOW_AC_LOCATION_2]"
+      size: "[BTU_RATING_2] BTU"
+
+  biweekly_tasks:
+    - task: "Clean or replace filter"
+      how: "Remove filter, rinse with water, let dry completely before reinstalling"
+      tip: "Dirty filter makes unit work harder and can freeze up"
+    - task: "Check for proper drainage"
+      verify: "Slight backward tilt — water should drain outside"
+      problem: "Water dripping inside indicates improper installation"
+
+  monthly_tasks:
+    - task: "Clean front grille"
+      how: "Vacuum or wipe with damp cloth"
+    - task: "Inspect coils (if visible)"
+      look_for: "Dust buildup, bent fins"
+      clean: "Use soft brush or coil cleaner spray"
+    - task: "Check window seal"
+      verify: "Foam or weatherstripping intact"
+      problem: "Gaps waste energy and let insects in"
+    - task: "Test all controls"
+      verify: "Fan speeds, temperature settings, timer if equipped"
+
+  installation_tips:
+    - "Unit should tilt slightly backward (1/4\" to 1/2\") for drainage"
+    - "Use foam insulation panels in side gaps"
+    - "Install support bracket for larger units (over 10,000 BTU)"
+    - "Ensure electrical outlet can handle unit's amperage"
+    - "Do NOT use extension cords — fire hazard"
+
+  end_of_season:
+    if_removing:
+      - "Run fan-only mode for 24 hours to dry interior"
+      - "Clean filter and coils"
+      - "Store in climate-controlled space — garage gets too hot/cold"
+      - "Cover with original packaging or breathable cover"
+      - "Store upright — never on its side"
+      - "Re-seal window with insulation"
+    if_leaving_installed:
+      - "Install weatherproof cover over exterior"
+      - "Seal interior with plastic or insulated cover"
+      - "DO NOT run unit in cold weather — can damage compressor"
+
+  troubleshooting:
+    not_cooling:
+      - "Clean filter first — dirty filter is #1 cause"
+      - "Check if ice has formed — let unit thaw with fan only"
+      - "Verify proper seal around unit"
+      - "Room may be too large for unit's BTU rating"
+    unit_freezing:
+      - "Filter is dirty — clean immediately"
+      - "Outdoor temperature too low for AC operation"
+      - "Refrigerant leak — requires replacement"
+    water_dripping_inside:
+      - "Unit not tilted properly — adjust installation"
+      - "Drain hole clogged — clear with pipe cleaner"
+      - "Interior humidity very high — normal for extreme conditions"
+    unusual_smells:
+      - "Musty: mold in unit — deep clean coils and drain pan"
+      - "Burning: electrical problem — unplug immediately"
+
+  diy_vs_pro:
+    diy_tasks:
+      - "Filter cleaning"
+      - "Coil cleaning"
+      - "Installation and removal"
+      - "Seal and weatherstripping"
+    usually_replace_instead:
+      - "Compressor failure — cost of repair exceeds replacement"
+      - "Refrigerant leak — not repairable on window units"
+      - "Electrical problems — safety concern"
+
+  sizing_guide:
+    - room_size: "150-250 sq ft"
+      btu_needed: "6,000 BTU"
+    - room_size: "250-350 sq ft"
+      btu_needed: "8,000 BTU"
+    - room_size: "350-450 sq ft"
+      btu_needed: "10,000 BTU"
+    - room_size: "450-550 sq ft"
+      btu_needed: "12,000 BTU"
+  sizing_note: "Add 10% for sunny rooms, high ceilings, or kitchens"
+
+# -----------------------------------------------------------------------------
+
+water_heater:
+  title: "Water Heater Maintenance"
+  feature: has_water_heater
+  section: 5
+  category: systems
+  overview: "Water heaters fail eventually — maintenance extends life and prevents flooding. Tank units last 8-12 years; tankless 15-20 years. Know your water heater's age."
+
+  your_water_heater:
+    type: "[WATER_HEATER_TYPE]"  # tank gas, tank electric, tankless, heat pump
+    location: "[WATER_HEATER_LOCATION]"
+    age: "[WATER_HEATER_AGE] years"
+    capacity: "[WATER_HEATER_CAPACITY] gallons"
+    fuel: "[WATER_HEATER_FUEL]"
+    shutoff_valve: "[WH_SHUTOFF_LOCATION]"
+    drain_valve: "[WH_DRAIN_LOCATION]"
+
+  biannual_maintenance:
+    tpr_valve_test:
+      what: "Temperature and Pressure Relief valve — critical safety device"
+      location: "Side or top of tank"
+      how:
+        - "1. Place bucket under discharge pipe"
+        - "2. Lift lever gently for 5 seconds"
+        - "3. Water should flow out"
+        - "4. Release — valve should close fully"
+      if_fails: "Valve doesn't open OR doesn't close — replace immediately"
+      warning: "Water will be HOT — use caution"
+
+  annual_maintenance:
+    tank_flush:
+      purpose: "Removes sediment that reduces efficiency and causes noise"
+      when: "Annually, or more often with hard water"
+      steps:
+        - "1. Turn off gas/electricity to water heater"
+        - "2. Turn off cold water inlet valve"
+        - "3. Connect garden hose to drain valve"
+        - "4. Run hose to floor drain or outside"
+        - "5. Open a hot water faucet upstairs (breaks vacuum)"
+        - "6. Open drain valve"
+        - "7. Let water flow until clear (may take 5-10 minutes)"
+        - "8. Close drain valve"
+        - "9. Open cold water inlet to refill tank"
+        - "10. Once full, restore power"
+      tip: "If water is very cloudy, repeat process"
+    anode_rod_check:
+      purpose: "Sacrificial rod that prevents tank corrosion"
+      frequency: "Check every 2-3 years, replace when depleted"
+      sign_of_depletion: "Rod less than 1/2\" diameter or coated heavily"
+      diy_challenge: "Requires socket wrench and often significant force"
+      pro_recommendation: "Have HVAC tech check during service call"
+
+  temperature_setting:
+    recommended: "120°F"
+    too_low: "Below 120°F risks Legionella bacteria growth"
+    too_high: "Above 140°F risks scalding, wastes energy"
+    how_to_adjust:
+      gas: "Dial on gas valve — usually labeled"
+      electric: "Behind upper and lower panels — requires screwdriver"
+
+  warning_signs:
+    approaching_failure:
+      - "Rusty water from hot tap only"
+      - "Rumbling or popping sounds (sediment buildup)"
+      - "Water pooling around base"
+      - "Hot water doesn't last as long as it used to"
+      - "Unit is over 10 years old"
+    emergency_immediate:
+      - "Significant leak or flooding"
+      - "Gas smell near unit"
+      - "Relief valve continuously discharging"
+      - "Scorched or burnt smell"
+
+  tankless_specific:
+    advantages: "Endless hot water, longer lifespan, space saving"
+    maintenance:
+      - "Flush with vinegar annually (especially with hard water)"
+      - "Clean inlet filter screen every 6 months"
+      - "Check for error codes on display"
+      - "Ensure venting clear (gas units)"
+    common_issues:
+      - "Error codes — consult manual or call service"
+      - "Fluctuating temperatures — may need descaling"
+      - "No hot water — check gas/electric, flow sensor"
+
+  emergency_shutoff:
+    water: "[WH_SHUTOFF_LOCATION] — turn clockwise"
+    gas: "Turn valve perpendicular to pipe"
+    electric: "Breaker in panel: [WH_BREAKER_LOCATION]"
+    when_to_shut_off:
+      - "Any significant leak"
+      - "Gas odor"
+      - "Strange sounds"
+      - "Preparing for extended vacation (optional)"
+
+  diy_vs_pro:
+    diy_tasks:
+      - "TPR valve testing"
+      - "Tank flushing"
+      - "Temperature adjustment"
+      - "Visual inspections"
+    call_pro:
+      - "Anode rod replacement"
+      - "TPR valve replacement"
+      - "Any gas line work"
+      - "Electrical troubleshooting"
+      - "Unit replacement"
+      - "Tankless descaling (first time)"
+
+  replacement_planning:
+    when_to_replace: "Before catastrophic failure — 8-12 years for tank, 15-20 for tankless"
+    consider:
+      - "Upgrading to more efficient model"
+      - "Tankless if space is limited"
+      - "Heat pump water heater for electric (very efficient)"
+      - "Expansion tank installation if not present"
+
+  regional_note: "Southeast: Hard water accelerates sediment buildup — consider annual flushing. High humidity in some locations can cause exterior corrosion. Water heaters in garage can be affected by temperature extremes."
+
+  contacts:
+    plumber: "[PLUMBER_NAME] — [PLUMBER_PHONE]"
+    hvac_service: "[HVAC_COMPANY] — [HVAC_PHONE]"
+
+# -----------------------------------------------------------------------------
+
+roof_maintenance:
+  title: "Roof Maintenance & Inspection"
+  feature: has_roof
+  section: 5
+  category: systems
+  overview: "Your roof protects everything below it. Regular inspection catches small problems before they become expensive water damage. Know your roof's age and warranty status."
+
+  your_roof_info:
+    material: "[ROOF_MATERIAL]"  # asphalt shingle, metal, tile, flat/TPO
+    age: "[ROOF_AGE] years"
+    last_inspection: "[LAST_ROOF_INSPECTION_DATE]"
+    warranty: "[ROOF_WARRANTY_INFO]"
+    known_issues: "[ROOF_KNOWN_ISSUES]"
+
+  inspection_schedule:
+    frequency: "Twice yearly (spring and fall) plus after major storms"
+    method: "Ground-level with binoculars, or hire professional for roof walk"
+    safety: "Do NOT walk on roof unless experienced and equipped — falls are leading cause of home injury deaths"
+
+  ground_level_inspection:
+    what_to_check:
+      - item: "Shingle condition"
+        look_for: "Missing, curling, cracking, or buckling shingles"
+      - item: "Granule loss"
+        look_for: "Bare spots on shingles, granules in gutters"
+        indicates: "Shingles nearing end of life"
+      - item: "Flashing"
+        look_for: "Gaps, rust, lifting around chimneys, vents, skylights"
+      - item: "Gutters and downspouts"
+        look_for: "Sagging, pulling away, overflow signs"
+      - item: "Moss or algae"
+        look_for: "Green or black growth on shingles"
+        action: "Can be treated, but excessive growth holds moisture"
+      - item: "Debris"
+        look_for: "Branches, leaves accumulating in valleys"
+      - item: "Soffits and fascia"
+        look_for: "Rot, peeling paint, pest damage"
+
+  interior_inspection:
+    attic_checks:
+      - "Daylight visible through roof boards"
+      - "Water stains on underside of sheathing"
+      - "Mold or mildew on wood"
+      - "Sagging areas in roof deck"
+    ceiling_checks:
+      - "Water stains"
+      - "Peeling paint"
+      - "Bubbling drywall"
+      - "Musty odors"
+
+  after_storm_inspection:
+    look_for:
+      - "Shingles or debris in yard"
+      - "Bent or damaged flashing"
+      - "Dents on metal components (hail)"
+      - "Lifted shingles"
+      - "Damaged vents or skylights"
+    document: "Take photos/video for insurance before repairs"
+    timing: "File claim promptly — most policies have time limits"
+
+  maintenance_tasks:
+    keep_clear:
+      - "Trim branches — maintain 10-foot clearance"
+      - "Remove debris from valleys and around penetrations"
+      - "Clear gutters and downspouts"
+    address_promptly:
+      - "Replace missing or damaged shingles"
+      - "Reseal flashing that has lifted"
+      - "Repair small issues before they become big ones"
+
+  lifespan_by_material:
+    - material: "3-tab asphalt shingles"
+      years: "15-20"
+    - material: "Architectural/dimensional shingles"
+      years: "25-30"
+    - material: "Metal roofing"
+      years: "40-70"
+    - material: "Clay/concrete tile"
+      years: "50-100"
+    - material: "Slate"
+      years: "75-200"
+    - material: "Flat/TPO/EPDM"
+      years: "15-30"
+
+  warning_signs:
+    minor_concern:
+      - "Few missing shingles"
+      - "Minor flashing gaps"
+      - "Algae/moss growth"
+    moderate_concern:
+      - "Multiple areas with damage"
+      - "Granules heavily depleted"
+      - "Flashing significantly deteriorated"
+    major_concern_call_now:
+      - "Active leak into home"
+      - "Sagging roof sections"
+      - "Multiple layers of shingles visible"
+      - "Roof older than expected lifespan"
+
+  diy_vs_pro:
+    diy_appropriate:
+      - "Ground-level visual inspections"
+      - "Clearing debris from accessible areas"
+      - "Gutter cleaning (from ladder, carefully)"
+      - "Minor repairs if experienced and equipped"
+    call_professional:
+      - "Roof walking and detailed inspection"
+      - "Any repair work (safety and warranty reasons)"
+      - "Flashing repair or replacement"
+      - "Shingle replacement beyond small patch"
+      - "Leak investigation"
+      - "Insurance claim documentation"
+
+  regional_note: "Southeast: Heavy storms and hurricanes require prompt post-storm inspection. Hot, humid climate shortens shingle life — expect 15-20 years vs. 20-30 in cooler climates. Algae-resistant shingles recommended."
+
+  contacts:
+    roofer: "[ROOFER_NAME] — [ROOFER_PHONE]"
+    insurance: "[INSURANCE_PROVIDER] — [INSURANCE_CLAIM_PHONE]"
+
+# -----------------------------------------------------------------------------
+
+plumbing_system:
+  title: "Plumbing System Maintenance"
+  feature: has_plumbing
+  section: 5
+  category: systems
+  overview: "Plumbing problems often start small and hidden. Regular checks catch leaks early before they cause water damage, mold, or structural problems."
+
+  your_plumbing_info:
+    main_shutoff: "[MAIN_WATER_SHUTOFF]"
+    pipe_material: "[PIPE_MATERIAL]"  # copper, PEX, CPVC, galvanized
+    water_pressure: "[WATER_PRESSURE_PSI] psi"
+    main_cleanout: "[MAIN_CLEANOUT_LOCATION]"
+    sewer_type: "[SEWER_TYPE]"  # municipal, septic
+
+  monthly_inspection:
+    check_locations:
+      - location: "Under kitchen sink"
+        look_for: "Drips, moisture, corrosion on supply lines"
+      - location: "Under bathroom sinks"
+        look_for: "Drips, moisture, P-trap integrity"
+      - location: "Around toilets"
+        look_for: "Water at base, rocking (bad wax seal)"
+      - location: "Near water heater"
+        look_for: "Pooling water, corrosion"
+      - location: "Behind washer"
+        look_for: "Hose bulges, fitting drips"
+      - location: "Exposed basement pipes"
+        look_for: "Sweating, drips, corrosion"
+
+  seasonal_tasks:
+    spring:
+      - "Turn on outdoor faucets — check for freeze damage"
+      - "Inspect hose bibs for leaks"
+      - "Check irrigation system startup"
+      - "Test sump pump operation"
+    summer:
+      - "Monitor water bill for unexplained increases"
+      - "Check toilet flappers (silent leaks)"
+      - "Clean aerators on faucets"
+    fall:
+      - "Disconnect and drain outdoor hoses"
+      - "Shut off and drain outdoor faucet supply lines"
+      - "Insulate exposed pipes in unheated areas"
+      - "Know how to shut off main if freeze threatens"
+    winter:
+      - "In extreme cold, let faucets drip to prevent freezing"
+      - "Open cabinet doors to warm pipes"
+      - "Know where pipes are most vulnerable"
+
+  drain_maintenance:
+    monthly:
+      - "Run water in unused drains to fill P-trap (prevents sewer gas)"
+      - "Clean pop-up sink stoppers"
+    quarterly:
+      - "Flush drains with hot water and baking soda"
+      - "Use enzyme drain cleaner (NOT chemical)"
+    do_not:
+      - "Use chemical drain cleaners regularly — damages pipes"
+      - "Pour grease down drains"
+      - "Flush anything but toilet paper"
+
+  water_pressure:
+    ideal_range: "40-60 psi"
+    too_low: "Below 40 psi — may indicate leak, blockage, or utility issue"
+    too_high: "Above 80 psi — install pressure reducing valve (PRV)"
+    how_to_test: "Screw pressure gauge onto hose bib, turn on water"
+
+  leak_detection:
+    water_meter_test:
+      - "1. Turn off all water-using fixtures and appliances"
+      - "2. Read water meter"
+      - "3. Wait 2 hours without using water"
+      - "4. Read meter again"
+      - "5. If meter moved, you have a leak"
+    toilet_leak_test:
+      - "1. Put food coloring in tank"
+      - "2. Wait 15 minutes without flushing"
+      - "3. If color appears in bowl, flapper is leaking"
+    common_hidden_leaks:
+      - "Toilet flapper (can waste 200 gal/day)"
+      - "Under slab (unexplained wet spots, sounds of running water)"
+      - "Behind walls (stains, mold smell)"
+
+  emergency_procedures:
+    burst_pipe:
+      - "1. Shut off main water: [MAIN_WATER_SHUTOFF]"
+      - "2. Turn off water heater (prevent dry heating)"
+      - "3. Open faucets to drain remaining water"
+      - "4. Call plumber: [PLUMBER_PHONE]"
+      - "5. Document damage for insurance"
+    clogged_main_drain:
+      - "1. Stop using water immediately"
+      - "2. Locate main cleanout: [MAIN_CLEANOUT_LOCATION]"
+      - "3. Call plumber for main line snaking"
+      - "4. Do NOT continue flushing/draining"
+
+  diy_vs_pro:
+    diy_tasks:
+      - "Fixing running toilet (flapper, fill valve)"
+      - "Replacing faucet aerators"
+      - "Unclogging simple drain clogs"
+      - "Replacing supply lines (washing machine, toilet, sink)"
+      - "Replacing shower head"
+    call_pro:
+      - "Main line clogs"
+      - "Slab leaks"
+      - "Water heater issues"
+      - "Pipe replacement"
+      - "Low water pressure throughout house"
+      - "Sewer line problems"
+      - "Anything requiring permits"
+
+  contacts:
+    plumber: "[PLUMBER_NAME] — [PLUMBER_PHONE]"
+    emergency_plumber: "[EMERGENCY_PLUMBER] — [EMERGENCY_PLUMBER_PHONE]"
+    water_utility: "[WATER_UTILITY] — [WATER_UTILITY_PHONE]"
+
+# -----------------------------------------------------------------------------
+
+electrical_panel:
+  title: "Electrical Panel & Wiring Safety"
+  feature: has_electrical
+  section: 5
+  category: systems
+  overview: "Electrical problems cause thousands of house fires annually. Regular safety checks and proper circuit loading prevent fires, damage to electronics, and costly repairs."
+
+  your_electrical_info:
+    panel_location: "[ELECTRICAL_PANEL_LOCATION]"
+    panel_amperage: "[PANEL_AMPERAGE] amp service"
+    panel_age: "[PANEL_AGE] years"
+    gfci_locations: "[GFCI_OUTLET_LOCATIONS]"
+    afci_circuits: "[AFCI_CIRCUIT_LIST]"
+    surge_protector: "[SURGE_PROTECTION_INFO]"
+
+  panel_maintenance:
+    annual_inspection:
+      - task: "Visual panel inspection"
+        check: "Rust, burn marks, scorching, unusual smells"
+        warning: "Never touch bus bars or wiring inside panel"
+      - task: "Check breaker labels"
+        ensure: "Every circuit is labeled accurately"
+        tip: "Update labels after any electrical work"
+      - task: "Look for overloaded circuits"
+        signs: "Breakers that trip repeatedly"
+      - task: "Check panel door"
+        ensure: "Closes securely, no gaps"
+    panel_safety:
+      - "Keep 3-foot clearance in front of panel"
+      - "Do NOT store items in front of or near panel"
+      - "Replace any fuses with correct amperage (if fuse box)"
+      - "Never use copper wire or foil as fuse substitute"
+
+  gfci_outlets:
+    locations_required: "Bathrooms, kitchen (within 6' of sink), garage, outdoors, basement, laundry"
+    monthly_test:
+      - "1. Push TEST button — should click and outlet goes dead"
+      - "2. Push RESET button — power should return"
+      - "3. If no click or power doesn't cut, replace outlet"
+      - "Note: GFCI can protect multiple downstream outlets — test the main one"
+
+  afci_breakers:
+    purpose: "Detect arc faults that can cause fires (frayed wires, etc.)"
+    locations_required: "Bedrooms, living areas (requirements vary by code year)"
+    monthly_test:
+      - "1. Push TEST button on breaker"
+      - "2. Breaker should trip"
+      - "3. Reset breaker"
+
+  warning_signs:
+    call_electrician_soon:
+      - "Breakers trip repeatedly"
+      - "Lights dim when appliances run"
+      - "Outlets don't work or work intermittently"
+      - "Two-prong outlets (ungrounded) throughout house"
+      - "Extension cords used as permanent wiring"
+    call_electrician_immediately:
+      - "Burning smell from outlet, switch, or panel"
+      - "Sparks from outlets"
+      - "Outlet or switch plate warm or hot to touch"
+      - "Buzzing or crackling from outlets or panel"
+      - "Flickering lights throughout house"
+      - "Shock when touching appliances"
+
+  safety_best_practices:
+    - "Never overload outlets with multiple power strips"
+    - "Don't run cords under rugs (heat buildup, damage)"
+    - "Replace damaged cords immediately"
+    - "Use correct wattage bulbs in fixtures"
+    - "Keep water away from electrical devices"
+    - "Use surge protectors for sensitive electronics"
+    - "Unplug small appliances when not in use"
+
+  load_management:
+    typical_circuit_loads:
+      - "15-amp circuit: ~1,440 watts"
+      - "20-amp circuit: ~1,920 watts"
+    high_draw_appliances:
+      - "Space heater: 1,500 watts"
+      - "Hair dryer: 1,200-1,875 watts"
+      - "Microwave: 600-1,200 watts"
+      - "Toaster: 800-1,400 watts"
+    rule: "Keep total load under 80% of circuit capacity"
+
+  diy_vs_pro:
+    diy_safe:
+      - "Testing GFCI/AFCI devices"
+      - "Replacing light bulbs"
+      - "Replacing outlet/switch covers"
+      - "Resetting tripped breakers"
+      - "Replacing smoke detector batteries"
+    always_call_electrician:
+      - "Any work inside electrical panel"
+      - "Installing new circuits"
+      - "Replacing outlets or switches"
+      - "Any electrical work that requires a permit"
+      - "Troubleshooting recurring problems"
+      - "Upgrading service panel"
+
+  when_to_upgrade_panel:
+    signs_needed:
+      - "Panel is fuse box (not breakers)"
+      - "Panel is Federal Pacific, Zinsco, or Pushmatic brand"
+      - "Service is less than 100 amps (older homes)"
+      - "Adding major appliances (EV charger, hot tub, etc.)"
+      - "Frequent tripping even with normal use"
+
+  regional_note: "Southeast: Lightning is a major concern — whole-house surge protection highly recommended. High humidity can cause corrosion in panels and outdoor outlets."
+
+  contacts:
+    electrician: "[ELECTRICIAN_NAME] — [ELECTRICIAN_PHONE]"
+    power_company: "[POWER_COMPANY] — [POWER_COMPANY_PHONE]"
+
+# -----------------------------------------------------------------------------
+
+washer_dryer:
+  title: "Washer & Dryer Maintenance"
+  feature: has_washer_dryer
+  section: 5
+  category: systems
+  overview: "Dryer lint is the leading cause of laundry room fires. Regular cleaning and hose inspection prevent fires, flooding, and extend appliance life significantly."
+
+  your_laundry_info:
+    washer_location: "[WASHER_LOCATION]"
+    dryer_location: "[DRYER_LOCATION]"
+    dryer_type: "[DRYER_TYPE]"  # gas, electric
+    water_shutoffs: "[LAUNDRY_SHUTOFF_LOCATIONS]"
+    dryer_vent_path: "[DRYER_VENT_PATH]"
+
+  every_load:
+    dryer:
+      - "Clean lint trap before every load"
+      - "Never run dryer with lint trap missing"
+    washer:
+      - "Remove wet clothes promptly (prevents mold/mildew)"
+      - "Leave door ajar after load to dry interior"
+
+  monthly_maintenance:
+    washer:
+      - task: "Run cleaning cycle"
+        how: "Empty hot cycle with washer cleaner, bleach, or white vinegar"
+        purpose: "Prevents mold, mildew, and odors"
+      - task: "Clean detergent dispenser"
+        how: "Remove, soak in hot water, scrub buildup"
+      - task: "Wipe door seal (front-loaders)"
+        check: "Mold in gasket folds — clean with diluted bleach"
+      - task: "Check drain filter (if equipped)"
+        location: "Front bottom panel on many models"
+    dryer:
+      - task: "Vacuum lint housing"
+        how: "Remove lint trap, vacuum inside the slot"
+      - task: "Check exhaust vent flap outside"
+        ensure: "Opens when dryer runs, closes when off"
+        concern: "Stuck open = pest entry; stuck closed = fire risk"
+
+  annual_maintenance:
+    washer_hoses:
+      - "Inspect supply hoses for bulges, cracks, or brittleness"
+      - "Replace rubber hoses every 3-5 years (even if they look fine)"
+      - "Upgrade to stainless steel braided hoses"
+      - "Ensure connections are tight but not overtightened"
+      - "Turn off valves if leaving for extended period"
+    dryer_vent_cleaning:
+      - "Disconnect vent from dryer"
+      - "Clean entire duct run to exterior (brush kit or vacuum)"
+      - "Remove lint from exterior vent hood"
+      - "Check for crushed or kinked duct sections"
+      - "Replace flexible foil duct with rigid metal (fire safety)"
+      - "Consider professional cleaning if duct is long or has many bends"
+
+  dryer_fire_prevention:
+    critical_safety:
+      - "NEVER leave dryer running when not home or asleep"
+      - "Clean lint trap every load — no exceptions"
+      - "Clean vent duct annually"
+      - "Use only rigid metal ductwork (not plastic or foil)"
+      - "Maximum duct length: 25 feet with no bends (subtract 5' per elbow)"
+      - "Never vent dryer into garage, attic, or crawlspace"
+    warning_signs:
+      - "Clothes take longer than one cycle to dry"
+      - "Dryer or clothes very hot after cycle"
+      - "Burning smell"
+      - "Exterior vent doesn't open when dryer runs"
+      - "Laundry room more humid than usual"
+
+  washer_flooding_prevention:
+    - "Turn off supply valves when traveling"
+    - "Use stainless steel braided hoses"
+    - "Install flood sensor/alarm behind washer"
+    - "Know how to quickly shut off water"
+    - "Consider automatic shutoff valves"
+
+  leveling:
+    washer:
+      - "Machine should not rock or walk during spin"
+      - "Adjust feet until bubble level shows level"
+      - "Lock adjustable feet with lock nut"
+      - "Vibration can damage flooring and plumbing"
+    dryer:
+      - "Should be level for proper drum rotation"
+      - "Adjust feet as needed"
+
+  diy_vs_pro:
+    diy_tasks:
+      - "Lint trap cleaning"
+      - "Running cleaning cycles"
+      - "Vent duct cleaning (if accessible)"
+      - "Replacing supply hoses"
+      - "Leveling machines"
+      - "Cleaning door seals"
+    call_pro:
+      - "Gas dryer installation or repair"
+      - "Vent duct cleaning (long/complex runs)"
+      - "Not draining or spinning (washer)"
+      - "Not heating (dryer)"
+      - "Strange noises during operation"
+      - "Electronic/sensor problems"
+
+  contacts:
+    appliance_repair: "[APPLIANCE_REPAIR_COMPANY] — [APPLIANCE_REPAIR_PHONE]"
+
+# -----------------------------------------------------------------------------
+
+dishwasher:
+  title: "Dishwasher Maintenance"
+  feature: has_dishwasher
+  section: 5
+  category: systems
+  overview: "Regular dishwasher maintenance prevents foul odors, improves cleaning performance, and extends appliance life. A few minutes monthly makes a big difference."
+
+  your_dishwasher:
+    location: "[DISHWASHER_LOCATION]"
+    water_shutoff: "[DISHWASHER_SHUTOFF]"
+    model: "[DISHWASHER_MODEL]"
+
+  monthly_maintenance:
+    - task: "Clean the filter"
+      location: "Bottom of tub, usually twists out"
+      how: "Rinse under running water, scrub with soft brush"
+      frequency: "Monthly, or more often with heavy use"
+    - task: "Clean spray arms"
+      how: "Remove if possible, clear holes with toothpick or wire"
+      check: "Arms spin freely when replaced"
+    - task: "Wipe door gasket"
+      how: "Damp cloth, check for mold or debris"
+    - task: "Run cleaning cycle"
+      how: "Empty cycle with dishwasher cleaner or cup of white vinegar"
+
+  weekly_habits:
+    - "Scrape plates but don't pre-rinse (modern dishwashers need some soil)"
+    - "Load properly — don't block spray arms"
+    - "Wipe around door edges where seal meets"
+    - "Check drain area for food debris"
+
+  biannual_maintenance:
+    - task: "Clean interior door and edges"
+      how: "Toothbrush and cleaner in crevices"
+    - task: "Check and clean air gap (if equipped)"
+      location: "Small fixture on counter near sink"
+      how: "Remove cap, clear any debris"
+    - task: "Inspect supply line"
+      check: "No kinks, cracks, or corrosion"
+    - task: "Run garbage disposal before dishwasher"
+      why: "Shared drain — clear disposal prevents backup"
+
+  troubleshooting:
+    not_cleaning_well:
+      - "Clean filter — #1 cause"
+      - "Clean spray arm holes"
+      - "Check water temperature (should be 120°F at tap)"
+      - "Use rinse aid"
+      - "Don't overload"
+    standing_water:
+      - "Check filter and drain area for clogs"
+      - "Run garbage disposal"
+      - "Check drain hose for kinks"
+      - "Clean air gap if equipped"
+    foul_odor:
+      - "Clean filter"
+      - "Run cleaning cycle with vinegar"
+      - "Check door gasket for mold"
+      - "Leave door slightly ajar between uses"
+    spots_on_dishes:
+      - "Refill rinse aid"
+      - "Hard water — consider water softener"
+      - "Use correct detergent amount"
+
+  diy_vs_pro:
+    diy_tasks:
+      - "Filter cleaning"
+      - "Spray arm cleaning"
+      - "Running cleaning cycles"
+      - "Gasket wiping"
+      - "Basic troubleshooting"
+    call_pro:
+      - "Not draining at all"
+      - "Leaking underneath"
+      - "Not filling with water"
+      - "Door latch problems"
+      - "Error codes on display"
+
+# -----------------------------------------------------------------------------
+
+refrigerator:
+  title: "Refrigerator Maintenance"
+  feature: has_refrigerator
+  section: 5
+  category: systems
+  overview: "Refrigerators run 24/7 — a little maintenance significantly improves efficiency and prevents costly breakdowns. Coil cleaning alone can reduce energy use 15%."
+
+  your_refrigerator:
+    location: "[REFRIGERATOR_LOCATION]"
+    model: "[REFRIGERATOR_MODEL]"
+    water_filter_type: "[FRIDGE_FILTER_TYPE]"
+    ice_maker: "[ICE_MAKER_INFO]"
+
+  temperature_settings:
+    refrigerator: "37°F (range 35-38°F)"
+    freezer: "0°F (range -5 to 5°F)"
+    check_with: "Appliance thermometer (don't trust built-in gauge)"
+    food_safety: "Fridge above 40°F or freezer above 0°F = food safety risk"
+
+  monthly_maintenance:
+    - task: "Check temperature settings"
+      verify: "37°F fridge, 0°F freezer"
+    - task: "Clean interior"
+      how: "Wipe spills immediately, deep clean monthly"
+    - task: "Check door seals"
+      test: "Close door on dollar bill — should resist pulling out"
+    - task: "Clear air vents inside"
+      ensure: "Not blocked by food items"
+
+  biannual_maintenance:
+    condenser_coils:
+      where: "Behind (some models) or underneath (most models)"
+      how:
+        - "1. Unplug refrigerator"
+        - "2. Remove base grille (usually snaps off)"
+        - "3. Vacuum coils with brush attachment"
+        - "4. Wipe with coil brush if very dirty"
+        - "5. Replace grille, plug in"
+      impact: "Dirty coils make compressor work harder — shortens life, increases energy use"
+    water_filter:
+      frequency: "Every 6 months, or per indicator light"
+      why: "Old filters reduce water flow and don't filter effectively"
+      replacement: "[FRIDGE_FILTER_TYPE]"
+    drip_pan:
+      where: "Underneath, behind base grille"
+      clean: "Slide out, wash with soap and water, replace"
+
+  door_seal_maintenance:
+    check: "Seals should be pliable, no cracks or gaps"
+    clean: "Wipe monthly with mild soap — removes debris that prevents sealing"
+    test: "Dollar bill test — should hold firmly when door closed"
+    replace_if: "Visible damage, bill slides out easily, condensation on seal"
+
+  ice_maker_care:
+    monthly:
+      - "Dump old ice — absorbs freezer odors"
+      - "Clean ice bin with soap and water"
+      - "Check supply line for leaks"
+    troubleshooting:
+      no_ice: "Check water supply valve, water filter, and freeze-up"
+      small_ice: "Water filter may need replacing"
+      bad_taste: "Replace filter, clean ice bin, dump old ice"
+
+  efficiency_tips:
+    - "Keep fridge 2/3 full — mass helps maintain temperature"
+    - "Don't put hot food in directly — let cool first"
+    - "Don't leave door open while deciding what to eat"
+    - "Ensure adequate ventilation around unit (1\" sides, 2\" rear)"
+    - "Vacuum coils twice a year"
+
+  warning_signs:
+    - "Runs constantly (compressor never stops)"
+    - "Food not staying cold"
+    - "Excessive condensation inside"
+    - "Loud or unusual noises"
+    - "Ice buildup in freezer (auto-defrost failure)"
+    - "Water leaking underneath"
+
+  diy_vs_pro:
+    diy_tasks:
+      - "Coil cleaning"
+      - "Filter replacement"
+      - "Interior cleaning"
+      - "Door seal inspection"
+      - "Temperature adjustment"
+    call_pro:
+      - "Not cooling"
+      - "Making loud noises"
+      - "Leaking water"
+      - "Frost buildup (auto-defrost failure)"
+      - "Compressor issues"
+
+# -----------------------------------------------------------------------------
+
+water_softener:
+  title: "Water Softener Maintenance"
+  feature: has_water_softener
+  section: 5
+  category: systems
+  overview: "Water softeners need regular salt refills and occasional cleaning to work properly. Neglected systems waste salt and fail to soften water effectively."
+
+  your_softener:
+    location: "[WATER_SOFTENER_LOCATION]"
+    type: "[SOFTENER_TYPE]"  # ion exchange, salt-free
+    settings: "[SOFTENER_SETTINGS]"
+    salt_type: "[SALT_TYPE_USED]"
+    regeneration_schedule: "[REGENERATION_SCHEDULE]"
+
+  monthly_tasks:
+    - task: "Check salt level"
+      minimum: "Keep salt at least 1/3 full"
+      tip: "Set calendar reminder to check monthly"
+    - task: "Inspect for salt bridges"
+      what: "Hard crust above water level — salt looks full but system starves"
+      how_to_check: "Push broom handle into salt — should break through easily"
+      fix: "Break up crust with broom handle, do not use sharp tools"
+    - task: "Check for salt mushing"
+      what: "Soft sludge at bottom of tank"
+      sign: "Poor softening despite adequate salt level"
+      fix: "Clean out brine tank, may need professional"
+
+  biannual_maintenance:
+    - task: "Clean resin tank"
+      how: "Use resin cleaner per manufacturer instructions"
+      when: "Every 6-12 months, or if water seems less soft"
+    - task: "Clean brine tank"
+      when: "Annually, or if salt bridging/mushing occurs"
+      steps:
+        - "1. Use up salt or scoop out remaining"
+        - "2. Disconnect brine line"
+        - "3. Remove and clean brine components"
+        - "4. Wash tank with soap and water"
+        - "5. Reassemble and refill with salt"
+
+  salt_selection:
+    types:
+      - type: "Pellets"
+        best_for: "Most residential softeners — cleanest, most common"
+      - type: "Crystals"
+        note: "More affordable, may bridge more easily"
+      - type: "Blocks"
+        note: "Only for specific softeners designed for them"
+    quality: "Higher purity salt = less residue and bridging"
+    never_use: "Rock salt — contains impurities that clog system"
+
+  settings_optimization:
+    hardness_setting: "Match to actual water hardness (test or check utility report)"
+    regeneration_frequency: "Depends on water use and hardness"
+    regeneration_time: "Schedule for low-use time (usually 2-3 AM)"
+    consider: "Demand-initiated regeneration (only regenerates when needed)"
+
+  troubleshooting:
+    water_not_soft:
+      - "Check salt level"
+      - "Break up salt bridge if present"
+      - "Verify hardness setting matches water supply"
+      - "Check bypass valve — ensure not in bypass"
+      - "Clean resin with resin cleaner"
+    salt_not_going_down:
+      - "Salt bridge — break up crust"
+      - "Regeneration not occurring — check timer/settings"
+    water_in_salt_tank:
+      - "Some water is normal (for brine)"
+      - "Excessive water = clogged drain or stuck valve"
+
+  diy_vs_pro:
+    diy_tasks:
+      - "Adding salt"
+      - "Breaking up salt bridges"
+      - "Using resin cleaner"
+      - "Adjusting settings"
+      - "Cleaning brine tank"
+    call_pro:
+      - "System not regenerating"
+      - "Salt not going down (after checking bridge)"
+      - "Resin tank issues"
+      - "Persistent soft water failure"
+      - "Major component replacement"
+
+  contacts:
+    water_treatment_service: "[WATER_TREATMENT_COMPANY] — [WATER_TREATMENT_PHONE]"
+
+# -----------------------------------------------------------------------------
+
+sump_pump:
+  title: "Sump Pump Maintenance"
+  feature: has_sump_pump
+  section: 5
+  category: systems
+  overview: "Sump pumps fail when you need them most — during storms and power outages. Regular testing and backup power are essential for basement flood prevention."
+
+  your_sump_pump:
+    location: "[SUMP_PUMP_LOCATION]"
+    type: "[SUMP_PUMP_TYPE]"  # pedestal, submersible
+    backup_type: "[SUMP_BACKUP_TYPE]"  # battery, water-powered, secondary pump
+    discharge_location: "[SUMP_DISCHARGE_LOCATION]"
+    alarm: "[SUMP_ALARM_INFO]"
+
+  quarterly_testing:
+    pump_test:
+      - "1. Locate sump pit: [SUMP_PUMP_LOCATION]"
+      - "2. Remove pit cover"
+      - "3. Slowly pour 5 gallons of water into pit"
+      - "4. Pump should activate and empty pit"
+      - "5. Listen for smooth operation — no grinding"
+      - "6. Replace cover"
+    backup_system_test:
+      - "Disconnect primary power"
+      - "Pour water into pit"
+      - "Verify backup activates"
+      - "Reconnect primary power"
+    alarm_test:
+      - "Pour water until alarm activates"
+      - "Replace batteries if alarm weak"
+
+  annual_maintenance:
+    - task: "Clean pump and pit"
+      how: "Remove pump, clean debris from pit, rinse pump"
+      check: "Inlet screen clear of debris"
+    - task: "Inspect discharge line"
+      check: "No clogs, ice damage, or disconnections"
+    - task: "Check check valve"
+      what: "Prevents water from flowing back into pit"
+      test: "Water should not drain back after pump shuts off"
+    - task: "Inspect float switch"
+      verify: "Moves freely, not tangled on cords"
+    - task: "Replace backup battery"
+      frequency: "Every 2-3 years (or per manufacturer)"
+      type: "[SUMP_BATTERY_TYPE]"
+
+  backup_power_options:
+    battery_backup:
+      pros: "Works during power outages, affordable"
+      cons: "Limited runtime (typically 5-8 hours), batteries need replacement"
+      maintenance: "Replace battery every 2-3 years, test quarterly"
+    water_powered_backup:
+      pros: "Unlimited runtime (uses municipal water pressure)"
+      cons: "Uses significant water, requires good pressure, doesn't work on well"
+    generator:
+      pros: "Powers primary pump at full capacity"
+      cons: "Requires fuel, may not auto-start"
+    secondary_pump:
+      pros: "Redundancy if primary fails"
+      cons: "Also needs power, two pumps to maintain"
+
+  discharge_line_care:
+    - "Ensure line drains away from foundation (10+ feet ideal)"
+    - "Check for clogs before and during rainy season"
+    - "Insulate or bury below frost line to prevent freezing"
+    - "Ensure discharge doesn't flow to neighbor's property"
+    - "Install freeze guard (pop-off discharge) in cold climates"
+
+  warning_signs:
+    pump_problems:
+      - "Runs continuously (stuck float or high water table)"
+      - "Cycles on/off rapidly (short cycling)"
+      - "Doesn't turn on when water rises"
+      - "Makes grinding or rattling noises"
+      - "Vibrates excessively"
+    system_problems:
+      - "Water backing up around pump"
+      - "Pump runs but pit doesn't empty"
+      - "Burning smell from motor"
+
+  emergency_preparation:
+    - "Keep backup battery charged"
+    - "Have wet-dry vacuum available"
+    - "Know emergency plumber number"
+    - "Consider portable backup pump"
+    - "Install high-water alarm: [SUMP_ALARM_INFO]"
+
+  diy_vs_pro:
+    diy_tasks:
+      - "Quarterly testing"
+      - "Cleaning pump and pit"
+      - "Battery replacement"
+      - "Float switch adjustment"
+      - "Discharge line inspection"
+    call_pro:
+      - "Pump replacement"
+      - "Check valve replacement"
+      - "Discharge line repair"
+      - "Installing backup system"
+      - "Pump runs continuously (diagnosing cause)"
+
+  regional_note: "Southeast: Heavy summer storms can overwhelm pumps. Battery backup essential — storms often cause power outages. Clay soil drains slowly, increasing pump runtime."
+
+  contacts:
+    plumber: "[PLUMBER_NAME] — [PLUMBER_PHONE]"
+    waterproofing_contractor: "[WATERPROOFING_COMPANY] — [WATERPROOFING_PHONE]"
+
+# -----------------------------------------------------------------------------
+
+generator:
+  title: "Backup Generator Maintenance"
+  feature: has_generator
+  section: 5
+  category: systems
+  overview: "Generators need regular exercise and maintenance to work when you need them. A neglected generator will fail during the power outage you bought it for."
+
+  your_generator:
+    type: "[GENERATOR_TYPE]"  # portable, standby/automatic
+    fuel: "[GENERATOR_FUEL]"  # gasoline, propane, natural gas, dual-fuel
+    capacity: "[GENERATOR_CAPACITY] watts"
+    location: "[GENERATOR_LOCATION]"
+    transfer_switch: "[TRANSFER_SWITCH_INFO]"
+
+  safety_critical:
+    - icon: "⚠️"
+      warning: "NEVER run generator indoors, in garage, or near windows"
+      reason: "Carbon monoxide poisoning — kills within minutes"
+    - icon: "⚠️"
+      warning: "Keep generator 20+ feet from house, exhaust away from windows"
+    - icon: "⚠️"
+      warning: "NEVER connect generator directly to home wiring without transfer switch"
+      reason: "Backfeed can electrocute utility workers and damage your home"
+    - icon: "⚠️"
+      warning: "Let generator cool before refueling"
+      reason: "Gasoline on hot engine can ignite"
+
+  portable_generator_maintenance:
+    monthly:
+      - task: "Run for 15-30 minutes under load"
+        why: "Keeps carburetor clear, tests operation"
+        tip: "Connect a load (lights, fan) — don't run without load"
+      - task: "Check fuel"
+        treat: "Use fuel stabilizer in stored gasoline"
+        replace: "Fresh gasoline every 6 months maximum"
+    every_50_hours_or_annually:
+      - "Change oil (check level before each use)"
+      - "Replace or clean air filter"
+      - "Inspect spark plug — replace if worn"
+      - "Check fuel filter"
+      - "Inspect fuel lines for cracks"
+
+  standby_generator_maintenance:
+    automatic_exercise: "Most run weekly on schedule — verify it's running"
+    monthly_check:
+      - "Verify exercise cycle ran"
+      - "Check for error codes on panel"
+      - "Inspect area around unit"
+    annual_professional:
+      - "Full inspection and service"
+      - "Oil and filter change"
+      - "Battery test and replacement if needed"
+      - "Transfer switch test"
+      - "Load bank test (optional but recommended)"
+
+  fuel_management:
+    gasoline:
+      - "Always use fuel stabilizer"
+      - "Rotate stock every 3-6 months"
+      - "Store in approved containers only"
+      - "Store away from ignition sources"
+      - "Keep minimum [FUEL_STORAGE_AMOUNT] gallons on hand"
+    propane:
+      - "Check tank level gauge before storm season"
+      - "Schedule refill when below 30%"
+      - "Propane doesn't degrade — no rotation needed"
+    natural_gas:
+      - "No fuel storage needed — continuous supply"
+      - "Test during utility outage (rare but possible)"
+
+  before_storm_season:
+    - "Run generator under load to verify operation"
+    - "Check/top off oil"
+    - "Ensure fresh, stabilized fuel on hand"
+    - "Test transfer switch operation"
+    - "Review what circuits are connected"
+    - "Know how to safely start and connect"
+
+  transfer_switch_basics:
+    purpose: "Safely connects generator to home circuits, prevents backfeed"
+    types:
+      - "Manual: You flip switches to select circuits"
+      - "Automatic: Senses outage and switches automatically"
+    what_to_power: "Prioritize: refrigerator, sump pump, medical equipment, some lights"
+    load_management: "Don't exceed generator capacity — know your load limits"
+
+  diy_vs_pro:
+    diy_tasks:
+      - "Monthly exercise runs"
+      - "Oil checks and changes (portable)"
+      - "Air filter cleaning"
+      - "Fuel management"
+      - "Basic inspection"
+    call_pro:
+      - "Transfer switch installation (required for standby)"
+      - "Standby generator service"
+      - "Electrical troubleshooting"
+      - "Propane or natural gas connections"
+      - "Load calculation and circuit selection"
+
+  contacts:
+    generator_service: "[GENERATOR_SERVICE] — [GENERATOR_SERVICE_PHONE]"
+    electrician: "[ELECTRICIAN_NAME] — [ELECTRICIAN_PHONE]"
+    fuel_supplier: "[FUEL_SUPPLIER] — [FUEL_SUPPLIER_PHONE]"
+
+# -----------------------------------------------------------------------------
+
+ev_charger:
+  title: "EV Charger Maintenance"
+  feature: has_ev_charger
+  section: 5
+  category: systems
+  overview: "Home EV chargers are generally low-maintenance but regular inspection ensures safe, reliable charging. Electrical issues should be addressed immediately."
+
+  your_charger:
+    type: "[CHARGER_TYPE]"  # Level 1 (120V), Level 2 (240V)
+    brand: "[CHARGER_BRAND]"
+    location: "[CHARGER_LOCATION]"
+    circuit: "[CHARGER_CIRCUIT_INFO]"
+    installation_date: "[CHARGER_INSTALL_DATE]"
+
+  monthly_inspection:
+    - task: "Inspect connector and cable"
+      look_for: "Cracks, fraying, cuts, burn marks, bent pins"
+      action: "Discontinue use and call electrician if damage found"
+    - task: "Check cable for kinks or damage"
+      note: "Don't store cable tightly wound — causes internal damage"
+    - task: "Verify indicator lights work normally"
+      check: "Consult manual for light meanings"
+    - task: "Test charge initiation"
+      verify: "Vehicle connects and charges properly"
+
+  quarterly_tasks:
+    - task: "Clean connector contacts"
+      how: "Dry cloth only — no liquids or cleaners"
+    - task: "Inspect mounting"
+      check: "Securely attached, no looseness"
+    - task: "Check for firmware updates"
+      how: "Through manufacturer app or website"
+    - task: "Test ground fault protection"
+      how: "Most units have test button — should trip and reset"
+
+  annual_inspection:
+    professional_check:
+      - "Electrical connections tight and not overheating"
+      - "Breaker correctly sized and functioning"
+      - "Grounding intact"
+      - "Overall system condition"
+
+  safety_practices:
+    - "Keep charging area dry — avoid charging in rain if exposed"
+    - "Don't use extension cords with Level 2 chargers"
+    - "Keep connector off ground when not in use"
+    - "Don't charge with damaged cable or connector"
+    - "Ensure adequate ventilation around charger"
+
+  troubleshooting:
+    not_charging:
+      - "Check circuit breaker — reset if tripped"
+      - "Check vehicle charge port"
+      - "Try different start time (may be scheduled)"
+      - "Check for error codes on charger or vehicle"
+    slow_charging:
+      - "Verify charger output matches expected"
+      - "Check for voltage drop (may need electrician)"
+      - "Vehicle may be limiting due to battery temperature"
+    overheating:
+      - "Discontinue use immediately"
+      - "Check for loose connections"
+      - "May indicate circuit not properly sized"
+
+  electrical_requirements:
+    level_2:
+      - "Dedicated 240V circuit (typically 40-50 amp)"
+      - "Breaker sized correctly (typically 50 amp for 40 amp charger)"
+      - "Properly rated wiring (typically 6 AWG)"
+      - "GFCI protection (built into most chargers)"
+
+  diy_vs_pro:
+    diy_tasks:
+      - "Visual inspections"
+      - "Connector cleaning"
+      - "Firmware updates"
+      - "Testing charge function"
+    always_call_electrician:
+      - "Any electrical issues"
+      - "Charger installation or relocation"
+      - "Burning smell or visible damage"
+      - "Breaker trips repeatedly"
+      - "Circuit capacity concerns"
+
+  contacts:
+    electrician: "[ELECTRICIAN_NAME] — [ELECTRICIAN_PHONE]"
+    charger_support: "[CHARGER_MANUFACTURER_SUPPORT]"
+
+# -----------------------------------------------------------------------------
+
+smart_home:
+  title: "Smart Home System Maintenance"
+  feature: has_smart_home
+  section: 5
+  category: systems
+  overview: "Smart home devices need regular updates and battery replacements to remain secure and functional. Neglected systems become security vulnerabilities."
+
+  your_smart_home:
+    hub: "[SMART_HOME_HUB]"
+    hub_location: "[HUB_LOCATION]"
+    wifi_router: "[WIFI_ROUTER_MODEL]"
+    devices: "[SMART_DEVICE_LIST]"
+
+  monthly_maintenance:
+    - task: "Check for firmware updates"
+      devices: "Hub, thermostat, locks, cameras, sensors"
+      why: "Security patches and bug fixes"
+    - task: "Verify all devices are online"
+      how: "Check app status for each device"
+    - task: "Test automations"
+      verify: "Schedules and routines still work as expected"
+    - task: "Review user access"
+      check: "Remove old guest codes, revoked users"
+
+  quarterly_tasks:
+    - task: "Check battery levels in sensors and locks"
+      replace: "When below 20%, or proactively at 30%"
+      tip: "Replace all batteries same type at once"
+    - task: "Test smart locks"
+      verify: "Manual, keypad, and app control all work"
+    - task: "Test smart smoke/CO detectors"
+      verify: "Alert reaches phone when tested"
+    - task: "Review connected devices list"
+      action: "Remove any unknown or unused devices"
+
+  security_best_practices:
+    network:
+      - "Use strong, unique WiFi password"
+      - "Enable WPA3 if router supports"
+      - "Consider separate IoT network/VLAN"
+      - "Regularly update router firmware"
+    accounts:
+      - "Use unique passwords for each smart home service"
+      - "Enable two-factor authentication everywhere available"
+      - "Review account activity periodically"
+      - "Use password manager"
+    devices:
+      - "Change default passwords on all devices"
+      - "Disable features you don't use"
+      - "Keep firmware updated"
+      - "Only buy from reputable manufacturers"
+
+  troubleshooting:
+    device_offline:
+      - "Check device power and battery"
+      - "Verify WiFi is working"
+      - "Restart device"
+      - "Restart hub/router"
+      - "Check for range issues"
+    automation_not_working:
+      - "Verify trigger conditions correct"
+      - "Check device is online"
+      - "Review recent app or firmware updates"
+      - "Recreate automation"
+    slow_response:
+      - "Check WiFi signal strength"
+      - "Too many devices on network"
+      - "Hub overloaded — reduce automations"
+
+  battery_schedule:
+    door_window_sensors: "Every 1-2 years"
+    motion_sensors: "Every 1-2 years"
+    smart_locks: "Every 6-12 months"
+    smart_buttons: "Every 1-2 years"
+    smoke_co_detectors: "Per manufacturer (usually annual test reminder)"
+    tip: "Replace proactively before failure"
+
+  backup_and_recovery:
+    - "Document all device settings and automations"
+    - "Keep device boxes with setup codes"
+    - "Export configurations where possible"
+    - "Know how to factory reset devices"
+    - "Keep backup account recovery codes"
+
+  diy_vs_pro:
+    diy_tasks:
+      - "Firmware updates"
+      - "Battery replacements"
+      - "Adding/removing devices"
+      - "Creating automations"
+      - "Network security configuration"
+    call_pro:
+      - "Complex networking issues"
+      - "Smart lock installation"
+      - "Smart thermostat wiring"
+      - "Hardwired device installation"
+
+# -----------------------------------------------------------------------------
+
+water_filtration:
+  title: "Water Filtration System Maintenance"
+  feature: has_water_filtration
+  section: 5
+  category: systems
+  overview: "Water filtration systems only work if filters are replaced on schedule. Neglected filters lose effectiveness and can harbor bacteria."
+
+  your_system:
+    type: "[FILTRATION_TYPE]"  # under-sink, whole-house, reverse osmosis, UV
+    location: "[FILTRATION_LOCATION]"
+    filter_types: "[FILTER_TYPES_INSTALLED]"
+    install_date: "[FILTRATION_INSTALL_DATE]"
+
+  filter_replacement_schedule:
+    sediment_filter:
+      frequency: "Every 3-6 months"
+      sign_to_replace: "Visible discoloration, reduced flow"
+    carbon_filter:
+      frequency: "Every 6-12 months"
+      sign_to_replace: "Bad taste returns, odor in water"
+    reverse_osmosis_membrane:
+      frequency: "Every 2-3 years"
+      sign_to_replace: "TDS levels increasing"
+    uv_bulb:
+      frequency: "Annually"
+      note: "Output decreases even if bulb still lights"
+    post_filters:
+      frequency: "Every 6-12 months"
+      purpose: "Final polishing before tap"
+
+  monthly_checks:
+    - task: "Check for leaks"
+      locations: "Around housing, fittings, connections"
+    - task: "Monitor water flow"
+      concern: "Reduced flow indicates filter clogging"
+    - task: "Check pressure gauges (if equipped)"
+      indicator: "Large pressure drop = filter needs replacing"
+
+  annual_maintenance:
+    - task: "Replace all filters per schedule"
+    - task: "Sanitize system (per manufacturer)"
+      how: "Usually involves bleach solution through system"
+    - task: "Test water quality"
+      verify: "System is working properly"
+    - task: "Inspect for leaks and wear"
+
+  reverse_osmosis_specific:
+    components:
+      - "Pre-filters (sediment, carbon): every 6-12 months"
+      - "RO membrane: every 2-3 years"
+      - "Post-filter: every 6-12 months"
+      - "Storage tank: check air pressure annually"
+    drain_line: "Clear of clogs — check quarterly"
+    tank_pressure: "Should be 7-8 psi when empty"
+
+  whole_house_specific:
+    - "Size filters correctly for home's water flow"
+    - "Install bypass for filter changes"
+    - "Consider water testing to determine needed filtration"
+    - "Track usage to predict replacement timing"
+
+  troubleshooting:
+    reduced_flow:
+      - "Filter clogged — replace"
+      - "Air lock in system — bleed air"
+      - "Valve not fully open"
+    bad_taste_or_odor:
+      - "Carbon filter exhausted"
+      - "Bacteria growth — sanitize system"
+      - "Check expiration on filters"
+    leaking:
+      - "Loose housing — tighten O-ring"
+      - "Cracked housing — replace"
+      - "Fitting loose — tighten or replace"
+
+  diy_vs_pro:
+    diy_tasks:
+      - "Filter replacement"
+      - "System sanitization"
+      - "Basic troubleshooting"
+      - "Water quality testing"
+    call_pro:
+      - "System installation"
+      - "Complex repairs"
+      - "Water quality analysis"
+      - "RO membrane replacement (if difficult access)"
+
+  contacts:
+    water_treatment: "[WATER_TREATMENT_COMPANY] — [WATER_TREATMENT_PHONE]"
+    filter_supplier: "[FILTER_SUPPLIER]"
+
+# -----------------------------------------------------------------------------
+
+radon_mitigation:
+  title: "Radon Mitigation System Maintenance"
+  feature: has_radon_mitigation
+  section: 5
+  category: systems
+  overview: "Radon mitigation systems run continuously to keep radon levels safe. A simple monthly check confirms your system is protecting your family."
+
+  your_system:
+    type: "[RADON_SYSTEM_TYPE]"  # sub-slab suction, drain tile suction, sump depressurization
+    fan_location: "[RADON_FAN_LOCATION]"
+    manometer_location: "[MANOMETER_LOCATION]"
+    exhaust_point: "[RADON_EXHAUST_LOCATION]"
+    install_date: "[RADON_SYSTEM_INSTALL_DATE]"
+
+  monthly_check:
+    manometer_reading:
+      what: "U-tube gauge showing system is pulling negative pressure"
+      normal: "Fluid levels uneven (one side higher) — indicates suction"
+      problem: "Fluid levels EQUAL — fan may have failed"
+      location: "[MANOMETER_LOCATION]"
+    fan_check:
+      - "Feel pipe near fan — should sense slight suction or vibration"
+      - "Listen for fan running (may be subtle)"
+      - "Check for error lights if fan has indicator"
+    visual_inspection:
+      - "Pipe connections tight"
+      - "No visible damage to piping"
+      - "Exterior exhaust clear of obstructions"
+
+  annual_maintenance:
+    - task: "Radon retest"
+      frequency: "Every 2 years, or after any foundation work"
+      method: "Short-term test kit or continuous monitor"
+      target: "Below 4 pCi/L (below 2 pCi/L is ideal)"
+    - task: "Inspect foundation seals"
+      check: "Cracks, sump lid seal, floor-wall joint"
+      action: "Reseal any gaps that have opened"
+    - task: "Check exhaust pipe"
+      verify: "Clear of debris, snow, bird nests"
+
+  fan_replacement:
+    lifespan: "Most fans last 5-10 years"
+    signs_of_failure:
+      - "Manometer shows no pressure differential"
+      - "No sound or vibration from fan"
+      - "Radon levels increase on retest"
+    replacement_note: "Requires matching correct fan type and installation"
+
+  if_levels_increase:
+    immediate_steps:
+      - "Check that fan is running"
+      - "Verify manometer shows suction"
+      - "Inspect foundation for new cracks or unsealed areas"
+      - "Check sump pit lid seal"
+    if_system_working_but_levels_high:
+      - "May need system enhancement"
+      - "Additional suction points"
+      - "More powerful fan"
+      - "Call radon professional for evaluation"
+
+  radon_testing:
+    short_term_test: "2-7 days — good for initial check"
+    long_term_test: "90+ days — gives average reading"
+    continuous_monitor: "Best for ongoing monitoring"
+    when_to_test:
+      - "Every 2 years routinely"
+      - "After foundation cracks appear"
+      - "After foundation waterproofing"
+      - "After major renovation"
+      - "If fan replaced"
+
+  diy_vs_pro:
+    diy_tasks:
+      - "Monthly manometer check"
+      - "Fan operation check"
+      - "Radon test kit placement"
+      - "Visual inspections"
+    call_pro:
+      - "Fan replacement"
+      - "System not maintaining pressure"
+      - "Radon levels still high"
+      - "Foundation seal work"
+      - "System enhancement"
+
+  regional_note: "Radon levels vary significantly by location. Some areas of the Southeast have elevated radon potential, especially in foothill and mountain regions."
+
+  contacts:
+    radon_contractor: "[RADON_CONTRACTOR] — [RADON_CONTRACTOR_PHONE]"
+    test_kit_source: "[RADON_TEST_SOURCE]"
+
+# -----------------------------------------------------------------------------
+
+garbage_disposal:
+  title: "Garbage Disposal Maintenance"
+  feature: has_garbage_disposal
+  section: 5
+  category: systems
+  overview: "Garbage disposals need proper use and regular cleaning to work well and avoid jams. Most problems are user-caused and easily preventable."
+
+  your_disposal:
+    location: "[DISPOSAL_LOCATION]"
+    reset_button: "[DISPOSAL_RESET_LOCATION]"  # usually bottom of unit
+    shutoff: "[DISPOSAL_SHUTOFF]"  # usually same switch as outlet
+
+  proper_use:
+    always_do:
+      - "Run COLD water before, during, and 15 seconds after grinding"
+      - "Feed food waste gradually — don't overload"
+      - "Cut large items into smaller pieces"
+      - "Run regularly to prevent rust and corrosion"
+    never_do:
+      - "Grease, oil, or fat — coats pipes, causes clogs"
+      - "Fibrous foods — celery, corn husks, artichokes, asparagus"
+      - "Starchy foods in quantity — pasta, rice, potato peels"
+      - "Coffee grounds — accumulate in pipes"
+      - "Bones larger than chicken bones"
+      - "Egg shells — contrary to myth, they dull blades"
+      - "Non-food items — glass, plastic, metal, paper"
+      - "Harsh chemicals or drain cleaners"
+
+  weekly_cleaning:
+    ice_cube_method:
+      - "1. Run cold water"
+      - "2. Drop in 2 cups of ice cubes"
+      - "3. Turn on disposal"
+      - "4. Let run until ice is gone"
+      - "5. Purpose: Cleans blades and walls"
+    citrus_freshening:
+      - "After ice cleaning, grind citrus peel (lemon, orange)"
+      - "Natural deodorizer and cleaner"
+
+  monthly_deep_clean:
+    - step: "1. Turn off power to disposal"
+    - step: "2. Clean splash guard"
+      how: "Lift flaps, scrub with brush and dish soap"
+    - step: "3. Clean inside walls"
+      how: "Use disposal brush or old toothbrush"
+    - step: "4. Baking soda and vinegar"
+      how: "Pour 1/2 cup baking soda, add 1 cup vinegar, let fizz, flush with hot water"
+    - step: "5. Restore power"
+
+  troubleshooting:
+    disposal_wont_run:
+      - "1. Check if humming — if so, it's jammed (see below)"
+      - "2. Check reset button on bottom of unit — press firmly"
+      - "3. Check circuit breaker"
+      - "4. If nothing, motor may have failed"
+    disposal_jammed:
+      - "1. Turn OFF disposal (switch and breaker)"
+      - "2. NEVER put hand inside"
+      - "3. Use hex wrench in bottom center hole — rotate back and forth"
+      - "4. Alternative: Use wooden broom handle from top to rotate"
+      - "5. Remove loosened debris with tongs"
+      - "6. Press reset button"
+      - "7. Turn on water, then disposal"
+    disposal_leaking:
+      - "From top: Sink flange seal — may need tightening or plumber's putty"
+      - "From side: Dishwasher connection — tighten hose clamp"
+      - "From bottom: Internal seal failure — usually means replacement"
+    bad_odor:
+      - "Clean splash guard (most common source)"
+      - "Run ice cubes and citrus"
+      - "Check for stuck food underneath splash guard"
+
+  diy_vs_pro:
+    diy_tasks:
+      - "Proper use education"
+      - "Ice and citrus cleaning"
+      - "Deep cleaning"
+      - "Unjamming with hex wrench"
+      - "Pressing reset button"
+    call_plumber:
+      - "Leaking from bottom (replacement needed)"
+      - "Won't reset after unjamming"
+      - "Motor doesn't respond at all"
+      - "Electrical issues"
+
+# -----------------------------------------------------------------------------
+
+hot_tub_spa:
+  title: "Hot Tub & Spa Maintenance"
+  feature: has_hot_tub
+  section: 5
+  category: systems
+  overview: "Hot tubs require diligent water chemistry and equipment maintenance. Warm, still water grows bacteria quickly — proper care is essential for health and equipment longevity."
+
+  your_hot_tub:
+    location: "[HOT_TUB_LOCATION]"
+    capacity: "[HOT_TUB_GALLONS] gallons"
+    sanitizer: "[HOT_TUB_SANITIZER]"  # chlorine, bromine, salt
+    equipment_access: "[HOT_TUB_EQUIPMENT_LOCATION]"
+    cover_type: "[HOT_TUB_COVER_TYPE]"
+    gfci_location: "[HOT_TUB_GFCI_LOCATION]"
+
+  twice_weekly:
+    water_testing:
+      - test: "pH"
+        ideal: "7.2 - 7.8"
+        too_low: "Corrosive to equipment, skin irritation"
+        too_high: "Reduces sanitizer effectiveness, cloudy water"
+      - test: "Sanitizer (chlorine or bromine)"
+        chlorine_ideal: "1-3 ppm"
+        bromine_ideal: "3-5 ppm"
+        too_low: "Bacteria growth, algae"
+        too_high: "Skin and eye irritation"
+      - test: "Alkalinity"
+        ideal: "80-120 ppm"
+        purpose: "Stabilizes pH"
+    visual_check:
+      - "Water clarity — should be crystal clear"
+      - "Foam level — excessive foam indicates buildup"
+      - "Cover condition — no sagging or waterlogging"
+
+  weekly_tasks:
+    - task: "Shock treatment"
+      why: "Oxidizes contaminants, reactivates sanitizer"
+      when: "After heavy use or weekly minimum"
+      how: "Add shock per product directions, run jets, wait before using"
+    - task: "Clean waterline"
+      how: "Wipe with approved spa cleaner and cloth"
+    - task: "Rinse filter cartridge"
+      how: "Remove, spray with hose"
+    - task: "Check water level"
+      maintain: "Mid-skimmer level"
+
+  monthly_tasks:
+    - task: "Deep clean filter"
+      how: "Soak overnight in filter cleaner solution, rinse thoroughly"
+    - task: "Inspect cover"
+      check: "Tears, waterlogging, sagging, broken straps"
+    - task: "Check jets"
+      verify: "All jets functional, none stuck"
+    - task: "Inspect cabinet/skirting"
+      look_for: "Pest entry, rot, damage"
+
+  quarterly_tasks:
+    drain_and_refill:
+      frequency: "Every 3-4 months (sooner with heavy use)"
+      steps:
+        - "1. Turn off power at breaker"
+        - "2. Drain water (use drain valve or submersible pump)"
+        - "3. Clean shell with spa cleaner"
+        - "4. Flush plumbing with line cleaner"
+        - "5. Rinse thoroughly"
+        - "6. Refill with fresh water"
+        - "7. Balance chemicals before heating"
+        - "8. Restore power"
+    filter_replacement:
+      frequency: "Every 1-2 years (or sooner if damaged)"
+
+  chemical_safety:
+    - "NEVER mix different chemicals"
+    - "Add chemicals to water, never water to chemicals"
+    - "Store chemicals in cool, dry place"
+    - "Keep chlorine and bromine separated"
+    - "Shower before and after using hot tub"
+    - "Don't use hot tub if water is cloudy"
+
+  troubleshooting:
+    cloudy_water:
+      causes: "Low sanitizer, high pH, dirty filter, old water"
+      fix: "Check chemistry, clean filter, consider drain and refill"
+    foamy_water:
+      causes: "Body oils, lotions, soap residue, low calcium"
+      fix: "Shock, use enzyme cleaner, encourage showering before use"
+    green_water:
+      causes: "Algae growth — low sanitizer"
+      fix: "Shock heavily, scrub, clean filter, may need drain"
+    smelly_water:
+      causes: "Bacteria, biofilm"
+      fix: "Drain, flush lines with cleaner, refill, rebalance"
+    heater_not_working:
+      check: "Thermostat setting, water level, filter cleanliness, breaker"
+      call_pro_if: "All checks pass but no heat"
+
+  winterizing:
+    if_not_using:
+      - "Drain completely (including pumps and lines)"
+      - "Blow out remaining water with shop vac"
+      - "Add antifreeze to any water that can't be removed"
+      - "Clean and store cover"
+    if_keeping_running:
+      - "Continue regular maintenance"
+      - "Monitor more frequently in cold weather"
+      - "Keep cover closed to retain heat"
+      - "Check for ice damage"
+
+  diy_vs_pro:
+    diy_tasks:
+      - "Water testing and chemical adjustments"
+      - "Filter cleaning and replacement"
+      - "Draining and refilling"
+      - "Shell cleaning"
+      - "Cover care"
+    call_pro:
+      - "Heater issues"
+      - "Pump problems"
+      - "Electrical issues"
+      - "Plumbing leaks"
+      - "Control panel errors"
+
+  contacts:
+    hot_tub_service: "[HOT_TUB_SERVICE] — [HOT_TUB_SERVICE_PHONE]"
+    supply_store: "[HOT_TUB_SUPPLY_STORE]"
+

@@ -1,0 +1,736 @@
+emergency_contacts:
+  title: "Emergency Contacts & Critical Shutoffs"
+  category: emergency
+  module_type: reference
+  section: 3
+  overview: "Master reference for emergency contacts and critical system shutoff locations. Post near main entry."
+
+  critical_shutoffs:
+    water_main:
+      location: "[WATER_SHUTOFF_LOCATION]"
+      type: "Gate valve (multiple turns) or Ball valve (1/4 turn)"
+      how_to: "Turn clockwise until fully closed"
+      when_to_use: "Burst pipe, major leak, leaving home extended period"
+      note: "Test annually — valves can seize from disuse"
+
+    gas_main:
+      location: "[GAS_SHUTOFF_LOCATION]"
+      type: "Lever valve requiring wrench"
+      how_to: "Turn 1/4 turn so handle is perpendicular to pipe"
+      tool_needed: "Crescent wrench or dedicated gas shutoff wrench"
+      when_to_use: "Gas smell, hissing sound, before major work"
+      warning: "Once shut off, only gas company should restore service"
+
+    electrical_main:
+      location: "[ELECTRICAL_PANEL_LOCATION]"
+      type: "Main breaker at top of panel"
+      how_to: "Flip main breaker to OFF position"
+      when_to_use: "Electrical fire, flooding near panel, before major work"
+      note: "Individual breakers control specific circuits — label if not done"
+
+    hvac_system:
+      location: "[HVAC_UNIT_LOCATION]"
+      emergency_shutoff: "Breaker in panel OR switch near unit"
+      when_to_use: "Strange smells, unusual sounds, visible damage"
+
+  emergency_numbers:
+    always_call:
+      - "Fire/Police/Medical Emergency: 911"
+      - "Poison Control: 1-800-222-1222"
+    utilities:
+      - "Power Company: [POWER_COMPANY] — [POWER_COMPANY_PHONE]"
+      - "Gas Company: [GAS_COMPANY] — [GAS_COMPANY_PHONE]"
+      - "Water Utility: [WATER_COMPANY] — [WATER_COMPANY_PHONE]"
+    service_providers:
+      - "Plumber: [PLUMBER_NAME] — [PLUMBER_PHONE]"
+      - "Electrician: [ELECTRICIAN_NAME] — [ELECTRICIAN_PHONE]"
+      - "HVAC: [HVAC_NAME] — [HVAC_PHONE]"
+      - "Locksmith: [LOCKSMITH_NAME] — [LOCKSMITH_PHONE]"
+    personal:
+      - "Primary Contact: [PRIMARY_CONTACT_NAME] — [PRIMARY_CONTACT_PHONE]"
+      - "Backup Contact: [BACKUP_CONTACT_NAME] — [BACKUP_CONTACT_PHONE]"
+      - "Neighbor: [TRUSTED_NEIGHBOR_NAME] — [TRUSTED_NEIGHBOR_PHONE]"
+    insurance:
+      - "Provider: [INSURANCE_PROVIDER]"
+      - "Policy: [INSURANCE_POLICY_NUMBER]"
+      - "Claims: [INSURANCE_CLAIM_PHONE]"
+
+  safety_equipment_locations:
+    fire_extinguishers:
+      - "Kitchen: [KITCHEN_EXTINGUISHER_LOCATION]"
+      - "Garage: [GARAGE_EXTINGUISHER_LOCATION]"
+      - "Basement/Utility: [BASEMENT_EXTINGUISHER_LOCATION]"
+    first_aid_kit: "[FIRST_AID_KIT_LOCATION]"
+    flashlights: "[FLASHLIGHT_STORAGE_LOCATION]"
+    emergency_supplies: "[EMERGENCY_KIT_LOCATION]"
+
+  monthly_safety_checks:
+    - "Test smoke detectors — press test button"
+    - "Test CO detectors — press test button"
+    - "Check fire extinguisher pressure gauges — needle in green zone"
+    - "Test GFCI outlets — press test/reset buttons"
+    - "Verify flashlights work and have fresh batteries"
+
+
+fire_safety:
+  title: "Fire Safety & Prevention"
+  category: emergency
+  module_type: guide
+  section: 3
+  overview: "Comprehensive fire prevention and evacuation planning for your household."
+
+  evacuation_plan:
+    primary_exit: "[PRIMARY_EXIT_ROUTE]"
+    secondary_exit: "[SECONDARY_EXIT_ROUTE]"
+    meeting_point: "[FIRE_MEETING_POINT]"
+    special_considerations:
+      - "Children's rooms: practice two exit routes"
+      - "Mobility concerns: [MOBILITY_EVACUATION_PLAN]"
+      - "Pets: carriers accessible near exits"
+    practice_frequency: "Twice yearly — once during day, once at night"
+
+  prevention_checklist:
+    kitchen:
+      - "Never leave cooking unattended on stovetop"
+      - "Keep flammables (towels, paper, curtains) away from range"
+      - "Clean range hood filters monthly"
+      - "Ensure exhaust fan vents to exterior"
+    electrical:
+      - "Do not overload outlets or extension cords"
+      - "Replace frayed or damaged cords immediately"
+      - "Use surge protectors for electronics"
+      - "Extension cords are temporary — not permanent wiring"
+    heating:
+      - "3-foot clearance around space heaters"
+      - "Never leave space heaters unattended or overnight"
+      - "Have chimney inspected and cleaned annually before use"
+      - "Use fireplace screen; dispose of ashes in metal container"
+    dryer:
+      - "Clean lint trap EVERY load"
+      - "Clean vent duct annually (or more if longer run)"
+      - "Do not run dryer when leaving home or sleeping"
+      - "Replace plastic or foil vent with rigid metal"
+    general:
+      - "Store flammables away from heat sources"
+      - "Dispose of oily rags properly (can spontaneously combust)"
+      - "Never smoke indoors"
+      - "Keep candles away from combustibles, never leave unattended"
+
+  smoke_and_co_detectors:
+    locations_required:
+      - "Every bedroom"
+      - "Outside each sleeping area"
+      - "Every level of home including basement"
+      - "CO detectors near sleeping areas and attached garage"
+    maintenance:
+      - "Test monthly by pressing test button"
+      - "Replace batteries twice yearly (daylight saving time)"
+      - "Replace entire unit every 10 years (check manufacture date)"
+      - "Vacuum dust from detectors annually"
+    types:
+      ionization: "Better for fast-flaming fires"
+      photoelectric: "Better for smoldering fires"
+      recommendation: "Use both types or combination units"
+
+  fire_extinguishers:
+    locations:
+      - "Kitchen (not near stove — 10+ feet away for access)"
+      - "Garage"
+      - "Each level of home"
+      - "Near fireplace if present"
+    type_for_home: "ABC-rated (handles most home fires)"
+    size: "5 lb minimum for each location"
+    maintenance:
+      - "Check pressure gauge monthly — needle in green"
+      - "Professional inspection annually"
+      - "Replace or service every 6-12 years"
+    pass_method:
+      - "P — Pull the pin"
+      - "A — Aim at base of fire"
+      - "S — Squeeze the handle"
+      - "S — Sweep side to side"
+    when_to_use: "Small fire, contained, you have clear exit behind you"
+    when_not_to_use: "Fire spreading, heavy smoke, you cannot escape"
+
+
+seasonal_spring:
+  title: "Spring Maintenance Checklist"
+  category: seasonal
+  module_type: guide
+  section: 5
+  overview: "Post-winter assessment and preparation for summer. Best completed March-April in Southeast."
+  time_estimate: "4-6 hours total (can be spread over weekends)"
+  difficulty: "Mostly Easy, some Moderate"
+
+  exterior_inspection:
+    roof_and_gutters:
+      - task: "Inspect roof from ground with binoculars"
+        look_for: "Missing shingles, damaged flashing, sagging areas"
+        diy_or_pro: "DIY inspection, PRO for repairs"
+      - task: "Clean gutters and downspouts"
+        how: "Remove debris, flush with hose, check for leaks"
+        frequency: "Twice yearly minimum (spring and fall)"
+      - task: "Verify downspouts direct water 4+ feet from foundation"
+        fix: "Add extensions if needed"
+    siding_and_trim:
+      - task: "Walk perimeter, inspect siding"
+        look_for: "Cracks, rot, pest damage, loose sections"
+      - task: "Check caulking around windows and doors"
+        action: "Recaulk gaps to prevent water intrusion and drafts"
+      - task: "Power wash siding, walkways, driveway"
+        tip: "Use appropriate pressure for siding type — vinyl is delicate"
+    foundation:
+      - task: "Inspect foundation for cracks"
+        concern: "Horizontal cracks, stair-step cracks in brick, water stains"
+        action: "Monitor and document; large cracks need PRO evaluation"
+      - task: "Verify soil slopes away from foundation"
+        grade: "6 inches drop over 10 feet from house"
+
+  hvac_preparation:
+    - task: "Schedule professional AC tune-up"
+      timing: "Before first hot spell (March-April in Southeast)"
+      includes: "Refrigerant check, coil cleaning, electrical inspection"
+      cost_range: "$100-200"
+    - task: "Replace HVAC filter"
+      filter_size: "[HVAC_FILTER_SIZE]"
+      location: "[HVAC_FILTER_LOCATION]"
+    - task: "Clear debris from outdoor AC unit"
+      clearance: "2 feet on all sides, nothing on top"
+    - task: "Clean condensate drain line"
+      how: "Pour 1 cup white vinegar or bleach solution through line"
+      frequency: "Every spring, prevents clogs and overflow"
+    - task: "Test AC operation"
+      action: "Run system, verify cool air from vents, no unusual sounds"
+
+  plumbing_checks:
+    - task: "Turn on exterior faucets"
+      check_for: "Leaks, low pressure, freeze damage"
+    - task: "Inspect hose bibs for drips"
+      action: "Replace washers or entire bib if damaged"
+    - task: "Check irrigation system"
+      actions:
+        - "Run each zone, check for broken heads or leaks"
+        - "Adjust spray patterns"
+        - "Reprogram timer for spring watering needs"
+    - task: "Flush water heater"
+      how: "Connect hose to drain valve, flush until water runs clear"
+      removes: "Sediment that reduces efficiency and causes noise"
+      frequency: "Annually"
+
+  windows_and_doors:
+    - task: "Clean windows inside and out"
+      tip: "Use squeegee for streak-free finish"
+    - task: "Inspect screens for holes or damage"
+      action: "Repair with screen patch kit or replace"
+    - task: "Lubricate door hinges and locks"
+      product: "Graphite for locks, silicone for hinges"
+    - task: "Test weatherstripping"
+      how: "Close door on paper — should grip, not slide"
+      action: "Replace if worn"
+
+  safety_equipment:
+    - task: "Test smoke and CO detectors"
+      action: "Press test button, replace batteries"
+    - task: "Check fire extinguisher pressure"
+      look_for: "Needle in green zone"
+    - task: "Review and update emergency contact list"
+    - task: "Check expiration dates on emergency supplies"
+      replace: "Expired medications, old batteries, outdated food"
+
+
+seasonal_summer:
+  title: "Summer Maintenance Checklist"
+  category: seasonal
+  module_type: guide
+  section: 5
+  overview: "Focus on cooling efficiency, pest prevention, and outdoor maintenance. June-August in Southeast."
+  time_estimate: "2-4 hours monthly"
+  difficulty: "Easy to Moderate"
+
+  regional_note: "Southeast summers are brutal on AC systems. Monthly filter checks essential."
+
+  hvac_and_cooling:
+    - task: "Check/replace HVAC filter monthly"
+      why: "Heavy AC use clogs filters faster; dirty filter strains system"
+      filter_size: "[HVAC_FILTER_SIZE]"
+    - task: "Keep outdoor unit clear"
+      action: "Trim vegetation to 2-foot clearance"
+      wash: "Gently hose off condenser coils if dirty"
+    - task: "Monitor condensate drain"
+      check: "Drain line flowing, no standing water in pan"
+      clog_sign: "Water around indoor unit, AC shuts off"
+    - task: "Set programmable thermostat efficiently"
+      recommendation: "78°F when home, higher when away"
+      tip: "Each degree lower = ~3% more energy cost"
+
+  moisture_and_humidity:
+    regional_focus: "Southeast humidity breeds mold quickly"
+    tasks:
+      - task: "Run bathroom exhaust fans 20+ minutes after showers"
+      - task: "Check dehumidifier operation if present"
+        target: "Keep indoor humidity below 50%"
+      - task: "Inspect under sinks for leaks or moisture"
+      - task: "Check attic for proper ventilation"
+        signs_of_problem: "Extremely hot attic, moisture on rafters"
+      - task: "Monitor basement/crawlspace humidity"
+
+  pest_prevention:
+    - task: "Inspect exterior for entry points"
+      common_areas: "Foundation gaps, utility penetrations, soffit gaps"
+      action: "Seal with caulk, steel wool, or expanding foam"
+    - task: "Trim vegetation away from house"
+      distance: "Keep 12+ inches from foundation"
+      why: "Vegetation provides pest highway to home"
+    - task: "Eliminate standing water"
+      locations: "Bird baths, plant saucers, clogged gutters"
+      why: "Mosquito breeding sites"
+    - task: "Store firewood 20+ feet from house"
+    - task: "Keep trash cans clean and sealed"
+    - task: "Watch for regional pests: fire ants, mosquitoes, roaches, termite swarms"
+
+  exterior_maintenance:
+    - task: "Inspect deck/patio for damage"
+      look_for: "Loose boards, popped nails, rot, mildew"
+      action: "Power wash and reseal if needed"
+    - task: "Check exterior paint and stain"
+      action: "Touch up peeling areas before moisture penetrates"
+    - task: "Inspect driveway and walkways"
+      look_for: "Cracks, heaving, trip hazards"
+      action: "Fill cracks to prevent water intrusion and expansion"
+    - task: "Clean and adjust outdoor lighting"
+      tip: "Switch to LED for efficiency; adjust timers for longer days"
+
+  lawn_and_landscape:
+    - task: "Water deeply but infrequently"
+      amount: "1 inch per week including rain"
+      timing: "Early morning (before 10am) to reduce evaporation"
+    - task: "Mow at proper height"
+      height: "3-4 inches for most grasses — taller in heat"
+      rule: "Never remove more than 1/3 of blade"
+    - task: "Monitor for drought stress"
+      signs: "Grass doesn't spring back when walked on, blue-gray color"
+    - task: "Watch for fungus in humid conditions"
+      signs: "Brown patches, circles, white coating"
+      action: "Reduce watering, improve air circulation, fungicide if severe"
+
+
+seasonal_fall:
+  title: "Fall Maintenance Checklist"
+  category: seasonal
+  module_type: guide
+  section: 5
+  overview: "Prepare for heating season and winterize before first freeze. September-November in Southeast."
+  time_estimate: "6-8 hours total"
+  difficulty: "Moderate"
+
+  key_deadlines:
+    hvac_service: "Before turning on heat (October)"
+    winterization: "Before first freeze (typically late November in Charlotte area)"
+    gutter_cleaning: "After leaves fall (November)"
+
+  heating_preparation:
+    - task: "Schedule furnace/heat pump tune-up"
+      timing: "Before first use (September-October)"
+      includes: "Inspect heat exchanger, clean burners, check safety controls"
+      cost_range: "$100-200"
+    - task: "Replace HVAC filter"
+      filter_size: "[HVAC_FILTER_SIZE]"
+    - task: "Test heating system operation"
+      action: "Run heat, verify warm air from vents, check for burning smell"
+      note: "Slight dust smell on first use is normal; should clear in minutes"
+    - task: "Reverse ceiling fans"
+      direction: "Clockwise (pushes air up, circulates warm air)"
+    - task: "Check carbon monoxide detectors"
+      action: "Test, replace batteries, verify not expired"
+
+  exterior_winterization:
+    - task: "Clean gutters after leaves fall"
+      importance: "Clogged gutters = ice dams in winter"
+      tip: "Install gutter guards if not present"
+    - task: "Disconnect and drain garden hoses"
+    - task: "Shut off and drain exterior faucets"
+      location: "Interior shutoff valve for each hose bib"
+      action: "Close valve, open exterior faucet to drain"
+    - task: "Winterize irrigation system"
+      action: "Blow out lines with compressed air or have PRO do it"
+      timing: "Before first hard freeze"
+    - task: "Drain and store outdoor fountains"
+    - task: "Store or cover outdoor furniture"
+
+  roof_and_drainage:
+    - task: "Inspect roof before winter weather"
+      look_for: "Missing shingles, damaged flashing, debris buildup"
+      timing: "Before leaves fall makes inspection easier"
+    - task: "Clear debris from roof valleys"
+    - task: "Check attic ventilation"
+      why: "Proper ventilation prevents ice dams"
+    - task: "Inspect chimney"
+      schedule: "Professional inspection/cleaning before use"
+      look_for: "Cracked cap, damaged flashing, debris in flue"
+
+  windows_and_insulation:
+    - task: "Check weatherstripping on all exterior doors"
+      test: "Close door on paper — should grip, not slide freely"
+      replace: "If worn, compressed, or missing"
+    - task: "Inspect window caulking"
+      action: "Recaulk any gaps or cracks"
+    - task: "Install storm windows if applicable"
+    - task: "Add insulation to attic hatch"
+      diy_tip: "Rigid foam plus weatherstripping is easy upgrade"
+    - task: "Check insulation in attic"
+      target: "R-38 to R-60 for Southeast"
+      look_for: "Gaps, compressed areas, settling"
+
+  safety_checks:
+    - task: "Test smoke detectors, replace batteries"
+    - task: "Test CO detectors, replace batteries"
+    - task: "Check fire extinguisher pressure gauges"
+    - task: "Inspect fireplace and chimney before use"
+      action: "PRO inspection/cleaning annually"
+    - task: "Stock winter emergency supplies"
+      items: "Flashlights, batteries, blankets, water, non-perishable food"
+
+
+seasonal_winter:
+  title: "Winter Maintenance Checklist"
+  category: seasonal
+  module_type: guide
+  section: 5
+  overview: "Protect pipes from freezing, maintain heating efficiency. December-February in Southeast."
+  time_estimate: "2-3 hours monthly, plus as-needed during cold snaps"
+  difficulty: "Easy to Moderate"
+
+  regional_note: "Charlotte area: typically 2-4 freezes below 25°F annually. Pipe protection critical."
+
+  freeze_protection:
+    temperature_thresholds:
+      watch: "Below 32°F — monitor vulnerable pipes"
+      action: "Below 25°F — take protective measures"
+      danger: "Below 20°F — maximum protection needed"
+
+    pipe_protection:
+      - task: "Identify vulnerable pipes"
+        locations: "Exterior walls, crawl spaces, attic, garage, unheated areas"
+      - task: "Add insulation to exposed pipes"
+        product: "Pipe insulation foam sleeves"
+      - task: "In deep freeze: let faucets drip"
+        which: "Faucets on exterior walls, both hot and cold"
+        flow: "Pencil-lead thin stream"
+      - task: "Open cabinet doors"
+        where: "Under sinks on exterior walls"
+        why: "Allows warm air to reach pipes"
+      - task: "Maintain minimum temperature"
+        rule: "Never below 55°F, even when away"
+      - task: "If leaving for extended period"
+        option_1: "Maintain heat at 55°F+"
+        option_2: "Shut off water and drain system"
+
+    if_pipes_freeze:
+      - "Do NOT use open flame to thaw"
+      - "Use hair dryer, heat lamp, or space heater"
+      - "Start thawing from faucet end toward frozen section"
+      - "Open faucet so water can flow as it thaws"
+      - "Check for cracks once thawed — may not leak until water flows"
+
+  heating_efficiency:
+    - task: "Replace HVAC filter monthly"
+      why: "Dirty filter restricts airflow, reduces efficiency, strains system"
+      filter_size: "[HVAC_FILTER_SIZE]"
+    - task: "Keep heating vents clear"
+      check: "Furniture, rugs, and curtains not blocking vents"
+    - task: "Program thermostat efficiently"
+      recommendation: "68°F when home/awake, lower when away/sleeping"
+    - task: "Use ceiling fans in reverse"
+      direction: "Clockwise on low to circulate warm air"
+    - task: "Check exterior doors for drafts"
+      fix: "Add weatherstripping, door sweeps, draft stoppers"
+
+  ice_and_snow:
+    regional_note: "Charlotte: typically 1-3 significant snow/ice events per winter"
+    preparation:
+      - "Stock ice melt/sand BEFORE winter storms"
+      - "Test snow blower or ensure shovels accessible"
+      - "Know snow removal responsibility (driveway, sidewalk)"
+    during_events:
+      - task: "Clear snow promptly"
+        why: "Prevents ice formation, reduces liability"
+      - task: "Apply ice melt strategically"
+        tip: "Apply before/during snow, not just after"
+        caution: "Avoid on new concrete (<1 year) — use sand instead"
+      - task: "Monitor roof for ice dams"
+        signs: "Icicles, water stains inside, ice at gutters"
+        action: "Rake snow from eaves with roof rake if safe"
+
+  emergency_preparedness:
+    power_outage_kit:
+      - "Flashlights and extra batteries"
+      - "Battery-powered radio"
+      - "Phone chargers (battery bank, car charger)"
+      - "Blankets and warm clothing"
+      - "Non-perishable food (no cooking required)"
+      - "Bottled water"
+      - "Medications (7-day supply)"
+      - "Cash (ATMs may be down)"
+    heating_backup:
+      - "Space heater (electric with auto-shutoff)"
+      - "Extra blankets and sleeping bags"
+      - "Generator if available: [GENERATOR_LOCATION]"
+    car_kit:
+      - "Blanket, gloves, hat"
+      - "Ice scraper, small shovel"
+      - "Jumper cables"
+      - "Flashlight"
+      - "Snacks and water"
+
+
+cleaning_basics:
+  title: "Cleaning Schedule & Guidelines"
+  category: cleaning
+  module_type: guide
+  section: 5
+  overview: "Practical cleaning schedules organized by frequency. Customize based on household needs."
+
+  daily_tasks:
+    time: "15-20 minutes"
+    tasks:
+      - "Make beds"
+      - "Wipe kitchen counters"
+      - "Wash dishes / run dishwasher"
+      - "Quick bathroom wipe-down (sink, toilet seat)"
+      - "Sort mail, clear clutter hotspots"
+      - "Sweep high-traffic floors as needed"
+
+  weekly_tasks:
+    time: "2-3 hours total"
+    bathroom:
+      - "Clean toilets (bowl, seat, base)"
+      - "Scrub sinks and counters"
+      - "Clean mirrors"
+      - "Clean shower/tub (weekly prevents buildup)"
+      - "Wash or replace towels"
+      - "Empty trash"
+      - "Mop floor"
+    kitchen:
+      - "Wipe down all appliance exteriors"
+      - "Clean microwave interior"
+      - "Wipe cabinet fronts"
+      - "Clean sink thoroughly"
+      - "Take out trash and recycling"
+      - "Mop floor"
+    living_areas:
+      - "Dust surfaces (work top to bottom)"
+      - "Vacuum carpets and rugs"
+      - "Vacuum/mop hard floors"
+      - "Fluff and rotate cushions"
+      - "Wipe light switches and door handles"
+    bedrooms:
+      - "Change bed linens"
+      - "Dust surfaces"
+      - "Vacuum floors"
+
+  monthly_tasks:
+    time: "3-4 hours total"
+    kitchen:
+      - "Deep clean refrigerator (shelves, drawers, gasket)"
+      - "Clean oven interior"
+      - "Clean range hood filter (soak in degreaser)"
+      - "Run cleaning cycle on dishwasher"
+      - "Clean garbage disposal (ice + citrus or baking soda)"
+      - "Wipe inside cabinets"
+    bathroom:
+      - "Deep clean grout"
+      - "Clean exhaust fan cover"
+      - "Wash shower curtain/liner"
+      - "Descale showerhead (soak in vinegar)"
+    general:
+      - "Wash all bedding (including mattress pad)"
+      - "Vacuum upholstered furniture"
+      - "Clean air vents and returns"
+      - "Wipe baseboards"
+      - "Clean interior windows"
+      - "Dust ceiling fans and light fixtures"
+
+  quarterly_tasks:
+    time: "4-6 hours"
+    tasks:
+      - "Flip/rotate mattresses"
+      - "Wash pillows and comforters"
+      - "Clean behind and under furniture"
+      - "Clean window tracks and sills"
+      - "Deep clean carpets (rent or hire)"
+      - "Organize and declutter one major area"
+      - "Clean refrigerator coils"
+      - "Clean dryer vent duct"
+
+  annual_tasks:
+    timing: "Schedule throughout year, not all at once"
+    tasks:
+      - "Professional carpet cleaning"
+      - "Clean windows (interior and exterior)"
+      - "Deep clean behind all appliances"
+      - "Shampoo upholstered furniture"
+      - "Clean all light fixtures"
+      - "Wash walls in high-traffic areas"
+      - "Clean garage floor"
+      - "Declutter and donate unused items"
+      - "Clean outdoor furniture and cushions"
+
+
+general_maintenance:
+  title: "General Home Maintenance"
+  category: maintenance
+  section: 5
+  overview: "Ongoing maintenance tasks that prevent costly repairs. Prevention is always cheaper than repair."
+
+  monthly_checks:
+    - task: "Test GFCI outlets"
+      how: "Press test button (should trip), then reset"
+      locations: "Bathroom, kitchen, garage, outdoor, near water"
+    - task: "Check under sinks for leaks"
+      look_for: "Drips, moisture, water stains, mold"
+    - task: "Test smoke and CO detectors"
+      action: "Press test button, verify alarm sounds"
+    - task: "Run unused fixtures"
+      why: "Prevents trap dry-out and sewer gas entry"
+      action: "Run water in rarely-used sinks, tubs, floor drains"
+    - task: "Check fire extinguisher gauges"
+    - task: "Inspect for pest activity"
+      look_for: "Droppings, gnaw marks, entry points"
+
+  quarterly_checks:
+    - task: "Test garage door auto-reverse"
+      how: "Place 2x4 flat under door, close — should reverse on contact"
+      also: "Test photo-eye sensors (door reverses when beam broken)"
+    - task: "Check water heater for leaks"
+      look_for: "Moisture at base, rust on tank, dripping from relief valve"
+    - task: "Inspect caulking in bathrooms"
+      where: "Tub/shower surround, sink backsplash, toilet base"
+      action: "Recaulk if cracked, missing, or moldy"
+    - task: "Lubricate door hinges and locks"
+      product: "Graphite for locks (not WD-40), silicone spray for hinges"
+    - task: "Check weather stripping"
+      where: "Exterior doors, garage door seal"
+      test: "Close door on paper — should grip, not slide"
+    - task: "Clean range hood filter"
+      how: "Soak in hot water with degreaser, rinse, dry"
+
+  bi_annual_checks:
+    - task: "Flush water heater"
+      how: "Connect hose to drain valve, flush until clear"
+      why: "Removes sediment, improves efficiency, extends life"
+    - task: "Test water pressure"
+      ideal: "40-60 PSI"
+      concern: ">80 PSI damages pipes and fixtures"
+      action: "Install pressure reducing valve if too high"
+    - task: "Inspect attic"
+      look_for: "Leaks, pest activity, insulation condition, ventilation"
+    - task: "Check basement/crawlspace"
+      look_for: "Moisture, cracks, pest activity, insulation"
+    - task: "Clean dryer vent duct"
+      importance: "Fire hazard — lint buildup is highly flammable"
+      how: "Disconnect, clean with brush, verify exterior flap operates"
+    - task: "Replace smoke/CO detector batteries"
+      timing: "Spring and fall (daylight saving time change)"
+
+  annual_checks:
+    - task: "Service HVAC system"
+      timing: "Heating before fall, cooling before spring"
+      diy_or_pro: "PRO service — includes refrigerant, electrical, combustion checks"
+    - task: "Inspect roof"
+      what: "Shingles, flashing, vents, gutters"
+      diy_or_pro: "DIY from ground with binoculars, PRO for close inspection"
+    - task: "Clean gutters"
+      timing: "Spring and fall minimum"
+    - task: "Inspect foundation"
+      look_for: "New cracks, water intrusion signs, settling"
+    - task: "Test sump pump"
+      how: "Pour water into pit until pump activates"
+      check: "Float switch, discharge, battery backup"
+    - task: "Inspect/clean chimney"
+      diy_or_pro: "PRO inspection and cleaning before heating season"
+    - task: "Check water softener/filtration"
+      action: "Service per manufacturer schedule"
+
+
+home_inventory:
+  title: "Home Inventory & Documentation"
+  category: maintenance
+  section: 5
+  overview: "Maintain accurate records for insurance, maintenance, and emergency reference."
+
+  why_it_matters:
+    - "Insurance claims require proof of ownership and value"
+    - "Maintenance tracking prevents missed service"
+    - "Emergency responders benefit from utility info"
+    - "Future home sale requires documentation"
+
+  documentation_checklist:
+    property_documents:
+      keep_original:
+        - "Deed"
+        - "Survey"
+        - "Title insurance policy"
+        - "HOA documents and covenants"
+      keep_copies:
+        - "Mortgage documents"
+        - "Property tax records"
+        - "Permits for improvements"
+    system_records:
+      for_each_major_system:
+        - "Make/model/serial number"
+        - "Installation date"
+        - "Warranty information"
+        - "Service history"
+        - "User manuals"
+      systems_to_document:
+        - "HVAC (indoor and outdoor units)"
+        - "Water heater"
+        - "Electrical panel"
+        - "Plumbing fixtures"
+        - "Appliances"
+        - "Roofing"
+        - "Windows"
+    improvement_records:
+      - "Contractor name and contact"
+      - "Date completed"
+      - "Cost"
+      - "Permits obtained"
+      - "Before/after photos"
+      - "Warranty information"
+
+  visual_documentation:
+    room_by_room:
+      - "Walk through each room with video"
+      - "Open closets and cabinets"
+      - "Capture serial numbers and model info"
+      - "Narrate estimated values"
+    high_value_items:
+      - "Individual photos with detail"
+      - "Receipts or appraisals"
+      - "Serial numbers recorded"
+    schedule: "Update annually or after major purchases"
+    storage: "Store copy offsite or in cloud (not only in house)"
+
+  maintenance_log:
+    what_to_track:
+      - "Date of service"
+      - "What was done"
+      - "Who did the work (DIY or contractor)"
+      - "Cost"
+      - "Next service due"
+    benefits:
+      - "Proves maintenance for warranty claims"
+      - "Identifies recurring issues"
+      - "Helps budget for future repairs"
+      - "Valuable for home sale disclosure"
+
+  emergency_reference:
+    post_visibly:
+      - "Utility shutoff locations"
+      - "Emergency contacts"
+      - "Alarm codes (secured location)"
+      - "WiFi password (for guests)"
+    share_with:
+      - "Household members"
+      - "House sitters"
+      - "Trusted neighbor"

@@ -1,0 +1,166 @@
+emergency_quick_start:
+  title: "Emergency Quick-Start Cards"
+  section: 1
+  category: quick_start
+  overview: "Laminated emergency reference cards for immediate crisis response. Post near main entry or kitchen."
+  cards:
+    gas_leak:
+      title: "Gas Leak Emergency"
+      icon: "🔥"
+      severity: "CRITICAL — ACT IMMEDIATELY"
+      warning: "DO NOT flip switches, use phones inside, light matches, or start vehicles in garage"
+      signs:
+        - "Rotten egg / sulfur smell"
+        - "Hissing sound near gas line or appliance"
+        - "Dead vegetation over gas line path"
+        - "Bubbles in standing water near gas line"
+      immediate_actions:
+        - "1. STOP — do not touch any electrical switches"
+        - "2. DO NOT use phones, garage door openers, or car ignitions inside"
+        - "3. Get everyone out — leave doors open as you exit"
+        - "4. Move at least 100 feet away from the structure"
+        - "5. Call 911 from a neighbor's phone or safe distance"
+        - "6. Call gas company: [GAS_COMPANY_PHONE]"
+        - "7. Do NOT re-enter until cleared by fire department or gas company"
+      shutoff_info:
+        location: "[GAS_SHUTOFF_LOCATION]"
+        tool_required: "Crescent wrench or gas shutoff wrench"
+        instructions: "Turn valve 1/4 turn so handle is perpendicular to pipe"
+        warning: "Only shut off if you can do so safely WITHOUT re-entering the structure"
+      post_incident:
+        - "Gas company must inspect and restore service"
+        - "Have HVAC tech inspect furnace and water heater before use"
+        - "Document incident for insurance if damage occurred"
+      emergency_contacts:
+        - "911"
+        - "Gas Company: [GAS_COMPANY_PHONE]"
+        - "HVAC Tech: [HVAC_NAME] — [HVAC_PHONE]"
+
+    water_emergency:
+      title: "Water Leak / Flood Emergency"
+      icon: "💧"
+      severity: "URGENT — ACT WITHIN MINUTES"
+      warning: "Water + electricity = electrocution risk. Kill power to affected areas FIRST if water is near outlets."
+      signs:
+        - "Visible water pooling or spraying"
+        - "Water stains spreading on ceiling or walls"
+        - "Sound of running water when nothing is on"
+        - "Sudden drop in water pressure"
+        - "Water meter spinning when all fixtures off"
+      immediate_actions:
+        - "1. ELECTRICAL FIRST — if water near outlets, shut off breaker at panel: [ELECTRICAL_PANEL_LOCATION]"
+        - "2. Shut off main water valve: [WATER_SHUTOFF_LOCATION]"
+        - "3. If burst pipe, open faucets to drain remaining water"
+        - "4. Move electronics, documents, valuables to dry area"
+        - "5. Contain water with towels, buckets, wet-dry vac"
+        - "6. Take photos/video of damage BEFORE cleanup"
+        - "7. Call plumber: [PLUMBER_NAME] — [PLUMBER_PHONE]"
+      shutoff_info:
+        main_location: "[WATER_SHUTOFF_LOCATION]"
+        how_to: "Turn valve clockwise until fully closed (gate valve) or 1/4 turn (ball valve)"
+        street_shutoff: "Curb shutoff requires meter key — near street"
+      fixture_shutoffs:
+        - "Toilet: valve behind/below toilet, turn clockwise"
+        - "Sink: valves under sink cabinet"
+        - "Washing machine: valves behind unit, red=hot, blue=cold"
+        - "Water heater: cold water inlet valve on top"
+      post_incident:
+        - "Run fans and dehumidifier for 48-72 hours minimum"
+        - "Check for mold within 24-48 hours — Southeast humidity accelerates growth"
+        - "File insurance claim if damage exceeds $1,000"
+        - "Save damaged items for adjuster if possible"
+      emergency_contacts:
+        - "Plumber: [PLUMBER_NAME] — [PLUMBER_PHONE]"
+        - "Insurance: [INSURANCE_PROVIDER] — [INSURANCE_CLAIM_PHONE]"
+        - "Water Damage Restoration: [RESTORATION_COMPANY] — [RESTORATION_PHONE]"
+
+    fire:
+      title: "Fire Emergency"
+      icon: "🔥"
+      severity: "CRITICAL — LIFE SAFETY FIRST"
+      warning: "Get out, stay out. Property can be replaced. People cannot."
+      immediate_actions:
+        - "1. ALERT — yell 'FIRE!' to wake/warn everyone"
+        - "2. GET OUT — use nearest exit, do NOT stop for belongings"
+        - "3. CLOSE DOORS behind you as you leave (slows fire spread)"
+        - "4. If door is hot, use alternate exit"
+        - "5. If smoke, stay LOW — crawl under smoke"
+        - "6. Once outside, move to meeting point: [FIRE_MEETING_POINT]"
+        - "7. Call 911 from outside — give address: [HOME_ADDRESS]"
+        - "8. DO NOT re-enter for any reason"
+      if_clothes_on_fire: "STOP, DROP, ROLL — cover face with hands"
+      if_trapped:
+        - "Close door, seal cracks with towels/sheets"
+        - "Call 911, give exact location in building"
+        - "Signal from window with flashlight or light-colored cloth"
+      small_fire_only:
+        conditions: "Fire is small (wastebasket size), contained, not spreading"
+        action: "Use extinguisher: PASS method"
+        pass_method:
+          - "P — Pull pin"
+          - "A — Aim at base of fire"
+          - "S — Squeeze handle"
+          - "S — Sweep side to side"
+        abort_if: "Fire grows, smoke thickens, or extinguisher empties — GET OUT"
+      extinguisher_locations:
+        - "Kitchen: [KITCHEN_EXTINGUISHER_LOCATION]"
+        - "Garage: [GARAGE_EXTINGUISHER_LOCATION]"
+        - "Basement: [BASEMENT_EXTINGUISHER_LOCATION]"
+      meeting_point: "[FIRE_MEETING_POINT]"
+      post_incident:
+        - "Do not re-enter until fire department gives all-clear"
+        - "Contact insurance immediately: [INSURANCE_PROVIDER] — [INSURANCE_CLAIM_PHONE]"
+        - "Document all damage with photos/video"
+        - "Keep receipts for temporary housing, food, clothing"
+      emergency_contacts:
+        - "911"
+        - "Insurance: [INSURANCE_PROVIDER] — [INSURANCE_CLAIM_PHONE]"
+        - "Primary Contact: [PRIMARY_CONTACT_NAME] — [PRIMARY_CONTACT_PHONE]"
+
+    power_outage:
+      title: "Power Outage Response"
+      icon: "⚡"
+      severity: "MODERATE — assess cause first"
+      first_steps:
+        - "1. Check if outage is just your home or neighborhood-wide"
+        - "2. Look outside — are neighbor's lights on?"
+        - "3. Check breaker panel: [ELECTRICAL_PANEL_LOCATION]"
+      if_just_your_home:
+        - "Check main breaker — flip fully OFF then ON"
+        - "Check for tripped breakers (handle in middle position)"
+        - "If breaker keeps tripping, leave it OFF and call electrician"
+        - "Electrician: [ELECTRICIAN_NAME] — [ELECTRICIAN_PHONE]"
+      if_neighborhood_wide:
+        - "Report outage to utility: [POWER_COMPANY] — [POWER_COMPANY_PHONE]"
+        - "Check utility outage map for estimated restoration"
+        - "Unplug sensitive electronics (computers, TVs) to prevent surge damage"
+      immediate_actions:
+        - "Turn off/unplug major appliances to prevent surge on restoration"
+        - "Leave one light ON so you know when power returns"
+        - "Locate flashlights — avoid candles if possible (fire risk)"
+        - "Check on elderly/vulnerable household members"
+      food_safety:
+        refrigerator: "Stays cold ~4 hours if door stays closed"
+        freezer_full: "Stays frozen ~48 hours"
+        freezer_half: "Stays frozen ~24 hours"
+        rule: "When in doubt, throw it out — discard anything above 40°F for 2+ hours"
+      generator_safety:
+        - "NEVER run generator indoors or in garage — CO poisoning kills"
+        - "Place generator 20+ feet from home, exhaust away from windows"
+        - "Generator location: [GENERATOR_LOCATION]"
+        - "Fuel: [GENERATOR_FUEL_TYPE]"
+        - "Do NOT connect generator directly to home wiring without transfer switch"
+      extended_outage:
+        - "If outage exceeds 4 hours in extreme heat/cold, consider relocating"
+        - "Cooling center / warming shelter locations: check local emergency management"
+        - "Keep phones charged — use car charger if needed"
+        - "Fill bathtub with water for toilet flushing if on well/pump"
+      post_restoration:
+        - "Wait 5 minutes, then plug in appliances one at a time"
+        - "Reset clocks, thermostats, alarms"
+        - "Check refrigerator/freezer temperatures"
+        - "Reset sump pump and test operation"
+        - "Check garage door opener"
+      emergency_contacts:
+        - "Power Company: [POWER_COMPANY] — [POWER_COMPANY_PHONE]"
+        - "Electrician: [ELECTRICIAN_NAME] — [ELECTRICIAN_PHONE]"

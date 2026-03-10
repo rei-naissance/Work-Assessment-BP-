@@ -1,0 +1,248 @@
+# =============================================================================
+# INVENTORY_TEMPLATES.YAML — Home Equipment & Emergency Supply Inventories
+# =============================================================================
+# Structure must match TemplateWriter.write_inventory() expectations:
+#   - equipment_checklist.systems: list of {name, fields}
+#   - emergency_kit.base_supplies: list of strings
+#   - emergency_kit.region_supplements.{key}.label + items: list of strings
+# =============================================================================
+
+equipment_checklist:
+  title: "Home Equipment & Systems Inventory"
+  section: 6
+  category: inventory
+  systems:
+    - name: "HVAC System"
+      fields:
+        - "Type (furnace, heat pump, central AC)"
+        - "Make/Model"
+        - "Serial Number"
+        - "Year Installed"
+        - "BTU/Tonnage"
+        - "Filter Size"
+        - "Last Serviced"
+        - "Service Company"
+        - "Warranty Expires"
+    - name: "Water Heater"
+      fields:
+        - "Type (tank gas, tank electric, tankless)"
+        - "Make/Model"
+        - "Serial Number"
+        - "Year Installed"
+        - "Capacity (gallons)"
+        - "Location"
+        - "Last Flushed"
+        - "Anode Rod Replaced"
+        - "Warranty Expires"
+    - name: "Electrical Panel"
+      fields:
+        - "Amperage (100, 150, 200, 400)"
+        - "Make"
+        - "Location"
+        - "Year Installed"
+        - "Last Inspection"
+        - "Subpanel Locations"
+    - name: "Roof"
+      fields:
+        - "Material (asphalt, metal, tile)"
+        - "Year Installed"
+        - "Installer"
+        - "Shingle Brand/Color"
+        - "Warranty Type (manufacturer, labor)"
+        - "Warranty Expires"
+        - "Last Inspection"
+    - name: "Plumbing"
+      fields:
+        - "Pipe Material (copper, PEX, CPVC)"
+        - "Main Shutoff Location"
+        - "Water Pressure (PSI)"
+        - "Last Inspection"
+    - name: "Washer"
+      fields:
+        - "Type (top load, front load)"
+        - "Make/Model"
+        - "Serial Number"
+        - "Year Purchased"
+        - "Warranty Expires"
+    - name: "Dryer"
+      fields:
+        - "Type (gas, electric)"
+        - "Make/Model"
+        - "Serial Number"
+        - "Year Purchased"
+        - "Vent Type"
+        - "Last Vent Cleaned"
+        - "Warranty Expires"
+    - name: "Dishwasher"
+      fields:
+        - "Make/Model"
+        - "Serial Number"
+        - "Year Purchased"
+        - "Warranty Expires"
+    - name: "Refrigerator"
+      fields:
+        - "Make/Model"
+        - "Serial Number"
+        - "Year Purchased"
+        - "Water Filter Model"
+        - "Filter Replacement Interval"
+        - "Warranty Expires"
+    - name: "Range/Oven"
+      fields:
+        - "Type (gas, electric, induction)"
+        - "Make/Model"
+        - "Serial Number"
+        - "Year Purchased"
+        - "Warranty Expires"
+    - name: "Garage Door Opener"
+      fields:
+        - "Make/Model"
+        - "Year Installed"
+        - "Drive Type (chain, belt)"
+        - "Keypad Code Location"
+    - name: "Water Softener"
+      fields:
+        - "Make/Model"
+        - "Year Installed"
+        - "Grain Capacity"
+        - "Salt Type"
+        - "Regeneration Frequency"
+    - name: "Sump Pump"
+      fields:
+        - "Make/Model"
+        - "Year Installed"
+        - "Horsepower"
+        - "Backup Type (battery, water-powered)"
+        - "Battery Replaced"
+        - "Location"
+    - name: "Generator"
+      fields:
+        - "Type (standby, portable)"
+        - "Make/Model"
+        - "Wattage"
+        - "Fuel Type"
+        - "Transfer Switch Type"
+        - "Last Serviced"
+        - "Location"
+    - name: "Security System"
+      fields:
+        - "Provider"
+        - "Panel Location"
+        - "Monitoring Type"
+        - "Contract Expires"
+        - "Monthly Fee"
+    - name: "Solar Panels"
+      fields:
+        - "Installer"
+        - "Year Installed"
+        - "System Size (kW)"
+        - "Panel Count"
+        - "Inverter Make/Model"
+        - "Monitoring System"
+        - "Panel Warranty Expires"
+        - "Inverter Warranty Expires"
+    - name: "Smoke/CO Detectors"
+      fields:
+        - "Locations"
+        - "Type (battery, hardwired)"
+        - "Make"
+        - "Manufacture Date"
+        - "Replacement Due"
+    - name: "Irrigation System"
+      fields:
+        - "Number of Zones"
+        - "Controller Make/Model"
+        - "Controller Location"
+        - "Backflow Type"
+        - "Winterization Required"
+
+emergency_kit:
+  title: "Emergency Supply Kit Checklist"
+  section: 6
+  category: inventory
+  base_supplies:
+    - "Water — 1 gallon per person per day for at least 3 days"
+    - "Non-perishable food — 3-day supply per person"
+    - "Manual can opener"
+    - "Battery-powered or hand-crank radio (NOAA weather)"
+    - "Flashlight with extra batteries"
+    - "Headlamps (one per person)"
+    - "First aid kit"
+    - "Whistle to signal for help"
+    - "N95 masks"
+    - "Plastic sheeting and duct tape"
+    - "Moist towelettes, garbage bags, and ties"
+    - "Wrench or pliers to turn off utilities"
+    - "Cell phone with chargers and backup battery"
+    - "Prescription medications — 7-day supply"
+    - "Important documents in waterproof container"
+    - "Cash in small bills ($200+)"
+    - "Local maps (don't rely on phone)"
+    - "Extra set of house and car keys"
+    - "Change of clothes and sturdy shoes per person"
+    - "Blankets or sleeping bags"
+    - "Emergency contact list"
+    - "Recent family photo (for reunification)"
+    - "Pet supplies if applicable (food, water, carrier)"
+  region_supplements:
+    freeze:
+      label: "Cold Climate Additions"
+      items:
+        - "Extra blankets and sleeping bags"
+        - "Hand and body warmers (chemical)"
+        - "Ice melt and snow shovel"
+        - "Insulated water containers (prevent freezing)"
+        - "Indoor-safe backup heater with CO detector"
+        - "Pipe insulation supplies"
+        - "Extra warm clothing layers"
+        - "Car kit: ice scraper, kitty litter, blanket"
+    hurricane:
+      label: "Hurricane Region Additions"
+      items:
+        - "Hurricane shutters or pre-cut plywood"
+        - "Tarps (multiple sizes)"
+        - "Waterproof storage containers"
+        - "Extra fuel for generator (stored safely)"
+        - "Waterproof boots and rain gear"
+        - "Battery-powered sump pump"
+        - "Evacuation route maps"
+        - "Cash ($300+ — ATMs may be down for weeks)"
+        - "Copies of insurance policies"
+    wildfire:
+      label: "Wildfire Region Additions"
+      items:
+        - "N95 respirator masks for each household member"
+        - "Go-bag packed and ready at all times"
+        - "Fireproof document safe or fire-resistant bag"
+        - "Garden hose long enough to reach all sides of home"
+        - "Ladder for roof access"
+        - "Extra fire extinguisher"
+        - "HEPA air purifier for smoke season"
+    earthquake:
+      label: "Earthquake Region Additions"
+      items:
+        - "Sturdy shoes stored under each bed (broken glass)"
+        - "Heavy-duty work gloves"
+        - "Pry bar"
+        - "Fire extinguisher"
+        - "Tent or emergency shelter"
+        - "Extra water (utilities may be out for extended period)"
+        - "Wrench for gas shutoff"
+    tornado:
+      label: "Tornado Region Additions"
+      items:
+        - "Bicycle or motorcycle helmets for each family member"
+        - "Sturdy shoes in safe room"
+        - "Weather radio with alarm function"
+        - "Mattress or heavy blankets for protection"
+        - "Flashlight in safe room"
+        - "Phone charger in safe room"
+    flood:
+      label: "Flood-Prone Area Additions"
+      items:
+        - "Sandbags or quick dam products"
+        - "Sump pump with battery backup"
+        - "Waterproof containers for valuables"
+        - "Waders or waterproof boots"
+        - "Flood evacuation route maps"
+        - "Copies of flood insurance documents"

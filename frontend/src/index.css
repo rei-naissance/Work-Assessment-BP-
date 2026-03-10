@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Serif+Display&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    @apply text-gray-700 antialiased;
+  }
+}
+
+/* Print stylesheet - ensures clean, printer-ready output */
+@media print {
+  /* Hide navigation, sidebar, action buttons, and UI chrome */
+  nav, header,
+  .lg\:block.w-72,
+  .lg\:hidden.sticky,
+  button,
+  [data-print-hide],
+  .fixed,
+  .sticky {
+    display: none !important;
+  }
+
+  /* Full-width content for printing */
+  .flex.gap-6 {
+    display: block !important;
+  }
+  .flex-1 {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* Clean white backgrounds for body and main containers */
+  body, .min-h-screen {
+    background: white !important;
+    background-color: white !important;
+  }
+
+  /* Preserve callout box backgrounds for readability */
+  .bg-amber-50, .bg-blue-50 {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Remove shadows */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Keep essential borders for tables and cards */
+  table, .border, [class*="border-"] {
+    border-color: #e5e7eb !important;
+  }
+
+  /* Force all sub-chapter content to show when printing */
+  .section-content {
+    display: block !important;
+    max-height: none !important;
+    page-break-before: always;
+    page-break-inside: auto;
+  }
+  .section-content:first-child {
+    page-break-before: auto;
+  }
+
+  /* Avoid orphaned headings */
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Tables: allow splitting across pages for large tables */
+  table {
+    page-break-inside: auto;
+  }
+  tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+  }
+  thead {
+    display: table-header-group;
+  }
+
+  /* Lists: allow splitting across pages */
+  ol, ul {
+    page-break-inside: auto;
+  }
+  li {
+    page-break-inside: avoid;
+  }
+
+  /* Figures and images stay together */
+  figure, img {
+    page-break-inside: avoid;
+  }
+
+  /* Ensure readable text colors for printing */
+  body {
+    color: #000 !important;
+    font-size: 11pt;
+    line-height: 1.5;
+  }
+
+  /* Optimize typography for print */
+  h1 { font-size: 18pt; }
+  h2 { font-size: 16pt; }
+  h3 { font-size: 14pt; }
+  h4, h5, h6 { font-size: 12pt; }
+
+  /* Print margins matching PDF output */
+  @page {
+    margin: 0.75in;
+    size: letter;
+  }
+
+  /* Orphan/widow control */
+  p, li {
+    page-break-inside: avoid;
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Ensure links are visible with URL for important references */
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 8pt;
+    color: #666;
+  }
+
+  /* Hide external link icons */
+  a[href^="http"] svg {
+    display: none !important;
+  }
+
+  /* Make print-specific adjustments for better readability */
+  .text-gray-400, .text-gray-500 {
+    color: #666 !important;
+  }
+
+  .text-gray-600, .text-gray-700 {
+    color: #333 !important;
+  }
+}

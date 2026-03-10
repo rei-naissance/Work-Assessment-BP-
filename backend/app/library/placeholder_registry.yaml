@@ -1,0 +1,2615 @@
+# Placeholder Registry - Single Source of Truth
+# All placeholders used in templates MUST be registered here.
+# Build will FAIL if any unregistered placeholder is found.
+
+categories:
+  - id: home_access
+    label: "Home & Access"
+  - id: people
+    label: "People"
+  - id: vendors
+    label: "Vendors"
+  - id: systems
+    label: "Systems & Inventory"
+
+placeholders:
+  # ============================================================
+  # HOME & ACCESS
+  # ============================================================
+  HOME_ADDRESS:
+    category: home_access
+    label: "Home Address"
+    hint: "Your full street address including city, state, and ZIP."
+    profile_path: "home_identity.address_line1"
+
+  HOME_NICKNAME:
+    category: home_access
+    label: "Home Nickname"
+    hint: "A friendly name for your home (e.g., 'The Lake House')."
+    profile_path: "home_identity.home_nickname"
+
+  WATER_SHUTOFF_LOCATION:
+    category: home_access
+    label: "Main Water Shutoff Location"
+    hint: "Usually near the street-side foundation wall, basement utility area, or garage. Look for a valve on the main water line entering the house."
+    profile_path: "critical_locations.water_shutoff.location"
+
+  GAS_SHUTOFF_LOCATION:
+    category: home_access
+    label: "Gas Shutoff Location"
+    hint: "Typically at the gas meter (exterior) or where gas line enters the house. Look for a valve requiring a wrench to turn."
+    profile_path: "critical_locations.gas_shutoff.location"
+
+  ELECTRICAL_PANEL_LOCATION:
+    category: home_access
+    label: "Electrical Panel Location"
+    hint: "Often in garage, utility closet, basement, or exterior wall. It's the gray metal box with circuit breakers."
+    profile_path: "critical_locations.electrical_panel.location"
+
+  HVAC_UNIT_LOCATION:
+    category: home_access
+    label: "HVAC Unit Location"
+    hint: "Indoor unit often in attic, basement, or utility closet. Outdoor unit (condenser) typically on side or back of house."
+    profile_path: "critical_locations.hvac_unit.location"
+
+  SUMP_PUMP_LOCATION:
+    category: home_access
+    label: "Sump Pump Location"
+    hint: "Usually in the lowest part of the basement or crawlspace, in a pit or basin."
+    profile_path: "critical_locations.sump_pump.location"
+
+  ATTIC_ACCESS_LOCATION:
+    category: home_access
+    label: "Attic Access Location"
+    hint: "Look for a pull-down ladder or hatch in a hallway ceiling, closet, or garage."
+    profile_path: "critical_locations.attic_access.location"
+
+  CRAWLSPACE_ACCESS_LOCATION:
+    category: home_access
+    label: "Crawlspace Access Location"
+    hint: "Often an exterior hatch, interior floor hatch, or access panel in a closet."
+    profile_path: "critical_locations.crawlspace_access.location"
+
+  FIRE_MEETING_POINT:
+    category: home_access
+    label: "Fire Meeting Point"
+    hint: "Designate a safe spot outside (mailbox, neighbor's driveway, large tree) where everyone gathers after evacuation."
+    profile_path: "guest_sitter_mode.fire_meeting_point"
+
+  ALARM_CODE:
+    category: home_access
+    label: "Alarm Code"
+    hint: "Your security system disarm code. Store securely."
+    profile_path: "guest_sitter_mode.alarm_instructions"
+
+  WIFI_PASSWORD:
+    category: home_access
+    label: "WiFi Password"
+    hint: "Check your router or ISP documentation."
+    profile_path: "guest_sitter_mode.wifi_password"
+
+  GARAGE_CODE:
+    category: home_access
+    label: "Garage Code"
+    hint: "Keypad code for garage door entry."
+    profile_path: "guest_sitter_mode.garage_code"
+
+  # ============================================================
+  # PEOPLE
+  # ============================================================
+  PRIMARY_CONTACT_NAME:
+    category: people
+    label: "Primary Emergency Contact Name"
+    hint: "Your first call in an emergency — spouse, partner, or trusted family member."
+    profile_path: "contacts_vendors.emergency_contacts[0].name"
+
+  PRIMARY_CONTACT_PHONE:
+    category: people
+    label: "Primary Emergency Contact Phone"
+    hint: "Phone number for your primary emergency contact."
+    profile_path: "contacts_vendors.emergency_contacts[0].phone"
+
+  SECONDARY_CONTACT_NAME:
+    category: people
+    label: "Secondary Emergency Contact Name"
+    hint: "Backup contact if primary is unreachable."
+    profile_path: "contacts_vendors.emergency_contacts[1].name"
+
+  SECONDARY_CONTACT_PHONE:
+    category: people
+    label: "Secondary Emergency Contact Phone"
+    hint: "Phone number for your secondary contact."
+    profile_path: "contacts_vendors.emergency_contacts[1].phone"
+
+  NEIGHBOR_NAME:
+    category: people
+    label: "Neighbor Name"
+    hint: "A nearby neighbor who can help in emergencies or check on the house."
+    profile_path: "contacts_vendors.neighbors[0].name"
+
+  NEIGHBOR_PHONE:
+    category: people
+    label: "Neighbor Phone"
+    hint: "Phone number for your neighbor contact."
+    profile_path: "contacts_vendors.neighbors[0].phone"
+
+  PET_NAMES:
+    category: people
+    label: "Pet Names"
+    hint: "Names of all pets in the household."
+    profile_path: "guest_sitter_mode.pet_sitter_info.pet_names"
+
+  VET_NAME:
+    category: people
+    label: "Veterinarian Name"
+    hint: "Your regular vet clinic name."
+    profile_path: "guest_sitter_mode.pet_sitter_info.vet_name"
+
+  VET_PHONE:
+    category: people
+    label: "Veterinarian Phone"
+    hint: "Phone number for your vet clinic."
+    profile_path: "guest_sitter_mode.pet_sitter_info.vet_phone"
+
+  # ============================================================
+  # VENDORS
+  # ============================================================
+  PLUMBER_NAME:
+    category: vendors
+    label: "Plumber Name"
+    hint: "Your go-to plumber. Ask neighbors or check HomeSureApp.com for recommendations."
+    profile_path: "contacts_vendors.plumber.name"
+
+  PLUMBER_PHONE:
+    category: vendors
+    label: "Plumber Phone"
+    hint: "Phone number for your plumber."
+    profile_path: "contacts_vendors.plumber.phone"
+
+  ELECTRICIAN_NAME:
+    category: vendors
+    label: "Electrician Name"
+    hint: "Licensed electrician for electrical work. Check HomeSureApp.com for recommendations."
+    profile_path: "contacts_vendors.electrician.name"
+
+  ELECTRICIAN_PHONE:
+    category: vendors
+    label: "Electrician Phone"
+    hint: "Phone number for your electrician."
+    profile_path: "contacts_vendors.electrician.phone"
+
+  HVAC_TECH_NAME:
+    category: vendors
+    label: "HVAC Technician Name"
+    hint: "HVAC company for heating/cooling service. Check HomeSureApp.com for recommendations."
+    profile_path: "contacts_vendors.hvac_tech.name"
+
+  HVAC_TECH_PHONE:
+    category: vendors
+    label: "HVAC Technician Phone"
+    hint: "Phone number for your HVAC technician."
+    profile_path: "contacts_vendors.hvac_tech.phone"
+
+  HANDYMAN_NAME:
+    category: vendors
+    label: "Handyman Name"
+    hint: "General handyman for small repairs. Check HomeSureApp.com for recommendations."
+    profile_path: "contacts_vendors.handyman.name"
+
+  HANDYMAN_PHONE:
+    category: vendors
+    label: "Handyman Phone"
+    hint: "Phone number for your handyman."
+    profile_path: "contacts_vendors.handyman.phone"
+
+  LOCKSMITH_NAME:
+    category: vendors
+    label: "Locksmith Name"
+    hint: "24-hour locksmith for lockouts and rekeying."
+    profile_path: "contacts_vendors.locksmith.name"
+
+  LOCKSMITH_PHONE:
+    category: vendors
+    label: "Locksmith Phone"
+    hint: "Phone number for your locksmith."
+    profile_path: "contacts_vendors.locksmith.phone"
+
+  RESTORATION_COMPANY:
+    category: vendors
+    label: "Restoration Company Name"
+    hint: "Water/fire damage restoration company. Your insurance may have preferred vendors."
+    profile_path: null
+
+  RESTORATION_PHONE:
+    category: vendors
+    label: "Restoration Company Phone"
+    hint: "Phone number for restoration company."
+    profile_path: null
+
+  # ============================================================
+  # UTILITIES
+  # ============================================================
+  POWER_COMPANY:
+    category: vendors
+    label: "Power Company"
+    hint: "Your electric utility provider (check your bill)."
+    profile_path: "contacts_vendors.power.company"
+
+  POWER_PHONE:
+    category: vendors
+    label: "Power Company Emergency Line"
+    hint: "Outage reporting number (usually on your bill or utility website)."
+    profile_path: "contacts_vendors.power.phone"
+
+  GAS_COMPANY:
+    category: vendors
+    label: "Gas Company"
+    hint: "Your natural gas provider (check your bill)."
+    profile_path: "contacts_vendors.gas.company"
+
+  GAS_PHONE:
+    category: vendors
+    label: "Gas Company Emergency Line"
+    hint: "Gas leak reporting number (usually on your bill or meter)."
+    profile_path: "contacts_vendors.gas.phone"
+
+  WATER_COMPANY:
+    category: vendors
+    label: "Water Company"
+    hint: "Your water utility provider (check your bill)."
+    profile_path: "contacts_vendors.water.company"
+
+  WATER_PHONE:
+    category: vendors
+    label: "Water Company Emergency Line"
+    hint: "Water emergency reporting number."
+    profile_path: "contacts_vendors.water.phone"
+
+  # ============================================================
+  # INSURANCE
+  # ============================================================
+  INSURANCE_PROVIDER:
+    category: vendors
+    label: "Insurance Provider"
+    hint: "Your homeowner's or renter's insurance company."
+    profile_path: "contacts_vendors.insurance.provider"
+
+  INSURANCE_POLICY_NUMBER:
+    category: vendors
+    label: "Insurance Policy Number"
+    hint: "Your policy number (on your declarations page or insurance card)."
+    profile_path: "contacts_vendors.insurance.policy_number"
+
+  INSURANCE_CLAIM_PHONE:
+    category: vendors
+    label: "Insurance Claims Phone"
+    hint: "24-hour claims line (on your insurance card or policy documents)."
+    profile_path: "contacts_vendors.insurance.claim_phone"
+
+  # ============================================================
+  # SYSTEMS & INVENTORY
+  # ============================================================
+  HVAC_FILTER_SIZE:
+    category: systems
+    label: "HVAC Filter Size"
+    hint: "Check the existing filter or the slot dimensions. Common sizes: 16x20x1, 20x25x1, 16x25x4."
+    profile_path: null
+
+  WATER_HEATER_MODEL:
+    category: systems
+    label: "Water Heater Model"
+    hint: "Check the label on your water heater tank."
+    profile_path: null
+
+  GENERATOR_MODEL:
+    category: systems
+    label: "Generator Model"
+    hint: "Check the label on your generator unit."
+    profile_path: null
+
+  POOL_SERVICE_COMPANY:
+    category: systems
+    label: "Pool Service Company"
+    hint: "Your pool maintenance company."
+    profile_path: null
+
+  POOL_SERVICE_PHONE:
+    category: systems
+    label: "Pool Service Phone"
+    hint: "Phone number for pool service company."
+    profile_path: null
+
+  SEPTIC_SERVICE_COMPANY:
+    category: systems
+    label: "Septic Service Company"
+    hint: "Company that pumps/maintains your septic system."
+    profile_path: null
+
+  SEPTIC_SERVICE_PHONE:
+    category: systems
+    label: "Septic Service Phone"
+    hint: "Phone number for septic service."
+    profile_path: null
+
+  # ============================================================
+  # GENERATOR & POWER
+  # ============================================================
+  GENERATOR_LOCATION:
+    category: systems
+    label: "Generator Location"
+    hint: "Where your backup generator is located (garage, shed, side of house)."
+    profile_path: null
+
+  GENERATOR_FUEL_TYPE:
+    category: systems
+    label: "Generator Fuel Type"
+    hint: "What fuel your generator uses (natural gas, propane, gasoline, diesel)."
+    profile_path: null
+
+  # ============================================================
+  # HVAC (Additional)
+  # ============================================================
+  HVAC_NAME:
+    category: vendors
+    label: "HVAC Company Name"
+    hint: "Your HVAC service company name."
+    profile_path: "contacts_vendors.hvac_tech.name"
+
+  HVAC_PHONE:
+    category: vendors
+    label: "HVAC Company Phone"
+    hint: "Phone number for your HVAC company."
+    profile_path: "contacts_vendors.hvac_tech.phone"
+
+  # ============================================================
+  # FIRE SAFETY
+  # ============================================================
+  KITCHEN_EXTINGUISHER_LOCATION:
+    category: home_access
+    label: "Kitchen Fire Extinguisher Location"
+    hint: "Where you keep a fire extinguisher in/near the kitchen."
+    profile_path: null
+
+  GARAGE_EXTINGUISHER_LOCATION:
+    category: home_access
+    label: "Garage Fire Extinguisher Location"
+    hint: "Where you keep a fire extinguisher in the garage."
+    profile_path: null
+
+  BASEMENT_EXTINGUISHER_LOCATION:
+    category: home_access
+    label: "Basement Fire Extinguisher Location"
+    hint: "Where you keep a fire extinguisher in the basement."
+    profile_path: null
+
+  # ============================================================
+  # UTILITIES (Additional Phones)
+  # ============================================================
+  POWER_COMPANY_PHONE:
+    category: vendors
+    label: "Power Company Phone"
+    hint: "Electric company main or outage line."
+    profile_path: "contacts_vendors.power.phone"
+
+  GAS_COMPANY_PHONE:
+    category: vendors
+    label: "Gas Company Phone"
+    hint: "Gas company main or emergency line."
+    profile_path: "contacts_vendors.gas.phone"
+
+  # ============================================================
+  # LANDSCAPING & EXTERIOR
+  # ============================================================
+  LANDSCAPER_NAME:
+    category: vendors
+    label: "Landscaper Name"
+    hint: "Your lawn care or landscaping company."
+    profile_path: null
+
+  LANDSCAPER_PHONE:
+    category: vendors
+    label: "Landscaper Phone"
+    hint: "Phone number for your landscaper."
+    profile_path: null
+
+  PAINTER_NAME:
+    category: vendors
+    label: "Painter Name"
+    hint: "Your interior/exterior painter or painting company."
+    profile_path: null
+
+  PAINTER_PHONE:
+    category: vendors
+    label: "Painter Phone"
+    hint: "Phone number for your painter."
+    profile_path: null
+
+  # ============================================================
+  # HOA / CONDO / TOWNHOUSE
+  # ============================================================
+  HOA_NAME:
+    category: home_access
+    label: "HOA Name"
+    hint: "Your homeowner's association name."
+    profile_path: null
+
+  HOA_CONTACT_PHONE:
+    category: home_access
+    label: "HOA Contact Phone"
+    hint: "Phone number for your HOA office or management."
+    profile_path: null
+
+  HOA_PORTAL_URL:
+    category: home_access
+    label: "HOA Portal URL"
+    hint: "Web address for your HOA owner portal."
+    profile_path: null
+
+  HOA_DUES_AMOUNT:
+    category: home_access
+    label: "HOA Dues Amount"
+    hint: "Your monthly or quarterly HOA dues amount."
+    profile_path: null
+
+  DUES_DUE_DATE:
+    category: home_access
+    label: "HOA Dues Due Date"
+    hint: "When your HOA dues are due each month/quarter."
+    profile_path: null
+
+  HOA_MAINTENANCE_REQUEST_PROCESS:
+    category: home_access
+    label: "HOA Maintenance Request Process"
+    hint: "How to submit maintenance requests to your HOA."
+    profile_path: null
+
+  MANAGEMENT_COMPANY:
+    category: vendors
+    label: "Property Management Company"
+    hint: "The company that manages your building or community."
+    profile_path: null
+
+  CONDO_INSURANCE_PROVIDER:
+    category: vendors
+    label: "Condo Insurance Provider"
+    hint: "Your HO-6 condo insurance company."
+    profile_path: null
+
+  CONDO_INSURANCE_POLICY:
+    category: vendors
+    label: "Condo Insurance Policy Number"
+    hint: "Your condo insurance policy number."
+    profile_path: null
+
+  TOWNHOUSE_OWNERSHIP_TYPE:
+    category: home_access
+    label: "Townhouse Ownership Type"
+    hint: "Fee simple, condo, or co-op ownership."
+    profile_path: null
+
+  TOWNHOUSE_HOA_NAME:
+    category: home_access
+    label: "Townhouse HOA Name"
+    hint: "Your townhouse community HOA name."
+    profile_path: null
+
+  TOWNHOUSE_HOA_CONTACT:
+    category: home_access
+    label: "Townhouse HOA Contact"
+    hint: "Contact info for your townhouse HOA."
+    profile_path: null
+
+  TOWNHOUSE_DUES:
+    category: home_access
+    label: "Townhouse Dues"
+    hint: "Your townhouse HOA dues amount."
+    profile_path: null
+
+  # ============================================================
+  # RENTAL / APARTMENT
+  # ============================================================
+  PROPERTY_MANAGER_NAME:
+    category: vendors
+    label: "Property Manager Name"
+    hint: "Your landlord or property manager's name."
+    profile_path: null
+
+  PROPERTY_MANAGER_PHONE:
+    category: vendors
+    label: "Property Manager Phone"
+    hint: "Phone number for your property manager."
+    profile_path: null
+
+  EMERGENCY_MAINTENANCE_PHONE:
+    category: vendors
+    label: "Emergency Maintenance Phone"
+    hint: "24-hour emergency maintenance line for your building."
+    profile_path: null
+
+  RENT_DUE_DATE:
+    category: home_access
+    label: "Rent Due Date"
+    hint: "When your rent is due each month."
+    profile_path: null
+
+  LEASE_END_DATE:
+    category: home_access
+    label: "Lease End Date"
+    hint: "When your current lease expires."
+    profile_path: null
+
+  RENTERS_INSURANCE_PROVIDER:
+    category: vendors
+    label: "Renter's Insurance Provider"
+    hint: "Your renter's insurance company."
+    profile_path: null
+
+  RENTERS_POLICY_NUMBER:
+    category: vendors
+    label: "Renter's Insurance Policy Number"
+    hint: "Your renter's insurance policy number."
+    profile_path: null
+
+  TENANT_PORTAL_URL:
+    category: home_access
+    label: "Tenant Portal URL"
+    hint: "Web address for your building's tenant portal."
+    profile_path: null
+
+  # ============================================================
+  # MOBILE / MANUFACTURED HOME
+  # ============================================================
+  MOBILE_HOME_PARK_NAME:
+    category: home_access
+    label: "Mobile Home Park Name"
+    hint: "The name of your mobile home community or park."
+    profile_path: null
+
+  LOT_NUMBER:
+    category: home_access
+    label: "Lot Number"
+    hint: "Your lot or space number in the mobile home park."
+    profile_path: null
+
+  MOBILE_HOME_YEAR:
+    category: home_access
+    label: "Mobile Home Year"
+    hint: "The year your mobile/manufactured home was built."
+    profile_path: null
+
+  MOBILE_HOME_SIZE:
+    category: home_access
+    label: "Mobile Home Size"
+    hint: "Size/dimensions of your mobile home (e.g., single-wide, double-wide)."
+    profile_path: null
+
+  PARK_MANAGEMENT:
+    category: vendors
+    label: "Park Management Company"
+    hint: "The management company for your mobile home park."
+    profile_path: null
+
+  PARK_MANAGEMENT_CONTACT:
+    category: vendors
+    label: "Park Management Contact"
+    hint: "Contact person at park management."
+    profile_path: null
+
+  PARK_MANAGEMENT_PHONE:
+    category: vendors
+    label: "Park Management Phone"
+    hint: "Phone number for park management."
+    profile_path: null
+
+  MOBILE_HOME_WATER_SHUTOFF:
+    category: home_access
+    label: "Mobile Home Water Shutoff"
+    hint: "Location of water shutoff for your mobile home (often under the home or at the lot connection)."
+    profile_path: null
+
+  MOBILE_HOME_SERVICE:
+    category: vendors
+    label: "Mobile Home Service Company"
+    hint: "Company that services mobile/manufactured homes."
+    profile_path: null
+
+  MOBILE_HOME_SERVICE_PHONE:
+    category: vendors
+    label: "Mobile Home Service Phone"
+    hint: "Phone number for mobile home service company."
+    profile_path: null
+
+  MOBILE_HOME_INSURANCE:
+    category: vendors
+    label: "Mobile Home Insurance Provider"
+    hint: "Your mobile home insurance company."
+    profile_path: null
+
+  MOBILE_HOME_POLICY_NUMBER:
+    category: vendors
+    label: "Mobile Home Insurance Policy Number"
+    hint: "Your mobile home insurance policy number."
+    profile_path: null
+
+  # ============================================================
+  # TRUSTED NEIGHBORS
+  # ============================================================
+  TRUSTED_NEIGHBOR_NAME:
+    category: people
+    label: "Trusted Neighbor Name"
+    hint: "A neighbor you trust to help in emergencies."
+    profile_path: "contacts_vendors.neighbors[0].name"
+
+  TRUSTED_NEIGHBOR_PHONE:
+    category: people
+    label: "Trusted Neighbor Phone"
+    hint: "Phone number for your trusted neighbor."
+    profile_path: "contacts_vendors.neighbors[0].phone"
+
+  # ============================================================
+  # HVAC (More)
+  # ============================================================
+  HVAC_FILTER_LOCATION:
+    category: home_access
+    label: "HVAC Filter Location"
+    hint: "Where the HVAC filter is located (often in a return vent, basement, or utility closet)."
+    profile_path: null
+
+  # ============================================================
+  # STORM / SAFETY
+  # ============================================================
+  SAFE_ROOM_LOCATION:
+    category: home_access
+    label: "Safe Room Location"
+    hint: "Your designated safe room for severe weather (interior room, basement, closet)."
+    profile_path: null
+
+  # ============================================================
+  # SECURITY
+  # ============================================================
+  ALARM_COMPANY:
+    category: vendors
+    label: "Alarm Company"
+    hint: "Your security monitoring company name."
+    profile_path: null
+
+  ALARM_COMPANY_PHONE:
+    category: vendors
+    label: "Alarm Company Phone"
+    hint: "Phone number for your alarm/security company."
+    profile_path: null
+
+  ALARM_PANEL_LOCATION:
+    category: home_access
+    label: "Alarm Panel Location"
+    hint: "Where your security alarm panel/keypad is located."
+    profile_path: null
+
+  HIDDEN_KEY_LOCATION:
+    category: home_access
+    label: "Hidden Key Location"
+    hint: "Where you keep a spare/hidden key (be careful who you share this with)."
+    profile_path: null
+
+  # ============================================================
+  # LANDSCAPING
+  # ============================================================
+  LAWN_SQUARE_FEET:
+    category: systems
+    label: "Lawn Square Feet"
+    hint: "Approximate lawn area for fertilizer calculations."
+    profile_path: null
+
+  GRASS_TYPE:
+    category: systems
+    label: "Grass Type"
+    hint: "Your lawn grass type (e.g., Bermuda, Fescue, St. Augustine)."
+    profile_path: null
+
+  SOIL_TYPE:
+    category: systems
+    label: "Soil Type"
+    hint: "Your soil type (clay, sandy, loam, etc.)."
+    profile_path: null
+
+  SOIL_TEST_DATE:
+    category: systems
+    label: "Last Soil Test Date"
+    hint: "When you last had your soil tested."
+    profile_path: null
+
+  IRRIGATION_TYPE:
+    category: systems
+    label: "Irrigation Type"
+    hint: "Type of irrigation system (in-ground sprinklers, drip, manual)."
+    profile_path: null
+
+  IRRIGATION_COMPANY:
+    category: vendors
+    label: "Irrigation Company"
+    hint: "Company that services your sprinkler/irrigation system."
+    profile_path: null
+
+  IRRIGATION_PHONE:
+    category: vendors
+    label: "Irrigation Company Phone"
+    hint: "Phone number for irrigation service."
+    profile_path: null
+
+  LAWN_SERVICE_NAME:
+    category: vendors
+    label: "Lawn Service Name"
+    hint: "Your lawn care company or landscaper."
+    profile_path: null
+
+  LAWN_SERVICE_PHONE:
+    category: vendors
+    label: "Lawn Service Phone"
+    hint: "Phone number for lawn service."
+    profile_path: null
+
+  ARBORIST_NAME:
+    category: vendors
+    label: "Arborist Name"
+    hint: "Certified arborist or tree service company."
+    profile_path: null
+
+  ARBORIST_PHONE:
+    category: vendors
+    label: "Arborist Phone"
+    hint: "Phone number for arborist/tree service."
+    profile_path: null
+
+  # Tree inventory
+  TREE_1_SPECIES:
+    category: systems
+    label: "Tree 1 Species"
+    hint: "Species of your first significant tree."
+    profile_path: null
+
+  TREE_1_LOCATION:
+    category: systems
+    label: "Tree 1 Location"
+    hint: "Location of first tree on property."
+    profile_path: null
+
+  TREE_1_AGE:
+    category: systems
+    label: "Tree 1 Age"
+    hint: "Approximate age of first tree."
+    profile_path: null
+
+  TREE_1_INSPECTION_DATE:
+    category: systems
+    label: "Tree 1 Last Inspection"
+    hint: "When first tree was last inspected."
+    profile_path: null
+
+  TREE_2_SPECIES:
+    category: systems
+    label: "Tree 2 Species"
+    hint: "Species of your second significant tree."
+    profile_path: null
+
+  TREE_2_LOCATION:
+    category: systems
+    label: "Tree 2 Location"
+    hint: "Location of second tree on property."
+    profile_path: null
+
+  TREE_2_AGE:
+    category: systems
+    label: "Tree 2 Age"
+    hint: "Approximate age of second tree."
+    profile_path: null
+
+  TREE_2_INSPECTION_DATE:
+    category: systems
+    label: "Tree 2 Last Inspection"
+    hint: "When second tree was last inspected."
+    profile_path: null
+
+  # Climate/frost info
+  USDA_ZONE:
+    category: systems
+    label: "USDA Hardiness Zone"
+    hint: "Your USDA plant hardiness zone (check online by ZIP code)."
+    profile_path: null
+
+  LAST_FROST_DATE:
+    category: systems
+    label: "Average Last Frost Date"
+    hint: "When spring frost typically ends in your area."
+    profile_path: null
+
+  FIRST_FROST_DATE:
+    category: systems
+    label: "Average First Frost Date"
+    hint: "When fall frost typically starts in your area."
+    profile_path: null
+
+  COUNTY_EXTENSION_OFFICE:
+    category: vendors
+    label: "County Extension Office"
+    hint: "Your local agricultural extension office for lawn/garden advice."
+    profile_path: null
+
+  # Drainage
+  DOWNSPOUT_1_CONDITION:
+    category: systems
+    label: "Downspout 1 Condition"
+    hint: "Condition of first downspout."
+    profile_path: null
+
+  DOWNSPOUT_2_CONDITION:
+    category: systems
+    label: "Downspout 2 Condition"
+    hint: "Condition of second downspout."
+    profile_path: null
+
+  DOWNSPOUT_3_CONDITION:
+    category: systems
+    label: "Downspout 3 Condition"
+    hint: "Condition of third downspout."
+    profile_path: null
+
+  DOWNSPOUT_4_CONDITION:
+    category: systems
+    label: "Downspout 4 Condition"
+    hint: "Condition of fourth downspout."
+    profile_path: null
+
+  DRAINAGE_COMPANY:
+    category: vendors
+    label: "Drainage Company"
+    hint: "Company that handles drainage/grading work."
+    profile_path: null
+
+  DRAINAGE_PHONE:
+    category: vendors
+    label: "Drainage Company Phone"
+    hint: "Phone number for drainage service."
+    profile_path: null
+
+  DRAINAGE_CONTRACTOR:
+    category: vendors
+    label: "Drainage Contractor"
+    hint: "Contractor for drainage work."
+    profile_path: null
+
+  # ============================================================
+  # EMERGENCY EQUIPMENT LOCATIONS
+  # ============================================================
+  FLASHLIGHT_STORAGE_LOCATION:
+    category: home_access
+    label: "Flashlight Storage Location"
+    hint: "Where you keep flashlights for emergencies."
+    profile_path: null
+
+  EMERGENCY_KIT_LOCATION:
+    category: home_access
+    label: "Emergency Kit Location"
+    hint: "Where your emergency supply kit is stored."
+    profile_path: null
+
+  FIRST_AID_KIT_LOCATION:
+    category: home_access
+    label: "First Aid Kit Location"
+    hint: "Where your first aid kit is stored."
+    profile_path: null
+
+  # ============================================================
+  # ADDITIONAL CONTACTS
+  # ============================================================
+  BACKUP_CONTACT_NAME:
+    category: people
+    label: "Backup Contact Name"
+    hint: "Third emergency contact if primary and secondary unavailable."
+    profile_path: null
+
+  BACKUP_CONTACT_PHONE:
+    category: people
+    label: "Backup Contact Phone"
+    hint: "Phone for backup contact."
+    profile_path: null
+
+  WATER_COMPANY_PHONE:
+    category: vendors
+    label: "Water Company Phone"
+    hint: "Water utility emergency/service line."
+    profile_path: "contacts_vendors.water.phone"
+
+  # ============================================================
+  # FIRE SAFETY & EVACUATION
+  # ============================================================
+  PRIMARY_EXIT_ROUTE:
+    category: home_access
+    label: "Primary Exit Route"
+    hint: "Your main fire escape route."
+    profile_path: null
+
+  SECONDARY_EXIT_ROUTE:
+    category: home_access
+    label: "Secondary Exit Route"
+    hint: "Backup exit route if primary blocked."
+    profile_path: null
+
+  MOBILITY_EVACUATION_PLAN:
+    category: home_access
+    label: "Mobility Evacuation Plan"
+    hint: "Special evacuation considerations for mobility-impaired residents."
+    profile_path: null
+
+  EVACUATION_ROUTE:
+    category: home_access
+    label: "Evacuation Route"
+    hint: "Your planned route out of the area in emergencies."
+    profile_path: null
+
+  EVACUATION_DESTINATION:
+    category: home_access
+    label: "Evacuation Destination"
+    hint: "Where your family will go if evacuation needed."
+    profile_path: null
+
+  EVACUATION_ZONE:
+    category: home_access
+    label: "Evacuation Zone"
+    hint: "Your official evacuation zone (hurricane, flood, etc.)."
+    profile_path: null
+
+  # ============================================================
+  # POOL & HOT TUB
+  # ============================================================
+  POOL_SERVICE_NAME:
+    category: vendors
+    label: "Pool Service Name"
+    hint: "Pool maintenance company name."
+    profile_path: null
+
+  POOL_TYPE:
+    category: systems
+    label: "Pool Type"
+    hint: "Type of pool (in-ground, above-ground, fiberglass, etc.)."
+    profile_path: null
+
+  POOL_GALLONS:
+    category: systems
+    label: "Pool Gallons"
+    hint: "Pool water volume for chemical calculations."
+    profile_path: null
+
+  POOL_EQUIPMENT_LOCATION:
+    category: home_access
+    label: "Pool Equipment Location"
+    hint: "Where pool pump, filter, etc. are located."
+    profile_path: null
+
+  POOL_DRAIN_LOCATION:
+    category: home_access
+    label: "Pool Drain Location"
+    hint: "Location of main pool drain."
+    profile_path: null
+
+  SKIMMER_BASKET_LOCATION:
+    category: home_access
+    label: "Skimmer Basket Location"
+    hint: "Where pool skimmer baskets are."
+    profile_path: null
+
+  PUMP_STRAINER_LOCATION:
+    category: home_access
+    label: "Pump Strainer Location"
+    hint: "Location of pump strainer basket."
+    profile_path: null
+
+  POOL_EQUIPMENT_WARRANTY_INFO:
+    category: systems
+    label: "Pool Equipment Warranty"
+    hint: "Warranty information for pool equipment."
+    profile_path: null
+
+  HOT_TUB_LOCATION:
+    category: home_access
+    label: "Hot Tub Location"
+    hint: "Where your hot tub/spa is located."
+    profile_path: null
+
+  HOT_TUB_GALLONS:
+    category: systems
+    label: "Hot Tub Gallons"
+    hint: "Hot tub water volume."
+    profile_path: null
+
+  HOT_TUB_SERVICE:
+    category: vendors
+    label: "Hot Tub Service"
+    hint: "Company that services your hot tub."
+    profile_path: null
+
+  HOT_TUB_SERVICE_PHONE:
+    category: vendors
+    label: "Hot Tub Service Phone"
+    hint: "Phone for hot tub service."
+    profile_path: null
+
+  HOT_TUB_EQUIPMENT_LOCATION:
+    category: home_access
+    label: "Hot Tub Equipment Location"
+    hint: "Where hot tub pump/controls are."
+    profile_path: null
+
+  HOT_TUB_GFCI_LOCATION:
+    category: home_access
+    label: "Hot Tub GFCI Location"
+    hint: "GFCI breaker for hot tub."
+    profile_path: null
+
+  HOT_TUB_COVER_TYPE:
+    category: systems
+    label: "Hot Tub Cover Type"
+    hint: "Type of cover on your hot tub."
+    profile_path: null
+
+  HOT_TUB_SANITIZER:
+    category: systems
+    label: "Hot Tub Sanitizer"
+    hint: "What you use to sanitize (chlorine, bromine, etc.)."
+    profile_path: null
+
+  HOT_TUB_SUPPLY_STORE:
+    category: vendors
+    label: "Hot Tub Supply Store"
+    hint: "Where you buy hot tub supplies."
+    profile_path: null
+
+  # ============================================================
+  # GARAGE
+  # ============================================================
+  GARAGE_DOOR_TYPE:
+    category: systems
+    label: "Garage Door Type"
+    hint: "Type of garage door."
+    profile_path: null
+
+  GARAGE_OPENER_BRAND:
+    category: systems
+    label: "Garage Opener Brand"
+    hint: "Brand of your garage door opener."
+    profile_path: null
+
+  GARAGE_OPENER_LOCATION:
+    category: home_access
+    label: "Garage Opener Location"
+    hint: "Where the opener motor is mounted."
+    profile_path: null
+
+  GARAGE_MANUAL_RELEASE_LOCATION:
+    category: home_access
+    label: "Garage Manual Release"
+    hint: "Location of manual release for power outages."
+    profile_path: null
+
+  GARAGE_SENSOR_HEIGHT:
+    category: systems
+    label: "Garage Sensor Height"
+    hint: "Height of safety sensors."
+    profile_path: null
+
+  GARAGE_DOOR_SERVICE:
+    category: vendors
+    label: "Garage Door Service"
+    hint: "Company that services garage doors."
+    profile_path: null
+
+  GARAGE_DOOR_PHONE:
+    category: vendors
+    label: "Garage Door Phone"
+    hint: "Phone for garage door service."
+    profile_path: null
+
+  # ============================================================
+  # WATER HEATER
+  # ============================================================
+  WATER_HEATER_TYPE:
+    category: systems
+    label: "Water Heater Type"
+    hint: "Tank, tankless, heat pump, etc."
+    profile_path: null
+
+  WATER_HEATER_FUEL:
+    category: systems
+    label: "Water Heater Fuel"
+    hint: "Gas, electric, propane, etc."
+    profile_path: null
+
+  WATER_HEATER_LOCATION:
+    category: home_access
+    label: "Water Heater Location"
+    hint: "Where your water heater is located."
+    profile_path: null
+
+  WATER_HEATER_CAPACITY:
+    category: systems
+    label: "Water Heater Capacity"
+    hint: "Tank size in gallons."
+    profile_path: null
+
+  WATER_HEATER_AGE:
+    category: systems
+    label: "Water Heater Age"
+    hint: "Age of your water heater."
+    profile_path: null
+
+  WH_SHUTOFF_LOCATION:
+    category: home_access
+    label: "Water Heater Shutoff"
+    hint: "Location of water heater shutoff valve."
+    profile_path: null
+
+  WH_DRAIN_LOCATION:
+    category: home_access
+    label: "Water Heater Drain"
+    hint: "Location of drain valve."
+    profile_path: null
+
+  WH_BREAKER_LOCATION:
+    category: home_access
+    label: "Water Heater Breaker"
+    hint: "Which breaker controls water heater."
+    profile_path: null
+
+  EXPANSION_TANK_LOCATION:
+    category: home_access
+    label: "Expansion Tank Location"
+    hint: "Location of thermal expansion tank."
+    profile_path: null
+
+  # ============================================================
+  # HVAC EXTENDED
+  # ============================================================
+  HVAC_COMPANY:
+    category: vendors
+    label: "HVAC Company"
+    hint: "Your HVAC service company."
+    profile_path: null
+
+  AC_FILTER_SIZE:
+    category: systems
+    label: "AC Filter Size"
+    hint: "Dimensions of your AC filter."
+    profile_path: null
+
+  AC_FILTER_LOCATION:
+    category: home_access
+    label: "AC Filter Location"
+    hint: "Where to access the AC filter."
+    profile_path: null
+
+  AC_SYSTEM_AGE:
+    category: systems
+    label: "AC System Age"
+    hint: "Age of your air conditioning system."
+    profile_path: null
+
+  THERMOSTAT_LOCATION:
+    category: home_access
+    label: "Thermostat Location"
+    hint: "Where your thermostat is."
+    profile_path: null
+
+  CONDENSATE_DRAIN_LOCATION:
+    category: home_access
+    label: "Condensate Drain Location"
+    hint: "Where the AC condensate drain is."
+    profile_path: null
+
+  REFRIGERANT_TYPE:
+    category: systems
+    label: "Refrigerant Type"
+    hint: "Type of refrigerant (R-22, R-410A, etc.)."
+    profile_path: null
+
+  INDOOR_UNIT_LOCATION:
+    category: home_access
+    label: "Indoor Unit Location"
+    hint: "Location of indoor HVAC unit."
+    profile_path: null
+
+  OUTDOOR_UNIT_LOCATION:
+    category: home_access
+    label: "Outdoor Unit Location"
+    hint: "Location of outdoor condenser unit."
+    profile_path: null
+
+  HEAT_PUMP_INDOOR_LOCATION:
+    category: home_access
+    label: "Heat Pump Indoor Unit"
+    hint: "Indoor unit of heat pump."
+    profile_path: null
+
+  HEAT_PUMP_OUTDOOR_LOCATION:
+    category: home_access
+    label: "Heat Pump Outdoor Unit"
+    hint: "Outdoor unit of heat pump."
+    profile_path: null
+
+  HP_FILTER_LOCATION:
+    category: home_access
+    label: "Heat Pump Filter Location"
+    hint: "Where to access heat pump filter."
+    profile_path: null
+
+  HP_FILTER_SIZE:
+    category: systems
+    label: "Heat Pump Filter Size"
+    hint: "Filter size for heat pump."
+    profile_path: null
+
+  AUX_HEAT_TYPE:
+    category: systems
+    label: "Auxiliary Heat Type"
+    hint: "Type of backup/auxiliary heating."
+    profile_path: null
+
+  EMERGENCY_HEAT_INSTRUCTIONS:
+    category: systems
+    label: "Emergency Heat Instructions"
+    hint: "How to use emergency heat mode."
+    profile_path: null
+
+  RADIANT_TYPE:
+    category: systems
+    label: "Radiant Heat Type"
+    hint: "Type of radiant heating (floor, baseboard, etc.)."
+    profile_path: null
+
+  RADIANT_ZONES_DESCRIPTION:
+    category: systems
+    label: "Radiant Zones Description"
+    hint: "Description of heating zones."
+    profile_path: null
+
+  ZONE_VALVE_LOCATIONS:
+    category: home_access
+    label: "Zone Valve Locations"
+    hint: "Where zone control valves are."
+    profile_path: null
+
+  BOILER_LOCATION:
+    category: home_access
+    label: "Boiler Location"
+    hint: "Where your boiler is located."
+    profile_path: null
+
+  BOILER_FUEL_TYPE:
+    category: systems
+    label: "Boiler Fuel Type"
+    hint: "Fuel type for boiler."
+    profile_path: null
+
+  BOILER_SERVICE:
+    category: vendors
+    label: "Boiler Service"
+    hint: "Company that services your boiler."
+    profile_path: null
+
+  BOILER_SERVICE_PHONE:
+    category: vendors
+    label: "Boiler Service Phone"
+    hint: "Phone for boiler service."
+    profile_path: null
+
+  WINDOW_AC_LOCATION_1:
+    category: home_access
+    label: "Window AC Location 1"
+    hint: "Location of first window AC unit."
+    profile_path: null
+
+  WINDOW_AC_LOCATION_2:
+    category: home_access
+    label: "Window AC Location 2"
+    hint: "Location of second window AC unit."
+    profile_path: null
+
+  BTU_RATING_1:
+    category: systems
+    label: "BTU Rating 1"
+    hint: "BTU rating of first window unit."
+    profile_path: null
+
+  BTU_RATING_2:
+    category: systems
+    label: "BTU Rating 2"
+    hint: "BTU rating of second window unit."
+    profile_path: null
+
+  VENTILATION_TYPE:
+    category: systems
+    label: "Ventilation Type"
+    hint: "Type of ventilation system."
+    profile_path: null
+
+  DEHUMIDIFIER_LOCATION:
+    category: home_access
+    label: "Dehumidifier Location"
+    hint: "Where your dehumidifier is."
+    profile_path: null
+
+  HYGROMETER_LOCATION:
+    category: home_access
+    label: "Hygrometer Location"
+    hint: "Where humidity monitor is."
+    profile_path: null
+
+  # ============================================================
+  # ELECTRICAL
+  # ============================================================
+  PANEL_AMPERAGE:
+    category: systems
+    label: "Panel Amperage"
+    hint: "Main panel amperage (100A, 200A, etc.)."
+    profile_path: null
+
+  PANEL_AGE:
+    category: systems
+    label: "Panel Age"
+    hint: "Age of electrical panel."
+    profile_path: null
+
+  GFCI_OUTLET_LOCATIONS:
+    category: home_access
+    label: "GFCI Outlet Locations"
+    hint: "Where GFCI outlets are (kitchen, bath, etc.)."
+    profile_path: null
+
+  AFCI_CIRCUIT_LIST:
+    category: systems
+    label: "AFCI Circuit List"
+    hint: "Which circuits have AFCI protection."
+    profile_path: null
+
+  SURGE_PROTECTION_INFO:
+    category: systems
+    label: "Surge Protection Info"
+    hint: "Whole-house surge protection details."
+    profile_path: null
+
+  # ============================================================
+  # PLUMBING
+  # ============================================================
+  MAIN_WATER_SHUTOFF:
+    category: home_access
+    label: "Main Water Shutoff"
+    hint: "Location of main water shutoff valve."
+    profile_path: "critical_locations.water_shutoff.location"
+
+  SEWER_TYPE:
+    category: systems
+    label: "Sewer Type"
+    hint: "Municipal sewer or septic."
+    profile_path: null
+
+  PIPE_MATERIAL:
+    category: systems
+    label: "Pipe Material"
+    hint: "Type of pipes (copper, PVC, PEX, etc.)."
+    profile_path: null
+
+  WATER_PRESSURE_PSI:
+    category: systems
+    label: "Water Pressure PSI"
+    hint: "Your home's water pressure."
+    profile_path: null
+
+  DRAIN_VALVE_LOCATIONS:
+    category: home_access
+    label: "Drain Valve Locations"
+    hint: "Where drain valves are for winterizing."
+    profile_path: null
+
+  MAIN_CLEANOUT_LOCATION:
+    category: home_access
+    label: "Main Cleanout Location"
+    hint: "Where main sewer cleanout is."
+    profile_path: null
+
+  LAUNDRY_SHUTOFF_LOCATIONS:
+    category: home_access
+    label: "Laundry Shutoff Locations"
+    hint: "Shutoff valves for washer."
+    profile_path: null
+
+  EMERGENCY_PLUMBER:
+    category: vendors
+    label: "Emergency Plumber"
+    hint: "24-hour plumber name."
+    profile_path: null
+
+  EMERGENCY_PLUMBER_PHONE:
+    category: vendors
+    label: "Emergency Plumber Phone"
+    hint: "24-hour plumber phone."
+    profile_path: null
+
+  # ============================================================
+  # SEPTIC
+  # ============================================================
+  SEPTIC_TANK_LOCATION:
+    category: home_access
+    label: "Septic Tank Location"
+    hint: "Where your septic tank is buried."
+    profile_path: null
+
+  SEPTIC_TANK_SIZE:
+    category: systems
+    label: "Septic Tank Size"
+    hint: "Tank capacity in gallons."
+    profile_path: null
+
+  DRAIN_FIELD_LOCATION:
+    category: home_access
+    label: "Drain Field Location"
+    hint: "Location of septic drain field."
+    profile_path: null
+
+  SEPTIC_ACCESS_DESCRIPTION:
+    category: home_access
+    label: "Septic Access"
+    hint: "How to access tank for pumping."
+    profile_path: null
+
+  LAST_SEPTIC_PUMPING_DATE:
+    category: systems
+    label: "Last Septic Pumping"
+    hint: "When tank was last pumped."
+    profile_path: null
+
+  SEPTIC_COMPANY:
+    category: vendors
+    label: "Septic Company"
+    hint: "Your septic service company."
+    profile_path: null
+
+  SEPTIC_PHONE:
+    category: vendors
+    label: "Septic Phone"
+    hint: "Phone for septic service."
+    profile_path: null
+
+  COUNTY_HEALTH_DEPT:
+    category: vendors
+    label: "County Health Department"
+    hint: "Health dept for septic permits."
+    profile_path: null
+
+  HEALTH_DEPT_PHONE:
+    category: vendors
+    label: "Health Dept Phone"
+    hint: "Phone for health department."
+    profile_path: null
+
+  # ============================================================
+  # WELL WATER
+  # ============================================================
+  WELL_LOCATION:
+    category: home_access
+    label: "Well Location"
+    hint: "Where your well is located."
+    profile_path: null
+
+  WELL_DEPTH:
+    category: systems
+    label: "Well Depth"
+    hint: "Depth of your well."
+    profile_path: null
+
+  WELL_PUMP_TYPE:
+    category: systems
+    label: "Well Pump Type"
+    hint: "Submersible, jet pump, etc."
+    profile_path: null
+
+  PRESSURE_TANK_LOCATION:
+    category: home_access
+    label: "Pressure Tank Location"
+    hint: "Where pressure tank is."
+    profile_path: null
+
+  PRESSURE_GAUGE_LOCATION:
+    category: home_access
+    label: "Pressure Gauge Location"
+    hint: "Where to check water pressure."
+    profile_path: null
+
+  LAST_WELL_TEST_DATE:
+    category: systems
+    label: "Last Well Test Date"
+    hint: "When well water was last tested."
+    profile_path: null
+
+  WELL_SERVICE:
+    category: vendors
+    label: "Well Service"
+    hint: "Company that services your well."
+    profile_path: null
+
+  WELL_SERVICE_PHONE:
+    category: vendors
+    label: "Well Service Phone"
+    hint: "Phone for well service."
+    profile_path: null
+
+  LOCAL_WATER_TESTING_LAB:
+    category: vendors
+    label: "Water Testing Lab"
+    hint: "Lab for water testing."
+    profile_path: null
+
+  WATER_TESTING_LAB:
+    category: vendors
+    label: "Water Testing Lab"
+    hint: "Lab that tests your water."
+    profile_path: null
+
+  TESTING_LAB_PHONE:
+    category: vendors
+    label: "Testing Lab Phone"
+    hint: "Phone for water testing lab."
+    profile_path: null
+
+  # ============================================================
+  # WATER TREATMENT
+  # ============================================================
+  WATER_SOFTENER_LOCATION:
+    category: home_access
+    label: "Water Softener Location"
+    hint: "Where water softener is."
+    profile_path: null
+
+  SOFTENER_TYPE:
+    category: systems
+    label: "Softener Type"
+    hint: "Type of water softener."
+    profile_path: null
+
+  SOFTENER_SETTINGS:
+    category: systems
+    label: "Softener Settings"
+    hint: "Your softener settings."
+    profile_path: null
+
+  SALT_TYPE_USED:
+    category: systems
+    label: "Salt Type Used"
+    hint: "Salt type for softener."
+    profile_path: null
+
+  REGENERATION_SCHEDULE:
+    category: systems
+    label: "Regeneration Schedule"
+    hint: "When softener regenerates."
+    profile_path: null
+
+  FILTRATION_LOCATION:
+    category: home_access
+    label: "Filtration Location"
+    hint: "Where water filter is."
+    profile_path: null
+
+  FILTRATION_TYPE:
+    category: systems
+    label: "Filtration Type"
+    hint: "Type of water filtration."
+    profile_path: null
+
+  FILTRATION_INSTALL_DATE:
+    category: systems
+    label: "Filtration Install Date"
+    hint: "When filtration was installed."
+    profile_path: null
+
+  FILTER_TYPES_INSTALLED:
+    category: systems
+    label: "Filter Types Installed"
+    hint: "Types of filters in system."
+    profile_path: null
+
+  FILTER_SUPPLIER:
+    category: vendors
+    label: "Filter Supplier"
+    hint: "Where to buy replacement filters."
+    profile_path: null
+
+  WATER_TREATMENT_COMPANY:
+    category: vendors
+    label: "Water Treatment Company"
+    hint: "Company for water treatment."
+    profile_path: null
+
+  WATER_TREATMENT_PHONE:
+    category: vendors
+    label: "Water Treatment Phone"
+    hint: "Phone for water treatment."
+    profile_path: null
+
+  WATER_TREATMENT_DESCRIPTION:
+    category: systems
+    label: "Water Treatment Description"
+    hint: "Description of your water treatment."
+    profile_path: null
+
+  BACKFLOW_PREVENTER_LOCATION:
+    category: home_access
+    label: "Backflow Preventer Location"
+    hint: "Where backflow preventer is."
+    profile_path: null
+
+  BACKFLOW_TESTER:
+    category: vendors
+    label: "Backflow Tester"
+    hint: "Who tests your backflow preventer."
+    profile_path: null
+
+  BACKFLOW_PHONE:
+    category: vendors
+    label: "Backflow Phone"
+    hint: "Phone for backflow testing."
+    profile_path: null
+
+  # ============================================================
+  # SUMP PUMP
+  # ============================================================
+  SUMP_PUMP_TYPE:
+    category: systems
+    label: "Sump Pump Type"
+    hint: "Type of sump pump."
+    profile_path: null
+
+  SUMP_DISCHARGE_LOCATION:
+    category: home_access
+    label: "Sump Discharge Location"
+    hint: "Where sump pump discharges."
+    profile_path: null
+
+  SUMP_BACKUP_TYPE:
+    category: systems
+    label: "Sump Backup Type"
+    hint: "Backup sump pump system."
+    profile_path: null
+
+  SUMP_BATTERY_TYPE:
+    category: systems
+    label: "Sump Battery Type"
+    hint: "Battery for backup pump."
+    profile_path: null
+
+  SUMP_ALARM_INFO:
+    category: systems
+    label: "Sump Alarm Info"
+    hint: "High water alarm details."
+    profile_path: null
+
+  # ============================================================
+  # BASEMENT
+  # ============================================================
+  BASEMENT_TYPE:
+    category: systems
+    label: "Basement Type"
+    hint: "Finished, unfinished, partial, etc."
+    profile_path: null
+
+  BASEMENT_FLOOR_DRAIN_LOCATION:
+    category: home_access
+    label: "Basement Floor Drain"
+    hint: "Location of floor drain."
+    profile_path: null
+
+  KNOWN_WATER_ENTRY_POINTS:
+    category: home_access
+    label: "Known Water Entry Points"
+    hint: "Where water has entered before."
+    profile_path: null
+
+  WATERPROOFING_COMPANY:
+    category: vendors
+    label: "Waterproofing Company"
+    hint: "Basement waterproofing company."
+    profile_path: null
+
+  WATERPROOFING_PHONE:
+    category: vendors
+    label: "Waterproofing Phone"
+    hint: "Phone for waterproofing."
+    profile_path: null
+
+  # ============================================================
+  # SOLAR
+  # ============================================================
+  SOLAR_PANEL_COUNT:
+    category: systems
+    label: "Solar Panel Count"
+    hint: "Number of solar panels."
+    profile_path: null
+
+  SOLAR_SYSTEM_SIZE:
+    category: systems
+    label: "Solar System Size"
+    hint: "System size in kW."
+    profile_path: null
+
+  SOLAR_PANEL_LOCATION:
+    category: home_access
+    label: "Solar Panel Location"
+    hint: "Where panels are mounted."
+    profile_path: null
+
+  INVERTER_LOCATION:
+    category: home_access
+    label: "Inverter Location"
+    hint: "Where solar inverter is."
+    profile_path: null
+
+  INVERTER_TYPE:
+    category: systems
+    label: "Inverter Type"
+    hint: "Type of solar inverter."
+    profile_path: null
+
+  INVERTER_MANUFACTURER:
+    category: systems
+    label: "Inverter Manufacturer"
+    hint: "Inverter brand/manufacturer."
+    profile_path: null
+
+  INVERTER_SUPPORT_PHONE:
+    category: vendors
+    label: "Inverter Support Phone"
+    hint: "Manufacturer support number."
+    profile_path: null
+
+  SOLAR_INSTALL_DATE:
+    category: systems
+    label: "Solar Install Date"
+    hint: "When solar was installed."
+    profile_path: null
+
+  SOLAR_INSTALLER:
+    category: vendors
+    label: "Solar Installer"
+    hint: "Company that installed solar."
+    profile_path: null
+
+  SOLAR_INSTALLER_PHONE:
+    category: vendors
+    label: "Solar Installer Phone"
+    hint: "Phone for solar installer."
+    profile_path: null
+
+  SOLAR_MONITORING_SYSTEM:
+    category: systems
+    label: "Solar Monitoring System"
+    hint: "How to monitor production."
+    profile_path: null
+
+  UTILITY_SOLAR_DEPARTMENT:
+    category: vendors
+    label: "Utility Solar Department"
+    hint: "Utility contact for solar."
+    profile_path: null
+
+  PANEL_BATTERY_LOCATION:
+    category: home_access
+    label: "Battery Location"
+    hint: "Where battery storage is."
+    profile_path: null
+
+  # ============================================================
+  # GENERATOR
+  # ============================================================
+  GENERATOR_TYPE:
+    category: systems
+    label: "Generator Type"
+    hint: "Portable, standby, etc."
+    profile_path: null
+
+  GENERATOR_CAPACITY:
+    category: systems
+    label: "Generator Capacity"
+    hint: "Generator wattage."
+    profile_path: null
+
+  GENERATOR_FUEL:
+    category: systems
+    label: "Generator Fuel"
+    hint: "Fuel type for generator."
+    profile_path: null
+
+  FUEL_STORAGE_AMOUNT:
+    category: systems
+    label: "Fuel Storage Amount"
+    hint: "How much fuel you keep on hand."
+    profile_path: null
+
+  FUEL_SUPPLIER:
+    category: vendors
+    label: "Fuel Supplier"
+    hint: "Where to get generator fuel."
+    profile_path: null
+
+  FUEL_SUPPLIER_PHONE:
+    category: vendors
+    label: "Fuel Supplier Phone"
+    hint: "Phone for fuel supplier."
+    profile_path: null
+
+  TRANSFER_SWITCH_INFO:
+    category: systems
+    label: "Transfer Switch Info"
+    hint: "Details about transfer switch."
+    profile_path: null
+
+  GENERATOR_SERVICE:
+    category: vendors
+    label: "Generator Service"
+    hint: "Generator service company."
+    profile_path: null
+
+  GENERATOR_SERVICE_PHONE:
+    category: vendors
+    label: "Generator Service Phone"
+    hint: "Phone for generator service."
+    profile_path: null
+
+  # ============================================================
+  # EV CHARGER
+  # ============================================================
+  CHARGER_LOCATION:
+    category: home_access
+    label: "EV Charger Location"
+    hint: "Where EV charger is."
+    profile_path: null
+
+  CHARGER_TYPE:
+    category: systems
+    label: "Charger Type"
+    hint: "Level 1, Level 2, etc."
+    profile_path: null
+
+  CHARGER_BRAND:
+    category: systems
+    label: "Charger Brand"
+    hint: "EV charger brand."
+    profile_path: null
+
+  CHARGER_CIRCUIT_INFO:
+    category: systems
+    label: "Charger Circuit Info"
+    hint: "Which circuit powers charger."
+    profile_path: null
+
+  CHARGER_INSTALL_DATE:
+    category: systems
+    label: "Charger Install Date"
+    hint: "When charger was installed."
+    profile_path: null
+
+  CHARGER_MANUFACTURER_SUPPORT:
+    category: vendors
+    label: "Charger Manufacturer Support"
+    hint: "Support number for charger."
+    profile_path: null
+
+  INSTALLER_PHONE:
+    category: vendors
+    label: "Installer Phone"
+    hint: "Phone for charger installer."
+    profile_path: null
+
+  # ============================================================
+  # FIREPLACE
+  # ============================================================
+  FIREPLACE_TYPE:
+    category: systems
+    label: "Fireplace Type"
+    hint: "Wood, gas, electric, etc."
+    profile_path: null
+
+  FIREPLACE_GAS_SHUTOFF:
+    category: home_access
+    label: "Fireplace Gas Shutoff"
+    hint: "Gas shutoff for fireplace."
+    profile_path: null
+
+  DAMPER_LOCATION:
+    category: home_access
+    label: "Damper Location"
+    hint: "Where fireplace damper is."
+    profile_path: null
+
+  CHIMNEY_TYPE:
+    category: systems
+    label: "Chimney Type"
+    hint: "Masonry, metal, etc."
+    profile_path: null
+
+  CHIMNEY_SWEEP_NAME:
+    category: vendors
+    label: "Chimney Sweep Name"
+    hint: "Chimney cleaning service."
+    profile_path: null
+
+  CHIMNEY_SWEEP_PHONE:
+    category: vendors
+    label: "Chimney Sweep Phone"
+    hint: "Phone for chimney sweep."
+    profile_path: null
+
+  LAST_CHIMNEY_INSPECTION_DATE:
+    category: systems
+    label: "Last Chimney Inspection"
+    hint: "When chimney was last inspected."
+    profile_path: null
+
+  # ============================================================
+  # SECURITY
+  # ============================================================
+  SECURITY_PROVIDER:
+    category: vendors
+    label: "Security Provider"
+    hint: "Your security monitoring company."
+    profile_path: null
+
+  MONITORING_COMPANY:
+    category: vendors
+    label: "Monitoring Company"
+    hint: "Company that monitors your system."
+    profile_path: null
+
+  MONITORING_PHONE:
+    category: vendors
+    label: "Monitoring Phone"
+    hint: "Phone for monitoring company."
+    profile_path: null
+
+  SECURITY_PANEL_LOCATION:
+    category: home_access
+    label: "Security Panel Location"
+    hint: "Where main security panel is."
+    profile_path: null
+
+  SECURITY_INSTALLER:
+    category: vendors
+    label: "Security Installer"
+    hint: "Who installed your system."
+    profile_path: null
+
+  MASTER_CODE_LOCATION_REFERENCE:
+    category: home_access
+    label: "Master Code Reference"
+    hint: "Where you store master code info."
+    profile_path: null
+
+  DURESS_CODE_INFO:
+    category: home_access
+    label: "Duress Code Info"
+    hint: "Silent alarm code details."
+    profile_path: null
+
+  CO_DETECTOR_LOCATIONS:
+    category: home_access
+    label: "CO Detector Locations"
+    hint: "Where CO detectors are."
+    profile_path: null
+
+  LOCAL_POLICE_NON_EMERGENCY:
+    category: vendors
+    label: "Police Non-Emergency"
+    hint: "Local police non-emergency number."
+    profile_path: null
+
+  # ============================================================
+  # SMART HOME
+  # ============================================================
+  SMART_HOME_HUB:
+    category: systems
+    label: "Smart Home Hub"
+    hint: "Your smart home hub/platform."
+    profile_path: null
+
+  HUB_LOCATION:
+    category: home_access
+    label: "Hub Location"
+    hint: "Where smart hub is."
+    profile_path: null
+
+  SMART_DEVICE_LIST:
+    category: systems
+    label: "Smart Device List"
+    hint: "List of smart devices."
+    profile_path: null
+
+  WIFI_ROUTER_MODEL:
+    category: systems
+    label: "WiFi Router Model"
+    hint: "Your router model."
+    profile_path: null
+
+  # ============================================================
+  # ROOF
+  # ============================================================
+  ROOF_MATERIAL:
+    category: systems
+    label: "Roof Material"
+    hint: "Shingle, tile, metal, etc."
+    profile_path: null
+
+  ROOF_AGE:
+    category: systems
+    label: "Roof Age"
+    hint: "Age of your roof."
+    profile_path: null
+
+  LAST_ROOF_INSPECTION_DATE:
+    category: systems
+    label: "Last Roof Inspection"
+    hint: "When roof was last inspected."
+    profile_path: null
+
+  ROOF_WARRANTY_INFO:
+    category: systems
+    label: "Roof Warranty Info"
+    hint: "Warranty details for roof."
+    profile_path: null
+
+  ROOF_KNOWN_ISSUES:
+    category: systems
+    label: "Roof Known Issues"
+    hint: "Known problems with roof."
+    profile_path: null
+
+  ROOFER_NAME:
+    category: vendors
+    label: "Roofer Name"
+    hint: "Your roofing company."
+    profile_path: null
+
+  ROOFER_PHONE:
+    category: vendors
+    label: "Roofer Phone"
+    hint: "Phone for roofer."
+    profile_path: null
+
+  # ============================================================
+  # ATTIC
+  # ============================================================
+  INSULATION_TYPE:
+    category: systems
+    label: "Insulation Type"
+    hint: "Fiberglass, blown-in, etc."
+    profile_path: null
+
+  INSULATION_DEPTH:
+    category: systems
+    label: "Insulation Depth"
+    hint: "How thick attic insulation is."
+    profile_path: null
+
+  INSULATION_COMPANY:
+    category: vendors
+    label: "Insulation Company"
+    hint: "Insulation installer."
+    profile_path: null
+
+  INSULATION_PHONE:
+    category: vendors
+    label: "Insulation Phone"
+    hint: "Phone for insulation company."
+    profile_path: null
+
+  # ============================================================
+  # RADON
+  # ============================================================
+  RADON_SYSTEM_TYPE:
+    category: systems
+    label: "Radon System Type"
+    hint: "Active or passive mitigation."
+    profile_path: null
+
+  RADON_FAN_LOCATION:
+    category: home_access
+    label: "Radon Fan Location"
+    hint: "Where radon fan is."
+    profile_path: null
+
+  RADON_EXHAUST_LOCATION:
+    category: home_access
+    label: "Radon Exhaust Location"
+    hint: "Where radon exhausts."
+    profile_path: null
+
+  MANOMETER_LOCATION:
+    category: home_access
+    label: "Manometer Location"
+    hint: "Where to check system pressure."
+    profile_path: null
+
+  RADON_SYSTEM_INSTALL_DATE:
+    category: systems
+    label: "Radon System Install Date"
+    hint: "When system was installed."
+    profile_path: null
+
+  RADON_CONTRACTOR:
+    category: vendors
+    label: "Radon Contractor"
+    hint: "Radon mitigation company."
+    profile_path: null
+
+  RADON_CONTRACTOR_PHONE:
+    category: vendors
+    label: "Radon Contractor Phone"
+    hint: "Phone for radon contractor."
+    profile_path: null
+
+  RADON_TEST_SOURCE:
+    category: vendors
+    label: "Radon Test Source"
+    hint: "Where to get radon tests."
+    profile_path: null
+
+  # ============================================================
+  # APPLIANCES
+  # ============================================================
+  APPLIANCE_REPAIR_COMPANY:
+    category: vendors
+    label: "Appliance Repair Company"
+    hint: "Appliance repair service."
+    profile_path: null
+
+  APPLIANCE_REPAIR_PHONE:
+    category: vendors
+    label: "Appliance Repair Phone"
+    hint: "Phone for appliance repair."
+    profile_path: null
+
+  REFRIGERATOR_MODEL:
+    category: systems
+    label: "Refrigerator Model"
+    hint: "Your refrigerator model."
+    profile_path: null
+
+  REFRIGERATOR_LOCATION:
+    category: home_access
+    label: "Refrigerator Location"
+    hint: "Where refrigerator is."
+    profile_path: null
+
+  FRIDGE_FILTER_TYPE:
+    category: systems
+    label: "Fridge Filter Type"
+    hint: "Water filter for refrigerator."
+    profile_path: null
+
+  ICE_MAKER_INFO:
+    category: systems
+    label: "Ice Maker Info"
+    hint: "Ice maker details."
+    profile_path: null
+
+  DISHWASHER_MODEL:
+    category: systems
+    label: "Dishwasher Model"
+    hint: "Your dishwasher model."
+    profile_path: null
+
+  DISHWASHER_LOCATION:
+    category: home_access
+    label: "Dishwasher Location"
+    hint: "Where dishwasher is."
+    profile_path: null
+
+  DISHWASHER_SHUTOFF:
+    category: home_access
+    label: "Dishwasher Shutoff"
+    hint: "Water shutoff for dishwasher."
+    profile_path: null
+
+  DISPOSAL_LOCATION:
+    category: home_access
+    label: "Disposal Location"
+    hint: "Garbage disposal location."
+    profile_path: null
+
+  DISPOSAL_RESET_LOCATION:
+    category: home_access
+    label: "Disposal Reset Location"
+    hint: "Where reset button is."
+    profile_path: null
+
+  DISPOSAL_SHUTOFF:
+    category: home_access
+    label: "Disposal Shutoff"
+    hint: "How to shut off disposal."
+    profile_path: null
+
+  WASHER_LOCATION:
+    category: home_access
+    label: "Washer Location"
+    hint: "Where washing machine is."
+    profile_path: null
+
+  DRYER_LOCATION:
+    category: home_access
+    label: "Dryer Location"
+    hint: "Where dryer is."
+    profile_path: null
+
+  DRYER_TYPE:
+    category: systems
+    label: "Dryer Type"
+    hint: "Gas or electric dryer."
+    profile_path: null
+
+  DRYER_VENT_PATH:
+    category: home_access
+    label: "Dryer Vent Path"
+    hint: "How dryer vents outside."
+    profile_path: null
+
+  # ============================================================
+  # IRRIGATION EXTENDED
+  # ============================================================
+  IRRIGATION_CONTROLLER_LOCATION:
+    category: home_access
+    label: "Irrigation Controller"
+    hint: "Where sprinkler controller is."
+    profile_path: null
+
+  IRRIGATION_ZONE_COUNT:
+    category: systems
+    label: "Irrigation Zone Count"
+    hint: "Number of watering zones."
+    profile_path: null
+
+  IRRIGATION_ZONE_MAP_LOCATION:
+    category: home_access
+    label: "Zone Map Location"
+    hint: "Where zone map is kept."
+    profile_path: null
+
+  IRRIGATION_MAIN_SHUTOFF:
+    category: home_access
+    label: "Irrigation Main Shutoff"
+    hint: "Main water shutoff for irrigation."
+    profile_path: null
+
+  RAIN_SENSOR_LOCATION:
+    category: home_access
+    label: "Rain Sensor Location"
+    hint: "Where rain sensor is."
+    profile_path: null
+
+  LOCAL_WATERING_RULES:
+    category: systems
+    label: "Local Watering Rules"
+    hint: "Local watering restrictions."
+    profile_path: null
+
+  ZONE_1_DESCRIPTION:
+    category: systems
+    label: "Zone 1 Description"
+    hint: "What zone 1 covers."
+    profile_path: null
+
+  ZONE_2_DESCRIPTION:
+    category: systems
+    label: "Zone 2 Description"
+    hint: "What zone 2 covers."
+    profile_path: null
+
+  ZONE_3_DESCRIPTION:
+    category: systems
+    label: "Zone 3 Description"
+    hint: "What zone 3 covers."
+    profile_path: null
+
+  # ============================================================
+  # PEST CONTROL
+  # ============================================================
+  PEST_CONTROL_COMPANY:
+    category: vendors
+    label: "Pest Control Company"
+    hint: "Your pest control service."
+    profile_path: null
+
+  PEST_CONTROL_PHONE:
+    category: vendors
+    label: "Pest Control Phone"
+    hint: "Phone for pest control."
+    profile_path: null
+
+  TERMITE_BOND_INFO:
+    category: systems
+    label: "Termite Bond Info"
+    hint: "Termite bond/warranty details."
+    profile_path: null
+
+  WILDLIFE_REMOVAL_COMPANY:
+    category: vendors
+    label: "Wildlife Removal"
+    hint: "Wildlife removal service."
+    profile_path: null
+
+  WILDLIFE_PHONE:
+    category: vendors
+    label: "Wildlife Phone"
+    hint: "Phone for wildlife removal."
+    profile_path: null
+
+  MOLD_REMEDIATION_COMPANY:
+    category: vendors
+    label: "Mold Remediation"
+    hint: "Mold removal service."
+    profile_path: null
+
+  MOLD_COMPANY:
+    category: vendors
+    label: "Mold Company"
+    hint: "Mold inspection/remediation."
+    profile_path: null
+
+  MOLD_PHONE:
+    category: vendors
+    label: "Mold Phone"
+    hint: "Phone for mold service."
+    profile_path: null
+
+  STRUCTURAL_ENGINEER:
+    category: vendors
+    label: "Structural Engineer"
+    hint: "Structural engineering firm."
+    profile_path: null
+
+  STRUCTURAL_PHONE:
+    category: vendors
+    label: "Structural Phone"
+    hint: "Phone for structural engineer."
+    profile_path: null
+
+  # ============================================================
+  # CHILDREN
+  # ============================================================
+  CHILD_1_NAME:
+    category: people
+    label: "Child 1 Name"
+    hint: "Name of first child."
+    profile_path: null
+
+  CHILD_1_AGE:
+    category: people
+    label: "Child 1 Age"
+    hint: "Age of first child."
+    profile_path: null
+
+  CHILD_2_NAME:
+    category: people
+    label: "Child 2 Name"
+    hint: "Name of second child."
+    profile_path: null
+
+  CHILD_2_AGE:
+    category: people
+    label: "Child 2 Age"
+    hint: "Age of second child."
+    profile_path: null
+
+  PEDIATRICIAN_NAME:
+    category: vendors
+    label: "Pediatrician Name"
+    hint: "Your children's doctor."
+    profile_path: null
+
+  PEDIATRICIAN_PHONE:
+    category: vendors
+    label: "Pediatrician Phone"
+    hint: "Phone for pediatrician."
+    profile_path: null
+
+  # ============================================================
+  # ELDERLY
+  # ============================================================
+  ELDERLY_HOUSEHOLD_MEMBER_NAME:
+    category: people
+    label: "Elderly Member Name"
+    hint: "Name of elderly household member."
+    profile_path: null
+
+  MOBILITY_CONSIDERATIONS:
+    category: systems
+    label: "Mobility Considerations"
+    hint: "Special mobility needs."
+    profile_path: null
+
+  MEDICAL_CONSIDERATIONS:
+    category: systems
+    label: "Medical Considerations"
+    hint: "Medical needs to consider."
+    profile_path: null
+
+  MEDICAL_ALERT_PROVIDER:
+    category: vendors
+    label: "Medical Alert Provider"
+    hint: "Medical alert service."
+    profile_path: null
+
+  MEDICAL_ALERT_PHONE:
+    category: vendors
+    label: "Medical Alert Phone"
+    hint: "Phone for medical alert."
+    profile_path: null
+
+  PHYSICIAN_NAME:
+    category: vendors
+    label: "Physician Name"
+    hint: "Primary care physician."
+    profile_path: null
+
+  PHYSICIAN_PHONE:
+    category: vendors
+    label: "Physician Phone"
+    hint: "Phone for physician."
+    profile_path: null
+
+  # ============================================================
+  # PETS
+  # ============================================================
+  PET_1_NAME:
+    category: people
+    label: "Pet 1 Name"
+    hint: "Name of first pet."
+    profile_path: null
+
+  PET_1_TYPE:
+    category: people
+    label: "Pet 1 Type"
+    hint: "Type of first pet."
+    profile_path: null
+
+  PET_1_BREED:
+    category: people
+    label: "Pet 1 Breed"
+    hint: "Breed of first pet."
+    profile_path: null
+
+  PET_1_AGE:
+    category: people
+    label: "Pet 1 Age"
+    hint: "Age of first pet."
+    profile_path: null
+
+  PET_1_MICROCHIP_NUMBER:
+    category: people
+    label: "Pet 1 Microchip"
+    hint: "Microchip number for first pet."
+    profile_path: null
+
+  PET_2_NAME:
+    category: people
+    label: "Pet 2 Name"
+    hint: "Name of second pet."
+    profile_path: null
+
+  PET_2_TYPE:
+    category: people
+    label: "Pet 2 Type"
+    hint: "Type of second pet."
+    profile_path: null
+
+  PET_2_BREED:
+    category: people
+    label: "Pet 2 Breed"
+    hint: "Breed of second pet."
+    profile_path: null
+
+  PET_2_AGE:
+    category: people
+    label: "Pet 2 Age"
+    hint: "Age of second pet."
+    profile_path: null
+
+  PET_2_MICROCHIP_NUMBER:
+    category: people
+    label: "Pet 2 Microchip"
+    hint: "Microchip number for second pet."
+    profile_path: null
+
+  EMERGENCY_VET:
+    category: vendors
+    label: "Emergency Vet"
+    hint: "24-hour emergency vet."
+    profile_path: null
+
+  EMERGENCY_VET_PHONE:
+    category: vendors
+    label: "Emergency Vet Phone"
+    hint: "Phone for emergency vet."
+    profile_path: null
+
+  VET_ADDRESS:
+    category: vendors
+    label: "Vet Address"
+    hint: "Address of regular vet."
+    profile_path: null
+
+  PET_EVACUATION_PLAN:
+    category: systems
+    label: "Pet Evacuation Plan"
+    hint: "Plan for evacuating with pets."
+    profile_path: null
+
+  # ============================================================
+  # ALLERGIES
+  # ============================================================
+  KNOWN_ALLERGENS:
+    category: people
+    label: "Known Allergens"
+    hint: "List of known allergies."
+    profile_path: null
+
+  ALLERGY_SUFFERER_NAME:
+    category: people
+    label: "Allergy Sufferer Name"
+    hint: "Who has allergies."
+    profile_path: null
+
+  ALLERGY_SEVERITY:
+    category: systems
+    label: "Allergy Severity"
+    hint: "How severe the allergies are."
+    profile_path: null
+
+  ALLERGIST_NAME:
+    category: vendors
+    label: "Allergist Name"
+    hint: "Your allergist."
+    profile_path: null
+
+  ALLERGIST_PHONE:
+    category: vendors
+    label: "Allergist Phone"
+    hint: "Phone for allergist."
+    profile_path: null
+
+  # ============================================================
+  # EMERGENCY CONTACTS ADDITIONAL
+  # ============================================================
+  EMERGENCY_CONTACT_NAME:
+    category: people
+    label: "Emergency Contact Name"
+    hint: "Name of emergency contact."
+    profile_path: "contacts_vendors.emergency_contacts[0].name"
+
+  EMERGENCY_CONTACT_PHONE:
+    category: people
+    label: "Emergency Contact Phone"
+    hint: "Phone for emergency contact."
+    profile_path: "contacts_vendors.emergency_contacts[0].phone"
+
+  WATER_UTILITY:
+    category: vendors
+    label: "Water Utility"
+    hint: "Your water utility company."
+    profile_path: "contacts_vendors.water.company"
+
+  WATER_UTILITY_PHONE:
+    category: vendors
+    label: "Water Utility Phone"
+    hint: "Phone for water utility."
+    profile_path: "contacts_vendors.water.phone"
+
+  UTILITY_COMPANY:
+    category: vendors
+    label: "Utility Company"
+    hint: "Your utility company."
+    profile_path: null

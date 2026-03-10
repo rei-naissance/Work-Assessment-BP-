@@ -1,0 +1,879 @@
+# =============================================================================
+# LANDSCAPING.YAML — Lawn, Landscape, and Drainage Maintenance
+# =============================================================================
+# Comprehensive guides for lawn care, trees, shrubs, and water management
+# Region-aware with seasonal scheduling by climate zone
+# =============================================================================
+
+landscaping_general:
+  title: "Lawn & Landscaping Master Guide"
+  trigger: has_yard
+  section: 5
+  category: landscaping
+  overview: "A healthy lawn increases property value by 5-15% and provides natural cooling. Proper care means mowing, watering, and feeding at the right times — not harder work, smarter scheduling."
+
+  your_lawn:
+    grass_type: "[GRASS_TYPE]"  # bermuda, zoysia, fescue, st_augustine, kentucky_bluegrass
+    lawn_size: "[LAWN_SQUARE_FEET]"
+    soil_type: "[SOIL_TYPE]"  # clay, loam, sandy
+    irrigation: "[IRRIGATION_TYPE]"  # sprinkler_system, hose, drip, none
+    last_soil_test: "[SOIL_TEST_DATE]"
+
+  mowing_fundamentals:
+    golden_rule: "Never remove more than 1/3 of the grass blade — cutting too short stresses roots"
+    height_by_grass_type:
+      bermuda: "1-1.5 inches"
+      zoysia: "1.5-2 inches"
+      st_augustine: "3-4 inches"
+      fescue: "3-4 inches"
+      kentucky_bluegrass: "2.5-3.5 inches"
+    frequency:
+      growing_season: "Weekly or as needed to maintain 1/3 rule"
+      dormant_season: "Every 2-3 weeks or as needed"
+    technique:
+      - "Alternate mowing patterns each time (prevents ruts and lean)"
+      - "Mow when grass is dry (cleaner cut, less disease)"
+      - "Leave clippings on lawn (returns nitrogen) unless heavy"
+      - "Sharpen blades: dull cuts tear grass, inviting disease"
+    blade_sharpening:
+      frequency: "Every 20-25 hours of use or at least 2x per season"
+      signs_dull: "Grass tips look brown/ragged after mowing"
+
+  watering_guide:
+    rule: "Deep and infrequent beats shallow and frequent"
+    amount: "1 inch per week (including rainfall)"
+    timing:
+      best: "Early morning (4-10 AM) — minimal evaporation, grass dries before nightfall"
+      avoid: "Evening watering promotes fungal disease"
+    measurement:
+      method: "Place empty tuna can in lawn, run sprinkler until 1 inch collected"
+      sprinkler_systems: "Check each zone delivers even coverage monthly"
+    drought_tips:
+      - "Raise mowing height — taller grass shades roots"
+      - "Allow lawn to go dormant rather than light watering"
+      - "Focus water on high-visibility areas during restrictions"
+
+  fertilizing_schedule:
+    soil_test_first: "Always soil test before fertilizing — saves money and prevents over-application"
+    soil_test_frequency: "Every 2-3 years"
+    timing_by_grass:
+      warm_season: # bermuda, zoysia, st_augustine
+        primary: "Late spring through summer (April-August)"
+        avoid: "Fall fertilizing pushes growth before dormancy"
+      cool_season: # fescue, bluegrass
+        primary: "Early fall (September) and late spring (April-May)"
+        avoid: "Summer fertilizing stresses grass in heat"
+    application:
+      - "Apply when grass is dry but soil is moist"
+      - "Use broadcast spreader for even coverage"
+      - "Water lightly after application"
+      - "Don't fertilize before heavy rain (runoff pollution)"
+
+  annual_lawn_calendar:
+    early_spring:
+      - "Remove debris, dethatch if needed (thatch > 0.5 inch)"
+      - "Apply pre-emergent weed control (before soil hits 55°F)"
+      - "First mow when grass actively growing"
+      - "Service mower: oil, spark plug, blade sharpening"
+    late_spring:
+      - "Begin regular mowing schedule"
+      - "Spot-treat weeds as they appear"
+      - "First fertilizer application for warm-season grass"
+    summer:
+      - "Maintain consistent watering schedule"
+      - "Raise mowing height during heat stress"
+      - "Monitor for pest and disease"
+      - "Sharpen blades mid-season"
+    early_fall:
+      - "Overseed thin areas (best time for cool-season grass)"
+      - "Aerate compacted areas"
+      - "Apply fall fertilizer (cool-season grass)"
+      - "Lower mowing height gradually before winter"
+    late_fall:
+      - "Final mow at lower height to prevent matting"
+      - "Rake or mulch fallen leaves"
+      - "Winterize irrigation system before first freeze"
+      - "Clean and store mower properly"
+
+  common_problems:
+    brown_patches:
+      possible_causes: "Drought, fungal disease, grub damage, dog urine"
+      diagnose: "Pull on brown grass — if it lifts easily like carpet, likely grubs"
+      fungal_indicators: "Rings or irregular patches, white/gray coating in morning"
+    bare_spots:
+      causes: "Heavy traffic, shade, pet damage, disease"
+      fix: "Rake, loosen soil, seed, cover lightly with straw, keep moist"
+    weeds:
+      prevention: "Thick healthy lawn is best weed prevention"
+      crabgrass: "Pre-emergent in early spring before germination"
+      broadleaf: "Post-emergent herbicide or manual removal"
+    compacted_soil:
+      signs: "Water runs off rather than soaking in, thin grass"
+      fix: "Core aeration in fall (warm-season) or spring (cool-season)"
+
+  equipment_maintenance:
+    mower:
+      before_each_use: "Check oil level, inspect blade"
+      monthly: "Clean underside, check tire pressure"
+      annually: "Change oil, replace spark plug, sharpen/replace blade, clean air filter"
+    string_trimmer:
+      after_use: "Clean debris from guard and head"
+      monthly: "Check line feed mechanism, inspect spark arrestor"
+    blower:
+      monthly: "Clean air filter, inspect fuel lines"
+
+  diy_vs_professional:
+    diy_tasks:
+      - "Regular mowing, edging, trimming"
+      - "Basic fertilizing and weed control"
+      - "Overseeding small areas"
+      - "Simple irrigation adjustments"
+    hire_professional:
+      - "Soil testing and amendment planning"
+      - "Major aeration or dethatching"
+      - "Persistent pest or disease issues"
+      - "Large-scale overseeding or sod installation"
+      - "Irrigation system installation or major repair"
+    lawn_service: "[LAWN_SERVICE_NAME] — [LAWN_SERVICE_PHONE]"
+
+  regional_notes:
+    southeast: "Warm-season grasses (bermuda, zoysia, st_augustine) dominate. Watch for chinch bugs in st_augustine, fungal issues in high humidity."
+    northeast: "Cool-season fescue and bluegrass. Shorter growing season. Fall is prime overseeding time."
+    midwest: "Mix of cool and transition zone grasses. Late fall fertilizing critical for spring green-up."
+    southwest: "Water conservation critical. Consider xeriscaping. Buffalo grass and bermuda handle heat."
+    west: "Varies by elevation. Many areas have water restrictions — plan accordingly."
+
+# -----------------------------------------------------------------------------
+
+landscaping_trees_shrubs:
+  title: "Tree & Shrub Care Guide"
+  trigger: has_trees_or_shrubs
+  section: 5
+  category: landscaping
+  overview: "Mature trees can add $1,000-10,000 to property value and reduce cooling costs by 25%. Proper care extends their life and prevents expensive removal."
+
+  your_trees:
+    tree_1:
+      species: "[TREE_1_SPECIES]"
+      location: "[TREE_1_LOCATION]"
+      approximate_age: "[TREE_1_AGE]"
+      last_inspection: "[TREE_1_INSPECTION_DATE]"
+    tree_2:
+      species: "[TREE_2_SPECIES]"
+      location: "[TREE_2_LOCATION]"
+      approximate_age: "[TREE_2_AGE]"
+      last_inspection: "[TREE_2_INSPECTION_DATE]"
+
+  tree_inspection_checklist:
+    frequency: "Twice yearly (spring and fall) plus after major storms"
+    trunk:
+      - "Look for cracks, splits, or cavities"
+      - "Check for fungal growth (mushrooms, conks) — signs of internal decay"
+      - "Inspect for bark damage, peeling, or cankers"
+      - "Note any lean changes from previous inspection"
+    branches:
+      - "Dead branches (no leaves, brittle, bark falling off)"
+      - "Crossing or rubbing branches"
+      - "Hanging or broken branches (widow-makers)"
+      - "Branches within 10 feet of house or power lines"
+    roots:
+      - "Visible root rot or mushrooms at base"
+      - "Heaving soil around root zone"
+      - "Root damage from construction or digging"
+    canopy:
+      - "Overall shape and balance"
+      - "Discolored or sparse foliage"
+      - "Premature leaf drop"
+      - "Signs of pest infestation"
+
+  pruning_guide:
+    when_to_prune:
+      dead_damaged: "Anytime — remove promptly"
+      most_trees: "Late winter/early spring while dormant"
+      spring_flowering: "Immediately after blooming"
+      avoid: "Late summer through fall (stimulates growth before dormancy)"
+    what_to_prune:
+      - "Dead, damaged, or diseased branches (3 D's)"
+      - "Branches crossing or rubbing"
+      - "Water sprouts (vertical shoots from branches)"
+      - "Suckers (shoots from base or roots)"
+      - "Branches creating clearance issues"
+    how_to_prune:
+      - "Cut just outside branch collar (the swelling where branch meets trunk)"
+      - "Don't leave stubs — they invite decay"
+      - "For branches over 2 inches, use 3-cut method to prevent bark tearing"
+      - "Don't top trees — causes weak regrowth and decay"
+    tools:
+      hand_pruners: "Branches up to 3/4 inch"
+      loppers: "Branches 3/4 to 2 inches"
+      pruning_saw: "Branches over 2 inches"
+      pole_pruner: "Branches you can't reach from ground"
+    safety:
+      - "Never prune near power lines — call utility company"
+      - "Wear safety glasses and gloves"
+      - "Don't climb trees with chainsaw — leave to professionals"
+      - "Be aware of falling branches"
+
+  mulching:
+    benefits: "Retains moisture, moderates soil temperature, suppresses weeds, improves soil"
+    proper_technique:
+      depth: "2-4 inches"
+      extent: "Out to drip line if possible, minimum 2-3 foot radius"
+      critical: "Keep mulch 3-6 inches away from trunk (mulch volcano = tree death)"
+    material: "Shredded hardwood, pine bark, or wood chips"
+    refresh: "Add mulch annually to maintain depth"
+    avoid:
+      - "Piling mulch against trunk (causes rot)"
+      - "Using plastic underneath (prevents air and water)"
+      - "Fresh grass clippings (can mat and mold)"
+
+  watering_trees:
+    newly_planted:
+      frequency: "Weekly deep watering for first 2 years"
+      amount: "10-15 gallons per inch of trunk diameter"
+      method: "Slow trickle at base, soaker hose, or tree watering bag"
+    established_trees:
+      when: "During extended drought (3+ weeks without rain)"
+      how: "Deep soaking once per week rather than frequent light watering"
+      note: "Water at drip line, not trunk — that's where absorbing roots are"
+
+  shrub_maintenance:
+    planting_distance: "Plant at least 3 feet from house foundation"
+    pruning_schedule:
+      spring_blooming: "Prune immediately after flowering"
+      summer_blooming: "Prune in late winter/early spring"
+      evergreen: "Light shaping in late spring"
+    rejuvenation: "Old overgrown shrubs: cut 1/3 of oldest stems to ground each year for 3 years"
+    pest_watch: "Inspect monthly for scale, aphids, spider mites — treat early"
+
+  common_problems:
+    dead_branches:
+      cause: "Disease, drought stress, storm damage, age"
+      action: "Remove promptly — dead wood attracts pests and can fall"
+    leaning_tree:
+      sudden_lean: "Emergency — call arborist immediately"
+      gradual_lean: "May be normal growth toward light, but have assessed if near structures"
+    bark_damage:
+      from_mower: "Prevent with mulch ring; damage can kill tree"
+      from_animals: "Wrap trunk with hardware cloth"
+    fungal_growth:
+      mushrooms_at_base: "Often indicates root rot — have arborist assess"
+      conks_on_trunk: "Sign of internal decay — may need removal"
+
+  storm_damage_response:
+    immediate:
+      - "Stay away from downed limbs near power lines — call utility"
+      - "Document damage with photos before cleanup"
+      - "Don't attempt removal of large hung-up branches"
+    after_storm:
+      - "Remove completely broken branches cleanly"
+      - "Don't top damaged trees — make proper cuts or have arborist assess"
+      - "Trees that can be saved are worth saving"
+    when_to_remove:
+      - "More than 50% of crown damaged"
+      - "Major structural damage to trunk"
+      - "Tree poses imminent hazard"
+
+  diy_vs_professional:
+    diy_safe:
+      - "Pruning branches you can reach from ground (under 10 feet)"
+      - "Branches under 3 inches diameter"
+      - "Mulching and watering"
+      - "Basic inspection"
+    hire_certified_arborist:
+      - "Any work requiring ladder or climbing"
+      - "Branches near power lines (call utility for those over lines)"
+      - "Large branch removal or tree removal"
+      - "Disease or pest diagnosis"
+      - "Cabling or bracing"
+      - "Trees showing signs of decline"
+    arborist: "[ARBORIST_NAME] — [ARBORIST_PHONE]"
+    verify_credentials: "Look for ISA Certified Arborist credential"
+
+  regional_notes:
+    southeast: "Watch for pine beetles, oak wilt. Hurricane prep: thin crowns, remove weak branches."
+    northeast: "Ice storm damage common. Avoid salt damage near roads."
+    midwest: "Emerald ash borer has decimated ash trees. Storm damage from tornadoes."
+    southwest: "Water stress is major killer. Protect from desert sun damage."
+    west: "Fire mitigation: limb up trees, remove dead material, create defensible space."
+
+# -----------------------------------------------------------------------------
+
+landscaping_spring:
+  title: "Spring Landscaping Checklist"
+  trigger: true  # Universal for all homes with yards
+  section: 5
+  category: landscaping
+  overview: "Spring sets the stage for your landscape's entire year. A few hours of work in March-April prevents months of problems. This checklist covers the 2-4 week window when timing matters most."
+
+  timing_guide:
+    when_to_start: "When soil is workable but before plants break dormancy"
+    temperature_triggers:
+      soil_55f: "Apply pre-emergent weed control"
+      last_frost: "Plant frost-sensitive annuals"
+      soil_60f: "Safe to plant warm-season vegetables"
+    your_area:
+      last_frost_date: "[LAST_FROST_DATE]"
+      usda_zone: "[USDA_ZONE]"
+
+  week_by_week_schedule:
+    early_spring_4_6_weeks_before_last_frost:
+      lawn:
+        - "□ Rake debris, leaves, and thatch"
+        - "□ Remove winter covers from roses/shrubs"
+        - "□ Test soil (if not done in 2 years)"
+        - "□ Apply pre-emergent when soil reaches 55°F"
+        - "□ Service mower: oil, blade, spark plug"
+      beds:
+        - "□ Clean out winter debris"
+        - "□ Cut back ornamental grasses to 4-6 inches"
+        - "□ Prune summer-flowering shrubs (butterfly bush, hydrangea)"
+        - "□ Divide overgrown perennials"
+      trees:
+        - "□ Complete dormant pruning before buds break"
+        - "□ Apply dormant oil spray for overwintering insects"
+        - "□ Mulch newly planted trees"
+
+    mid_spring_2_4_weeks_before_last_frost:
+      lawn:
+        - "□ Begin regular mowing when grass actively growing"
+        - "□ First fertilizer application (warm-season grass)"
+        - "□ Repair bare spots: rake, seed, cover with straw"
+        - "□ Edge beds, walks, and driveways"
+      beds:
+        - "□ Add compost to beds before planting"
+        - "□ Plant bare-root roses and shrubs"
+        - "□ Transplant seedlings started indoors"
+        - "□ Install fresh edging if damaged"
+      irrigation:
+        - "□ Turn on sprinkler system"
+        - "□ Run each zone, check for broken heads, adjust coverage"
+        - "□ Replace damaged sprinkler heads"
+        - "□ Check hose bibs for winter damage"
+
+    late_spring_after_last_frost:
+      lawn:
+        - "□ Apply post-emergent for existing weeds"
+        - "□ Adjust mower height for growing season"
+        - "□ Resume regular watering schedule"
+      beds:
+        - "□ Plant annuals and frost-sensitive perennials"
+        - "□ Install summer containers"
+        - "□ Apply fresh mulch (2-3 inches)"
+        - "□ Install stakes for tall perennials"
+      maintenance:
+        - "□ Inspect for spring pest emergence"
+        - "□ Set up hummingbird/butterfly feeders"
+        - "□ Clean and repair outdoor furniture"
+
+  pre_emergent_timing:
+    critical_note: "Pre-emergent must be applied BEFORE weed seeds germinate — once you see weeds, it's too late"
+    soil_temperature: "Apply when soil temperature reaches 55°F for 3-5 consecutive days"
+    measurement: "Use soil thermometer at 2-inch depth, or track via local extension service"
+    timing_by_region:
+      southeast: "Late February to mid-March"
+      northeast: "Late March to mid-April"
+      midwest: "Early to mid-April"
+      southwest: "Early February"
+      west: "Varies by elevation — March to April"
+    after_application: "Water in lightly within 24 hours"
+
+  perennial_division:
+    why: "Rejuvenates plants, prevents overcrowding, free plants for other areas"
+    when_to_divide:
+      spring_bloomers: "Divide in fall"
+      summer_fall_bloomers: "Divide in early spring before growth begins"
+    how_to_divide:
+      - "Dig entire clump, keeping root ball intact"
+      - "Shake or wash off soil to see root structure"
+      - "Use sharp spade or knife to separate into sections"
+      - "Each section should have 3-5 shoots and healthy roots"
+      - "Replant immediately at same depth"
+      - "Water thoroughly"
+
+  soil_testing:
+    why_now: "Spring results guide the season's amendments"
+    how:
+      - "Take samples from 5-10 spots across lawn/beds"
+      - "Dig 4-6 inches deep, avoid recent fertilizer areas"
+      - "Mix samples together in clean bucket"
+      - "Send 1-2 cups to local extension office or lab"
+    what_you_learn: "pH, nitrogen, phosphorus, potassium, organic matter"
+    cost: "Typically $15-30 through extension service"
+    local_extension: "[COUNTY_EXTENSION_OFFICE]"
+
+  spring_equipment_prep:
+    mower:
+      - "□ Drain old fuel or add stabilizer"
+      - "□ Change oil (4-stroke engines)"
+      - "□ Replace or clean spark plug"
+      - "□ Sharpen or replace blade"
+      - "□ Clean air filter"
+      - "□ Check tire pressure"
+      - "□ Test run before first mow"
+    trimmer:
+      - "□ Replace fuel filter if 2-stroke"
+      - "□ Install fresh line"
+      - "□ Clean spark arrestor"
+    irrigation:
+      - "□ Inspect all heads and valves"
+      - "□ Run manual cycle, check for leaks"
+      - "□ Adjust heads for coverage"
+      - "□ Program controller for spring schedule"
+
+  tools_needed:
+    - "Rake (leaf and garden)"
+    - "Pruning shears and loppers"
+    - "Garden fork or spade"
+    - "Wheelbarrow"
+    - "Soil thermometer"
+    - "Broadcast spreader"
+    - "Sprinkler system tools (head wrench, etc.)"
+
+  regional_considerations:
+    southeast:
+      early_action: "Apply pre-emergent by early March — warm soil gets weeds started early"
+      pest_watch: "Fire ants become active — treat mounds as they appear"
+      timing: "Can plant warm-season annuals by April in most areas"
+    northeast:
+      patience: "Don't rush — late frosts common into May"
+      frost_protection: "Keep row covers ready for cold snaps"
+      timing: "Pre-emergent typically mid-April"
+    midwest:
+      frost_dates: "Highly variable — follow local extension guidance"
+      flooding: "Check drainage after spring rains"
+      timing: "Pre-emergent late April in northern areas"
+    southwest:
+      early_start: "Season starts in February for many areas"
+      water: "Begin irrigation monitoring early"
+      heat: "Get planting done before summer heat arrives"
+    west:
+      elevation_varies: "Timing varies dramatically by elevation"
+      fire_prep: "Begin defensible space cleanup"
+      water: "Check irrigation before mandatory rationing begins"
+
+# -----------------------------------------------------------------------------
+
+landscaping_fall:
+  title: "Fall Landscaping Checklist"
+  trigger: true  # Universal for all homes with yards
+  section: 5
+  category: landscaping
+  overview: "Fall is the most important season for lawn care. Cooler temperatures, warm soil, and reduced weed pressure create ideal conditions for overseeding and root development. What you do now determines next spring's success."
+
+  timing_guide:
+    when_to_start: "6-8 weeks before first expected frost"
+    key_dates:
+      first_frost_date: "[FIRST_FROST_DATE]"
+      soil_temp_drops_below_55: "Last chance for pre-emergent"
+      ground_freeze: "All irrigation winterized before this"
+
+  fall_lawn_priorities:
+    number_1_aeration:
+      why: "Compacted soil prevents water, air, and nutrients from reaching roots"
+      when: "Early fall for cool-season grass; late spring for warm-season"
+      how:
+        - "Water lawn day before (softens soil)"
+        - "Mark irrigation heads, valve boxes, shallow utilities"
+        - "Run core aerator in two perpendicular passes"
+        - "Leave soil plugs on lawn — they break down naturally"
+      frequency: "Annually for high-traffic areas; every 2-3 years otherwise"
+      diy_or_rent: "Rent core aerator (~$60-80/day) or hire lawn service"
+
+    number_2_overseeding:
+      why: "Thick lawn crowds out weeds — overseed thin areas now"
+      timing: "Early fall — 6-8 weeks before first frost (grass needs time to establish)"
+      steps:
+        - "Aerate first (seed falls into holes)"
+        - "Rake to remove debris and loosen soil surface"
+        - "Apply seed with broadcast spreader at recommended rate"
+        - "Apply thin layer of compost or peat moss over seed"
+        - "Keep consistently moist until germination (10-14 days)"
+      seed_selection: "Match existing grass type — buy quality seed (low weed/other seed content)"
+      cool_season_rates:
+        overseeding: "3-4 lbs per 1,000 sq ft"
+        bare_spots: "6-8 lbs per 1,000 sq ft"
+
+    number_3_fall_fertilizing:
+      why: "Fall fertilizer builds root reserves for spring green-up"
+      timing:
+        cool_season: "September through October — most important application of the year"
+        warm_season: "Light application in early fall; stop 6 weeks before dormancy"
+      type: "High nitrogen for cool-season; balanced or winterizer for warm-season"
+      skip_if: "Soil test shows adequate levels"
+
+  week_by_week_schedule:
+    early_fall_6_8_weeks_before_frost:
+      lawn:
+        - "□ Aerate compacted areas"
+        - "□ Overseed thin/bare areas (cool-season grass)"
+        - "□ Apply fall fertilizer"
+        - "□ Continue regular mowing — don't let grass get too tall"
+      beds:
+        - "□ Plant spring-blooming bulbs (tulips, daffodils, crocus)"
+        - "□ Divide and transplant perennials"
+        - "□ Cut back finished perennials"
+        - "□ Take cuttings from tender plants to overwinter indoors"
+      trees:
+        - "□ Water deeply before ground freezes — trees need moisture"
+        - "□ Plant new trees and shrubs (ideal time — roots establish before winter)"
+        - "□ Note trees needing winter pruning"
+
+    mid_fall_2_4_weeks_before_frost:
+      lawn:
+        - "□ Continue mowing — gradually lower height to final cut"
+        - "□ Apply pre-emergent for winter annual weeds (optional)"
+        - "□ Rake or mulch fallen leaves — don't let them smother lawn"
+      beds:
+        - "□ Pull spent annuals"
+        - "□ Add compost to beds"
+        - "□ Mulch perennials after ground begins to cool"
+      equipment:
+        - "□ Drain gas from equipment or add stabilizer"
+        - "□ Clean mower thoroughly before storage"
+        - "□ Sharpen and oil tools"
+
+    late_fall_around_first_frost:
+      lawn:
+        - "□ Final mow at lower height (prevents matting under snow)"
+        - "□ Remove last leaves — leaf mat can kill grass"
+      irrigation:
+        - "□ Winterize sprinkler system (blow out lines)"
+        - "□ Shut off and drain outdoor faucets"
+        - "□ Drain hoses and store indoors"
+      protection:
+        - "□ Wrap young tree trunks (prevents sunscald)"
+        - "□ Apply deer repellent to vulnerable plants"
+        - "□ Install burlap screens for evergreens in exposed locations"
+
+  leaf_management:
+    why_it_matters: "Leaf mat blocks light and traps moisture — can kill grass over winter"
+    options:
+      mulching: "Best option — mow over leaves to chop finely, adds nutrients to lawn"
+      composting: "Rake to compost pile — excellent brown material"
+      removal: "Bag and dispose if too heavy to mulch"
+    frequency: "Don't let leaves accumulate more than 2 inches before mulching/removal"
+    avoid: "Blowing all leaves into beds — some mulch is good, thick layers can smother plants"
+
+  bulb_planting:
+    timing: "Plant when soil temperature drops below 60°F — typically 6-8 weeks before ground freezes"
+    depth_rule: "Plant 2-3 times the bulb's height deep"
+    common_bulbs:
+      tulips: "6-8 inches deep"
+      daffodils: "6 inches deep"
+      crocus: "3-4 inches deep"
+      hyacinths: "6 inches deep"
+    tip: "Plant in groups of 10+ for visual impact"
+    fertilize: "Bone meal in planting hole provides phosphorus for root development"
+
+  tree_and_shrub_care:
+    watering:
+      - "Continue watering until ground freezes"
+      - "Evergreens especially need moisture going into winter"
+      - "Trees lose moisture through bark in dry winter conditions"
+    wrapping:
+      young_trees: "Wrap thin-barked trees (maples, fruit trees) to prevent sunscald"
+      material: "Paper tree wrap or white plastic guards"
+      timing: "Apply after leaves drop, remove in spring"
+    mulching:
+      - "Add 2-4 inches of mulch after ground cools"
+      - "Protects roots from freeze/thaw cycles"
+      - "Keep mulch away from trunk"
+
+  fall_equipment_maintenance:
+    mower_storage:
+      - "Run engine until fuel is exhausted, OR add fuel stabilizer and run 5 minutes"
+      - "Clean underside thoroughly — dried grass is corrosive"
+      - "Change oil if not done in spring"
+      - "Disconnect battery or charge monthly"
+      - "Store in dry location"
+    trimmer:
+      - "Empty fuel (2-stroke) or stabilize (4-stroke)"
+      - "Clean air filter"
+      - "Remove trimmer line to prevent coil deformation"
+    tools:
+      - "Clean all hand tools — remove soil and sap"
+      - "Sharpen shovels, hoes, pruners"
+      - "Apply light oil to metal parts"
+      - "Store in dry location"
+
+  irrigation_winterization:
+    critical: "Water in pipes will freeze and burst — blow out before first hard freeze"
+    steps:
+      - "Shut off water supply to irrigation system"
+      - "Set controller to 'off' or 'rain mode' (keeps programming)"
+      - "Use air compressor (max 50 PSI) to blow water from lines"
+      - "Open drain valves and leave open"
+      - "Insulate backflow preventer if above ground"
+    timing: "Before nighttime temperatures consistently below 32°F"
+    diy_or_hire: "Hire irrigation company (~$50-100) unless you have proper compressor"
+    irrigation_company: "[IRRIGATION_COMPANY] — [IRRIGATION_PHONE]"
+
+  regional_considerations:
+    southeast:
+      timing: "Later fall — first frost often not until November or later"
+      warm_season_grass: "Focus on pre-emergent for winter weeds, not overseeding"
+      note: "Leaf cleanup critical with many deciduous trees"
+    northeast:
+      timing: "Early fall action needed — first frost can come early"
+      winterizing: "Complete irrigation winterization by late October"
+      protection: "Heavy mulching for perennials"
+    midwest:
+      timing: "September is prime month for overseeding"
+      leaves: "Often heavy — multiple removal rounds needed"
+      wind: "Ensure mulch is heavy enough not to blow away"
+    southwest:
+      cool_season: "Fall is planting season for cool-season vegetables"
+      irrigation: "May not need winterization in mild areas"
+      overseeding: "Overseed bermuda with ryegrass for winter green"
+    west:
+      fire_prep: "Clear dry material before fire season ends"
+      rainfall: "Fall rains reduce irrigation needs"
+      mild_winters: "Some coastal areas can garden year-round"
+
+# -----------------------------------------------------------------------------
+
+landscaping_drainage:
+  title: "Drainage & Grading Guide"
+  trigger: true  # Critical for all homes
+  section: 5
+  category: landscaping
+  overview: "Water is the number one cause of foundation damage, basement flooding, and landscape erosion. Proper grading and drainage costs little but prevents thousands in water damage. Most problems are DIY-fixable with basic landscaping."
+
+  foundation_grading:
+    golden_rule: "Ground should slope AWAY from foundation at minimum 6 inches drop per 10 feet"
+    why: "Water pooling against foundation causes cracks, leaks, mold, and structural damage"
+    how_to_check:
+      - "Place 10-foot board against foundation"
+      - "Put level on board"
+      - "Measure gap at far end — should be at least 6 inches"
+      - "Repeat at multiple points around house"
+    problem_signs:
+      - "Water pooling near foundation after rain"
+      - "Soil settled against foundation"
+      - "Basement dampness or leaks"
+      - "Cracks in foundation walls"
+      - "Efflorescence (white mineral deposits) on basement walls"
+
+  grading_repair:
+    tools_needed:
+      - "Shovel and garden rake"
+      - "Wheelbarrow"
+      - "Level and 10-foot board"
+      - "Fill soil (clay-based, not topsoil)"
+      - "Tamper"
+    steps:
+      - "Remove any plants, mulch, or obstructions from work area"
+      - "Add fill soil against foundation (clay-based compacts better)"
+      - "Build up to create slope away from house"
+      - "Compact soil firmly with tamper"
+      - "Cover with 2 inches of mulch (keep 6 inches from siding)"
+      - "Slope mulch to match soil grade"
+    material:
+      use: "Clay-based fill soil — compacts and sheds water"
+      avoid: "Topsoil (too porous) or sand (drains toward foundation)"
+    maintenance: "Check and re-grade annually — settling is normal"
+
+  downspout_management:
+    rule: "Water should discharge at least 4 feet from foundation — farther is better"
+    problems_to_fix:
+      - "Downspouts dumping directly at foundation"
+      - "Extensions disconnected or damaged"
+      - "Water pooling at discharge point"
+      - "Downspouts draining toward house"
+    solutions:
+      extensions:
+        - "Rigid plastic extensions (4+ feet)"
+        - "Flexible roll-out extensions (extend when water flows)"
+        - "Underground drain pipes to yard or street"
+      splash_blocks: "Angled concrete or plastic blocks — better than nothing but extensions preferred"
+      underground_drains:
+        - "Rigid PVC pipe buried below grade"
+        - "Slope minimum 1% away from house"
+        - "Daylight at yard edge or connect to storm drain (if allowed)"
+        - "Pop-up emitter at discharge point"
+    your_downspouts:
+      front_left: "[DOWNSPOUT_1_CONDITION]"
+      front_right: "[DOWNSPOUT_2_CONDITION]"
+      rear_left: "[DOWNSPOUT_3_CONDITION]"
+      rear_right: "[DOWNSPOUT_4_CONDITION]"
+
+  gutter_maintenance:
+    frequency: "Clean twice yearly minimum — more if many trees"
+    timing: "Late spring (after pollen/seeds) and late fall (after leaves)"
+    cleaning_steps:
+      - "Set up ladder safely — never overreach"
+      - "Scoop debris by hand or with gutter scoop"
+      - "Flush with hose to check flow and find leaks"
+      - "Check downspout flow — snake if slow"
+      - "Inspect for damage: holes, loose sections, improper slope"
+    warning_signs:
+      - "Water overflowing during rain"
+      - "Sagging gutter sections"
+      - "Water stains on siding below gutters"
+      - "Mulch or soil erosion below gutter overflow"
+    guards:
+      pros: "Reduce cleaning frequency"
+      cons: "Still need periodic maintenance, can clog with small debris"
+      types: "Mesh screens, foam inserts, solid covers — quality varies significantly"
+
+  common_drainage_problems:
+    standing_water:
+      causes: "Low spots, clay soil, high water table, insufficient slope"
+      solutions:
+        minor: "Fill low spots with soil, regrade"
+        moderate: "Install French drain to redirect water"
+        severe: "Sump pump, catch basin, or professional drainage system"
+      timeline: "Standing water should drain within 24-48 hours after rain"
+
+    yard_flooding:
+      causes: "Neighbor's drainage, downspout discharge, impermeable surfaces, natural drainage pattern"
+      solutions:
+        - "Install swale (shallow ditch) to redirect flow"
+        - "Add catch basin and underground pipe"
+        - "Create rain garden in low area"
+        - "Install French drain across flow path"
+
+    basement_water:
+      causes: "Poor grading, gutter issues, foundation cracks, high water table"
+      first_steps:
+        - "Fix grading — slopes away at 6 inches per 10 feet"
+        - "Extend downspouts 4+ feet from house"
+        - "Ensure gutters clean and functional"
+        - "Seal visible foundation cracks"
+      persistent: "May need interior French drain and sump pump — professional assessment recommended"
+
+    driveway_puddles:
+      causes: "Settlement, improper original grade, heaving"
+      solutions:
+        - "Minor: fill with cold patch asphalt"
+        - "Moderate: Install channel drain across driveway"
+        - "Severe: Replace or overlay driveway"
+
+  french_drains:
+    what: "Gravel-filled trench with perforated pipe that collects and redirects groundwater"
+    when_needed:
+      - "Persistent wet areas in yard"
+      - "Water seeping into basement"
+      - "Retaining wall weep drainage"
+      - "Intercepting water before it reaches house"
+    components:
+      - "Trench: 6-12 inches wide, 18-24 inches deep"
+      - "Landscape fabric: lines trench to prevent soil clogging gravel"
+      - "Perforated pipe: 4-inch PVC or corrugated with holes facing down"
+      - "Gravel: washed 3/4 inch stone"
+    installation:
+      - "Dig trench with 1% minimum slope toward discharge point"
+      - "Line trench with landscape fabric, leaving excess on sides"
+      - "Add 2-3 inches of gravel"
+      - "Lay perforated pipe (holes DOWN)"
+      - "Cover pipe with gravel to within 4 inches of surface"
+      - "Fold fabric over gravel"
+      - "Top with soil and sod, or decorative stone"
+    discharge: "Must have somewhere for water to go — daylight at yard edge, dry well, or storm drain"
+    diy_difficulty: "Moderate — labor intensive but straightforward technique"
+
+  dry_wells:
+    what: "Underground pit filled with gravel that allows water to slowly infiltrate soil"
+    when_needed:
+      - "No place for French drain to daylight"
+      - "Downspout discharge point"
+      - "Small-scale drainage collection"
+    sizing: "General rule: 1 cubic foot of storage per 1 square foot of roof area draining to it"
+    installation:
+      - "Dig hole 3-4 feet diameter, 3-4 feet deep"
+      - "Line with landscape fabric"
+      - "Fill with large gravel or dry well chamber"
+      - "Connect inlet pipe from water source"
+      - "Cover with landscape fabric and backfill"
+    limitations: "Won't work in clay soil or high water table — water has nowhere to go"
+
+  rain_gardens:
+    what: "Shallow planted depression that captures runoff and allows it to slowly infiltrate"
+    benefits: "Attractive, filters pollutants, supports pollinators, reduces flooding"
+    location: "10+ feet from foundation, in natural low point or downspout discharge area"
+    sizing: "Typically 100-300 sq ft for residential — deeper is better than wider"
+    plants: "Native plants tolerant of both wet and dry conditions"
+    effectiveness: "Can reduce runoff from area by 30%+"
+
+  swales:
+    what: "Shallow vegetated channel that directs water flow"
+    when_needed:
+      - "Redirecting surface water around house"
+      - "Managing neighbor's drainage"
+      - "Replacing eroded drainage path"
+    design:
+      slope: "1-2% grade — enough to move water, slow enough to allow infiltration"
+      shape: "Broad, shallow — not a ditch"
+      width: "Depends on water volume — typically 2-4 feet"
+    maintenance: "Mow, remove debris, check for erosion or sediment buildup"
+
+  seasonal_maintenance:
+    spring:
+      - "□ Check grading — winter frost heave and settling common"
+      - "□ Clean gutters of winter debris"
+      - "□ Test sump pump operation"
+      - "□ Clear debris from catch basins and drain inlets"
+    summer:
+      - "□ Monitor during heavy rain for problem areas"
+      - "□ Clear drains before anticipated storms"
+      - "□ Check for erosion in swales and drainage paths"
+    fall:
+      - "□ Clean gutters after leaf drop"
+      - "□ Clear catch basins"
+      - "□ Check downspout extensions secure"
+    winter:
+      - "□ Keep gutters clear of ice dams"
+      - "□ Don't pile snow against foundation"
+      - "□ Clear drain paths of snow for melt"
+
+  professional_assessment:
+    when_to_call:
+      - "Persistent basement water despite correcting grading and gutters"
+      - "Significant erosion or land movement"
+      - "Neighbor's property draining onto yours (may require survey)"
+      - "Complex drainage system design"
+      - "Water table issues"
+    who_to_call:
+      grading_drainage: "Landscape contractor or drainage specialist"
+      basement_water: "Basement waterproofing company"
+      foundation_damage: "Structural engineer"
+    drainage_contractor: "[DRAINAGE_CONTRACTOR] — [DRAINAGE_PHONE]"
+
+  diy_vs_professional:
+    diy_tasks:
+      - "Gutter cleaning and maintenance"
+      - "Adding downspout extensions"
+      - "Minor grading adjustments"
+      - "Simple French drain (if you can dig)"
+      - "Dry well installation"
+    hire_professional:
+      - "Major grading around foundation"
+      - "Complex drainage system design"
+      - "Basement waterproofing systems"
+      - "Retaining wall drainage"
+      - "Connection to municipal storm drain"
+
+  regional_considerations:
+    southeast:
+      challenges: "High rainfall, clay soils, hurricane deluges"
+      tips: "Oversized gutters/downspouts, larger drainage capacity needed"
+      note: "Humid conditions — poor drainage = mold risk"
+    northeast:
+      challenges: "Freeze/thaw cycles, ice dams, spring thaw flooding"
+      tips: "Ensure drainage paths clear before snow melt"
+      note: "Frost heave can alter grading — check annually"
+    midwest:
+      challenges: "Clay soils, rapid snow melt, severe storms"
+      tips: "Sump pumps common necessity — battery backup essential"
+      note: "Tornado-region storm intensity requires robust drainage"
+    southwest:
+      challenges: "Monsoon flash floods, hardpan soil, erosion"
+      tips: "Dry wells effective in sandy soils; surface flow management critical"
+      note: "Rare heavy rain makes drainage easy to neglect until problems occur"
+    west:
+      challenges: "Wildfire + rain = mudslides, varied soil conditions"
+      tips: "Post-fire landscapes need immediate erosion control"
+      note: "Some areas have water harvesting requirements — check local codes"
+
+# =============================================================================

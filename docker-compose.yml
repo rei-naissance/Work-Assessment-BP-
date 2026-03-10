@@ -1,0 +1,54 @@
+services:
+  mongo:
+    image: mongo:7
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  backend:
+    build: ./backend
+    ports:
+      - "${BACKEND_PORT:-7691}:${BACKEND_PORT:-7691}"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/home_binder
+      - JWT_SECRET=${JWT_SECRET:-dev-secret-change-in-production}
+      - DATA_DIR=/data/binders
+      - PORT=${BACKEND_PORT:-7691}
+      - ENCRYPTION_KEY=${ENCRYPTION_KEY:-}
+      - STRIPE_SECRET_KEY=${STRIPE_SECRET_KEY:-}
+      - STRIPE_PUBLISHABLE_KEY=${STRIPE_PUBLISHABLE_KEY:-}
+      - STRIPE_WEBHOOK_SECRET=${STRIPE_WEBHOOK_SECRET:-}
+      - RESEND_API_KEY=${RESEND_API_KEY:-}
+      - FROM_EMAIL=${FROM_EMAIL:-noreply@mybinderpro.com}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+      - AI_ENHANCEMENT_ENABLED=${AI_ENHANCEMENT_ENABLED:-true}
+      - AI_ENHANCEMENT_PROVIDER=${AI_ENHANCEMENT_PROVIDER:-auto}
+      - FRONTEND_URL=http://localhost:${FRONTEND_PORT:-7680}
+      - ENVIRONMENT=${ENVIRONMENT:-development}
+    volumes:
+      - ./backend:/app
+      - binder_data:/data/binders
+    depends_on:
+      - mongo
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        - VITE_API_PORT=${BACKEND_PORT:-7691}
+    ports:
+      - "${FRONTEND_PORT:-7680}:${FRONTEND_PORT:-7680}"
+    environment:
+      - PORT=${FRONTEND_PORT:-7680}
+      - VITE_API_PORT=${BACKEND_PORT:-7691}
+      - VITE_API_URL=http://localhost:${BACKEND_PORT:-7691}/api
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    depends_on:
+      - backend
+
+volumes:
+  mongo_data:
+  binder_data:

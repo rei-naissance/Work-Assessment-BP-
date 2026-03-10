@@ -1,0 +1,40 @@
+# Env and secrets (keep .env.example files)
+.env
+.env.local
+frontend/.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+backend/venv/
+*.egg-info/
+.eggs/
+
+# Node
+node_modules/
+frontend/node_modules/
+frontend/dist/
+npm-debug.log*
+
+# IDE and OS
+.idea/
+.vscode/
+.DS_Store
+*.swp
+*.swo
+
+# Generated output
+backend/data/
+
+# Test and cache
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Root package lock (root package.json is for PM2 dotenv only)
+package-lock.json

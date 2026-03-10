@@ -1,0 +1,10 @@
+{
+  "name": "binderpro",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Root package for PM2 ecosystem config (dotenv). See backend/ and frontend/ for app packages.",
+  "type": "commonjs",
+  "dependencies": {
+    "dotenv": "^17.2.3"
+  }
+}

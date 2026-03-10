@@ -1,0 +1,440 @@
+# =============================================================================
+# HOUSEHOLD.YAML — Household-Specific Safety & Comfort Guides
+# =============================================================================
+# Guides triggered by household composition: pets, children, elderly, allergies
+# Focus on safety, accessibility, and health considerations
+# =============================================================================
+
+pet_safety:
+  title: "Pet Safety & Home Care"
+  trigger: has_pets
+  section: 5
+  category: household
+  overview: "Pets require a safe home environment and emergency planning. Knowing toxic substances, secure containment, and emergency procedures protects your furry family members."
+
+  your_pets:
+    pet_1:
+      name: "[PET_1_NAME]"
+      type: "[PET_1_TYPE]"
+      breed: "[PET_1_BREED]"
+      age: "[PET_1_AGE]"
+      microchip: "[PET_1_MICROCHIP_NUMBER]"
+    pet_2:
+      name: "[PET_2_NAME]"
+      type: "[PET_2_TYPE]"
+      breed: "[PET_2_BREED]"
+      age: "[PET_2_AGE]"
+      microchip: "[PET_2_MICROCHIP_NUMBER]"
+
+  toxic_substances:
+    foods_toxic_to_dogs:
+      - "Chocolate (especially dark chocolate)"
+      - "Grapes and raisins"
+      - "Onions and garlic"
+      - "Xylitol (artificial sweetener in gum, candy, peanut butter)"
+      - "Macadamia nuts"
+      - "Alcohol"
+      - "Caffeine"
+      - "Avocado"
+    foods_toxic_to_cats:
+      - "Lilies (all parts — potentially fatal)"
+      - "Onions and garlic"
+      - "Chocolate"
+      - "Alcohol"
+      - "Raw eggs and meat"
+      - "Caffeine"
+    household_toxins:
+      - "Antifreeze (sweet taste attracts pets — often fatal)"
+      - "Rat and mouse poison"
+      - "Insecticides and herbicides"
+      - "Many cleaning products"
+      - "Certain essential oils"
+      - "Human medications (especially acetaminophen, ibuprofen)"
+    toxic_plants:
+      - "Lilies (cats)"
+      - "Sago palm (dogs)"
+      - "Azaleas and rhododendrons"
+      - "Tulip and daffodil bulbs"
+      - "Oleander"
+      - "Pothos/Devil's ivy"
+
+  safe_storage:
+    - "Store medications in closed cabinets — child-proof = pet-proof"
+    - "Keep trash in secured container or behind closed door"
+    - "Store cleaning products in closed cabinets"
+    - "Keep garage chemicals (antifreeze, fertilizers) inaccessible"
+    - "Remove or fence toxic plants"
+    - "Secure small objects that could be swallowed"
+
+  secure_containment:
+    indoor:
+      - "Install baby gates for area restriction"
+      - "Check screens for holes or weak areas"
+      - "Secure windows with screens or guards"
+      - "Keep toilet lids closed (drowning risk for small pets)"
+      - "Cover or eliminate gaps behind appliances"
+    outdoor:
+      - "Inspect fence monthly for gaps, weak spots, dig points"
+      - "Check gate latches — ensure they close securely"
+      - "Fill holes along fence line"
+      - "Consider coyote rollers if wildlife threats exist"
+      - "Supervise near pools — not all dogs swim naturally"
+
+  pet_areas:
+    cleaning_schedule:
+      daily:
+        - "Clean food and water bowls"
+        - "Scoop litter boxes"
+        - "Pick up yard waste (if dog)"
+      weekly:
+        - "Wash pet bedding"
+        - "Deep clean litter boxes"
+        - "Clean crates and carriers"
+        - "Vacuum pet areas thoroughly"
+      monthly:
+        - "Wash pet toys"
+        - "Clean feeding station area"
+        - "Check for and address odors"
+
+  emergency_preparedness:
+    pet_emergency_kit:
+      - "3-day supply of food and water"
+      - "Medications (if any)"
+      - "Food/water bowls"
+      - "Leash, collar, harness"
+      - "Carrier or crate"
+      - "Recent photo of pet"
+      - "Copy of vaccination records"
+      - "First aid supplies"
+    evacuation_plan:
+      - "NEVER leave pets behind in evacuation"
+      - "Know pet-friendly shelters and hotels on evacuation route"
+      - "Keep carrier accessible"
+      - "Practice loading pets quickly"
+    if_separation:
+      - "Microchip with current contact info"
+      - "ID tags on collar with phone number"
+      - "Contact local shelters and animal control"
+      - "Post on lost pet websites and social media"
+
+  vet_and_emergency:
+    veterinarian: "[VET_NAME] — [VET_PHONE]"
+    vet_address: "[VET_ADDRESS]"
+    emergency_vet: "[EMERGENCY_VET] — [EMERGENCY_VET_PHONE]"
+    poison_control: "ASPCA: 888-426-4435 (fee may apply)"
+
+  guest_mode_note: "Inform guests/pet sitters of: feeding schedule, medication (if any), vet contact, and household hazards."
+
+# -----------------------------------------------------------------------------
+
+child_safety:
+  title: "Child-Proofing & Safety"
+  trigger: has_children
+  section: 5
+  category: household
+  overview: "Childproofing prevents injuries from falls, poisoning, and burns — the leading causes of home injuries for children. Age-appropriate measures keep kids safe while allowing exploration."
+
+  your_children:
+    child_1:
+      name: "[CHILD_1_NAME]"
+      age: "[CHILD_1_AGE]"
+    child_2:
+      name: "[CHILD_2_NAME]"
+      age: "[CHILD_2_AGE]"
+
+  by_age_group:
+    infants_0_12_months:
+      - "Never leave alone on elevated surfaces"
+      - "Install baby gates at top and bottom of stairs"
+      - "Remove soft bedding from crib (SIDS prevention)"
+      - "Keep crib away from windows, cords, curtains"
+      - "Cover outlets with caps or covers"
+    toddlers_1_3_years:
+      - "Anchor ALL furniture over 30 inches tall"
+      - "Install cabinet and drawer locks"
+      - "Move cleaning products, medications to high, locked storage"
+      - "Install toilet locks"
+      - "Use stove knob covers and oven lock"
+      - "Install doorknob covers on hazardous areas"
+    preschool_3_5_years:
+      - "Teach basic safety rules (hot, sharp, don't eat)"
+      - "Supervise around water always"
+      - "Install window guards or stops"
+      - "Keep small objects out of reach (choking hazard)"
+    school_age_5_plus:
+      - "Teach emergency procedures (911, evacuation)"
+      - "Safe firearm storage (if applicable)"
+      - "Internet safety measures"
+      - "Pool safety rules"
+
+  critical_safety_installations:
+    falls:
+      - item: "Safety gates"
+        where: "Top and bottom of all stairs"
+        type: "Hardware-mounted at top, pressure or hardware at bottom"
+      - item: "Window guards or stops"
+        spec: "Windows open no more than 4 inches"
+        note: "At least one window per room must open for fire escape"
+      - item: "Furniture anchors"
+        where: "All dressers, bookshelves, TVs on stands"
+        product: "L-brackets or anti-tip straps to wall studs"
+    poisoning:
+      - item: "Cabinet locks"
+        where: "Under all sinks, any cabinet with chemicals"
+      - item: "Medicine storage"
+        rule: "All medications locked, including vitamins"
+      - item: "Carbon monoxide detectors"
+        where: "Every floor, near bedrooms"
+    burns:
+      - item: "Water heater setting"
+        temperature: "120°F or below (prevents scalding)"
+      - item: "Stove safety"
+        measures: "Knob covers, back burner use, pot handle positioning"
+      - item: "Outlet covers"
+        type: "Tamper-resistant outlets or sliding covers"
+    drowning:
+      - item: "Toilet locks"
+        ages: "Until age 4-5"
+      - item: "Pool fence"
+        spec: "4 feet minimum, self-closing self-latching gate"
+      - item: "Supervision"
+        rule: "NEVER leave child unattended near any water"
+
+  emergency_numbers:
+    post_visibly:
+      - "911"
+      - "Poison Control: 1-800-222-1222"
+      - "Pediatrician: [PEDIATRICIAN_NAME] — [PEDIATRICIAN_PHONE]"
+      - "Emergency contact: [EMERGENCY_CONTACT_NAME] — [EMERGENCY_CONTACT_PHONE]"
+
+  fire_safety:
+    critical_note: "Children often sleep through smoke alarms"
+    actions:
+      - "Practice fire drills regularly"
+      - "Establish meeting point outside: [FIRE_MEETING_POINT]"
+      - "Teach 'get low and go'"
+      - "Know two ways out of every room"
+      - "Test alarms with children present so they recognize the sound"
+
+  supervision_guidelines:
+    never_alone:
+      - "In bathtub (any age can drown in inches of water)"
+      - "Near pools, hot tubs, or open water"
+      - "In kitchen while cooking"
+      - "With pets (until child learns appropriate interaction)"
+    safe_sleep:
+      - "Back to sleep for infants"
+      - "No loose bedding in crib"
+      - "No bed-sharing with infants"
+      - "Room-sharing recommended for first 6-12 months"
+
+  guest_mode_note: "Brief babysitters on: emergency numbers, medication procedures (if any), gate usage, and house rules."
+
+# -----------------------------------------------------------------------------
+
+elderly_accessibility:
+  title: "Accessibility & Aging-in-Place"
+  trigger: has_elderly
+  section: 5
+  category: household
+  overview: "Modifications for aging in place prevent falls (the leading cause of injury for older adults) and maintain independence. Many modifications are simple and affordable."
+
+  household_member:
+    name: "[ELDERLY_HOUSEHOLD_MEMBER_NAME]"
+    mobility_notes: "[MOBILITY_CONSIDERATIONS]"
+    medical_notes: "[MEDICAL_CONSIDERATIONS]"
+
+  fall_prevention:
+    statistics: "1 in 4 adults 65+ falls each year; falls are leading cause of injury death"
+    bathroom:
+      - item: "Grab bars"
+        where: "Near toilet, in shower/tub, at tub entry"
+        installation: "Must be anchored to wall studs or with heavy-duty anchors"
+        note: "Towel bars are NOT designed to bear weight"
+      - item: "Non-slip surfaces"
+        options: "Adhesive strips, bath mat with suction cups, textured floor coating"
+        where: "Tub/shower floor, bathroom floor"
+      - item: "Raised toilet seat"
+        benefit: "Easier to sit/stand"
+        option: "Toilet frame with arms for additional support"
+      - item: "Walk-in shower"
+        benefit: "Eliminates step-over fall risk"
+        alternative: "Tub cut-out or transfer bench"
+      - item: "Shower seat"
+        types: "Fold-down bench, freestanding stool, transfer bench"
+    hallways_stairs:
+      - item: "Handrails"
+        standard: "Both sides of all stairs, continuous full length"
+        in_hallways: "Consider adding if balance issues"
+      - item: "Lighting"
+        minimum: "Adequate lighting at all stairs"
+        enhancement: "Motion-activated nightlights in hallways"
+      - item: "Clear pathways"
+        remove: "Clutter, cords, boxes"
+        widen: "Doorways if wheelchair/walker needed (32\" minimum)"
+    flooring:
+      - item: "Remove throw rugs"
+        alternative: "Secure with double-sided tape or non-slip backing"
+      - item: "Reduce transitions"
+        address: "Raised thresholds, carpet edges, uneven surfaces"
+      - item: "Floor surface"
+        best: "Low-pile carpet or smooth, non-slip hard surface"
+
+  accessibility_modifications:
+    entry:
+      - "At least one zero-step entrance"
+      - "Ramp if steps unavoidable (1:12 slope ratio)"
+      - "Good lighting at entry"
+      - "Lever door handles (easier than knobs)"
+      - "Wide door (36\" preferred)"
+    kitchen:
+      - "Lever faucet handles"
+      - "Frequently used items at reachable height"
+      - "Pull-out shelves in lower cabinets"
+      - "Good task lighting at work areas"
+      - "Contrasting colors on counter edges"
+    bedroom:
+      - "Bed height for easy in/out (seat height when sitting)"
+      - "Nightstand with phone and flashlight"
+      - "Clear path to bathroom"
+      - "Adequate lighting from bed to bathroom"
+      - "Consider bed rail if needed"
+
+  technology_aids:
+    - "Medical alert system: [MEDICAL_ALERT_PROVIDER]"
+    - "Smart speaker for voice-controlled calls, lights, reminders"
+    - "Medication reminder system"
+    - "Video doorbell to see visitors without going to door"
+    - "Smart locks for keyless entry"
+
+  emergency_preparedness:
+    - "Phone accessible in every room (or mobile worn on person)"
+    - "Emergency contact list in large print"
+    - "Medical information card with medications, conditions, allergies"
+    - "Know evacuation plan and practice if mobility limited"
+
+  professional_assessment:
+    - "Occupational therapist home safety evaluation"
+    - "Area Agency on Aging resources"
+    - "Certified Aging in Place Specialist (CAPS) for modifications"
+
+  contacts:
+    physician: "[PHYSICIAN_NAME] — [PHYSICIAN_PHONE]"
+    medical_alert: "[MEDICAL_ALERT_PROVIDER] — [MEDICAL_ALERT_PHONE]"
+    emergency_contact: "[EMERGENCY_CONTACT_NAME] — [EMERGENCY_CONTACT_PHONE]"
+
+# -----------------------------------------------------------------------------
+
+allergy_air_quality:
+  title: "Allergy Management & Indoor Air Quality"
+  trigger: has_allergies
+  section: 5
+  category: household
+  overview: "Indoor air can be 2-5 times more polluted than outdoor air. Managing allergens requires both air filtration and source control for effective relief."
+
+  household_allergies:
+    affected_person: "[ALLERGY_SUFFERER_NAME]"
+    allergens: "[KNOWN_ALLERGENS]"  # dust mites, pet dander, pollen, mold
+    severity: "[ALLERGY_SEVERITY]"
+
+  hvac_filtration:
+    filter_rating:
+      minimum: "MERV 11 for allergy sufferers"
+      better: "MERV 13 (captures smaller particles)"
+      note: "Verify your HVAC can handle higher MERV (may restrict airflow)"
+    replacement:
+      frequency: "Every 30-60 days (monthly during high pollen season)"
+      your_filter_size: "[HVAC_FILTER_SIZE]"
+    additional:
+      - "Consider whole-house air purifier in ductwork"
+      - "UV light system kills mold and bacteria in ductwork"
+      - "Clean ducts every 3-5 years"
+
+  room_air_purifiers:
+    where_to_use:
+      - "Bedroom (where you spend 8+ hours)"
+      - "Main living areas"
+      - "Home office"
+    features_to_look_for:
+      - "True HEPA filter (captures 99.97% of 0.3 micron particles)"
+      - "Appropriate size for room (check CADR rating)"
+      - "Low noise level for bedroom use"
+      - "Easy filter replacement"
+    maintenance:
+      - "Replace filters per manufacturer schedule"
+      - "Run continuously on low — occasional use is less effective"
+
+  humidity_control:
+    target_range: "30-50% relative humidity"
+    too_high:
+      problems: "Dust mites thrive, mold grows"
+      solution: "Dehumidifier, AC, exhaust fans"
+    too_low:
+      problems: "Respiratory irritation"
+      solution: "Humidifier (clean frequently to prevent mold)"
+    monitoring: "Use hygrometer: [HYGROMETER_LOCATION]"
+
+  bedroom_allergen_control:
+    bedding:
+      - item: "Allergen-proof encasements"
+        where: "Mattress, box spring, pillows"
+        material: "Tightly woven microfiber"
+      - item: "Wash bedding weekly"
+        temperature: "Hot water (130°F) kills dust mites"
+      - item: "Replace pillows"
+        frequency: "Every 1-2 years"
+    flooring:
+      - "Remove carpet if possible — hard floors are easier to clean"
+      - "If carpet, vacuum twice weekly with HEPA vacuum"
+      - "Washable area rugs instead of wall-to-wall"
+    other:
+      - "Limit stuffed animals (or wash weekly)"
+      - "Keep pets out of bedroom"
+      - "Use blinds instead of fabric curtains"
+      - "Minimize upholstered furniture"
+
+  whole_house_strategies:
+    cleaning:
+      - "Vacuum with HEPA vacuum 2x weekly"
+      - "Damp-dust surfaces (dry dusting spreads particles)"
+      - "Wash curtains and upholstery regularly"
+      - "Clean bathroom to prevent mold"
+    source_control:
+      - "Keep windows closed during high pollen days"
+      - "Shower and change clothes after outdoor activity"
+      - "Wipe pets with damp cloth after outdoors"
+      - "Use exhaust fans when cooking and showering"
+      - "Don't line-dry clothes outdoors during pollen season"
+    pests:
+      - "Cockroach allergens are common trigger"
+      - "Seal entry points"
+      - "Don't leave food out"
+      - "Address any infestation promptly"
+
+  seasonal_considerations:
+    spring_pollen:
+      - "Monitor pollen counts (weather apps, pollen.com)"
+      - "Keep windows closed"
+      - "Run AC on recirculate"
+      - "HEPA filter in bedroom"
+      - "Shower before bed during high pollen days"
+    summer_mold:
+      - "Control humidity"
+      - "Address any water intrusion immediately"
+      - "Clean AC drip pans and drain lines"
+    fall_ragweed:
+      - "Same strategies as spring pollen"
+      - "Watch for leaf mold when raking"
+    winter_indoor:
+      - "Dust mites peak (more time indoors)"
+      - "Pet dander concentrates"
+      - "Keep humidity in range"
+      - "Change HVAC filter monthly"
+
+  when_to_see_doctor:
+    - "Symptoms don't improve with environmental controls"
+    - "Affecting sleep or daily activities"
+    - "Frequent sinus infections"
+    - "Asthma symptoms"
+    - "Your allergist: [ALLERGIST_NAME] — [ALLERGIST_PHONE]"
+

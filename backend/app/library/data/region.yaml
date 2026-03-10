@@ -1,0 +1,1477 @@
+# =============================================================================
+# REGION.YAML — Regional Home Maintenance Guides
+# =============================================================================
+# Climate-specific maintenance, seasonal tasks, and regional hazard preparedness
+# Organized by region with comprehensive guidance for local conditions
+# =============================================================================
+
+# =============================================================================
+# SOUTHEAST REGION (Primary Focus: Charlotte, NC area)
+# =============================================================================
+
+southeast_hurricane:
+  title: "Hurricane & Tropical Storm Preparedness"
+  region: southeast
+  section: 5
+  category: regional
+  overview: "Hurricane season runs June 1 - November 30. Even inland areas like Charlotte can experience damaging winds, flooding, and power outages from tropical systems."
+
+  hurricane_season:
+    dates: "June 1 - November 30"
+    peak_months: "August - October"
+    monitoring: "NOAA National Hurricane Center: hurricanes.gov"
+
+  before_season:
+    title: "Pre-Season Preparation (May)"
+    home_exterior:
+      - "Trim trees and remove dead branches that could become projectiles"
+      - "Secure or store outdoor furniture, grills, and decorations"
+      - "Inspect and repair roof — loose shingles become dangerous in high wind"
+      - "Clear gutters and downspouts for heavy rain"
+      - "Check garage door reinforcement — weakest point in many homes"
+      - "Photograph home exterior and contents for insurance documentation"
+    equipment:
+      - "Test generator and stock fuel with stabilizer"
+      - "Inspect hurricane shutters or have plywood pre-cut for windows"
+      - "Test sump pump and battery backup"
+      - "Ensure portable phone chargers are charged"
+
+  supply_kit:
+    title: "72-Hour Emergency Supply Kit"
+    water: "1 gallon per person per day x 3 days minimum"
+    food:
+      - "Non-perishable food (canned goods, granola bars, peanut butter)"
+      - "Manual can opener"
+      - "Baby food/formula if needed"
+      - "Pet food if applicable"
+    supplies:
+      - "Flashlights (multiple) and extra batteries"
+      - "Battery or crank-powered radio"
+      - "First aid kit"
+      - "Prescription medications (7-day supply)"
+      - "Cash in small bills (ATMs won't work)"
+      - "Important documents in waterproof container"
+      - "Phone chargers (car and battery pack)"
+      - "Full tank of gas in vehicle"
+    storage_location: "[EMERGENCY_KIT_LOCATION]"
+
+  when_storm_threatens:
+    48_hours_out:
+      - "Monitor NHC and local news for updates"
+      - "Top off vehicle gas tanks"
+      - "Get cash from ATM"
+      - "Charge all devices"
+      - "Fill prescriptions"
+      - "Know your evacuation zone: [EVACUATION_ZONE]"
+    24_hours_out:
+      - "Install hurricane shutters or board windows"
+      - "Bring in outdoor items or secure firmly"
+      - "Fill bathtub with water (toilet flushing if water fails)"
+      - "Review insurance policy and document location"
+      - "Confirm evacuation route if in mandatory zone"
+    just_before:
+      - "Turn refrigerator/freezer to coldest setting"
+      - "Unplug sensitive electronics"
+      - "Locate emergency kit and supplies"
+      - "Know how to shut off utilities if needed"
+
+  during_storm:
+    - "Stay indoors away from windows"
+    - "Monitor weather radio for updates"
+    - "Do NOT go outside during eye passage — storm returns from opposite direction"
+    - "If flooding threatens, move to upper floor"
+    - "Do NOT use candles — fire risk during emergency"
+    - "Preserve phone battery — text instead of call"
+
+  after_storm:
+    immediate:
+      - "Wait for all-clear before going outside"
+      - "Watch for downed power lines — assume all are live"
+      - "Check on neighbors, especially elderly"
+      - "Document damage with photos/video before cleanup"
+      - "Wear closed shoes — debris and nails"
+    power_outage:
+      - "Keep refrigerator closed — food safe 4 hours"
+      - "Keep freezer closed — food safe 24-48 hours"
+      - "Run generator OUTSIDE only, 20+ feet from house"
+      - "Report outage to utility: [POWER_COMPANY_PHONE]"
+    insurance:
+      - "Call insurance to report damage: [INSURANCE_CLAIM_PHONE]"
+      - "Don't make permanent repairs until adjuster visits"
+      - "Get contractor estimates in writing"
+      - "Keep all receipts for temporary repairs and expenses"
+
+  evacuation_info:
+    zone: "[EVACUATION_ZONE]"
+    route: "[EVACUATION_ROUTE]"
+    destination: "[EVACUATION_DESTINATION]"
+    pet_plan: "[PET_EVACUATION_PLAN]"
+    shelter_info: "Check Mecklenburg County Emergency Management for shelter locations"
+
+  contacts:
+    emergency: "911"
+    power_company: "[POWER_COMPANY] — [POWER_COMPANY_PHONE]"
+    insurance: "[INSURANCE_PROVIDER] — [INSURANCE_CLAIM_PHONE]"
+    county_emergency: "Mecklenburg Emergency Management: 311 or 704-336-7600"
+
+# -----------------------------------------------------------------------------
+
+southeast_humidity:
+  title: "Humidity & Moisture Control"
+  region: southeast
+  section: 5
+  category: regional
+  overview: "Southeast humidity (often 70-90% outdoors) creates year-round moisture challenges. Controlling indoor humidity prevents mold, wood damage, and HVAC problems."
+
+  target_humidity:
+    ideal_range: "30-50% relative humidity indoors"
+    problems_above_50:
+      - "Mold and mildew growth"
+      - "Dust mite proliferation"
+      - "Wood swelling (doors stick, floors cup)"
+      - "Musty odors"
+      - "Condensation on windows"
+    problems_below_30:
+      - "Static electricity"
+      - "Dry skin and respiratory irritation"
+      - "Wood cracking and splitting"
+
+  high_humidity_months: "March through October (worst: June-September)"
+
+  dehumidifier_use:
+    when_needed:
+      - "Basements and crawl spaces year-round"
+      - "Any room consistently above 50% RH"
+      - "After water damage or flooding"
+    sizing:
+      - "Basement 500 sq ft: 30-pint unit"
+      - "Basement 1000 sq ft: 50-pint unit"
+      - "Basement 1500+ sq ft: 70-pint unit or multiple units"
+    maintenance:
+      - "Empty reservoir daily or connect continuous drain"
+      - "Clean filter every 2 weeks"
+      - "Clean water tank monthly to prevent mold"
+      - "Replace unit every 5-10 years"
+
+  hvac_humidity_control:
+    - "Properly sized AC removes humidity while cooling"
+    - "Oversized AC short-cycles — cools but doesn't dehumidify"
+    - "Consider whole-house dehumidifier integrated with HVAC"
+    - "Don't close too many vents — disrupts air flow"
+    - "Change filters every 30-60 days in humid months"
+
+  problem_areas:
+    bathrooms:
+      - "Run exhaust fan during and 20 minutes after shower"
+      - "Ensure fan vents to exterior, not attic"
+      - "Squeegee shower walls after use"
+      - "Leave door open after showering if possible"
+    kitchens:
+      - "Use range hood when cooking, especially boiling"
+      - "Vent to exterior, not recirculating"
+    laundry:
+      - "Vent dryer to exterior"
+      - "Don't hang dry clothes indoors"
+    basement_crawl:
+      - "Run dehumidifier continuously"
+      - "Encapsulate crawl space with vapor barrier"
+      - "Ensure proper drainage away from foundation"
+
+  moisture_warning_signs:
+    - "Condensation on windows"
+    - "Musty odors anywhere in home"
+    - "Damp feeling to clothing or bedding"
+    - "Peeling wallpaper or bubbling paint"
+    - "Visible mold on walls, ceilings, or in closets"
+    - "Warped wood floors or sticking doors"
+
+  seasonal_tips:
+    spring_summer:
+      - "Keep windows closed on humid days"
+      - "Run AC even if not hot — removes humidity"
+      - "Don't leave wet towels on floors"
+      - "Check under sinks for condensation"
+    fall_winter:
+      - "Humidity drops naturally — may need less dehumidification"
+      - "Monitor for condensation when heat runs"
+      - "Continue basement dehumidifier year-round"
+
+  equipment:
+    hygrometer_location: "[HYGROMETER_LOCATION]"
+    dehumidifier_location: "[DEHUMIDIFIER_LOCATION]"
+    hvac_service: "[HVAC_COMPANY] — [HVAC_PHONE]"
+
+# -----------------------------------------------------------------------------
+
+southeast_pests:
+  title: "Southeast Pest Prevention & Control"
+  region: southeast
+  section: 5
+  category: regional
+  overview: "Warm, humid climate supports year-round pest activity. Termites, mosquitoes, roaches, and fire ants are particular concerns. Prevention is more effective than treatment."
+
+  termites:
+    threat_level: "HIGH — Southeast has among the highest termite pressure in the US"
+    types:
+      subterranean: "Most common — build mud tubes from soil to wood"
+      drywood: "Less common — live entirely in wood, no soil contact needed"
+    prevention:
+      - "Keep mulch at least 12 inches from foundation"
+      - "Fix any wood-to-soil contact"
+      - "Eliminate moisture sources near foundation"
+      - "Keep gutters clean and directing water away"
+      - "Don't stack firewood against house"
+    inspection:
+      frequency: "Annually — preferably spring"
+      what_they_check: "Foundation, basement, crawl space, attached structures"
+      cost: "$75-150 for inspection"
+    warning_signs:
+      - "Mud tubes on foundation or walls"
+      - "Hollow-sounding wood"
+      - "Swarmers (winged termites) inside home — usually spring"
+      - "Frass (wood-colored droppings) from drywood termites"
+    treatment_options:
+      - "Liquid barrier treatment (5-10 year protection)"
+      - "Baiting system (ongoing monitoring)"
+      - "Tent fumigation (drywood termites)"
+    termite_bond: "[TERMITE_BOND_INFO]"
+    pest_company: "[PEST_CONTROL_COMPANY] — [PEST_CONTROL_PHONE]"
+
+  mosquitoes:
+    peak_season: "April - October"
+    breeding_prevention:
+      - "Eliminate ALL standing water weekly"
+      - "Check: bird baths, plant saucers, gutters, tires, buckets"
+      - "Change pet water daily"
+      - "Keep pools chlorinated and circulating"
+      - "Clear clogged drains and French drains"
+    personal_protection:
+      - "Use EPA-registered repellents (DEET, Picaridin, Oil of Lemon Eucalyptus)"
+      - "Wear long sleeves/pants at dusk and dawn"
+      - "Ensure window screens are intact"
+    yard_treatment:
+      - "Mosquito yard spray (temporary, 2-3 weeks)"
+      - "Mosquito misting systems"
+      - "Professional barrier treatment"
+
+  roaches:
+    common_types:
+      american: "Large (1-2\"), reddish-brown, often from outdoors"
+      german: "Small (1/2\"), tan, indoor infestation indicates problem"
+    prevention:
+      - "Seal gaps around pipes, utility entries, doors"
+      - "Fix water leaks — roaches need moisture"
+      - "Don't leave food out overnight"
+      - "Empty garbage regularly"
+      - "Keep kitchens and bathrooms clean"
+    treatment:
+      - "Bait stations and gel baits (most effective)"
+      - "Professional treatment if infestation persists"
+      - "Avoid spray-only approaches — drives them into walls"
+
+  fire_ants:
+    threat: "Aggressive, painful stings — dangerous to allergic individuals"
+    identification: "Mounds in lawn, disturbing causes swarm"
+    treatment:
+      - "Individual mound treatment with bait or drench"
+      - "Broadcast bait application for yard-wide control"
+      - "Professional treatment for persistent problems"
+    warning: "Don't disturb mound — causes aggressive swarming"
+
+  wildlife:
+    common: "Squirrels, raccoons, bats, snakes"
+    prevention:
+      - "Seal gaps in soffits, vents, and roof line"
+      - "Use chimney cap with screen"
+      - "Trim tree branches away from roof (10 feet)"
+      - "Secure trash containers"
+    if_found: "Call licensed wildlife removal — DIY often illegal and dangerous"
+
+  integrated_pest_management:
+    approach:
+      - "Seal entry points (exclusion)"
+      - "Remove food and water sources (sanitation)"
+      - "Reduce hiding spots (habitat modification)"
+      - "Targeted treatment when needed (minimum effective approach)"
+    quarterly_service: "Recommended for Southeast — maintains barrier and catches problems early"
+
+  contacts:
+    pest_control: "[PEST_CONTROL_COMPANY] — [PEST_CONTROL_PHONE]"
+    wildlife_removal: "[WILDLIFE_REMOVAL_COMPANY] — [WILDLIFE_PHONE]"
+
+# -----------------------------------------------------------------------------
+
+southeast_mold_prevention:
+  title: "Mold Prevention & Remediation"
+  region: southeast
+  section: 5
+  category: regional
+  overview: "Southeast humidity creates ideal mold conditions. Mold can start growing within 24-48 hours of water exposure. Prevention and quick response are critical."
+
+  conditions_for_mold:
+    - "Moisture source (humidity, leak, condensation)"
+    - "Organic material (wood, drywall, fabric, dust)"
+    - "Temperature 60-80°F (typical home range)"
+    - "Darkness (mold grows faster in dark)"
+    - "Timeline: Visible mold can appear 24-48 hours after water exposure"
+
+  prevention_strategies:
+    humidity_control:
+      - "Keep indoor humidity below 50%"
+      - "Use dehumidifier in basement and crawl space"
+      - "Run exhaust fans during and after bathing/cooking"
+      - "Vent dryer to outside"
+    water_management:
+      - "Fix leaks within 24 hours"
+      - "Dry wet materials within 48 hours"
+      - "Improve drainage around foundation"
+      - "Keep gutters clean and directing water away"
+    air_circulation:
+      - "Don't push furniture tight against exterior walls"
+      - "Leave closet doors ajar periodically"
+      - "Run HVAC fan on 'circulate' mode"
+      - "Ensure adequate ventilation in all rooms"
+    building_materials:
+      - "Use mold-resistant drywall in bathrooms"
+      - "Apply mold-resistant paint in high-humidity areas"
+      - "Choose tile or vinyl over carpet in bathrooms/basements"
+
+  high_risk_areas:
+    check_regularly:
+      - "Behind furniture against exterior walls"
+      - "Under sinks (kitchen, bathroom)"
+      - "Around windows and doors"
+      - "In bathroom corners and ceiling"
+      - "Basement walls and floors"
+      - "Crawl space"
+      - "HVAC drip pan and drain line"
+      - "Washing machine gasket (front-loaders)"
+      - "Attic (near roof penetrations)"
+
+  mold_identification:
+    colors: "Black, green, white, orange, or pink"
+    texture: "Fuzzy, slimy, or powdery"
+    smell: "Musty, earthy odor (even if mold not visible)"
+    health_signs: "Respiratory symptoms, allergies that worsen at home"
+
+  small_mold_cleanup:
+    conditions: "Less than 10 square feet, non-porous surface, no health concerns"
+    supplies:
+      - "N95 mask"
+      - "Rubber gloves"
+      - "Goggles (no vents)"
+      - "Detergent solution or commercial mold cleaner"
+      - "Scrub brush"
+      - "Trash bags"
+    steps:
+      - "1. Contain area — close doors, don't spread spores"
+      - "2. Fix moisture source FIRST"
+      - "3. Scrub mold with detergent solution"
+      - "4. Rinse and dry completely"
+      - "5. Bag and dispose of cleaning materials"
+      - "6. Run dehumidifier and fans to dry area"
+    do_not:
+      - "Use bleach on porous surfaces (doesn't penetrate)"
+      - "Paint over mold"
+      - "Dry sweep or vacuum visible mold"
+
+  call_professional_when:
+    - "Mold covers more than 10 square feet"
+    - "Mold is in HVAC system"
+    - "Mold resulted from contaminated water (sewage, flood)"
+    - "Mold is in difficult access areas (inside walls)"
+    - "Anyone in household has respiratory conditions"
+    - "Mold keeps returning after cleanup"
+
+  after_water_damage:
+    timeline: "Act within 24-48 hours to prevent mold"
+    steps:
+      - "1. Stop water source"
+      - "2. Extract standing water (wet-dry vac, pumps)"
+      - "3. Remove wet materials (carpet padding, insulation)"
+      - "4. Set up fans and dehumidifiers"
+      - "5. Open windows if humidity is lower outside"
+      - "6. Monitor for mold development over next week"
+    professional_drying: "Required for large areas or water in wall cavities"
+
+  contacts:
+    mold_remediation: "[MOLD_REMEDIATION_COMPANY] — [MOLD_PHONE]"
+    water_damage_restoration: "[RESTORATION_COMPANY] — [RESTORATION_PHONE]"
+
+# -----------------------------------------------------------------------------
+
+southeast_energy_cooling:
+  title: "Energy-Efficient Cooling"
+  region: southeast
+  section: 5
+  category: regional
+  overview: "Cooling accounts for 40-50% of summer energy bills in the Southeast. Strategic improvements and smart habits can significantly reduce costs while staying comfortable."
+
+  cooling_season: "April - October (7+ months)"
+
+  thermostat_settings:
+    recommended:
+      when_home: "78°F"
+      when_away: "85°F or off"
+      when_sleeping: "78-80°F with ceiling fan"
+    every_degree_matters: "Each degree lower than 78°F increases cooling costs ~3%"
+    smart_thermostat: "Can save 10-15% on cooling with proper programming"
+
+  hvac_optimization:
+    filter_changes:
+      frequency: "Every 30-60 days during cooling season"
+      why: "Dirty filter restricts airflow, reduces efficiency, strains system"
+    professional_maintenance:
+      frequency: "Annually in spring"
+      includes: "Coil cleaning, refrigerant check, electrical inspection"
+      cost: "$75-200"
+    ductwork:
+      - "Seal leaks with mastic or foil tape (not duct tape)"
+      - "Insulate ducts in unconditioned spaces (attic, crawl)"
+      - "Duct leaks can waste 20-30% of cooled air"
+    sizing_matters: "Oversized AC short-cycles — cools but doesn't dehumidify"
+
+  passive_cooling:
+    window_management:
+      - "Close blinds/curtains on south and west windows during afternoon"
+      - "Use solar film or reflective shades"
+      - "Consider awnings on sun-exposed windows"
+    ceiling_fans:
+      - "Run counterclockwise in summer (pushes air down)"
+      - "Allows raising thermostat 4°F without comfort loss"
+      - "Turn OFF when room is unoccupied — fans cool people, not rooms"
+    heat_reduction:
+      - "Use microwave or outdoor grill instead of oven"
+      - "Run dishwasher at night"
+      - "Use LED bulbs (generate less heat)"
+      - "Unplug electronics and chargers when not in use"
+
+  insulation_and_sealing:
+    attic:
+      - "R-38 to R-60 recommended for Southeast"
+      - "Radiant barrier can reduce attic heat gain 25%"
+      - "Seal air leaks before adding insulation"
+    air_sealing:
+      - "Seal gaps around windows and doors"
+      - "Caulk around electrical outlets and switches"
+      - "Seal ductwork connections"
+    impact: "Air sealing + insulation can reduce cooling costs 15-30%"
+
+  upgrade_considerations:
+    when_replacing_ac:
+      - "Choose SEER 16+ for efficiency (minimum code may be lower)"
+      - "Variable-speed units maintain better humidity control"
+      - "Heat pump provides efficient heating AND cooling"
+    dehumidification:
+      - "Consider whole-house dehumidifier for better comfort"
+      - "Allows higher thermostat setting at same comfort level"
+
+  utility_programs:
+    - "Check for time-of-use rates — shift usage to off-peak"
+    - "Many utilities offer free energy audits"
+    - "Rebates may be available for efficient equipment"
+    - "Contact your utility: [POWER_COMPANY] — [POWER_COMPANY_PHONE]"
+
+  monthly_tracking:
+    - "Compare bills year-over-year (not month-to-month)"
+    - "Monitor kWh usage, not just dollar amount"
+    - "Sudden increase may indicate system problem"
+
+# =============================================================================
+# NORTHEAST REGION
+# =============================================================================
+
+northeast_winter:
+  title: "Northeast Winter Preparedness"
+  region: northeast
+  section: 5
+  category: regional
+  overview: "Northeast winters bring freezing temperatures, heavy snow, and ice storms. Preparation prevents frozen pipes, ice dams, and heating emergencies."
+
+  before_winter:
+    exterior:
+      - "Clean gutters — clogged gutters cause ice dams"
+      - "Inspect roof for missing/damaged shingles"
+      - "Seal gaps around doors, windows, and penetrations"
+      - "Insulate exposed pipes in unheated areas"
+      - "Disconnect and drain outdoor hoses"
+      - "Shut off and drain outdoor faucet supply lines"
+      - "Service snow blower or stock ice melt"
+    interior:
+      - "Schedule furnace maintenance"
+      - "Replace furnace filter"
+      - "Test heating system before cold weather"
+      - "Reverse ceiling fans (clockwise, low speed)"
+      - "Apply window insulation film where needed"
+      - "Stock emergency supplies (see kit list)"
+
+  freeze_prevention:
+    critical_temperatures: "Below 20°F requires active prevention"
+    pipe_protection:
+      - "Open cabinet doors under sinks on exterior walls"
+      - "Let faucets drip during extreme cold"
+      - "Maintain thermostat at 55°F minimum when away"
+      - "Insulate pipes with foam sleeves"
+      - "Know main shutoff location: [WATER_SHUTOFF_LOCATION]"
+    if_pipes_freeze:
+      - "Keep faucet open while thawing"
+      - "Apply gentle heat (hair dryer, heat lamp, towels)"
+      - "NEVER use open flame"
+      - "If pipe bursts, shut off main and call plumber"
+
+  snow_and_ice:
+    snow_removal:
+      - "Clear snow promptly — easier before compacting"
+      - "Clear path from foundation (prevent melt intrusion)"
+      - "Remove snow from window wells"
+    ice_melt:
+      - "Use sparingly on concrete less than 2 years old"
+      - "Calcium chloride is gentler than rock salt"
+      - "Sweep up excess after ice melts"
+    roof_snow:
+      - "Remove if accumulation exceeds 2 feet"
+      - "Use roof rake from ground — don't climb on icy roof"
+      - "Focus on eaves where ice dams form"
+
+  emergency_kit:
+    - "Flashlights and batteries"
+    - "Battery or crank radio"
+    - "Extra blankets"
+    - "Non-perishable food (3 days)"
+    - "Water (1 gallon/person/day)"
+    - "First aid kit"
+    - "Prescription medications"
+    - "Car charger for phone"
+    - "Cash (ATMs may not work)"
+
+  heating_safety:
+    - "Keep flammables away from heating equipment"
+    - "Test smoke and CO detectors"
+    - "Never use oven or stove for heating"
+    - "Have chimney inspected before use"
+    - "Generator: outside only, 20+ feet from house"
+
+# -----------------------------------------------------------------------------
+
+northeast_pests:
+  title: "Northeast Pest Prevention"
+  region: northeast
+  section: 5
+  category: regional
+  overview: "Cold winters drive pests indoors seeking warmth. Fall prevention is key to avoiding winter infestations. Termites and carpenter ants cause structural damage."
+
+  fall_prevention:
+    seal_entry_points:
+      - "Foundation cracks and gaps"
+      - "Gaps around utility pipes and wires"
+      - "Space under doors (install sweeps)"
+      - "Damaged screens and weatherstripping"
+      - "Gaps where siding meets foundation"
+    reduce_attraction:
+      - "Store firewood 20+ feet from house, off ground"
+      - "Keep gutters clean"
+      - "Trim vegetation away from foundation"
+      - "Remove leaf litter near foundation"
+
+  key_pests:
+    mice:
+      - "Can enter through 1/4-inch gap"
+      - "Seal all gaps with steel wool + caulk"
+      - "Store food in sealed containers"
+      - "Set traps along walls (they follow edges)"
+    carpenter_ants:
+      - "Attracted to damp, damaged wood"
+      - "Fix moisture problems first"
+      - "Look for sawdust piles"
+      - "Professional treatment often needed"
+    termites:
+      - "Schedule annual inspection (spring)"
+      - "Watch for swarmers (flying termites)"
+      - "Mud tubes indicate subterranean termites"
+      - "Keep soil away from wood siding"
+    stink_bugs:
+      - "Seal entry points before fall"
+      - "Vacuum up (don't crush — causes odor)"
+      - "They don't cause damage — nuisance only"
+
+  pest_service: "[PEST_CONTROL_COMPANY] — [PEST_CONTROL_PHONE]"
+
+# -----------------------------------------------------------------------------
+
+northeast_ice_dam_roof:
+  title: "Ice Dam & Roof Protection"
+  region: northeast
+  section: 5
+  category: regional
+  overview: "Ice dams form when heat escapes through the roof, melting snow that refreezes at the eave. Water backs up under shingles, causing leaks and damage."
+
+  how_ice_dams_form:
+    - "1. Heat escapes from living space into attic"
+    - "2. Warm attic melts snow on upper roof"
+    - "3. Meltwater runs down to cold eave"
+    - "4. Water refreezes, forming ice dam"
+    - "5. More melt backs up behind dam"
+    - "6. Water finds its way under shingles into home"
+
+  prevention:
+    insulation:
+      - "Attic floor should have R-49 or higher"
+      - "Insulation should be even — no thin spots"
+      - "Don't compress insulation — reduces effectiveness"
+    air_sealing:
+      - "Seal around light fixtures penetrating attic floor"
+      - "Seal plumbing and electrical penetrations"
+      - "Seal attic hatch with weatherstripping"
+      - "Seal around chimney chase"
+    ventilation:
+      - "Balance intake (soffit) and exhaust (ridge/gable)"
+      - "Don't block soffit vents with insulation — use baffles"
+      - "Adequate ventilation keeps attic cold"
+
+  if_ice_dam_forms:
+    immediate:
+      - "Create channels with calcium chloride in nylon stocking"
+      - "DO NOT chip ice — damages shingles"
+      - "Remove snow from roof with roof rake"
+      - "DO NOT use heat cables as permanent solution"
+    professional:
+      - "Steam removal by professional roofer"
+      - "Address underlying insulation/ventilation issues"
+
+  ice_shield:
+    - "Self-adhering membrane installed under shingles at eaves"
+    - "Should extend 3+ feet past exterior wall line"
+    - "Required by code in most Northeast areas"
+    - "Installed during roofing — not retrofit"
+
+# -----------------------------------------------------------------------------
+
+northeast_energy_efficiency:
+  title: "Northeast Energy Efficiency"
+  region: northeast
+  section: 5
+  category: regional
+  overview: "Long heating season makes efficiency upgrades highly cost-effective. Focus on air sealing and insulation first — they provide the best return on investment."
+
+  priority_order:
+    - "1. Air sealing (biggest impact per dollar)"
+    - "2. Attic insulation"
+    - "3. Basement/crawl space insulation"
+    - "4. Window and door weatherstripping"
+    - "5. HVAC system upgrade"
+
+  air_sealing:
+    biggest_leaks:
+      - "Attic bypasses (gaps around chimneys, plumbing stacks)"
+      - "Recessed lights penetrating attic"
+      - "Attic hatch or pull-down stairs"
+      - "Rim joist in basement"
+      - "Around windows and doors"
+    materials:
+      - "Caulk for gaps under 1/4 inch"
+      - "Foam sealant for gaps 1/4 to 3 inches"
+      - "Rigid foam for larger openings"
+
+  insulation_levels:
+    attic: "R-49 to R-60"
+    walls: "R-13 to R-23 (depends on wall thickness)"
+    basement_walls: "R-10 to R-19"
+    crawl_space: "R-25 under floor or R-10 on walls"
+
+  heating_system:
+    - "Replace furnaces older than 15 years"
+    - "High-efficiency furnaces: 95%+ AFUE"
+    - "Consider heat pump for moderate climates"
+    - "Cold-climate heat pumps work to -15°F"
+    - "Annual maintenance extends life and efficiency"
+
+  windows_and_doors:
+    - "Weatherstrip all exterior doors"
+    - "Apply window insulation film for single-pane"
+    - "Consider replacement if single-pane or failing"
+    - "Double or triple-pane low-E for new windows"
+
+  energy_audit:
+    - "Professional audit identifies biggest opportunities"
+    - "Often includes blower door test for air leaks"
+    - "Many utilities offer free or subsidized audits"
+
+# -----------------------------------------------------------------------------
+
+northeast_coastal_flooding:
+  title: "Coastal Flooding Preparedness"
+  region: northeast
+  section: 5
+  category: regional
+  overview: "Coastal properties face flooding from nor'easters, hurricanes, and tidal surges. Standard homeowner's insurance does NOT cover flood damage."
+
+  flood_insurance:
+    critical: "Required for federally-backed mortgages in flood zones"
+    purchase_timing: "30-day waiting period — buy before you need it"
+    coverage: "Separate policy from homeowner's insurance"
+    source: "NFIP (through insurance agents) or private insurers"
+
+  know_your_risk:
+    - "Check FEMA flood maps: msc.fema.gov"
+    - "Know your flood zone designation"
+    - "Understand base flood elevation (BFE)"
+    - "Consider flood history of neighborhood"
+
+  elevation_and_protection:
+    - "Elevate HVAC, water heater, electrical panel above BFE"
+    - "Install backflow valves on sewer lines"
+    - "Use flood-resistant materials below BFE"
+    - "Anchor fuel tanks to prevent flotation"
+    - "Elevate valuable/irreplaceable items"
+
+  preparation:
+    - "Install sump pump with battery backup"
+    - "Clear storm drains before storm season"
+    - "Have sandbags or flood barriers available"
+    - "Know evacuation routes from flood zones"
+    - "Document contents with photos/video"
+
+  during_flooding:
+    - "NEVER walk or drive through flood water"
+    - "6 inches of moving water can knock you down"
+    - "12 inches of water can float a vehicle"
+    - "Flood water contains sewage, chemicals, debris"
+
+  after_flooding:
+    - "Wait for all-clear before returning"
+    - "Document damage before cleanup"
+    - "Beware of electrical hazards"
+    - "Discard food that contacted flood water"
+    - "Dry home within 48 hours to prevent mold"
+
+# =============================================================================
+# MIDWEST REGION
+# =============================================================================
+
+midwest_tornado:
+  title: "Tornado & Severe Storm Preparedness"
+  region: midwest
+  section: 5
+  category: regional
+  overview: "The Midwest experiences more tornadoes than any other region. Having a plan and safe room identified can save your life."
+
+  tornado_season: "March through June, secondary peak September-October"
+  peak_time: "3 PM to 9 PM (but can occur anytime)"
+
+  warning_types:
+    watch: "Conditions favorable — be ready to act"
+    warning: "Tornado observed or indicated on radar — take shelter NOW"
+
+  safe_room:
+    best_locations:
+      - "Interior room on lowest floor"
+      - "Bathroom or closet (small rooms with plumbing are strong)"
+      - "Under staircase"
+      - "Basement, away from windows"
+    avoid:
+      - "Rooms with windows"
+      - "Upper floors"
+      - "Mobile homes (leave for sturdier structure)"
+      - "Vehicles"
+    your_safe_room: "[SAFE_ROOM_LOCATION]"
+
+  preparation:
+    - "Identify safe room and practice drills"
+    - "Install NOAA weather radio with battery backup"
+    - "Know how to receive wireless emergency alerts on phone"
+    - "Keep emergency supplies in safe room"
+    - "Secure heavy furniture and appliances"
+    - "Secure water heater to wall"
+
+  supplies_in_safe_room:
+    - "Flashlight and batteries"
+    - "Weather radio"
+    - "Shoes (for walking through debris)"
+    - "Blankets or mattress (protection from debris)"
+    - "First aid kit"
+    - "Water"
+    - "Cell phone charger"
+
+  if_warning_issued:
+    - "Go to safe room immediately"
+    - "Get under sturdy furniture or mattress"
+    - "Cover head and neck"
+    - "Stay away from windows"
+    - "Do NOT open windows — myth"
+
+  after_tornado:
+    - "Wait for all-clear before leaving shelter"
+    - "Watch for downed power lines"
+    - "Don't enter damaged buildings"
+    - "Document damage for insurance"
+    - "Check on neighbors"
+
+# -----------------------------------------------------------------------------
+
+midwest_foundation:
+  title: "Midwest Foundation & Soil Care"
+  region: midwest
+  section: 5
+  category: regional
+  overview: "Midwest clay soils expand when wet and contract when dry, stressing foundations. Freeze-thaw cycles add additional pressure. Consistent moisture management is key."
+
+  soil_challenges:
+    clay_soil:
+      - "Expands significantly when wet"
+      - "Shrinks and cracks when dry"
+      - "Creates uneven pressure on foundation"
+    freeze_thaw:
+      - "Water in soil expands when freezing"
+      - "Repeated cycles create pressure"
+      - "Most damage at foundation edge"
+
+  moisture_management:
+    too_wet:
+      - "Ensure gutters direct water 4-6 feet from foundation"
+      - "Grade soil to slope away from house"
+      - "Don't over-irrigate near foundation"
+    too_dry:
+      - "During drought, water foundation perimeter"
+      - "Use soaker hose 12-18 inches from foundation"
+      - "Maintain consistent moisture — avoid extremes"
+
+  warning_signs:
+    interior:
+      - "Doors and windows stick or won't close"
+      - "Cracks in drywall, especially at corners"
+      - "Uneven or sloping floors"
+      - "Gaps between walls and ceiling/floor"
+    exterior:
+      - "Stair-step cracks in brick"
+      - "Horizontal or diagonal foundation cracks"
+      - "Separation at corners"
+      - "Chimney leaning or separating"
+    basement:
+      - "Water intrusion"
+      - "Efflorescence (white deposits)"
+      - "Bowing or leaning walls"
+
+  when_to_act:
+    monitor: "Hairline cracks, minor sticking"
+    consult_professional: "Growing cracks, significant sticking, water intrusion"
+    emergency: "Bowing walls, major structural movement"
+
+# -----------------------------------------------------------------------------
+
+midwest_winter_freeze:
+  title: "Winter Freeze Protection"
+  region: midwest
+  section: 5
+  category: regional
+  overview: "Midwest winters regularly drop below 0°F. Protecting pipes and maintaining heating systems prevents costly damage and dangerous situations."
+
+  pipe_protection:
+    before_winter:
+      - "Shut off and drain exterior hose bibs"
+      - "Insulate pipes in unheated areas (foam sleeves)"
+      - "Know main water shutoff: [WATER_SHUTOFF_LOCATION]"
+    during_extreme_cold:
+      - "Open cabinet doors under sinks"
+      - "Let faucets drip (both hot and cold)"
+      - "Keep thermostat at 55°F minimum when away"
+      - "Keep garage door closed if pipes run through garage"
+
+  heating_system:
+    preparation:
+      - "Schedule professional maintenance in fall"
+      - "Replace filter monthly during heating season"
+      - "Test system before first cold snap"
+    emergency_backup:
+      - "Have backup heat source (kerosene heater, fireplace)"
+      - "Never use oven or stove for heating"
+      - "Never use generator indoors"
+    warning_signs:
+      - "Unusual noises"
+      - "Yellow pilot light (should be blue)"
+      - "Frequent cycling"
+      - "Inadequate heat"
+
+  emergency_supplies:
+    - "Extra blankets"
+    - "Battery radio"
+    - "Flashlights and batteries"
+    - "Non-perishable food"
+    - "Bottled water"
+    - "Medications"
+    - "Firewood (if applicable)"
+
+# -----------------------------------------------------------------------------
+
+midwest_basement_flooding:
+  title: "Basement Flooding Prevention"
+  region: midwest
+  section: 5
+  category: regional
+  overview: "Heavy rains, snowmelt, and high water tables create basement flooding risk. Sump pump reliability and proper drainage are essential."
+
+  sump_pump_critical:
+    testing: "Test quarterly by pouring water into pit"
+    backup_power:
+      - "Battery backup essential — storms cause outages"
+      - "Water-powered backup (uses municipal pressure)"
+      - "Generator as alternative"
+    backup_battery:
+      replacement: "Every 2-3 years"
+      testing: "Test by disconnecting primary power"
+    your_pump: "[SUMP_PUMP_LOCATION]"
+
+  drainage_improvements:
+    exterior:
+      - "Gutters directing water 6+ feet from foundation"
+      - "Ground sloping away from house (6 inches over 10 feet)"
+      - "Window well covers"
+      - "French drain if grading insufficient"
+    interior:
+      - "Interior French drain system"
+      - "Proper sump pit sizing"
+      - "Floor drain maintenance"
+
+  waterproofing:
+    interior_solutions:
+      - "Hydraulic cement for cracks"
+      - "Interior waterproofing membrane"
+      - "Dehumidifier for moisture control"
+    exterior_solutions:
+      - "Excavation and membrane application"
+      - "Most effective but most expensive"
+      - "Address severe or recurring problems"
+
+  if_flooding_occurs:
+    - "Shut off electricity to basement if safe"
+    - "Don't enter if electrical hazard"
+    - "Remove water (pump, wet-dry vac)"
+    - "Document for insurance"
+    - "Dry within 48 hours to prevent mold"
+
+# -----------------------------------------------------------------------------
+
+midwest_energy_insulation:
+  title: "Energy Efficiency & Insulation"
+  region: midwest
+  section: 5
+  category: regional
+  overview: "Extreme temperature swings (100°F summer to -20°F winter) make insulation and air sealing critical. A well-sealed home is comfortable and affordable year-round."
+
+  insulation_recommendations:
+    attic: "R-49 to R-60"
+    walls: "R-13 to R-23"
+    basement_walls: "R-15 to R-19"
+    rim_joist: "R-19 to R-30"
+
+  air_sealing_priorities:
+    - "Attic bypasses (largest air leaks)"
+    - "Rim joist in basement (spray foam)"
+    - "Around windows and doors"
+    - "Electrical boxes on exterior walls"
+    - "Ductwork joints"
+
+  window_upgrades:
+    - "Replace single-pane with double or triple"
+    - "Low-E coating reduces heat transfer"
+    - "Storm windows as intermediate step"
+    - "Window insulation film for temporary fix"
+
+  smart_thermostat:
+    benefits:
+      - "10-15% savings on heating and cooling"
+      - "Adjusts automatically when away"
+      - "Pre-heats/cools before you arrive"
+      - "Tracks energy usage"
+
+  utility_programs:
+    - "Many utilities offer free energy audits"
+    - "Rebates for insulation and air sealing"
+    - "Rebates for high-efficiency equipment"
+    - "Contact utility for current programs"
+
+# =============================================================================
+# SOUTHWEST REGION
+# =============================================================================
+
+southwest_heat:
+  title: "Extreme Heat & Desert Climate Care"
+  region: southwest
+  section: 5
+  category: regional
+  overview: "Desert heat exceeds 100°F for months. Protecting your home and cooling systems requires specific strategies for extreme temperature and intense sun."
+
+  cooling_priorities:
+    ac_maintenance:
+      - "Service AC before summer (April)"
+      - "Clean or replace filters monthly"
+      - "Keep condenser clear of debris"
+      - "Shade condenser if possible (don't block airflow)"
+    evaporative_coolers:
+      - "Replace pads seasonally"
+      - "Clean mineral deposits monthly"
+      - "Only effective when humidity is low"
+
+  heat_reduction:
+    exterior:
+      - "Light-colored or reflective roof coating"
+      - "Radiant barrier in attic"
+      - "Shade trees on west and south sides"
+      - "Window awnings or solar screens"
+    interior:
+      - "Close blinds during peak sun"
+      - "Use solar film on windows"
+      - "Cook outdoors or use microwave"
+      - "Run heat-generating appliances at night"
+
+  garage_protection:
+    - "Garage can exceed 140°F"
+    - "Keep garage door closed"
+    - "Don't store heat-sensitive items"
+    - "Consider insulated garage door"
+    - "Move stored chemicals to cooler location"
+
+  vehicle_protection:
+    - "Park in shade when possible"
+    - "Use windshield sunshade"
+    - "Crack windows slightly for ventilation"
+    - "NEVER leave children or pets in car"
+
+  personal_safety:
+    - "Stay hydrated — drink before you feel thirsty"
+    - "Limit outdoor activity to early morning"
+    - "Know signs of heat exhaustion"
+    - "Check on elderly neighbors"
+
+# -----------------------------------------------------------------------------
+
+southwest_monsoon:
+  title: "Monsoon & Flash Flood Preparedness"
+  region: southwest
+  section: 5
+  category: regional
+  overview: "Monsoon season (June-September) brings intense thunderstorms and flash flooding. Dry desert soil can't absorb sudden heavy rain, creating dangerous flash floods."
+
+  monsoon_season: "June 15 - September 30"
+
+  flash_flood_facts:
+    - "Floods are #1 weather killer in the Southwest"
+    - "Flash floods occur within minutes of heavy rain"
+    - "Dry washes can go from empty to raging in minutes"
+    - "Water may be miles from where rain fell"
+
+  preparation:
+    drainage:
+      - "Clear debris from yard drains and drainage channels"
+      - "Ensure water flows away from foundation"
+      - "Clean roof drains and scuppers"
+      - "Clear gutters and downspouts"
+    protection:
+      - "Install backflow valve on sewer"
+      - "Know flood-prone areas near your home"
+      - "Have sandbags or flood barriers available"
+    supplies:
+      - "Keep emergency kit ready"
+      - "Have battery radio for alerts"
+      - "Keep important documents elevated"
+
+  during_flood:
+    - "NEVER drive through flooded roads"
+    - "Turn Around Don't Drown — 6 inches can sweep you away"
+    - "Never walk through flowing water"
+    - "Move to higher ground if flooding threatens"
+    - "Stay away from washes and drainage channels"
+
+# -----------------------------------------------------------------------------
+
+southwest_dust_storms:
+  title: "Dust Storm & Air Quality Protection"
+  region: southwest
+  section: 5
+  category: regional
+  overview: "Haboobs (dust storms) can reduce visibility to zero and infiltrate homes. Protecting your home and HVAC system extends equipment life and improves air quality."
+
+  dust_storm_facts:
+    - "Can occur anytime but peak during monsoon season"
+    - "Walls of dust can be thousands of feet high"
+    - "Visibility drops to near zero within seconds"
+    - "Carries fine particles, bacteria, and allergens"
+
+  home_protection:
+    sealing:
+      - "Weatherstrip doors and windows"
+      - "Seal gaps around electrical outlets"
+      - "Caulk around windows"
+      - "Install door sweeps"
+    hvac:
+      - "Use MERV 11+ filters"
+      - "Replace filters monthly during dust season"
+      - "Consider whole-house air filtration"
+      - "Seal ductwork joints"
+
+  during_dust_storm:
+    inside:
+      - "Close all windows and doors"
+      - "Turn HVAC to recirculate (not fresh air)"
+      - "Seal gaps under doors with wet towels if needed"
+    driving:
+      - "Pull off road safely"
+      - "Turn off lights — other drivers may follow them"
+      - "Set parking brake"
+      - "Take foot off brake"
+      - "Wait for storm to pass"
+
+  after_storm:
+    - "Wait for visibility to improve before going outside"
+    - "Rinse exterior surfaces to prevent etching"
+    - "Clean or replace HVAC filter"
+    - "Vacuum and dust interior"
+
+# -----------------------------------------------------------------------------
+
+southwest_water_conservation:
+  title: "Water Conservation & Plumbing"
+  region: southwest
+  section: 5
+  category: regional
+  overview: "Water is precious and expensive in the desert Southwest. Conservation isn't just environmental — it saves significant money. Plumbing also faces unique desert challenges."
+
+  indoor_conservation:
+    fixtures:
+      - "Low-flow showerheads (2.0 GPM or less)"
+      - "Low-flow faucet aerators (1.5 GPM)"
+      - "Dual-flush or WaterSense toilets"
+    habits:
+      - "Fix leaks immediately — a dripping faucet wastes 3,000 gal/year"
+      - "Run dishwasher and laundry only when full"
+      - "Shorter showers"
+
+  outdoor_conservation:
+    xeriscaping:
+      - "Replace grass with native, drought-tolerant plants"
+      - "Use gravel and rock mulch"
+      - "Group plants by water needs"
+    irrigation:
+      - "Drip irrigation uses 60% less than sprinklers"
+      - "Water early morning (less evaporation)"
+      - "Adjust for season and weather"
+      - "Check for leaks monthly"
+    rainwater:
+      - "Harvest monsoon rain for irrigation"
+      - "Barrels or cisterns capture roof runoff"
+      - "Check local regulations"
+
+  plumbing_challenges:
+    slab_leaks:
+      - "Shifting desert soil stresses underground pipes"
+      - "Copper pipes corrode in some soil types"
+      - "Signs: unexplained water bill increase, hot spots on floor"
+      - "Requires professional detection and repair"
+    hard_water:
+      - "High mineral content common"
+      - "Causes scale buildup in pipes and appliances"
+      - "Consider water softener"
+
+# -----------------------------------------------------------------------------
+
+southwest_uv_roof_protection:
+  title: "UV & Roof Protection"
+  region: southwest
+  section: 5
+  category: regional
+  overview: "Intense desert sun degrades roofing materials faster than other climates. UV protection and regular inspection extend roof life significantly."
+
+  uv_damage:
+    - "Sun breaks down asphalt shingles"
+    - "Causes cracking in flat roof membranes"
+    - "Accelerates deterioration of flashing and seals"
+    - "Fades and degrades tiles"
+
+  protection_strategies:
+    coatings:
+      - "Reflective elastomeric coating every 3-5 years"
+      - "Reduces surface temperature 50-60°F"
+      - "Extends roof life significantly"
+      - "Reduces cooling costs 10-25%"
+    materials:
+      - "Choose light-colored or cool-roof-rated materials"
+      - "Tile roofs handle sun well"
+      - "Metal roofs with reflective coating"
+
+  inspection_schedule:
+    frequency: "Twice yearly + after monsoons"
+    check:
+      - "Cracking or blistering in flat roof membrane"
+      - "Curling or brittleness in shingles"
+      - "Deterioration around penetrations"
+      - "Ponding water on flat roofs"
+      - "Flashing condition"
+
+  flat_roof_specific:
+    - "Clear drainage scuppers regularly"
+    - "Prevent ponding (damages membrane)"
+    - "Recoat on schedule"
+    - "Address small problems immediately"
+
+# =============================================================================
+# WEST REGION
+# =============================================================================
+
+west_wildfire:
+  title: "Wildfire Preparedness & Defensible Space"
+  region: west
+  section: 5
+  category: regional
+  overview: "Wildfires in the West are increasingly common and severe. Creating defensible space and hardening your home can mean the difference between survival and total loss."
+
+  fire_season: "May - October (year-round in some areas)"
+
+  defensible_space:
+    zone_1:
+      distance: "0-5 feet from house"
+      requirements:
+        - "No plants within 5 feet of house"
+        - "Use gravel, pavers, or stone"
+        - "Remove dead plants and debris"
+        - "No mulch (use rock)"
+    zone_2:
+      distance: "5-30 feet from house"
+      requirements:
+        - "Low-growing, fire-resistant plants"
+        - "Remove dead vegetation"
+        - "Create separation between plants"
+        - "Remove ladder fuels (vegetation linking ground to trees)"
+    zone_3:
+      distance: "30-100 feet from house"
+      requirements:
+        - "Reduce vegetation density"
+        - "Create fuel breaks"
+        - "Remove dead trees and debris"
+        - "Thin trees for separation"
+
+  home_hardening:
+    roof:
+      - "Class A fire-rated roofing required in fire zones"
+      - "Clean gutters of leaves and debris"
+      - "Install ember-resistant vents"
+    exterior:
+      - "Enclose eaves and soffits"
+      - "Use fire-resistant siding"
+      - "Screen vents with 1/8\" metal mesh"
+      - "Remove wood fences attached to house"
+    decks:
+      - "Clear debris under and around deck"
+      - "Use fire-resistant decking material"
+      - "Remove stored items from under deck"
+
+  go_bag:
+    keep_near_door:
+      - "Important documents (copies)"
+      - "Medications (3-day supply)"
+      - "Phone chargers"
+      - "Cash"
+      - "Change of clothes"
+      - "Toiletries"
+      - "Pet supplies"
+      - "Photos/irreplaceables"
+
+  evacuation:
+    - "Know evacuation routes (have alternates)"
+    - "Sign up for emergency alerts"
+    - "Leave early — don't wait for mandatory order"
+    - "Have pet carriers ready"
+
+# -----------------------------------------------------------------------------
+
+west_earthquake:
+  title: "Earthquake Preparedness"
+  region: west
+  section: 5
+  category: regional
+  overview: "Earthquakes strike without warning. Securing your home, knowing what to do during shaking, and being prepared for aftermath are essential."
+
+  home_preparation:
+    secure_items:
+      - "Strap water heater to wall studs"
+      - "Secure tall furniture to walls"
+      - "Install latches on cabinets"
+      - "Hang heavy items away from beds and seating"
+      - "Use earthquake putty for valuables"
+    foundation:
+      - "Bolt house to foundation (pre-1980 homes)"
+      - "Brace cripple walls in crawl space"
+      - "Strap masonry chimneys"
+
+  know_your_shutoffs:
+    gas: "[GAS_SHUTOFF_LOCATION] — turn perpendicular to pipe after quake"
+    water: "[WATER_SHUTOFF_LOCATION]"
+    electric: "[ELECTRICAL_PANEL_LOCATION]"
+    special_tool: "Keep gas shutoff wrench at meter"
+
+  during_earthquake:
+    inside:
+      - "DROP to your hands and knees"
+      - "COVER under sturdy furniture or against interior wall"
+      - "HOLD ON until shaking stops"
+      - "Stay away from windows and exterior walls"
+      - "Do NOT run outside during shaking"
+    outside:
+      - "Move away from buildings and power lines"
+      - "Drop, cover, and hold on"
+    driving:
+      - "Pull over safely and stop"
+      - "Avoid bridges, overpasses, power lines"
+      - "Stay in vehicle until shaking stops"
+
+  after_earthquake:
+    - "Check for injuries first"
+    - "If gas smell, leave and call utility"
+    - "Check for damage before re-entering"
+    - "Expect aftershocks"
+    - "Use text instead of phone calls"
+
+  emergency_supplies:
+    - "Water (1 gallon/person/day for 3+ days)"
+    - "Food (non-perishable, 3+ days)"
+    - "First aid kit"
+    - "Flashlights and batteries"
+    - "Battery radio"
+    - "Shoes and work gloves (for debris)"
+    - "Medications"
+    - "Cash"
+
+# -----------------------------------------------------------------------------
+
+west_radon:
+  title: "Radon & Air Quality"
+  region: west
+  section: 5
+  category: regional
+  overview: "Parts of the West have elevated radon levels due to geology. Radon is the #2 cause of lung cancer. Testing is the only way to know your level."
+
+  what_is_radon:
+    - "Radioactive gas from uranium decay in soil"
+    - "Colorless, odorless — can't detect without testing"
+    - "Enters through foundation cracks, gaps, sump pits"
+    - "Accumulates indoors to dangerous levels"
+
+  testing:
+    methods:
+      - "Short-term test kit (2-7 days)"
+      - "Long-term test kit (90+ days)"
+      - "Continuous radon monitor"
+    when_to_test:
+      - "All homes should test (EPA recommendation)"
+      - "Lowest lived-in level"
+      - "Before buying a home"
+    action_level: "4 pCi/L or higher — mitigate"
+    consider_mitigation: "2-4 pCi/L"
+
+  mitigation:
+    how_it_works:
+      - "Sub-slab suction pulls radon from under foundation"
+      - "Fan exhausts radon above roofline"
+      - "Typically reduces levels 80-99%"
+    cost: "$800-2,500 for typical installation"
+    maintenance: "Check manometer monthly, fan lasts 5-10 years"
+
+  prevention:
+    - "Seal foundation cracks"
+    - "Seal sump pit"
+    - "Maintain vapor barriers in crawl space"
+    - "Ensure adequate ventilation"
+
+# -----------------------------------------------------------------------------
+
+west_mudslide_erosion:
+  title: "Mudslide & Erosion Prevention"
+  region: west
+  section: 5
+  category: regional
+  overview: "Steep terrain and heavy rains (especially after wildfire) create mudslide risk. Hillside properties require specific precautions."
+
+  risk_factors:
+    - "Steep slopes above or below property"
+    - "Previous wildfire in watershed"
+    - "Heavy or prolonged rain"
+    - "Cut slopes or disturbed earth"
+    - "Saturated soil"
+
+  warning_signs:
+    - "Cracks or bulges in ground"
+    - "Leaning trees, fences, or poles"
+    - "New springs or seeps"
+    - "Doors or windows suddenly stick"
+    - "Water flowing where it normally doesn't"
+
+  prevention:
+    vegetation:
+      - "Plant deep-rooted native plants"
+      - "Maintain ground cover"
+      - "Don't clear vegetation on slopes"
+    drainage:
+      - "Keep storm drains clear"
+      - "Don't redirect water to slopes"
+      - "Install proper drainage systems"
+    structures:
+      - "Retaining walls for steep slopes"
+      - "Terrace hillsides to slow water"
+      - "Geotechnical evaluation for new construction"
+
+  during_mudslide:
+    - "Move to upper floor if can't evacuate"
+    - "Stay away from slide path"
+    - "Listen for rumbling (mudflow approaching)"
+    - "Curl into tight ball if caught (protect head)"
+
+  after_wildfire:
+    - "Risk dramatically increases for 2-5 years"
+    - "Even small rain can trigger debris flows"
+    - "Evacuate during rainstorms if in risk area"
+    - "Consider temporary barriers"
+
+# -----------------------------------------------------------------------------
+
+west_energy_solar_optimization:
+  title: "Energy Efficiency & Solar Optimization"
+  region: west
+  section: 5
+  category: regional
+  overview: "Abundant sunshine makes the West ideal for solar. Combining solar with efficiency improvements maximizes savings and return on investment."
+
+  solar_basics:
+    ideal_conditions:
+      - "South-facing roof"
+      - "Minimal shading"
+      - "Roof in good condition (5+ years remaining)"
+    sizing: "Typically 5-10 kW for average home"
+    savings: "50-100% reduction in electricity bills"
+
+  before_solar:
+    efficiency_first:
+      - "Air seal and insulate"
+      - "Upgrade to LED lighting"
+      - "Efficient appliances"
+      - "Smaller system needed = lower cost"
+
+  solar_incentives:
+    federal: "30% tax credit through 2032"
+    state: "Check DSIRE database for state incentives"
+    utility: "Many offer additional rebates"
+    net_metering: "Varies by utility and state"
+
+  battery_storage:
+    benefits:
+      - "Use solar power at night"
+      - "Backup during outages"
+      - "Maximize time-of-use savings"
+    considerations:
+      - "Significant additional cost"
+      - "May qualify for additional incentives"
+      - "10-15 year lifespan typical"
+
+  maintenance:
+    - "Clean panels 1-2 times per year"
+    - "Monitor production for problems"
+    - "Trim trees as they grow"
+    - "Professional inspection every 3-5 years"
+

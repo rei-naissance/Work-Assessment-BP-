@@ -1,0 +1,584 @@
+# =============================================================================
+# HOME_TYPE.YAML — Housing Type-Specific Guides
+# =============================================================================
+# Maintenance and operational guidance specific to different housing situations
+# Each module addresses unique challenges and responsibilities
+# =============================================================================
+
+single_family_exterior:
+  title: "Single Family Home Exterior Maintenance"
+  home_type: single_family
+  section: 5
+  category: home_type
+  overview: "As a single-family homeowner, you're responsible for all exterior maintenance. Regular inspection and upkeep protect your investment and prevent costly repairs."
+
+  seasonal_exterior_schedule:
+    spring:
+      - "Walk full perimeter — check foundation, siding, trim"
+      - "Inspect roof from ground (binoculars) for winter damage"
+      - "Clean gutters and downspouts"
+      - "Check window and door caulking"
+      - "Power wash siding, deck, driveway"
+      - "Service lawn equipment"
+      - "Check drainage — ensure water flows away from foundation"
+    summer:
+      - "Mid-season gutter check (especially if trees nearby)"
+      - "Inspect and treat wood deck/fence"
+      - "Check for wasp nests and pest activity"
+      - "Maintain landscaping — keep vegetation away from foundation"
+    fall:
+      - "Clean gutters after leaves fall"
+      - "Inspect roof for storm damage"
+      - "Seal driveway cracks before winter"
+      - "Winterize irrigation system"
+      - "Store outdoor furniture or cover"
+      - "Disconnect and store hoses"
+    winter:
+      - "Keep gutters clear of ice buildup"
+      - "Monitor for ice dams"
+      - "Clear snow from foundation and window wells"
+      - "Check for animal entry points"
+
+  siding_maintenance:
+    inspection:
+      frequency: "Annually (spring)"
+      check_for:
+        - "Cracks, holes, or damage"
+        - "Loose or missing pieces"
+        - "Signs of moisture (bubbling, warping)"
+        - "Pest damage (holes, nesting)"
+        - "Mold or mildew growth"
+        - "Fading or peeling paint"
+    by_type:
+      vinyl:
+        - "Clean with garden hose and soft brush"
+        - "Repair cracks before they spread"
+        - "Replace damaged sections (snap-lock system)"
+        - "Lifespan: 20-40 years"
+      wood:
+        - "Repaint or restain every 3-5 years"
+        - "Check for rot, especially at ground level"
+        - "Caulk gaps and joints"
+        - "Lifespan: 20-40 years with maintenance"
+      fiber_cement:
+        - "Repaint every 5-15 years"
+        - "Caulk joints as needed"
+        - "Very durable, low maintenance"
+        - "Lifespan: 30-50 years"
+      brick:
+        - "Inspect mortar joints for deterioration"
+        - "Repoint (tuckpoint) crumbling mortar"
+        - "Check for efflorescence (white deposits)"
+        - "Lifespan: 100+ years with maintenance"
+
+  driveway_and_walkways:
+    concrete:
+      - "Seal every 2-3 years"
+      - "Fill cracks before winter (prevents water expansion damage)"
+      - "Remove stains promptly (oil, rust)"
+      - "Avoid de-icing salts on concrete less than 1 year old"
+    asphalt:
+      - "Seal coat every 2-4 years"
+      - "Fill cracks when they appear"
+      - "Edge to prevent grass encroachment"
+    pavers:
+      - "Replace damaged pavers promptly"
+      - "Refill joint sand after heavy rain"
+      - "Prevent weed growth with polymeric sand"
+
+  fencing_and_gates:
+    wood_fence:
+      - "Stain or seal every 2-3 years"
+      - "Check for rot at ground level"
+      - "Repair loose boards promptly"
+      - "Check gate hardware and adjust"
+    vinyl_fence:
+      - "Clean with soap and water"
+      - "Check posts for stability"
+      - "Very low maintenance"
+    chain_link:
+      - "Check for rust, treat or replace"
+      - "Tighten tension as needed"
+      - "Lubricate gate hinges"
+
+  foundation_monitoring:
+    - "Keep soil graded away from foundation (6\" drop over 10')"
+    - "Extend downspouts 4-6 feet from foundation"
+    - "Don't plant shrubs tight against foundation"
+    - "Monitor for cracks — document and track any changes"
+    - "Keep mulch at least 6\" from foundation"
+
+  exterior_paint:
+    frequency: "Every 5-10 years (varies by material and climate)"
+    signs_needed:
+      - "Peeling or flaking"
+      - "Fading"
+      - "Chalking (powdery residue)"
+      - "Cracking"
+    prep_matters: "Surface preparation is 80% of a good paint job"
+
+  contacts:
+    handyman: "[HANDYMAN_NAME] — [HANDYMAN_PHONE]"
+    painter: "[PAINTER_NAME] — [PAINTER_PHONE]"
+    landscaper: "[LANDSCAPER_NAME] — [LANDSCAPER_PHONE]"
+
+# -----------------------------------------------------------------------------
+
+condo_association:
+  title: "Condo & HOA Living Guide"
+  home_type: condo
+  section: 5
+  category: home_type
+  overview: "Condo ownership means shared responsibility with the HOA. Understanding what you own vs. what the association maintains prevents gaps in maintenance and insurance."
+
+  your_association:
+    name: "[HOA_NAME]"
+    management_company: "[MANAGEMENT_COMPANY]"
+    contact: "[HOA_CONTACT_PHONE]"
+    portal: "[HOA_PORTAL_URL]"
+    monthly_dues: "[HOA_DUES_AMOUNT]"
+    dues_due_date: "[DUES_DUE_DATE]"
+
+  ownership_boundaries:
+    you_typically_own:
+      - "Interior walls, flooring, ceilings (from studs/joists in)"
+      - "Interior fixtures (cabinets, appliances, counters)"
+      - "HVAC equipment inside your unit"
+      - "Windows and doors (check your documents)"
+      - "Plumbing from unit shutoff valve in"
+      - "Electrical from unit panel in"
+    association_typically_owns:
+      - "Building exterior (roof, siding, structure)"
+      - "Common areas (hallways, lobby, amenities)"
+      - "Shared systems (elevators, main plumbing, fire suppression)"
+      - "Landscaping and grounds"
+      - "Parking structures"
+    varies_by_condo:
+      - "Windows and sliding doors"
+      - "Balconies and patios"
+      - "HVAC equipment"
+      - "Limited common elements (assigned parking, storage)"
+    verify: "Check your CC&Rs and bylaws for your specific community"
+
+  insurance_requirements:
+    master_policy:
+      - "Covers building structure and common areas"
+      - "Check what's included: 'bare walls in' vs 'all in'"
+      - "Review certificate annually"
+    your_policy_must_cover:
+      - "Personal property (furniture, belongings)"
+      - "Interior improvements and betterments"
+      - "Liability (someone injured in your unit)"
+      - "Loss assessment (your share of deductible/uninsured loss)"
+      - "Gap coverage if master policy is 'bare walls'"
+    policy_holder: "[CONDO_INSURANCE_PROVIDER]"
+    policy_number: "[CONDO_INSURANCE_POLICY]"
+
+  maintenance_responsibilities:
+    your_unit:
+      - "HVAC filter changes and service"
+      - "Smoke and CO detector testing"
+      - "Plumbing fixtures maintenance"
+      - "Appliance maintenance"
+      - "Interior cleaning and upkeep"
+      - "Fireplace maintenance (if applicable)"
+    report_to_hoa:
+      - "Roof leaks or exterior damage"
+      - "Common area maintenance issues"
+      - "Pest problems in common areas"
+      - "Safety hazards"
+      - "Noise violations"
+    how_to_report: "[HOA_MAINTENANCE_REQUEST_PROCESS]"
+
+  governing_documents:
+    know_these:
+      - "CC&Rs (Covenants, Conditions & Restrictions)"
+      - "Bylaws"
+      - "Rules and Regulations"
+      - "Architectural Guidelines"
+    common_restrictions:
+      - "Exterior modifications (including window treatments)"
+      - "Pet policies (type, size, number)"
+      - "Rental restrictions"
+      - "Noise policies"
+      - "Parking rules"
+    before_any_changes: "Submit architectural review request BEFORE starting work"
+
+  financial_health:
+    review_annually:
+      - "HOA budget and financials"
+      - "Reserve fund balance"
+      - "Planned assessments"
+      - "Pending litigation"
+    warning_signs:
+      - "Low reserve fund"
+      - "Frequent special assessments"
+      - "Deferred maintenance visible"
+      - "High delinquency rate"
+      - "Pending lawsuits"
+
+  getting_involved:
+    - "Attend annual meeting"
+    - "Read board meeting minutes"
+    - "Join a committee"
+    - "Consider running for board"
+    - "Vote on all ballots"
+
+  communication_tips:
+    - "Put all requests in writing"
+    - "Use official channels (portal, email to management)"
+    - "Keep copies of all correspondence"
+    - "Follow up if no response within reasonable time"
+    - "Escalate to board if management unresponsive"
+
+  move_in_out_rules:
+    - "Reserve elevator/loading area if required"
+    - "Notify management of move date"
+    - "Verify deposit requirements"
+    - "Follow designated move hours"
+
+# -----------------------------------------------------------------------------
+
+townhouse_shared:
+  title: "Townhouse Shared-Wall Considerations"
+  home_type: townhouse
+  section: 5
+  category: home_type
+  overview: "Townhouse living combines homeownership with shared-wall living. Understanding your boundaries, responsibilities, and neighbor relationships makes for better living."
+
+  ownership_structure:
+    types:
+      fee_simple: "You own land and structure — most maintenance is yours"
+      condo_style: "You own interior, HOA owns exterior — check documents"
+    your_townhouse: "[TOWNHOUSE_OWNERSHIP_TYPE]"
+
+  your_hoa:
+    name: "[TOWNHOUSE_HOA_NAME]"
+    contact: "[TOWNHOUSE_HOA_CONTACT]"
+    dues: "[TOWNHOUSE_DUES]"
+
+  shared_walls:
+    understand:
+      - "Party wall is jointly owned (typically)"
+      - "Each owner responsible for their side"
+      - "Major modifications may require neighbor consent"
+      - "Sound transmission is common concern"
+    sound_mitigation:
+      - "Add mass to walls (extra drywall layer)"
+      - "Use acoustic insulation"
+      - "Install soundproof curtains"
+      - "Use rugs on hard floors"
+      - "Place furniture against shared walls"
+    water_issues:
+      - "Plumbing problems can affect neighbors"
+      - "Report leaks immediately — may affect adjacent units"
+      - "Document any water intrusion from neighbor's side"
+
+  maintenance_boundaries:
+    typically_yours:
+      - "Interior maintenance"
+      - "HVAC system for your unit"
+      - "Rear yard/patio (if fee simple)"
+      - "Windows and doors (verify with docs)"
+    typically_hoa:
+      - "Roof"
+      - "Front exterior"
+      - "Common areas"
+      - "Shared driveways"
+    verify: "Check CC&Rs for your specific community"
+
+  shared_elements:
+    driveways:
+      - "Coordinate maintenance with neighbors"
+      - "Share cost of repairs fairly"
+      - "Don't block neighbor's access"
+    fences:
+      - "Determine ownership before repairs"
+      - "Communicate before making changes"
+      - "Split costs if jointly owned"
+    landscaping:
+      - "Stay within property lines"
+      - "Consider impact on neighbors"
+      - "Follow HOA guidelines"
+
+  neighbor_relations:
+    best_practices:
+      - "Introduce yourself to adjacent neighbors"
+      - "Exchange contact information"
+      - "Communicate before noisy projects"
+      - "Respect quiet hours"
+      - "Address issues directly and respectfully first"
+    if_issues_arise:
+      - "Document the problem"
+      - "Discuss directly with neighbor"
+      - "If unresolved, involve HOA"
+      - "Mediation before legal action"
+
+  modifications:
+    before_any_work:
+      - "Check CC&Rs for restrictions"
+      - "Submit architectural request if required"
+      - "Determine if work affects shared walls"
+      - "Notify neighbors if work will impact them"
+    common_restrictions:
+      - "Exterior paint colors"
+      - "Fencing style and location"
+      - "Landscaping changes"
+      - "Satellite dish placement"
+
+# -----------------------------------------------------------------------------
+
+apartment_renter:
+  title: "Apartment & Renter Essentials"
+  home_type: apartment
+  section: 5
+  category: home_type
+  overview: "Renters have rights and responsibilities. Documenting conditions, understanding your lease, and maintaining communication with management protects you."
+
+  your_lease_info:
+    property_manager: "[PROPERTY_MANAGER_NAME]"
+    contact: "[PROPERTY_MANAGER_PHONE]"
+    emergency_maintenance: "[EMERGENCY_MAINTENANCE_PHONE]"
+    lease_end_date: "[LEASE_END_DATE]"
+    rent_due_date: "[RENT_DUE_DATE]"
+    portal: "[TENANT_PORTAL_URL]"
+
+  move_in_documentation:
+    critical:
+      - "Complete written move-in inspection with management"
+      - "Photograph EVERYTHING before moving items in"
+      - "Note existing damage on inspection form"
+      - "Keep copies of all documentation"
+    photograph:
+      - "Every room (multiple angles)"
+      - "All appliances"
+      - "Floors, walls, ceilings"
+      - "Windows and blinds"
+      - "Bathroom fixtures"
+      - "Existing stains, dents, scratches"
+      - "Exterior areas (balcony, patio)"
+    storage: "Keep photos with date stamps, backup to cloud"
+
+  renters_insurance:
+    why_essential:
+      - "Landlord's insurance does NOT cover your belongings"
+      - "Covers theft, fire, water damage to your property"
+      - "Provides liability coverage"
+      - "Often required by lease"
+    typical_coverage:
+      - "Personal property: $20,000-50,000"
+      - "Liability: $100,000-300,000"
+      - "Additional living expenses if displaced"
+    cost: "Typically $15-30/month"
+    your_policy: "[RENTERS_INSURANCE_PROVIDER] — [RENTERS_POLICY_NUMBER]"
+
+  maintenance_requests:
+    your_responsibilities:
+      - "Keep unit reasonably clean"
+      - "Replace batteries (smoke detectors, remotes)"
+      - "Replace light bulbs"
+      - "Unclog minor drain blockages"
+      - "Replace HVAC filter (some leases)"
+      - "Report problems promptly"
+    landlord_responsibilities:
+      - "Maintain habitable condition"
+      - "Working plumbing, heating, electrical"
+      - "Structural repairs"
+      - "Appliance repairs (if provided)"
+      - "Pest control (varies by state)"
+    how_to_request:
+      - "1. Submit written request through official channel"
+      - "2. Keep copy with date"
+      - "3. Follow up if not addressed"
+      - "4. Document any damage from delayed repairs"
+    emergency_vs_routine:
+      emergency: "No water, no heat, gas leak, flooding, fire damage, security breach"
+      routine: "Dripping faucet, running toilet, appliance issue"
+
+  know_your_rights:
+    typical_rights:
+      - "Quiet enjoyment of unit"
+      - "Working utilities and systems"
+      - "Proper notice before landlord entry (24-48 hours typical)"
+      - "Security deposit return (timeline varies by state)"
+      - "Protection from retaliation"
+    varies_by_state: "Check local tenant rights laws"
+    resources: "Local tenant rights organization, housing authority"
+
+  building_safety:
+    know:
+      - "Fire exit locations"
+      - "Fire extinguisher locations"
+      - "Assembly point after evacuation"
+      - "Emergency contact numbers"
+    fire_safety:
+      - "Know two ways out of building"
+      - "Don't block exits or stairwells"
+      - "Test smoke detectors monthly"
+      - "Have fire extinguisher (optional but smart)"
+
+  move_out_checklist:
+    give_proper_notice:
+      - "Check lease for notice requirement (typically 30-60 days)"
+      - "Submit notice in writing"
+      - "Keep proof of delivery"
+    before_leaving:
+      - "Clean thoroughly"
+      - "Remove all belongings"
+      - "Repair minor damage (nail holes, etc.)"
+      - "Return all keys"
+      - "Document condition with photos"
+      - "Request walk-through inspection"
+    deposit_return:
+      - "Know your state's timeline for return"
+      - "Provide forwarding address in writing"
+      - "Request itemized deduction list if not returned in full"
+
+# -----------------------------------------------------------------------------
+
+mobile_home:
+  title: "Mobile & Manufactured Home Care"
+  home_type: mobile
+  section: 5
+  category: home_type
+  overview: "Manufactured homes have unique maintenance needs. Proper leveling, anchoring, and underbelly care are essential for structural integrity and comfort."
+
+  your_home_info:
+    location: "[MOBILE_HOME_PARK_NAME]"
+    lot_number: "[LOT_NUMBER]"
+    park_management: "[PARK_MANAGEMENT_CONTACT]"
+    home_size: "[MOBILE_HOME_SIZE]"  # single-wide, double-wide
+    year_built: "[MOBILE_HOME_YEAR]"
+
+  anchoring_and_tie_downs:
+    critical_safety:
+      - "Anchors secure home to ground — critical for wind resistance"
+      - "Required by code in most areas"
+      - "Inspect annually, especially before storm season"
+    inspection_checklist:
+      - "All straps present and properly tensioned"
+      - "No rust, fraying, or damage to straps"
+      - "Ground anchors secure (not pulling out)"
+      - "Frame ties in good condition"
+    after_storms: "Reinspect all tie-downs after high wind events"
+    professional_check: "Every 3-5 years, or after any foundation movement"
+
+  leveling:
+    why_important:
+      - "Prevents stress on frame and walls"
+      - "Ensures doors and windows operate properly"
+      - "Prevents plumbing issues"
+      - "Improves HVAC efficiency"
+    signs_need_releveling:
+      - "Doors or windows stick or won't close"
+      - "Cracks in walls or ceiling"
+      - "Bouncy or uneven floors"
+      - "Visible gaps at floor/wall junction"
+      - "Plumbing problems"
+    frequency: "Check every 2-3 years, or when signs appear"
+    professional_required: "Leveling should be done by qualified installer"
+
+  skirting_and_underbelly:
+    skirting_purpose:
+      - "Protects plumbing and underbelly from weather"
+      - "Prevents pest entry"
+      - "Improves appearance"
+      - "Provides some insulation"
+    skirting_maintenance:
+      - "Inspect monthly for damage, gaps, or holes"
+      - "Ensure ventilation openings are maintained"
+      - "Keep vegetation away from skirting"
+      - "Repair damage promptly to prevent pest entry"
+    underbelly_inspection:
+      annual_checks:
+        - "Look for hanging or torn belly board"
+        - "Check for moisture or water damage"
+        - "Inspect insulation condition"
+        - "Look for pest nesting or damage"
+        - "Verify plumbing insulation intact"
+
+  roof_maintenance:
+    flat_roof_common:
+      - "Apply roof coating every 3-5 years"
+      - "Use coating designed for mobile home roofs"
+      - "Apply before rainy season"
+      - "Address any bubbles or separations"
+    inspection:
+      - "Check for soft spots (may indicate leak damage)"
+      - "Inspect seams and edges"
+      - "Check around vents and skylights"
+      - "Look for ponding water areas"
+    metal_roof:
+      - "Check for rust and treat promptly"
+      - "Ensure fasteners are tight"
+      - "Inspect seams for gaps"
+
+  plumbing_freeze_protection:
+    vulnerable_areas:
+      - "Pipes in underbelly"
+      - "Water heater compartment"
+      - "Kitchen and bath connections"
+    protection:
+      - "Insulate all exposed pipes"
+      - "Use heat tape on vulnerable sections"
+      - "Ensure skirting is intact (traps some heat)"
+      - "In extreme cold, let faucets drip"
+      - "Know main shutoff: [MOBILE_HOME_WATER_SHUTOFF]"
+
+  hvac_considerations:
+    typical_systems:
+      - "Package unit (all-in-one outside unit)"
+      - "Split system"
+      - "Furnace with window AC"
+    maintenance:
+      - "Change filters monthly"
+      - "Schedule professional service annually"
+      - "Clean outdoor unit coils"
+      - "Ensure ductwork connections are sealed"
+    energy_efficiency:
+      - "Mobile homes often have less insulation"
+      - "Add underbelly insulation"
+      - "Consider storm windows"
+      - "Use weatherstripping on doors"
+
+  storm_preparation:
+    before_storm_season:
+      - "Inspect and tighten all tie-downs"
+      - "Secure loose skirting"
+      - "Remove or secure outdoor items"
+      - "Know evacuation route"
+    during_high_winds:
+      - "Mobile homes are vulnerable to tornadoes"
+      - "Have evacuation plan to sturdy structure"
+      - "Monitor weather alerts"
+      - "Leave if tornado warning issued"
+
+  park_living:
+    know_your_lease:
+      - "Lot rent amount and due date"
+      - "What's included (water, sewer, trash)"
+      - "Maintenance responsibilities"
+      - "Rules and regulations"
+      - "Notice requirements for rent increases"
+    your_responsibilities:
+      - "Home maintenance"
+      - "Yard/lot maintenance (usually)"
+      - "Utilities"
+      - "Skirting and appearance"
+    park_responsibilities:
+      - "Common areas"
+      - "Streets and roads"
+      - "Water/sewer mains"
+
+  insurance:
+    mobile_home_policy:
+      - "Different from standard homeowner's"
+      - "Cover structure, contents, liability"
+      - "Consider flood insurance separately"
+      - "Verify adequate coverage for replacement"
+    your_policy: "[MOBILE_HOME_INSURANCE] — [MOBILE_HOME_POLICY_NUMBER]"
+
+  contacts:
+    mobile_home_service: "[MOBILE_HOME_SERVICE] — [MOBILE_HOME_SERVICE_PHONE]"
+    park_management: "[PARK_MANAGEMENT] — [PARK_MANAGEMENT_PHONE]"
+
