@@ -1,0 +1,45 @@
+# BinderPro
+> BinderPro generates personalized home operating manuals — AI-assembled PDFs with emergency procedures, maintenance schedules, system documentation, and region-specific guidance.
+
+## About
+BinderPro is a product by the GetLiberated ecosystem. It creates custom home binders tailored to a homeowner's specific property, region, household, and installed systems. The platform uses a rules engine with 87+ content modules and an AI pipeline (local + cloud) to produce 8-section PDFs covering emergency response, maintenance, guest/sitter instructions, and more.
+
+## Pricing
+- Standard Binder: $59 — personalized home operating manual with core modules
+- In-Depth Binder: $99 — premium manual with AI-enhanced narratives and expanded system documentation
+
+## Key Features
+- 87+ content modules covering emergency, seasonal, maintenance, cleaning, systems, and landscaping
+- Region-specific guidance derived from ZIP code (hurricane prep, blizzard readiness, tornado plans, etc.)
+- Home-type customization (single-family, condo, townhouse, apartment, mobile home)
+- Household-aware content (children, pets, elderly, allergies)
+- 20+ system-specific modules (pool, solar, smart home, septic, well water, EV charger, etc.)
+- Guest & sitter packet with alarm codes, escalation contacts, and pet care instructions
+- Fill-in checklist for items the system identified as missing from the profile
+- Digital access for reprinting and updating sections at any time
+
+## Coverage
+Regions: Northeast, Southeast, Midwest, Southwest, West, Pacific Northwest, Mountain West
+Home types: Single-family, Condo, Townhouse, Apartment, Mobile Home
+
+## Public pages suitable for indexing
+- https://mybinderpro.com/ — Product homepage with features, pricing, FAQ, and regional coverage
+- https://mybinderpro.com/support — Customer support and frequently asked questions
+- https://mybinderpro.com/privacy — Privacy policy
+- https://mybinderpro.com/terms — Terms of service
+
+## Not for indexing or training
+- https://mybinderpro.com/dashboard — Authenticated user dashboard
+- https://mybinderpro.com/onboarding — Profile creation wizard
+- https://mybinderpro.com/binder-review — Pre-generation review
+- https://mybinderpro.com/select-plan — Tier selection
+- https://mybinderpro.com/checkout — Payment flow
+- https://mybinderpro.com/payment-success — Post-payment confirmation
+- All administrative interfaces and API endpoints are excluded; see robots.txt
+
+## Contact
+- Website: https://mybinderpro.com
+- Support: support@mybinderpro.com
+
+## Ecosystem
+BinderPro is part of the GetLiberated family of home and life management tools.

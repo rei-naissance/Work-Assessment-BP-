@@ -5,6 +5,26 @@ services:
       - "27017:27017"
     volumes:
       - mongo_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.runCommand({ ping: 1 })"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+      start_period: 5s
 
   backend:
     build: ./backend
@@ -12,6 +32,7 @@ services:
       - "${BACKEND_PORT:-7691}:${BACKEND_PORT:-7691}"
     environment:
       - MONGO_URI=mongodb://mongo:27017/home_binder
+      - REDIS_URL=redis://redis:6379
       - JWT_SECRET=${JWT_SECRET:-dev-secret-change-in-production}
       - DATA_DIR=/data/binders
       - PORT=${BACKEND_PORT:-7691}
@@ -30,25 +51,47 @@ services:
       - ./backend:/app
       - binder_data:/data/binders
     depends_on:
-      - mongo
+      mongo:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  worker:
+    build: ./backend
+    command: arq app.worker.WorkerSettings
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/home_binder
+      - REDIS_URL=redis://redis:6379
+      - JWT_SECRET=${JWT_SECRET:-dev-secret-change-in-production}
+      - DATA_DIR=/data/binders
+      - ENCRYPTION_KEY=${ENCRYPTION_KEY:-}
+      - RESEND_API_KEY=${RESEND_API_KEY:-}
+      - FROM_EMAIL=${FROM_EMAIL:-noreply@mybinderpro.com}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+      - AI_ENHANCEMENT_ENABLED=${AI_ENHANCEMENT_ENABLED:-true}
+      - AI_ENHANCEMENT_PROVIDER=${AI_ENHANCEMENT_PROVIDER:-auto}
+      - ENVIRONMENT=${ENVIRONMENT:-development}
+    volumes:
+      - ./backend:/app
+      - binder_data:/data/binders
+    depends_on:
+      mongo:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
 
   frontend:
     build:
       context: ./frontend
       args:
-        - VITE_API_PORT=${BACKEND_PORT:-7691}
+        - VITE_API_URL=/api
+        - VITE_SITE_URL=${SITE_URL:-http://localhost:${FRONTEND_PORT:-7680}}
     ports:
-      - "${FRONTEND_PORT:-7680}:${FRONTEND_PORT:-7680}"
-    environment:
-      - PORT=${FRONTEND_PORT:-7680}
-      - VITE_API_PORT=${BACKEND_PORT:-7691}
-      - VITE_API_URL=http://localhost:${BACKEND_PORT:-7691}/api
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules
+      - "${FRONTEND_PORT:-7680}:7680"
     depends_on:
       - backend
 
 volumes:
   mongo_data:
   binder_data:
+  redis_data:

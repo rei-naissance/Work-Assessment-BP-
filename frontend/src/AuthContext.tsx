@@ -45,19 +45,25 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     setEmail('');
   }, []);
 
-  // Restore session on mount via refresh token cookie
+  // Restore session on mount via refresh token cookie.
+  // AbortController prevents the React StrictMode double-fire from racing:
+  // the cleanup aborts the first call so only the remounted effect completes.
   useEffect(() => {
-    api.post('/auth/refresh')
+    const controller = new AbortController();
+    api.post('/auth/refresh', undefined, { signal: controller.signal })
       .then((res) => {
         login(res.data.access_token);
+        setIsLoading(false);
       })
       .catch(() => {
+        if (controller.signal.aborted) return;
         setAccessToken(null);
         setIsAuthenticated(false);
         setIsAdmin(false);
         setEmail('');
-      })
-      .finally(() => setIsLoading(false));
+        setIsLoading(false);
+      });
+    return () => controller.abort();
   }, [login]);
 
   // Listen for 401 events from the API interceptor

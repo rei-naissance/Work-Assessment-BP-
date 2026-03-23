@@ -1,4 +1,4 @@
-import axios, { AxiosError } from 'axios';
+import axios, { AxiosError, type InternalAxiosRequestConfig } from 'axios';
 
 // Error response structure from backend
 export interface ApiError {
@@ -70,6 +70,27 @@ export const setAccessToken = (token: string | null) => {
   _accessToken = token;
 };
 
+// Singleton in-flight guard — prevents concurrent token expiries from
+// each triggering a separate /auth/refresh call (would cause rotation conflicts).
+let _refreshPromise: Promise<string | null> | null = null;
+// Prevents duplicate auth:unauthorized events when multiple requests fail
+// simultaneously after a refresh attempt fails.
+let _unauthorizedDispatched = false;
+
+function silentRefresh(): Promise<string | null> {
+  if (_refreshPromise) return _refreshPromise;
+  _unauthorizedDispatched = false;
+  _refreshPromise = api
+    .post<{ access_token: string }>('/auth/refresh')
+    .then((res) => {
+      _accessToken = res.data.access_token;
+      return res.data.access_token;
+    })
+    .catch(() => null)
+    .finally(() => { _refreshPromise = null; });
+  return _refreshPromise;
+}
+
 const api = axios.create({
   baseURL: apiBaseUrl,
   timeout: 30000, // 30 second timeout
@@ -84,13 +105,33 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
+// Augment config type so we can stamp retried requests.
+interface RetryConfig extends InternalAxiosRequestConfig {
+  _retry?: boolean;
+}
+
 api.interceptors.response.use(
   (res) => res,
-  (err: AxiosError<ApiError | { detail: ApiError | string }>) => {
-    // Handle 401 - clear token and notify via event (ProtectedRoute handles redirect)
-    if (err.response?.status === 401) {
+  async (err: AxiosError<ApiError | { detail: ApiError | string }>) => {
+    const config = err.config as RetryConfig | undefined;
+    const isRefreshCall = config?.url?.includes('/auth/refresh');
+
+    // On 401, attempt a silent token refresh then replay the original request once.
+    // Skip for refresh calls themselves (AuthContext handles those) and already-retried requests.
+    if (err.response?.status === 401 && !isRefreshCall && !config?._retry) {
+      const newToken = await silentRefresh();
+      if (newToken && config) {
+        config._retry = true;
+        config.headers['Authorization'] = `Bearer ${newToken}`;
+        return api.request(config);
+      }
+      // Refresh failed — clear token and notify so AuthContext can log out.
+      // Guard against multiple concurrent callers each dispatching the event.
       _accessToken = null;
-      window.dispatchEvent(new Event('auth:unauthorized'));
+      if (!_unauthorizedDispatched) {
+        _unauthorizedDispatched = true;
+        window.dispatchEvent(new Event('auth:unauthorized'));
+      }
     }
 
     // Transform error to our custom error type for easier handling

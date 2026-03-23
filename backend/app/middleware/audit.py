@@ -44,11 +44,10 @@ class AuditLoggingMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request: Request, call_next):
         response: Response = await call_next(request)
 
-        # Only log successful access to sensitive endpoints
-        if response.status_code < 400:
-            action = _get_audit_action(request.url.path, request.method)
-            if action:
-                await self._log_access(request, action, response.status_code)
+        # Log successful access/denied access (401/403) to sensitive endpoints
+        action = _get_audit_action(request.url.path, request.method)
+        if action and (response.status_code < 400 or response.status_code in (401, 403)):
+            await self._log_access(request, action, response.status_code)
 
         return response
 
@@ -62,7 +61,11 @@ class AuditLoggingMiddleware(BaseHTTPMiddleware):
                 from jose import jwt as jose_jwt
                 from app.config import settings
                 try:
-                    payload = jose_jwt.decode(auth[7:], settings.jwt_secret, algorithms=[settings.jwt_algorithm])
+                    payload = jose_jwt.decode(
+                        auth[7:], settings.jwt_secret,
+                        algorithms=[settings.jwt_algorithm],
+                        options={"verify_aud": False},  # best-effort extraction
+                    )
                     user_id = payload.get("sub")
                 except Exception:
                     pass

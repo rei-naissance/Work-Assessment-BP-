@@ -4,25 +4,50 @@ import traceback
 from contextlib import asynccontextmanager
 from datetime import datetime
 
+import sentry_sdk
+from sentry_sdk.integrations.fastapi import FastApiIntegration
+from sentry_sdk.integrations.starlette import StarletteIntegration
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from fastapi.exceptions import RequestValidationError
 from motor.motor_asyncio import AsyncIOMotorClient
 from pydantic import ValidationError
+from arq import create_pool
+from arq.connections import RedisSettings
 
 from app.config import settings
 from app.middleware.rate_limit import RateLimitMiddleware
 from app.middleware.logging import RequestLoggingMiddleware
 from app.middleware.security import SecurityHeadersMiddleware
 from app.middleware.audit import AuditLoggingMiddleware
+from app.middleware.body_limit import BodySizeLimitMiddleware
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+# Configure structured JSON logging for production observability
+_LOG_FORMAT = (
+    '{"time":"%(asctime)s","level":"%(levelname)s","name":"%(name)s","msg":"%(message)s"}'
+    if os.getenv("ENVIRONMENT", "development") == "production"
+    else "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 )
+logging.basicConfig(level=logging.INFO, format=_LOG_FORMAT)
 logger = logging.getLogger("home_binder")
+
+# Initialize Sentry when a DSN is configured.
+# Disabled in development (empty DSN in the config.py file) to avoid local noise
+if settings.sentry_dsn:
+    sentry_sdk.init(
+        dsn=settings.sentry_dsn,
+        environment=settings.environment,
+        integrations=[
+            StarletteIntegration(transaction_style="url"),
+            FastApiIntegration(transaction_style="url"),
+        ],
+        # Captures 10% of transactions for performance monitoring, adjust accordingly
+        traces_sample_rate=0.1,
+        # Never send personally identifiable information (like email, IP, etc)
+        send_default_pii=False,
+    )
+    logger.info("Sentry error tracking initialized (env=%s)", settings.environment)
 
 
 @asynccontextmanager
@@ -72,7 +97,9 @@ async def lifespan(app: FastAPI):
 
         # Payments collection
         await db.payments.create_index("user_id")
-        await db.payments.create_index("stripe_session_id")
+        # Unique + sparse: enforces idempotency at the DB level while allowing
+        # documents without a stripe_session_id (e.g. manual adjustments).
+        await db.payments.create_index("stripe_session_id", unique=True, sparse=True)
         await db.payments.create_index("created_at")
         await db.payments.create_index("status")
 
@@ -93,19 +120,38 @@ async def lifespan(app: FastAPI):
     except Exception as e:
         logger.warning(f"Could not create indexes (may already exist): {e}")
 
+    app.state.arq_pool = await create_pool(RedisSettings.from_dsn(settings.redis_url))
+    logger.info("ARQ job queue connected (redis=%s)", settings.redis_url)
+
     yield
+
+    await app.state.arq_pool.close()
     app.state.mongo.close()
 
 
-app = FastAPI(title="BinderPro API", lifespan=lifespan)
+# Disable interactive API docs in production — they expose internal schema
+_docs_url = None if settings.environment == "production" else "/docs"
+_redoc_url = None if settings.environment == "production" else "/redoc"
+_openapi_url = None if settings.environment == "production" else "/openapi.json"
+
+app = FastAPI(
+    title="BinderPro API",
+    lifespan=lifespan,
+    docs_url=_docs_url,
+    redoc_url=_redoc_url,
+    openapi_url=_openapi_url,
+)
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.get_cors_origins(),
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allow_headers=["Authorization", "Content-Type", "X-Requested-With"],
 )
+
+# Reject oversized request bodies early (512 KB for JSON endpoints).
+app.add_middleware(BodySizeLimitMiddleware)
 
 # Rate limiting middleware
 app.add_middleware(RateLimitMiddleware)
@@ -213,16 +259,89 @@ app.include_router(feedback.router, prefix="/api/feedback", tags=["feedback"])
 
 @app.get("/api/health")
 async def health(request: Request):
+    """Lightweight liveness probe used by Cloudflare / uptime monitors."""
     try:
         await request.app.state.db.command("ping")
         db_status = "connected"
     except Exception:
-        from fastapi.responses import JSONResponse
         return JSONResponse(
             status_code=503,
             content={"status": "unhealthy", "db": "unreachable"},
         )
     return {"status": "ok", "db": db_status}
+
+
+@app.get("/api/health/detailed")
+async def health_detailed(request: Request):
+    """Detailed readiness probe for ops monitoring.  Checks all dependencies."""
+    import shutil
+
+    results: dict = {"status": "ok", "components": {}}
+    status_code = 200
+
+    # MongoDB
+    try:
+        await request.app.state.db.command("ping")
+        results["components"]["mongodb"] = "ok"
+    except Exception as exc:
+        logger.warning("MongoDB health check failed: %s", exc)
+        results["components"]["mongodb"] = "error"
+        results["status"] = "degraded"
+        status_code = 503
+
+    # Redis (rate limiting + job queue)
+    try:
+        import redis.asyncio as aioredis
+        r = aioredis.from_url(settings.redis_url, decode_responses=True)
+        await r.ping()
+        await r.aclose()
+        results["components"]["redis"] = "ok"
+    except Exception as exc:
+        logger.warning("Redis health check failed: %s", exc)
+        results["components"]["redis"] = "error"
+        results["status"] = "degraded"
+        status_code = 503
+
+    # ARQ worker pool
+    arq_pool = getattr(request.app.state, "arq_pool", None)
+    if arq_pool:
+        results["components"]["arq_pool"] = "connected"
+    else:
+        results["components"]["arq_pool"] = "not initialized"
+
+    # Stripe
+    if settings.stripe_secret_key:
+        results["components"]["stripe"] = "configured"
+    else:
+        results["components"]["stripe"] = "not configured"
+        if settings.environment == "production":
+            results["status"] = "degraded"
+            status_code = 503
+
+    # Email (Resend)
+    if settings.resend_api_key:
+        results["components"]["email"] = "configured"
+    else:
+        results["components"]["email"] = "not configured"
+
+    # Disk space for PDF storage
+    try:
+        disk = shutil.disk_usage(settings.data_dir)
+        free_mb = disk.free // (1024 * 1024)
+        results["components"]["disk_free_mb"] = free_mb
+        if free_mb < 100:
+            results["components"]["disk"] = "low"
+            results["status"] = "degraded"
+            status_code = 503
+        else:
+            results["components"]["disk"] = "ok"
+    except Exception as exc:
+        logger.warning("Disk health check failed: %s", exc)
+        results["components"]["disk"] = "error"
+
+    if status_code != 200:
+        return JSONResponse(status_code=status_code, content=results)
+    return results
 
 
 @app.get("/api/content-stats")

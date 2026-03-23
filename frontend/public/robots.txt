@@ -1,0 +1,19 @@
+User-agent: *
+
+# Allow public marketing pages
+Allow: /
+Allow: /privacy
+Allow: /terms
+Allow: /support
+
+# Block API and authenticated app routes
+Disallow: /api/
+Disallow: /dashboard
+Disallow: /onboarding
+Disallow: /binder-review
+Disallow: /select-plan
+Disallow: /checkout
+Disallow: /payment-success
+Disallow: /admin
+
+Sitemap: https://mybinderpro.com/sitemap.xml
