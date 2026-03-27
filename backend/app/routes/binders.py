@@ -1,5 +1,7 @@
 import os
 import uuid
+import json
+import hashlib
 import logging
 from datetime import datetime, timedelta
 
@@ -73,6 +75,28 @@ async def generate_binder(body: BinderRequest, request: Request, user=Depends(ge
     sections = select_modules(profile, tier=body.tier)
     module_keys = [k for sec in sections.values() for k in sec.keys()]
 
+    # Deduplicate: return existing binder if profile and tier haven't changed
+    profile_hash = hashlib.sha256(
+        (json.dumps(profile.model_dump(), sort_keys=True, default=str) + body.tier).encode()
+    ).hexdigest()
+    existing = await db.binders.find_one({
+        "user_id": user["user_id"],
+        "tier": body.tier,
+        "profile_hash": profile_hash,
+        "status": {"$in": ["queued", "generating", "ready"]},
+    })
+    if existing:
+        return BinderOut(
+            id=str(existing["_id"]),
+            user_id=existing["user_id"],
+            tier=existing.get("tier", "standard"),
+            modules=existing.get("modules", []),
+            status=existing.get("status", "unknown"),
+            ai_content=existing.get("ai_content", {}),
+            missing_items=existing.get("missing_items", {}),
+            created_at=existing.get("created_at"),
+        )
+
     # Pre-compute output file paths so the worker can write directly to them
     file_id = uuid.uuid4().hex[:8]
     pdf_path = os.path.join(settings.data_dir, f"{user['user_id']}_{file_id}.pdf")
@@ -84,6 +108,7 @@ async def generate_binder(body: BinderRequest, request: Request, user=Depends(ge
         "user_email": user["email"],
         "tier": body.tier,
         "profile_snapshot": profile.model_dump(),
+        "profile_hash": profile_hash,
         "modules": module_keys,
         "pdf_path": pdf_path,
         "sitter_packet_path": sitter_path,

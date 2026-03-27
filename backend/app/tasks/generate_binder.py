@@ -120,10 +120,10 @@ async def generate_binder_job(ctx: dict, binder_id: str) -> None:
             logger.warning("Fill-in checklist generation failed: %s", exc)
             checklist_path = None
 
-        # Set file permissions — readable by owner and group, not world
+        # Set file permissions — readable by owner, group, and world (required for serving)
         for path in [pdf_path, sitter_path, checklist_path]:
             if path and os.path.exists(path):
-                os.chmod(path, 0o640)
+                os.chmod(path, 0o644)
 
         update_fields: dict = {
             "status": "ready",
