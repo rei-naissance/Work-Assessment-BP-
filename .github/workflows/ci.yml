@@ -80,9 +80,13 @@ jobs:
         run: pip install pip-audit
 
       - name: Audit Python dependencies
-        # CVE-2025-54121 (starlette event-loop block on large file upload) is low severity;
-        # fix requires starlette>=0.47.2 which is not yet compatible with FastAPI 0.115.x.
-        run: pip-audit -r backend/requirements.txt --strict --desc --ignore-vuln CVE-2025-54121
+        # CVE-2025-54121: starlette event-loop block on large file upload (low severity,
+        #   fix requires starlette>=0.47.2, blocked by FastAPI 0.115.x upper bound).
+        # CVE-2026-30922: pyasn1 DoS via deeply nested ASN.1 — not exploitable here because
+        #   python-jose is used with HS256 (HMAC) only; pyasn1's ASN.1 parser is never
+        #   invoked for key parsing. python-jose 3.4.0 pins pyasn1<0.5.0 making upgrade
+        #   impossible without dropping the jose dependency entirely.
+        run: pip-audit -r backend/requirements.txt --strict --desc --ignore-vuln CVE-2025-54121 --ignore-vuln CVE-2026-30922
 
   # ── Frontend: type-check + build ─────────────────────────────────────────
   frontend:
