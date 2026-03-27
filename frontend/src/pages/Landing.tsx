@@ -58,8 +58,9 @@ const FAQ = [
 
 export default function Landing() {
   const navigate = useNavigate();
-  const { isAuthenticated, isAdmin } = useAuth();
+  const { isAuthenticated, isAdmin, isLoading } = useAuth();
   const cta = () => {
+    if (isLoading) return;
     if (!isAuthenticated) navigate('/login');
     else if (isAdmin) navigate('/admin');
     else navigate('/dashboard');

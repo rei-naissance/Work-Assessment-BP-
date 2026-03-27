@@ -66,18 +66,35 @@ module.exports = {
       },
     },
     {
-      // Serve pre-built SPA with `serve` (npm i -g serve)
-      // For Docker deployments, Nginx-based Dockerfile is preferred.
+      // Serve pre-built SPA with `vite preview`.
+      //
+      // NOTE: `vite preview` is for LOCAL development only. It is not production-grade.
+      // For production, replace this process with nginx:
+      //
+      //   1. sudo apt install nginx
+      //   2. Copy frontend/nginx.conf to /etc/nginx/sites-available/binderpro
+      //   3. Change `proxy_pass http://backend:7691` to `proxy_pass http://localhost:7691`
+      //   4. Change `root /usr/share/nginx/html` to the absolute path of frontend/dist
+      //   5. sudo ln -s /etc/nginx/sites-available/binderpro /etc/nginx/sites-enabled/
+      //   6. sudo rm /etc/nginx/sites-enabled/default
+      //   7. sudo nginx -t && sudo systemctl enable nginx && sudo systemctl start nginx
+      //   8. pm2 delete frontend  (nginx replaces this process)
+      //
+      // See docs/ARCHITECTURE.md → Deployment for full instructions.
       name: 'frontend',
       cwd: './frontend',
       script: 'npx',
-      args: `serve dist -s -l ${FRONTEND_PORT}`,
+      args: `vite preview`,
       interpreter: 'none',
       env: {
         NODE_ENV: 'development',
+        PORT: FRONTEND_PORT,
+        VITE_API_PORT: '7691',
       },
       env_production: {
         NODE_ENV: 'production',
+        PORT: FRONTEND_PORT,
+        VITE_API_PORT: '7691',
       },
     },
   ],

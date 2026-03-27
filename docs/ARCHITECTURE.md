@@ -15,7 +15,17 @@ FastAPI Backend
     └── Fernet (field-level encryption)
 ```
 
-The frontend is a React SPA served by Vite (dev) or `vite preview` (production). API calls go to `/api` which proxies to the FastAPI backend in development, or hits the backend directly in production.
+The frontend is a React SPA. API calls use the relative path `/api`, proxied to the FastAPI backend. The proxy is handled by Vite (dev and local PM2) or nginx (production).
+
+**Serving modes:**
+
+| Mode | Command | Use case |
+|------|---------|----------|
+| Dev | `npm run dev` (Vite dev server) | Active development with HMR |
+| Local PM2 | `vite preview` via `ecosystem.config.cjs` | Running locally without Docker |
+| Production | nginx + Docker (`frontend/nginx.conf`) | Real deployments |
+
+`vite preview` is intentionally used for local PM2 because it reuses Vite's proxy config to forward `/api` to the backend. It is **not suitable for production** — use nginx instead (see Production Deployment below).
 
 ## Auth Flow
 
@@ -95,11 +105,43 @@ Applied in order in `main.py`:
 
 ## Deployment
 
-Production runs via PM2 (`ecosystem.config.cjs`):
-- Backend: Uvicorn with configurable workers
-- Frontend: `vite preview` serving the built SPA
+### Local Development (PM2)
 
-Docker Compose available as alternative (`docker-compose.yml`).
+`pm2 start ecosystem.config.cjs` runs three processes:
+- **backend** — Uvicorn with configurable workers (`WEB_CONCURRENCY`)
+- **frontend** — `vite preview` serving the built `dist/` with `/api` proxy to backend
+- **worker** — ARQ background worker for PDF generation
+
+After any frontend code change, rebuild before the changes take effect:
+```bash
+cd frontend && npm run build
+pm2 restart frontend
+```
+
+### Production (nginx + Docker)
+
+The intended production setup uses nginx as a reverse proxy in front of the static build. The config lives at `frontend/nginx.conf` and is used by `frontend/Dockerfile`.
+
+**To migrate from `vite preview` to nginx:**
+
+1. Install nginx: `sudo apt install nginx`
+2. Copy and adapt `frontend/nginx.conf` to `/etc/nginx/sites-available/binderpro`:
+   - Change `proxy_pass http://backend:7691` → `proxy_pass http://localhost:7691` (or your actual backend host)
+   - Change `root /usr/share/nginx/html` → actual path to `frontend/dist`
+3. Enable the site:
+   ```bash
+   sudo ln -s /etc/nginx/sites-available/binderpro /etc/nginx/sites-enabled/
+   sudo rm /etc/nginx/sites-enabled/default   # remove nginx default
+   sudo nginx -t                               # verify config
+   sudo systemctl enable nginx
+   sudo systemctl start nginx
+   ```
+4. Remove the `frontend` process from PM2 (`pm2 delete frontend`) — nginx replaces it.
+5. Set `ENVIRONMENT=production` in backend env so HSTS and production guards activate.
+
+nginx provides gzip compression, immutable asset caching, proper keepalives, and TLS termination — none of which `vite preview` handles.
+
+Docker Compose is available as a containerized alternative (`docker-compose.yml`).
 
 ## Configuration
 

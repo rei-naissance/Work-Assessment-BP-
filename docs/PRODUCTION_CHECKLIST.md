@@ -218,7 +218,9 @@ Required for commercial operation.
 Final checks before go-live.
 
 ### 7.1 Infrastructure
+- [ ] **nginx configured** — Replace `vite preview` PM2 process with nginx. Config template is at `frontend/nginx.conf`. Two changes required for bare-metal: swap `proxy_pass http://backend:7691` → `http://localhost:7691` and set correct `root` path. Full steps in `docs/ARCHITECTURE.md → Deployment`.
 - [ ] **Production domain configured** — DNS, SSL certificates
+- [ ] **HTTPS / TLS** — Configure SSL certificate in nginx (`ssl_certificate`, `ssl_certificate_key`). Let's Encrypt + Certbot is the standard free option. Also set `ENVIRONMENT=production` in backend env to activate HSTS header.
 - [ ] **Email domain authentication** — SPF, DKIM, DMARC for deliverability
 - [ ] **CDN configured** — CloudFlare or similar
 - [ ] **Backup verification** — Confirm backups are running

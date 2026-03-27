@@ -731,7 +731,7 @@ export default function Dashboard() {
                 )}
 
                 {/* Blocking issues */}
-                {profileComplete && !profileComplete.can_generate && profileComplete.blocking_issues.length > 0 && (
+                {profileComplete && !profileComplete.can_generate && (profileComplete.blocking_issues?.length ?? 0) > 0 && (
                   <div className="text-xs text-red-600 bg-red-50 px-2 py-1.5 rounded-lg mb-2">
                     <div className="flex items-center gap-1.5 font-medium">
                       <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -740,7 +740,7 @@ export default function Dashboard() {
                       Required to generate:
                     </div>
                     <ul className="mt-1 ml-5 list-disc">
-                      {profileComplete.blocking_issues.map((m, i) => <li key={i}>{m}</li>)}
+                      {(profileComplete.blocking_issues ?? []).map((m, i) => <li key={i}>{m}</li>)}
                     </ul>
                   </div>
                 )}
@@ -1448,7 +1448,7 @@ function CommandCenter({ profile, updateProfile, updateNestedProfile, onSave, ha
 
   const filledProviders = PROVIDER_KEYS.filter(p => (cv as any)[p.key]?.name && !(cv as any)[p.key]?.skip);
   const emptyProviders = PROVIDER_KEYS.filter(p => !(cv as any)[p.key]?.name && !(cv as any)[p.key]?.skip);
-  const contactCount = cv.emergency_contacts.filter(c => c.name.trim()).length + cv.neighbors.filter(c => c.name.trim()).length;
+  const contactCount = (cv.emergency_contacts ?? []).filter(c => c.name.trim()).length + (cv.neighbors ?? []).filter(c => c.name.trim()).length;
   const knownLocations = Object.values(cl).filter((l: any) => l?.status === 'known').length;
   const totalLocations = Object.keys(LOCATION_LABELS).length;
 
@@ -1488,33 +1488,33 @@ function CommandCenter({ profile, updateProfile, updateNestedProfile, onSave, ha
               <div>
                 <div className="flex items-center justify-between mb-2">
                   <p className={sectionLabel}>Emergency Contacts</p>
-                  <button onClick={() => { updateProfile('contacts_vendors', 'emergency_contacts', [...cv.emergency_contacts, { name: '', phone: '', relationship: '' }]); }} className="text-xs font-semibold text-brand-600 hover:text-brand-800" type="button">+ Add</button>
+                  <button onClick={() => { updateProfile('contacts_vendors', 'emergency_contacts', [...(cv.emergency_contacts ?? []), { name: '', phone: '', relationship: '' }]); }} className="text-xs font-semibold text-brand-600 hover:text-brand-800" type="button">+ Add</button>
                 </div>
-                {cv.emergency_contacts.map((c, i) => (
+                {(cv.emergency_contacts ?? []).map((c, i) => (
                   <div key={i} className="grid grid-cols-[1fr_1fr_auto] gap-1.5 mb-1.5">
-                    <input className="text-xs border border-gray-200 rounded-lg px-2 py-1.5" placeholder="Name" value={c.name} onChange={(e) => { const u = [...cv.emergency_contacts]; u[i] = { ...u[i], name: e.target.value }; updateProfile('contacts_vendors', 'emergency_contacts', u); }} onBlur={(e) => { const u = [...cv.emergency_contacts]; u[i] = { ...u[i], name: titleCase(e.target.value.trim()) }; updateProfile('contacts_vendors', 'emergency_contacts', u); }} />
-                    <input className="text-xs border border-gray-200 rounded-lg px-2 py-1.5" placeholder="Phone" value={c.phone} onChange={(e) => { const u = [...cv.emergency_contacts]; u[i] = { ...u[i], phone: formatPhone(e.target.value) }; updateProfile('contacts_vendors', 'emergency_contacts', u); }} type="tel" />
-                    <button onClick={() => updateProfile('contacts_vendors', 'emergency_contacts', cv.emergency_contacts.filter((_, idx) => idx !== i))} className="text-red-300 hover:text-red-500 text-xs px-1" type="button">✕</button>
+                    <input className="text-xs border border-gray-200 rounded-lg px-2 py-1.5" placeholder="Name" value={c.name} onChange={(e) => { const u = [...(cv.emergency_contacts ?? [])]; u[i] = { ...u[i], name: e.target.value }; updateProfile('contacts_vendors', 'emergency_contacts', u); }} onBlur={(e) => { const u = [...(cv.emergency_contacts ?? [])]; u[i] = { ...u[i], name: titleCase(e.target.value.trim()) }; updateProfile('contacts_vendors', 'emergency_contacts', u); }} />
+                    <input className="text-xs border border-gray-200 rounded-lg px-2 py-1.5" placeholder="Phone" value={c.phone} onChange={(e) => { const u = [...(cv.emergency_contacts ?? [])]; u[i] = { ...u[i], phone: formatPhone(e.target.value) }; updateProfile('contacts_vendors', 'emergency_contacts', u); }} type="tel" />
+                    <button onClick={() => updateProfile('contacts_vendors', 'emergency_contacts', (cv.emergency_contacts ?? []).filter((_, idx) => idx !== i))} className="text-red-300 hover:text-red-500 text-xs px-1" type="button">✕</button>
                   </div>
                 ))}
               </div>
               <div className="border-t border-gray-100 pt-2">
                 <div className="flex items-center justify-between mb-2">
                   <p className={sectionLabel}>Neighbors</p>
-                  <button onClick={() => { updateProfile('contacts_vendors', 'neighbors', [...cv.neighbors, { name: '', phone: '', relationship: '' }]); }} className="text-xs font-semibold text-brand-600 hover:text-brand-800" type="button">+ Add</button>
+                  <button onClick={() => { updateProfile('contacts_vendors', 'neighbors', [...(cv.neighbors ?? []), { name: '', phone: '', relationship: '' }]); }} className="text-xs font-semibold text-brand-600 hover:text-brand-800" type="button">+ Add</button>
                 </div>
-                {cv.neighbors.map((c, i) => (
+                {(cv.neighbors ?? []).map((c, i) => (
                   <div key={i} className="grid grid-cols-[1fr_1fr_auto] gap-1.5 mb-1.5">
-                    <input className="text-xs border border-gray-200 rounded-lg px-2 py-1.5" placeholder="Name" value={c.name} onChange={(e) => { const u = [...cv.neighbors]; u[i] = { ...u[i], name: e.target.value }; updateProfile('contacts_vendors', 'neighbors', u); }} onBlur={(e) => { const u = [...cv.neighbors]; u[i] = { ...u[i], name: titleCase(e.target.value.trim()) }; updateProfile('contacts_vendors', 'neighbors', u); }} />
-                    <input className="text-xs border border-gray-200 rounded-lg px-2 py-1.5" placeholder="Phone" value={c.phone} onChange={(e) => { const u = [...cv.neighbors]; u[i] = { ...u[i], phone: formatPhone(e.target.value) }; updateProfile('contacts_vendors', 'neighbors', u); }} type="tel" />
-                    <button onClick={() => updateProfile('contacts_vendors', 'neighbors', cv.neighbors.filter((_, idx) => idx !== i))} className="text-red-300 hover:text-red-500 text-xs px-1" type="button">✕</button>
+                    <input className="text-xs border border-gray-200 rounded-lg px-2 py-1.5" placeholder="Name" value={c.name} onChange={(e) => { const u = [...(cv.neighbors ?? [])]; u[i] = { ...u[i], name: e.target.value }; updateProfile('contacts_vendors', 'neighbors', u); }} onBlur={(e) => { const u = [...(cv.neighbors ?? [])]; u[i] = { ...u[i], name: titleCase(e.target.value.trim()) }; updateProfile('contacts_vendors', 'neighbors', u); }} />
+                    <input className="text-xs border border-gray-200 rounded-lg px-2 py-1.5" placeholder="Phone" value={c.phone} onChange={(e) => { const u = [...(cv.neighbors ?? [])]; u[i] = { ...u[i], phone: formatPhone(e.target.value) }; updateProfile('contacts_vendors', 'neighbors', u); }} type="tel" />
+                    <button onClick={() => updateProfile('contacts_vendors', 'neighbors', (cv.neighbors ?? []).filter((_, idx) => idx !== i))} className="text-red-300 hover:text-red-500 text-xs px-1" type="button">✕</button>
                   </div>
                 ))}
               </div>
             </div>
           ) : (
             <div className="space-y-1">
-              {cv.emergency_contacts.filter(c => c.name.trim()).map((c, i) => (
+              {(cv.emergency_contacts ?? []).filter(c => c.name.trim()).map((c, i) => (
                 <div key={i} className="flex items-center justify-between py-1.5 px-2 rounded-lg hover:bg-brand-50/30 transition">
                   <div className="flex items-center gap-2.5 min-w-0">
                     <div className="w-7 h-7 rounded-full bg-brand-100 text-brand-700 flex items-center justify-center text-xs font-semibold flex-shrink-0">{c.name.charAt(0).toUpperCase()}</div>
@@ -1526,7 +1526,7 @@ function CommandCenter({ profile, updateProfile, updateNestedProfile, onSave, ha
                   <PhoneLink phone={c.phone} className="text-xs flex-shrink-0 ml-2" />
                 </div>
               ))}
-              {cv.neighbors.filter(c => c.name.trim()).map((c, i) => (
+              {(cv.neighbors ?? []).filter(c => c.name.trim()).map((c, i) => (
                 <div key={`n-${i}`} className="flex items-center justify-between py-1.5 px-2 rounded-lg hover:bg-brand-50/30 transition">
                   <div className="flex items-center gap-2.5 min-w-0">
                     <div className="w-7 h-7 rounded-full bg-gray-100 text-gray-500 flex items-center justify-center text-xs font-semibold flex-shrink-0">{c.name.charAt(0).toUpperCase()}</div>
