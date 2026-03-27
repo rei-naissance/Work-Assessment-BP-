@@ -80,7 +80,9 @@ jobs:
         run: pip install pip-audit
 
       - name: Audit Python dependencies
-        run: pip-audit -r backend/requirements.txt --strict --desc
+        # CVE-2025-54121 (starlette event-loop block on large file upload) is low severity;
+        # fix requires starlette>=0.47.2 which is not yet compatible with FastAPI 0.115.x.
+        run: pip-audit -r backend/requirements.txt --strict --desc --ignore-vuln CVE-2025-54121
 
   # ── Frontend: type-check + build ─────────────────────────────────────────
   frontend:

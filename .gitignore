@@ -37,4 +37,4 @@ backend/data/
 htmlcov/
 
 # Root package lock (root package.json is for PM2 dotenv only)
-package-lock.json
+/package-lock.json
