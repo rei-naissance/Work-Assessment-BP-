@@ -59,6 +59,10 @@ async def _check_rate(limiter: str, key: str, limit: int, window: int) -> tuple[
     Denied requests are never recorded in Redis, so the window cannot be
     extended indefinitely by a flood of rejected retries.
     """
+    from app.config import settings
+    if settings.environment not in ("production", "staging"):
+        return True, 0
+
     redis_key = f"rl:{limiter}:{key}"
     now = time.time()
 
@@ -138,10 +142,6 @@ class RateLimitMiddleware(BaseHTTPMiddleware):
     async def dispatch(
         self, request: Request, call_next: Callable[[Request], Awaitable[Response]]
     ) -> Response:
-        from app.config import settings
-        if settings.environment not in ("production", "staging"):
-            return await call_next(request)
-
         path = request.url.path
         ip = _get_client_ip(request)
 
