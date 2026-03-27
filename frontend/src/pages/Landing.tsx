@@ -58,12 +58,21 @@ const FAQ = [
 
 export default function Landing() {
   const navigate = useNavigate();
-  const { isAuthenticated } = useAuth();
-  const cta = () => navigate(isAuthenticated ? '/dashboard' : '/login');
+  const { isAuthenticated, isAdmin } = useAuth();
+  const cta = () => {
+    if (!isAuthenticated) navigate('/login');
+    else if (isAdmin) navigate('/admin');
+    else navigate('/dashboard');
+  };
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [regionIdx, setRegionIdx] = useState(0);
   const [expandedCard, setExpandedCard] = useState<number | null>(null);
   const [pricing, setPricing] = useState<{ standard: number; premium: number } | null>(null);
+
+  useEffect(() => {
+    document.title = 'BinderPro — Your Home\'s Operating Manual';
+    return () => { document.title = 'BinderPro — Your Home\'s Operating Manual'; };
+  }, []);
 
   useEffect(() => {
     api.get('/payments/pricing').then((r) => {
@@ -87,9 +96,9 @@ export default function Landing() {
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 pt-12 pb-28 text-center">
           <img
-            src="/logo.png"
+            src="/logo-white.png"
             alt="BinderPro"
-            className="mx-auto h-12 sm:h-14 w-auto max-w-[280px] object-contain brightness-0 invert mb-8"
+            className="mx-auto h-12 sm:h-14 w-auto max-w-[280px] object-contain mb-8"
           />
           <span className="inline-block text-sm font-semibold bg-white/10 backdrop-blur border border-white/20 px-4 py-1.5 rounded-full mb-6">
             87 modules &middot; 640+ action items &middot; 8 organized sections
@@ -104,9 +113,12 @@ export default function Landing() {
             <button onClick={cta} className="px-10 py-4 bg-white text-brand-700 text-lg font-bold rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all">
               Build Your Binder
             </button>
-            <a href="#why-it-matters" className="px-6 py-2.5 border-2 border-white text-white font-semibold rounded-full hover:bg-white/10 flex items-center gap-2 transition-all">
+            <button
+              onClick={() => document.getElementById('why-it-matters')?.scrollIntoView({ behavior: 'smooth' })}
+              className="px-6 py-2.5 border-2 border-white text-white font-semibold rounded-full hover:bg-white/10 flex items-center gap-2 transition-all"
+            >
               Why it matters <span className="text-lg">↓</span>
-            </a>
+            </button>
           </div>
         </div>
 
@@ -136,17 +148,18 @@ export default function Landing() {
               </blockquote>
             </div>
 
-            {/* Right: video placeholder */}
+            {/* Right: video / visual */}
             <div>
-              <div className="relative aspect-video bg-gray-100 rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center overflow-hidden">
-                <div className="text-center">
-                  <div className="w-16 h-16 rounded-full bg-brand-600/10 flex items-center justify-center mx-auto mb-3">
+              <div className="relative aspect-video bg-gradient-to-br from-brand-50 to-brand-100 rounded-xl border border-brand-200 flex items-center justify-center overflow-hidden shadow-sm">
+                <div className="text-center px-8">
+                  <div className="w-16 h-16 rounded-full bg-brand-600/10 flex items-center justify-center mx-auto mb-4">
                     <svg className="w-8 h-8 text-brand-600" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M8 5v14l11-7z"/>
                     </svg>
                   </div>
-                  <p className="text-sm font-semibold text-gray-500">Why BinderPro?</p>
-                  <p className="text-xs text-gray-400 mt-1">Video coming soon</p>
+                  <p className="text-base font-semibold text-navy-900 mb-1">See BinderPro in Action</p>
+                  <p className="text-sm text-gray-500">A short walkthrough of how it works — from setup to your finished binder.</p>
+                  <p className="text-xs text-brand-600 font-semibold mt-3 uppercase tracking-wide">Coming Soon</p>
                 </div>
               </div>
             </div>

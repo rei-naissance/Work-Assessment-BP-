@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Primary Meta -->
-    <title>MyBinderPro</title>
-    <meta name="description" content="A personalized home operating manual with emergency procedures, maintenance schedules, contacts, and region-specific guidance — tailored to your home." />
+     <!-- Title is purely placeholder -->
+    <title>BinderPro — Your Home's Operating Manual</title>
+    <meta name="description" content="Build a custom home operating manual with emergency procedures, maintenance schedules, and system documentation — AI-generated and tailored to your home. Starting at $59." />
+    <link rel="canonical" href="https://mybinderpro.com/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -32,6 +34,132 @@
     <link rel="icon" type="image/png" href="/logo.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/logo.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/logo.png" />
+
+    <!-- Robots & AI discovery -->
+    <meta name="robots" content="index, follow" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" />
+
+    <!-- Structured Data: Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "BinderPro",
+      "url": "https://mybinderpro.com",
+      "logo": "https://mybinderpro.com/logo.png",
+      "description": "BinderPro generates personalized home operating manuals with emergency procedures, maintenance schedules, and system documentation.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "support@mybinderpro.com",
+        "contactType": "customer support"
+      },
+      "sameAs": []
+    }
+    </script>
+
+    <!-- Structured Data: SoftwareApplication + Offer -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "BinderPro",
+      "url": "https://mybinderpro.com",
+      "description": "Create a personalized home operating manual with 87 modules and 640+ action items — emergency procedures, maintenance schedules, system documentation, and region-specific guidance.",
+      "applicationCategory": "HomeAndGardenApplication",
+      "operatingSystem": "Web",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Standard",
+          "price": "59",
+          "priceCurrency": "USD",
+          "description": "Personalized home operating manual — digital + printed binder"
+        },
+        {
+          "@type": "Offer",
+          "name": "In-Depth Binder",
+          "price": "99",
+          "priceCurrency": "USD",
+          "description": "Premium home operating manual with expanded system documentation and AI-enhanced narratives"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Structured Data: FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How is this different from a generic home checklist?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Generic checklists give everyone the same list. BinderPro uses a rules engine that cross-references your ZIP code, home type, installed systems, household members, and preferences to assemble a binder unique to your home. A pool owner in Florida gets a completely different binder than a condo renter in Vermont."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What exactly do I receive?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You receive a professionally printed binder organized into 8 sections — emergency quick start, home profile, emergency playbooks, guest & sitter mode, maintenance guides, home inventory, contacts & vendors, and an appendix. You also get full digital access to download or reprint any section at any time."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I update my binder after I receive it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Your profile is always editable. When you make changes — new service provider, updated contacts, a system you added or removed — you can download the updated sections to print and swap into your binder, or request a freshly printed copy for just the cost of shipping."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who is BinderPro for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "BinderPro is for anyone responsible for a home: first-time homeowners getting organized from day one, long-time owners who have never had a system in place, landlords preparing rental or investment properties, parents who want their household to run smoothly, and anyone hosting guests, sitters, or short-term renters."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my information private?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your profile is stored securely and never shared or sold. It is used only to build your binder. Your data stays on file so you can log back in, make updates, and regenerate anytime without starting over."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why a physical binder and not just an app?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "When the power is out, your phone is dead, or a guest needs instructions — a physical binder on the shelf is always accessible. You also get digital access, so you have both. The physical format makes it easy to hand to a contractor, sitter, or family member without sharing logins."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Structured Data: WebSite (enables sitelinks search box) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "BinderPro",
+      "url": "https://mybinderpro.com",
+      "description": "Personalized home operating manuals with emergency procedures, maintenance schedules, and system documentation.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "BinderPro",
+        "url": "https://mybinderpro.com"
+      }
+    }
+    </script>
+
   </head>
   <body class="bg-gray-50 min-h-screen">
     <div id="root"></div>

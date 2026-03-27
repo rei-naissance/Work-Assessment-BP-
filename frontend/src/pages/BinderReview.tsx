@@ -302,7 +302,7 @@ export default function BinderReview() {
 
   const goToStep = (stepNum: number) => {
     localStorage.setItem('onboarding_step', String(stepNum));
-    navigate('/onboarding');
+    navigate('/onboarding?returnTo=binder-review');
   };
 
   if (loading) {

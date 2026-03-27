@@ -22,11 +22,12 @@ export default function Checkout() {
       window.location.href = res.data.checkout_url;
     } catch (e: any) {
       const detail = e.response?.data?.detail;
-      if (detail === 'Payment system not configured') {
-        // Fallback for dev mode - generate binder directly
+      if (detail === 'Payment system not configured' && import.meta.env.DEV) {
+        // Dev-only fallback: bypass payment and generate binder directly
         try {
           await api.post('/binders/generate', { tier });
           navigate('/dashboard');
+          return;
         } catch (genErr: any) {
           setError(genErr.response?.data?.detail || 'Something went wrong.');
         }

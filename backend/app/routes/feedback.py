@@ -1,6 +1,6 @@
 """Feedback routes for bug reports, suggestions, and questions."""
 from datetime import datetime
-from typing import Optional
+from typing import Literal, Optional
 
 from fastapi import APIRouter, Request
 from pydantic import BaseModel, Field
@@ -13,7 +13,7 @@ router = APIRouter()
 
 
 class FeedbackRequest(BaseModel):
-    type: str = Field(max_length=20)  # bug, feedback, question
+    type: Literal["bug", "feedback", "question"]
     message: str = Field(max_length=5000)
     page: Optional[str] = None
 
@@ -24,7 +24,12 @@ def get_user_from_token(request: Request) -> Optional[dict]:
     if not auth.startswith("Bearer "):
         return None
     try:
-        payload = jwt.decode(auth[7:], settings.jwt_secret, algorithms=[settings.jwt_algorithm])
+        payload = jwt.decode(
+            auth[7:], settings.jwt_secret,
+            algorithms=[settings.jwt_algorithm],
+            issuer=settings.jwt_issuer,
+            audience=settings.jwt_audience,
+        )
         return {"user_id": payload["sub"], "email": payload.get("email", "")}
     except JWTError:
         return None

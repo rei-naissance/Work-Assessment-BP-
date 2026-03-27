@@ -1,4 +1,5 @@
 import hashlib
+import hmac
 import secrets
 import uuid
 import logging
@@ -25,12 +26,16 @@ def _hash_otp(code: str) -> str:
 
 
 def _create_access_token(user_id: str, email: str, is_admin: bool) -> str:
+    now = datetime.utcnow()
     return jwt.encode(
         {
             "sub": user_id,
             "email": email,
             "is_admin": is_admin,
-            "exp": datetime.utcnow() + timedelta(minutes=settings.access_token_expire_minutes),
+            "iss": settings.jwt_issuer,
+            "aud": settings.jwt_audience,
+            "iat": now,
+            "exp": now + timedelta(minutes=settings.access_token_expire_minutes),
         },
         settings.jwt_secret,
         algorithm=settings.jwt_algorithm,
@@ -40,12 +45,16 @@ def _create_access_token(user_id: str, email: str, is_admin: bool) -> str:
 def _create_refresh_token(user_id: str) -> tuple[str, str]:
     """Create a refresh token JWT. Returns (token_string, jti)."""
     jti = uuid.uuid4().hex
+    now = datetime.utcnow()
     token = jwt.encode(
         {
             "sub": user_id,
             "type": "refresh",
             "jti": jti,
-            "exp": datetime.utcnow() + timedelta(days=settings.refresh_token_expire_days),
+            "iss": settings.jwt_issuer,
+            "aud": settings.jwt_audience,
+            "iat": now,
+            "exp": now + timedelta(days=settings.refresh_token_expire_days),
         },
         settings.jwt_secret,
         algorithm=settings.jwt_algorithm,
@@ -132,7 +141,7 @@ async def verify_otp(body: OTPVerify, request: Request, response: Response):
         await db.pending_otps.delete_one({"_id": stored["_id"]})
         raise_error(ErrorCode.INVALID_TOKEN, "Too many attempts. Please request a new code.")
 
-    if _hash_otp(body.code) != stored["code_hash"]:
+    if not hmac.compare_digest(_hash_otp(body.code), stored["code_hash"]):
         # Increment attempt counter
         await db.pending_otps.update_one(
             {"_id": stored["_id"]},
@@ -195,7 +204,12 @@ async def refresh(request: Request, response: Response):
         raise_error(ErrorCode.UNAUTHORIZED, "No refresh token")
 
     try:
-        payload = jwt.decode(token, settings.jwt_secret, algorithms=[settings.jwt_algorithm])
+        payload = jwt.decode(
+            token, settings.jwt_secret,
+            algorithms=[settings.jwt_algorithm],
+            issuer=settings.jwt_issuer,
+            audience=settings.jwt_audience,
+        )
     except JWTError:
         _clear_refresh_cookie(response)
         raise_error(ErrorCode.INVALID_TOKEN, "Invalid or expired refresh token")
@@ -261,7 +275,12 @@ async def logout(request: Request, response: Response):
     token = request.cookies.get("refresh_token")
     if token:
         try:
-            payload = jwt.decode(token, settings.jwt_secret, algorithms=[settings.jwt_algorithm])
+            payload = jwt.decode(
+                token, settings.jwt_secret,
+                algorithms=[settings.jwt_algorithm],
+                issuer=settings.jwt_issuer,
+                audience=settings.jwt_audience,
+            )
             jti = payload.get("jti")
             user_id = payload.get("sub")
             db = request.app.state.db

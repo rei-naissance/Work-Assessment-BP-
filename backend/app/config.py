@@ -30,6 +30,16 @@ class Settings(BaseSettings):
     environment: str = "development"  # development, staging, production
     # Comma-separated origins for CORS; empty = use frontend_url in production, * in dev
     cors_origins: str = ""
+    # Sentry DSN for error tracking (leave empty to disable)
+    sentry_dsn: str = ""
+    redis_url: str = "redis://localhost:6379"
+    # JWT issuer/audience for token validation and future SSO compatibility
+    jwt_issuer: str = "binderpro"
+    jwt_audience: str = "binderpro"
+    # Comma-separated list of trusted reverse proxy IPs/CIDRs.
+    # X-Forwarded-For is only trusted when the direct peer IP is in this list.
+    # Example: "10.0.0.1,172.16.0.0/12"
+    trusted_proxies: str = ""
 
     model_config = {"env_file": ".env", "extra": "ignore"}
 
@@ -68,6 +78,8 @@ class Settings(BaseSettings):
                 warnings.warn("Using localhost MongoDB in production - consider using Atlas")
             elif "tls=true" not in self.mongo_uri and "ssl=true" not in self.mongo_uri and "+srv" not in self.mongo_uri:
                 issues.append("MONGO_URI should use TLS in production (add tls=true or use mongodb+srv://)")
+            if "localhost" in self.redis_url or "127.0.0.1" in self.redis_url:
+                warnings.warn("REDIS_URL is localhost — Redis will be unavailable in production unless configured")
 
         return issues
 

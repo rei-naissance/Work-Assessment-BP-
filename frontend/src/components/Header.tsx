@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import api from '../api';
 import { useAuth } from '../AuthContext';
 import type { Binder } from '../types';
-import { btnPrimary, btnGhost, btnDanger } from '../styles/shared';
+import { btnPrimary } from '../styles/shared';
 
 export default function Header() {
   const navigate = useNavigate();
@@ -18,14 +18,21 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const showAuthNav = isAuthenticated && !isLanding && !isLogin;
 
-  useEffect(() => {
+  const fetchBinder = () => {
     if (showAuthNav) {
       api.get('/binders/').then((r) => {
-        if (r.data.length > 0) {
-          setBinder(r.data[0]);
-        }
+        if (r.data.length > 0) setBinder(r.data[0]);
       }).catch(() => {});
     }
+  };
+
+  useEffect(() => {
+    fetchBinder();
+  }, [showAuthNav]);
+
+  useEffect(() => {
+    window.addEventListener('binder:updated', fetchBinder);
+    return () => window.removeEventListener('binder:updated', fetchBinder);
   }, [showAuthNav]);
 
   const logout = async () => {
@@ -72,9 +79,9 @@ export default function Header() {
           ) : (
             <button onClick={() => navigate('/')} className="flex items-center">
               <img
-                src="/logo.png"
+                src={isLanding ? '/logo-white.png' : '/logo.png'}
                 alt="BinderPro — Your home deserves an operating manual"
-                className={`h-8 w-auto max-h-10 object-contain object-left ${isLanding ? 'brightness-0 invert' : ''}`}
+                className="h-8 w-auto max-h-10 object-contain object-left"
               />
             </button>
           )}
@@ -85,9 +92,9 @@ export default function Header() {
           {/* Landing: logged-out sees Features/Pricing, logged-in sees Dashboard */}
           {isLanding && !isAuthenticated && (
             <>
-              <a href="/#whats-included" className="hidden sm:inline-block text-sm font-medium text-white/70 hover:text-white px-3 py-1.5 rounded-full transition">Features</a>
-              <a href="/#pricing" className="hidden sm:inline-block text-sm font-medium text-white/70 hover:text-white px-3 py-1.5 rounded-full transition">Pricing</a>
-              <a href="/#faq" className="hidden sm:inline-block text-sm font-medium text-white/70 hover:text-white px-3 py-1.5 rounded-full transition">FAQ</a>
+              <button onClick={() => document.getElementById('whats-included')?.scrollIntoView({ behavior: 'smooth' })} className="hidden sm:inline-block text-sm font-medium text-white/70 hover:text-white px-3 py-1.5 rounded-full transition">Features</button>
+              <button onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })} className="hidden sm:inline-block text-sm font-medium text-white/70 hover:text-white px-3 py-1.5 rounded-full transition">Pricing</button>
+              <button onClick={() => document.getElementById('faq')?.scrollIntoView({ behavior: 'smooth' })} className="hidden sm:inline-block text-sm font-medium text-white/70 hover:text-white px-3 py-1.5 rounded-full transition">FAQ</button>
             </>
           )}
           {isLanding && isAuthenticated && (

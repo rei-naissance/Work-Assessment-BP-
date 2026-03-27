@@ -25,7 +25,12 @@ async def get_current_user(request: Request) -> dict:
     if not auth.startswith("Bearer "):
         raise_error(ErrorCode.UNAUTHORIZED, "Missing authentication token")
     try:
-        payload = jwt.decode(auth[7:], settings.jwt_secret, algorithms=[settings.jwt_algorithm])
+        payload = jwt.decode(
+            auth[7:], settings.jwt_secret,
+            algorithms=[settings.jwt_algorithm],
+            issuer=settings.jwt_issuer,
+            audience=settings.jwt_audience,
+        )
     except JWTError:
         raise_error(ErrorCode.INVALID_TOKEN, "Invalid or expired token")
     return {"user_id": payload["sub"], "email": payload.get("email", "")}

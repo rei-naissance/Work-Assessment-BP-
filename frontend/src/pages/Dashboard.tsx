@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../api';
 import type { Binder, Tier } from '../types';
@@ -209,7 +209,8 @@ export default function Dashboard() {
     step_to_fix: string;
   }>;
 } | null>(null);
-  const [hasChanges, setHasChanges] = useState(false);
+  const [savedProfile, setSavedProfile] = useState<typeof profile>(null);
+  const hasChanges = useMemo(() => JSON.stringify(profile) !== JSON.stringify(savedProfile), [profile, savedProfile]);
   const [activeSection, setActiveSection] = useState<string>('home_info');
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [expandedInfoSection, setExpandedInfoSection] = useState<string>('address'); // kept for suggestion navigation
@@ -250,6 +251,7 @@ export default function Dashboard() {
       await api.post('/binders/generate', { tier }, { timeout: 200000 });
       const res = await api.get('/binders/');
       setBinders(res.data);
+      window.dispatchEvent(new Event('binder:updated'));
       if (res.data.length > 0 && res.data[0].status === 'ready') {
         const sr = await api.get(`/binders/${res.data[0].id}/sections`);
         setSections(sr.data);
@@ -286,6 +288,7 @@ export default function Dashboard() {
         const [bindersRes, profileRes] = await Promise.all([api.get('/binders/'), api.get('/profile/')]);
         setBinders(bindersRes.data);
         setProfile(profileRes.data);
+        setSavedProfile(profileRes.data);
 
         if (bindersRes.data.length === 0) {
           const purchasedTier = (profileRes.data.purchased_tier || '') as Tier | '';
@@ -321,7 +324,6 @@ export default function Dashboard() {
   const updateProfile = (section: string, field: string, value: any) => {
     if (!profile) return;
     setProfile({ ...profile, [section]: { ...(profile as any)[section], [field]: value } });
-    setHasChanges(true);
   };
 
   const updateNestedProfile = (section: string, subsection: string, field: string, value: any) => {
@@ -330,7 +332,6 @@ export default function Dashboard() {
       ...profile,
       [section]: { ...(profile as any)[section], [subsection]: { ...(profile as any)[section][subsection], [field]: value } },
     });
-    setHasChanges(true);
   };
 
   const saveChanges = async () => {
@@ -338,7 +339,7 @@ export default function Dashboard() {
     setSaving(true);
     try {
       await api.put('/profile/', profile);
-      setHasChanges(false);
+      setSavedProfile(profile);
       // Refresh completeness check
       const res = await api.get('/profile/completeness');
       setProfileComplete(res.data);
@@ -377,7 +378,7 @@ export default function Dashboard() {
     try {
       if (hasChanges) {
         await api.put('/profile/', profile);
-        setHasChanges(false);
+        setSavedProfile(profile);
       }
       const tier = binders[0]?.tier || 'premium';
       setGenerationStatus('Generating AI content (30-90 sec)...');
@@ -386,6 +387,7 @@ export default function Dashboard() {
       setGenerationStatus('Loading binder...');
       const res = await api.get('/binders/');
       setBinders(res.data);
+      window.dispatchEvent(new Event('binder:updated'));
       if (res.data.length > 0 && res.data[0].status === 'ready') {
         const sr = await api.get(`/binders/${res.data[0].id}/sections`);
         setSections(sr.data);
@@ -417,16 +419,24 @@ export default function Dashboard() {
     }
   };
 
-  const download = (id: string) => {
-    secureDownload(`/binders/${id}/download`, 'binderpro.pdf');
+  const binderFilename = (b: Binder, type: 'full' | 'sitter' | 'checklist'): string => {
+    const date = b.created_at ? new Date(b.created_at).toISOString().slice(0, 10) : 'unknown';
+    const tier = b.tier || 'standard';
+    if (type === 'sitter') return `sitter-packet-${tier}-${date}.pdf`;
+    if (type === 'checklist') return `fill-in-checklist-${tier}-${date}.pdf`;
+    return `binderpro-${tier}-${date}.pdf`;
   };
 
-  const downloadSitterPacket = (id: string) => {
-    secureDownload(`/binders/${id}/download/sitter-packet`, 'sitter_packet.pdf');
+  const download = (b: Binder) => {
+    secureDownload(`/binders/${b.id}/download`, binderFilename(b, 'full'));
   };
 
-  const downloadChecklist = (id: string) => {
-    secureDownload(`/binders/${id}/download/checklist`, 'fill_in_checklist.pdf');
+  const downloadSitterPacket = (b: Binder) => {
+    secureDownload(`/binders/${b.id}/download/sitter-packet`, binderFilename(b, 'sitter'));
+  };
+
+  const downloadChecklist = (b: Binder) => {
+    secureDownload(`/binders/${b.id}/download/checklist`, binderFilename(b, 'checklist'));
   };
 
   if (loading) return (
@@ -513,7 +523,7 @@ export default function Dashboard() {
               </svg>
             </button>
             <button
-              onClick={() => latestBinder && download(latestBinder.id)}
+              onClick={() => latestBinder && download(latestBinder)}
               className="p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg transition"
               title="Download full binder"
             >
@@ -635,10 +645,10 @@ export default function Dashboard() {
               <div className="p-3 border-t border-gray-100">
                 <p className={`${sectionLabel} mb-2`}>Downloads</p>
                 <div className="space-y-2">
-                  <button onClick={() => download(latestBinder.id)} className="w-full text-left px-3 py-2 rounded-lg bg-brand-50 text-brand-700 text-sm font-medium">
+                  <button onClick={() => download(latestBinder)} className="w-full text-left px-3 py-2 rounded-lg bg-brand-50 text-brand-700 text-sm font-medium">
                     Full Binder PDF
                   </button>
-                  <button onClick={() => downloadSitterPacket(latestBinder.id)} className="w-full text-left px-3 py-2 rounded-lg bg-purple-50 text-purple-700 text-sm font-medium">
+                  <button onClick={() => downloadSitterPacket(latestBinder)} className="w-full text-left px-3 py-2 rounded-lg bg-purple-50 text-purple-700 text-sm font-medium">
                     Sitter Packet
                   </button>
                 </div>
@@ -869,8 +879,8 @@ export default function Dashboard() {
                   <p className={`${sectionLabel} mb-2`}>Previous</p>
                   {binders.slice(1, 3).map((b) => (
                     <div key={b.id} className="flex items-center justify-between py-1">
-                      <span className="text-xs text-gray-400">{b.created_at && new Date(b.created_at).toLocaleDateString()}</span>
-                      <button onClick={() => download(b.id)} className="text-xs text-brand-600 hover:text-brand-700">Download</button>
+                      <span className="text-xs text-gray-400">{b.created_at && new Date(b.created_at).toLocaleString(undefined, { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' })}</span>
+                      <button onClick={() => download(b)} className="text-xs text-brand-600 hover:text-brand-700">Download</button>
                     </div>
                   ))}
                 </div>
@@ -882,7 +892,7 @@ export default function Dashboard() {
                   <p className={`${sectionLabel} mb-2`}>Downloads</p>
                   <div className="space-y-2">
                     <button
-                      onClick={() => download(latestBinder.id)}
+                      onClick={() => download(latestBinder)}
                       className="w-full flex items-center gap-2 px-3 py-2 rounded-lg bg-brand-50 hover:bg-brand-100 transition group"
                     >
                       <span className="w-6 h-6 rounded bg-brand-100 text-brand-600 flex items-center justify-center text-xs group-hover:bg-brand-200">
@@ -899,7 +909,7 @@ export default function Dashboard() {
                       </svg>
                     </button>
                     <button
-                      onClick={() => downloadSitterPacket(latestBinder.id)}
+                      onClick={() => downloadSitterPacket(latestBinder)}
                       className="w-full flex items-center gap-2 px-3 py-2 rounded-lg bg-purple-50 hover:bg-purple-100 transition group"
                     >
                       <span className="w-6 h-6 rounded bg-purple-100 text-purple-600 flex items-center justify-center text-xs group-hover:bg-purple-200">
@@ -916,7 +926,7 @@ export default function Dashboard() {
                       </svg>
                     </button>
                     <button
-                      onClick={() => downloadChecklist(latestBinder.id)}
+                      onClick={() => downloadChecklist(latestBinder)}
                       className="w-full flex items-center gap-2 px-3 py-2 rounded-lg bg-amber-50 hover:bg-amber-100 transition group"
                     >
                       <span className="w-6 h-6 rounded bg-amber-100 text-amber-600 flex items-center justify-center text-xs group-hover:bg-amber-200">

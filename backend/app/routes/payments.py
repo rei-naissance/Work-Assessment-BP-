@@ -1,13 +1,14 @@
 """Stripe payment routes."""
 
+import hashlib
 import logging
-import uuid
-from datetime import datetime
+from datetime import datetime, date
 from fastapi import APIRouter, Depends, Request
 from pydantic import BaseModel
 from bson import ObjectId
 
 import stripe
+from pymongo.errors import DuplicateKeyError
 
 from app.config import settings
 from app.routes.profile import get_current_user
@@ -23,6 +24,14 @@ PRICES = {
     "standard": 5900,  # $59.00 in cents
     "premium": 9900,   # $99.00 in cents
 }
+
+# Stripe webhook event types this endpoint handles.
+# Register all three in the Stripe Dashboard → Webhooks → "Events to send".
+HANDLED_WEBHOOK_EVENTS = [
+    "checkout.session.completed",
+    "checkout.session.expired",
+    "payment_intent.payment_failed",
+]
 
 
 async def get_active_prices(db) -> dict:
@@ -77,8 +86,11 @@ async def create_checkout_session(
 
     plan_name = "In-Depth Binder" if body.tier == "premium" else "Standard Binder"
 
-    # Generate idempotency key based on user_id and tier to prevent duplicate charges
-    idempotency_key = f"checkout_{user['user_id']}_{body.tier}_{uuid.uuid4().hex[:8]}"
+    # Deterministic idempotency key: same user + tier + calendar day → same Stripe session
+    # This lets Stripe deduplicate retries while allowing a fresh session each new day.
+    idempotency_key = hashlib.sha256(
+        f"checkout:{user['user_id']}:{body.tier}:{date.today().isoformat()}".encode()
+    ).hexdigest()[:48]
 
     try:
         session = stripe.checkout.Session.create(
@@ -189,7 +201,15 @@ async def stripe_webhook(request: Request):
         if user_id:
             db = request.app.state.db
 
-            # Store payment receipt in database
+            # Idempotency guard: skip if this session was already processed
+            existing_payment = await db.payments.find_one({"stripe_session_id": session["id"]})
+            if existing_payment:
+                logger.info("Duplicate webhook event for session %s — skipping", session["id"])
+                return {"status": "ok"}
+
+            # Store payment receipt in database.
+            # The unique index on stripe_session_id guards against concurrent
+            # duplicate webhooks — catch DuplicateKeyError and treat as idempotent.
             receipt = {
                 "user_id": user_id,
                 "stripe_session_id": session["id"],
@@ -201,7 +221,14 @@ async def stripe_webhook(request: Request):
                 "status": "completed",
                 "created_at": datetime.utcnow(),
             }
-            await db.payments.insert_one(receipt)
+            try:
+                await db.payments.insert_one(receipt)
+            except DuplicateKeyError:
+                logger.info(
+                    "Duplicate webhook insert for session %s — already processed",
+                    session["id"],
+                )
+                return {"status": "ok"}
 
             # Update user record with purchase
             await db.users.update_one(
@@ -219,5 +246,30 @@ async def stripe_webhook(request: Request):
             # Send payment confirmation email
             if customer_email:
                 send_payment_confirmation(customer_email, tier, amount_total)
+
+    elif event["type"] == "checkout.session.expired":
+        # User abandoned the checkout (closed tab, navigated away, session timed out).
+        # No action needed — the idempotency key resets each calendar day so they can
+        # start a fresh session. Log for analytics/monitoring only.
+        session = event["data"]["object"]
+        user_id = session.get("metadata", {}).get("user_id")
+        logger.info(
+            "Checkout session expired (abandoned) — user=%s session=%s",
+            user_id,
+            session.get("id"),
+        )
+
+    elif event["type"] == "payment_intent.payment_failed":
+        # Card was declined, insufficient funds, or 3DS authentication failed.
+        # Log details for support and monitoring; no DB write needed since no
+        # successful payment record exists yet.
+        pi = event["data"]["object"]
+        error = pi.get("last_payment_error") or {}
+        logger.warning(
+            "Payment failed — intent=%s code=%s message=%s",
+            pi.get("id"),
+            error.get("code", "unknown"),
+            error.get("message", "no message"),
+        )
 
     return {"status": "ok"}

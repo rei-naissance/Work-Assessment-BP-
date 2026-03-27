@@ -1,9 +1,10 @@
 import os
 import uuid
 import logging
-from datetime import datetime
+from datetime import datetime, timedelta
 
 from bson import ObjectId
+from bson.errors import InvalidId
 from fastapi import APIRouter, Depends, Request
 from fastapi.responses import FileResponse
 
@@ -11,14 +12,8 @@ from app.config import settings
 from app.models.profile import Profile
 from app.models.binder import BinderRequest, BinderOut
 from app.rules.engine import select_modules
-from app.pdf.generator import generate_binder_pdf
-from app.ai.generator import AIContentGenerator
 from app.routes.profile import get_current_user
-from app.outputs.sitter_packet import generate_sitter_packet
-from app.outputs.fill_in_checklist import generate_fill_in_checklist, collect_unknowns_from_render
-from app.templates.narrative import clear_unknown_placeholders
 from app.errors import raise_error, ErrorCode, handle_db_error
-from app.services.email import send_binder_ready, send_generation_failed
 from app.services.crypto import decrypt_profile_fields
 
 logger = logging.getLogger(__name__)
@@ -62,19 +57,23 @@ async def generate_binder(body: BinderRequest, request: Request, user=Depends(ge
             f"Please complete your profile. Missing: {', '.join(missing)}"
         )
 
+    # Enforce per-user hourly generation limit to prevent multi-IP bypass attempts
+    one_hour_ago = datetime.utcnow() - timedelta(hours=1)
+    recent_count = await db.binders.count_documents({
+        "user_id": user["user_id"],
+        "created_at": {"$gte": one_hour_ago},
+        "status": {"$ne": "failed"},
+    })
+    if recent_count >= 3:
+        raise_error(
+            ErrorCode.RATE_LIMITED,
+            "You have reached the maximum of 3 binders per hour. Please try again later.",
+        )
+
     sections = select_modules(profile, tier=body.tier)
     module_keys = [k for sec in sections.values() for k in sec.keys()]
 
-    # AI content generation (two-stage pipeline)
-    ai_content = {}
-    ai_draft = {}
-    try:
-        generator = AIContentGenerator()
-        ai_content, ai_draft = await generator.generate(profile, sections, body.tier)
-    except Exception:
-        pass  # Fallback to template-only
-
-    # Generate unique filenames for all outputs
+    # Pre-compute output file paths so the worker can write directly to them
     file_id = uuid.uuid4().hex[:8]
     pdf_path = os.path.join(settings.data_dir, f"{user['user_id']}_{file_id}.pdf")
     sitter_path = os.path.join(settings.data_dir, f"{user['user_id']}_{file_id}_sitter.pdf")
@@ -82,15 +81,16 @@ async def generate_binder(body: BinderRequest, request: Request, user=Depends(ge
 
     binder_doc = {
         "user_id": user["user_id"],
+        "user_email": user["email"],
         "tier": body.tier,
         "profile_snapshot": profile.model_dump(),
         "modules": module_keys,
         "pdf_path": pdf_path,
         "sitter_packet_path": sitter_path,
         "fill_in_checklist_path": checklist_path,
-        "status": "generating",
-        "ai_content": ai_content,
-        "ai_draft": ai_draft,
+        "status": "queued",
+        "ai_content": {},
+        "ai_draft": {},
         "created_at": datetime.utcnow(),
     }
     try:
@@ -99,82 +99,48 @@ async def generate_binder(body: BinderRequest, request: Request, user=Depends(ge
         handle_db_error("creating binder record", e)
     binder_id = str(result.inserted_id)
 
+    # Enqueue the heavy work — AI + PDF generation runs in the background worker
     try:
-        # Clear unknown tracker before rendering
-        clear_unknown_placeholders()
-
-        # Stage 3: AI module enhancement (premium tier only)
-        from app.templates.narrative import TemplateWriter
-        writer = TemplateWriter()
-        section_blocks = writer.render_all_sections(sections, profile, ai_content)
-
-        missing_items = {}
-        if body.tier == "premium":
-            try:
-                section_blocks, missing_items = await generator.enhance_modules(
-                    section_blocks, profile, body.tier
-                )
-                logger.info("Stage 3 complete — %d sections enhanced, %d missing items",
-                            sum(1 for k in section_blocks if k.startswith("section_")),
-                            sum(len(v) for v in missing_items.values()))
-            except Exception as e:
-                logger.warning("Module enhancement failed, using template-only content: %s", e)
-
-        # 1. Generate main binder PDF (with pre-enhanced blocks)
-        generate_binder_pdf(profile, pdf_path, tier=body.tier,
-                            ai_content=ai_content, section_blocks=section_blocks)
-
-        # 2. Generate sitter packet
-        try:
-            generate_sitter_packet(profile, sitter_path, tier=body.tier, ai_content=ai_content)
-        except Exception as e:
-            logger.warning(f"Sitter packet generation failed: {e}")
-            sitter_path = None
-
-        # 3. Generate fill-in checklist (template unknowns + AI-identified gaps)
-        unknowns = []
-        try:
-            unknowns = collect_unknowns_from_render()
-            generate_fill_in_checklist(profile, checklist_path, unknowns=unknowns,
-                                       ai_missing_items=missing_items)
-        except Exception as e:
-            logger.warning(f"Fill-in checklist generation failed: {e}")
-            checklist_path = None
-
-        # Set restrictive file permissions on generated PDFs
-        for path in [pdf_path, sitter_path, checklist_path]:
-            if path and os.path.exists(path):
-                os.chmod(path, 0o600)
-
-        # Update document with actual paths (None if failed)
-        update_fields = {
-            "status": "ready",
-            "unknown_count": len(unknowns),
-            "missing_items": missing_items,
-        }
-        if sitter_path is None:
-            update_fields["sitter_packet_path"] = None
-        if checklist_path is None:
-            update_fields["fill_in_checklist_path"] = None
-
-        await db.binders.update_one({"_id": result.inserted_id}, {"$set": update_fields})
-        binder_doc["status"] = "ready"
-
-        # Send binder ready notification email
-        send_binder_ready(user["email"], body.tier)
-
+        await request.app.state.arq_pool.enqueue_job("generate_binder_job", binder_id)
     except Exception as e:
-        await db.binders.update_one({"_id": result.inserted_id}, {"$set": {"status": "failed"}})
-        logger.error(f"Binder generation failed: {e}")
+        logger.error("Failed to enqueue binder job %s: %s", binder_id, e)
+        await db.binders.update_one(
+            {"_id": result.inserted_id},
+            {"$set": {"status": "failed", "error": "Failed to queue generation job"}},
+        )
+        raise_error(ErrorCode.INTERNAL, "Failed to start binder generation")
+    logger.info("Binder %s queued for generation (tier=%s)", binder_id, body.tier)
 
-        # Send generation failed notification email
-        send_generation_failed(user["email"], body.tier)
+    return BinderOut(
+        id=binder_id,
+        user_id=user["user_id"],
+        tier=body.tier,
+        modules=module_keys,
+        status="queued",
+        created_at=binder_doc["created_at"],
+    )
 
-        raise_error(ErrorCode.GENERATION_FAILED, "Failed to generate binder. Please try again.", detail=str(e))
 
-    return BinderOut(id=binder_id, user_id=user["user_id"], tier=body.tier, modules=module_keys,
-                     status="ready", ai_content=ai_content, missing_items=missing_items,
-                     created_at=binder_doc["created_at"])
+def _parse_binder_oid(binder_id: str) -> ObjectId:
+    """Parse binder_id to ObjectId, raising a 400 on malformed input."""
+    try:
+        return ObjectId(binder_id)
+    except InvalidId:
+        raise_error(ErrorCode.INVALID_INPUT, "Invalid binder ID format")
+
+
+@router.get("/status/{binder_id}")
+async def get_binder_status(binder_id: str, request: Request, user=Depends(get_current_user)):
+    """Poll the generation status of a specific binder."""
+    oid = _parse_binder_oid(binder_id)
+    db = request.app.state.db
+    try:
+        doc = await db.binders.find_one({"_id": oid, "user_id": user["user_id"]})
+    except Exception as e:
+        handle_db_error("fetching binder status", e)
+    if not doc:
+        raise_error(ErrorCode.BINDER_NOT_FOUND, "Binder not found")
+    return {"binder_id": binder_id, "status": doc.get("status")}
 
 
 @router.get("/")
@@ -331,9 +297,10 @@ SECTION_META = [
 @router.get("/{binder_id}/sections")
 async def get_binder_sections(binder_id: str, request: Request, user=Depends(get_current_user)):
     """Return the binder's content organized by sections with module titles."""
+    oid = _parse_binder_oid(binder_id)
     db = request.app.state.db
     try:
-        doc = await db.binders.find_one({"_id": ObjectId(binder_id), "user_id": user["user_id"]})
+        doc = await db.binders.find_one({"_id": oid, "user_id": user["user_id"]})
     except Exception as e:
         handle_db_error("fetching binder sections", e)
     if not doc:
@@ -465,9 +432,10 @@ async def get_binder_sections(binder_id: str, request: Request, user=Depends(get
 @router.get("/{binder_id}/sections/{section_key}/content")
 async def get_section_content(binder_id: str, section_key: str, request: Request, user=Depends(get_current_user)):
     """Return rendered Block content for a specific section as JSON."""
+    oid = _parse_binder_oid(binder_id)
     db = request.app.state.db
     try:
-        doc = await db.binders.find_one({"_id": ObjectId(binder_id), "user_id": user["user_id"]})
+        doc = await db.binders.find_one({"_id": oid, "user_id": user["user_id"]})
     except Exception as e:
         handle_db_error("fetching binder content", e)
     if not doc:
@@ -533,14 +501,19 @@ async def download_binder(binder_id: str, request: Request):
     token_str = auth[7:]
 
     try:
-        payload = jose_jwt.decode(token_str, settings.jwt_secret, algorithms=[settings.jwt_algorithm])
+        payload = jose_jwt.decode(
+            token_str, settings.jwt_secret,
+            algorithms=[settings.jwt_algorithm],
+            issuer=settings.jwt_issuer,
+            audience=settings.jwt_audience,
+        )
         user_id = payload["sub"]
     except JWTError:
         raise_error(ErrorCode.INVALID_TOKEN, "Invalid or expired token")
 
     db = request.app.state.db
     try:
-        doc = await db.binders.find_one({"_id": ObjectId(binder_id), "user_id": user_id})
+        doc = await db.binders.find_one({"_id": _parse_binder_oid(binder_id), "user_id": user_id})
     except Exception as e:
         handle_db_error("fetching binder for download", e)
     if not doc:
@@ -554,7 +527,10 @@ async def download_binder(binder_id: str, request: Request):
         raise_error(ErrorCode.FORBIDDEN, "Invalid file path")
     if not os.path.exists(real_path):
         raise_error(ErrorCode.NOT_FOUND, "PDF file not found. Please regenerate your binder.")
-    return FileResponse(real_path, media_type="application/pdf", filename="binderpro.pdf")
+    tier = doc.get("tier", "standard")
+    date_str = doc["created_at"].strftime("%Y-%m-%d") if doc.get("created_at") else "unknown"
+    filename = f"binderpro-{tier}-{date_str}.pdf"
+    return FileResponse(real_path, media_type="application/pdf", filename=filename)
 
 
 @router.get("/{binder_id}/download/sitter-packet")
@@ -568,14 +544,19 @@ async def download_sitter_packet(binder_id: str, request: Request):
     token_str = auth[7:]
 
     try:
-        payload = jose_jwt.decode(token_str, settings.jwt_secret, algorithms=[settings.jwt_algorithm])
+        payload = jose_jwt.decode(
+            token_str, settings.jwt_secret,
+            algorithms=[settings.jwt_algorithm],
+            issuer=settings.jwt_issuer,
+            audience=settings.jwt_audience,
+        )
         user_id = payload["sub"]
     except JWTError:
         raise_error(ErrorCode.INVALID_TOKEN, "Invalid or expired token")
 
     db = request.app.state.db
     try:
-        doc = await db.binders.find_one({"_id": ObjectId(binder_id), "user_id": user_id})
+        doc = await db.binders.find_one({"_id": _parse_binder_oid(binder_id), "user_id": user_id})
     except Exception as e:
         handle_db_error("fetching sitter packet", e)
     if not doc:
@@ -592,7 +573,9 @@ async def download_sitter_packet(binder_id: str, request: Request):
         raise_error(ErrorCode.FORBIDDEN, "Invalid file path")
     if not os.path.exists(real_path):
         raise_error(ErrorCode.NOT_FOUND, "Sitter packet not available")
-    return FileResponse(real_path, media_type="application/pdf", filename="sitter_packet.pdf")
+    tier = doc.get("tier", "standard")
+    date_str = doc["created_at"].strftime("%Y-%m-%d") if doc.get("created_at") else "unknown"
+    return FileResponse(real_path, media_type="application/pdf", filename=f"sitter-packet-{tier}-{date_str}.pdf")
 
 
 @router.get("/{binder_id}/download/checklist")
@@ -606,14 +589,19 @@ async def download_fill_in_checklist(binder_id: str, request: Request):
     token_str = auth[7:]
 
     try:
-        payload = jose_jwt.decode(token_str, settings.jwt_secret, algorithms=[settings.jwt_algorithm])
+        payload = jose_jwt.decode(
+            token_str, settings.jwt_secret,
+            algorithms=[settings.jwt_algorithm],
+            issuer=settings.jwt_issuer,
+            audience=settings.jwt_audience,
+        )
         user_id = payload["sub"]
     except JWTError:
         raise_error(ErrorCode.INVALID_TOKEN, "Invalid or expired token")
 
     db = request.app.state.db
     try:
-        doc = await db.binders.find_one({"_id": ObjectId(binder_id), "user_id": user_id})
+        doc = await db.binders.find_one({"_id": _parse_binder_oid(binder_id), "user_id": user_id})
     except Exception as e:
         handle_db_error("fetching checklist", e)
     if not doc:
@@ -630,4 +618,6 @@ async def download_fill_in_checklist(binder_id: str, request: Request):
         raise_error(ErrorCode.FORBIDDEN, "Invalid file path")
     if not os.path.exists(real_path):
         raise_error(ErrorCode.NOT_FOUND, "Fill-in checklist not available")
-    return FileResponse(real_path, media_type="application/pdf", filename="fill_in_checklist.pdf")
+    tier = doc.get("tier", "standard")
+    date_str = doc["created_at"].strftime("%Y-%m-%d") if doc.get("created_at") else "unknown"
+    return FileResponse(real_path, media_type="application/pdf", filename=f"fill-in-checklist-{tier}-{date_str}.pdf")

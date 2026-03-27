@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import api from '../api';
+import api, { getErrorMessage } from '../api';
 import { useAuth } from '../AuthContext';
 import { card, btnPrimary, pageTitle } from '../styles/shared';
 import { Icon } from '../components/Icons';
@@ -32,8 +32,8 @@ export default function Login() {
     try {
       await api.post('/auth/request-otp', { email });
       setStep('otp');
-    } catch {
-      setError('Failed to send code. Please try again.');
+    } catch (e: unknown) {
+      setError(getErrorMessage(e));
     } finally {
       setLoading(false);
     }
@@ -56,8 +56,8 @@ export default function Login() {
       } catch {
         navigate('/onboarding');
       }
-    } catch {
-      setError('Invalid code. Please check and try again.');
+    } catch (e: unknown) {
+      setError(getErrorMessage(e));
     } finally {
       setLoading(false);
     }
@@ -69,9 +69,10 @@ export default function Login() {
     try {
       const res = await api.post('/auth/dev-login', { email: devEmail });
       login(res.data.access_token);
-      navigate('/dashboard');
-    } catch {
-      setError('Dev login failed.');
+      const { is_admin } = JSON.parse(atob(res.data.access_token.split('.')[1]));
+      navigate(is_admin ? '/admin' : '/dashboard');
+    } catch (e: unknown) {
+      setError(getErrorMessage(e));
     } finally {
       setLoading(false);
     }

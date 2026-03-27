@@ -1,0 +1,122 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  # ── Backend: lint + test ──────────────────────────────────────────────────
+  backend:
+    name: Backend Tests
+    runs-on: ubuntu-latest
+
+    services:
+      mongodb:
+        image: mongo:7
+        ports:
+          - 27017:27017
+        options: >-
+          --health-cmd "mongosh --eval 'db.runCommand({ ping: 1 })'"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+      redis:
+        image: redis:7-alpine
+        ports:
+          - 6379:6379
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: backend/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r backend/requirements.txt
+
+      - name: Run tests
+        working-directory: backend
+        run: pytest app/tests/ -v --tb=short
+        env:
+          ENVIRONMENT: test
+          JWT_SECRET: ci-test-secret-not-for-production
+          MONGO_URI: mongodb://localhost:27017/binderpro_test
+          REDIS_URL: redis://localhost:6379
+          ENCRYPTION_KEY: ""
+          STRIPE_SECRET_KEY: ""
+          STRIPE_WEBHOOK_SECRET: ""
+          RESEND_API_KEY: ""
+          ANTHROPIC_API_KEY: ""
+          SENTRY_DSN: ""
+
+  # ── Backend: dependency vulnerability scan ──────────────────────────────
+  pip-audit:
+    name: Dependency Audit
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: backend/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r backend/requirements.txt
+
+      - name: Install pip-audit
+        run: pip install pip-audit
+
+      - name: Audit Python dependencies
+        # CVE-2025-54121: starlette event-loop block on large file upload (low severity,
+        #   fix requires starlette>=0.47.2, blocked by FastAPI 0.115.x upper bound).
+        # CVE-2026-30922: pyasn1 DoS via deeply nested ASN.1 — not exploitable here because
+        #   python-jose is used with HS256 (HMAC) only; pyasn1's ASN.1 parser is never
+        #   invoked for key parsing. python-jose 3.4.0 pins pyasn1<0.5.0 making upgrade
+        #   impossible without dropping the jose dependency entirely.
+        run: pip-audit -r backend/requirements.txt --strict --desc --ignore-vuln CVE-2025-54121 --ignore-vuln CVE-2026-30922
+
+  # ── Frontend: type-check + build ─────────────────────────────────────────
+  frontend:
+    name: Frontend Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install dependencies
+        working-directory: frontend
+        run: npm ci
+
+      - name: Type check
+        working-directory: frontend
+        run: npx tsc --noEmit
+
+      - name: Build
+        working-directory: frontend
+        run: npm run build
+        env:
+          VITE_API_URL: /api
+          VITE_SITE_URL: https://mybinderpro.com
+
+      - name: Audit npm dependencies
+        working-directory: frontend
+        run: npm audit --omit=dev || true

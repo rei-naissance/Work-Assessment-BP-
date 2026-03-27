@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import api from '../api';
 import type { Profile } from '../types';
 import Stepper from '../components/Stepper';
@@ -415,6 +415,8 @@ export default function Onboarding() {
   const [validationError, setValidationError] = useState('');
   const [hasPaidPlan, setHasPaidPlan] = useState(false);  // Track if user already has a binder
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const returnTo = searchParams.get('returnTo');
   const { isAdmin } = useAuth();
 
   // Handle clicking on a step indicator to navigate
@@ -549,8 +551,8 @@ export default function Onboarding() {
   return (
     <div className={pageContainer}>
       <div className="text-center">
-        <p className="text-xs font-semibold tracking-[0.2em] text-gray-400 uppercase">Onboarding</p>
-        <h1 className={`${pageTitle} mt-2`}>Set Up Your Home Profile</h1>
+        <p className="text-xs font-semibold tracking-[0.2em] text-gray-400 uppercase">{hasPaidPlan ? 'Edit Profile' : 'Onboarding'}</p>
+        <h1 className={`${pageTitle} mt-2`}>{hasPaidPlan ? 'Update Your Home Profile' : 'Set Up Your Home Profile'}</h1>
         <p className={pageSubtitle}>Step {step + 1} of {TOTAL_STEPS} <span className="mx-2 text-gray-300">·</span> Estimated time: 10–12 minutes</p>
       </div>
       <div className="mt-5">
@@ -586,7 +588,26 @@ export default function Onboarding() {
             Save & Exit
           </button>
         </div>
-        {step < TOTAL_STEPS - 1 ? (
+        {returnTo === 'binder-review' ? (
+          <div className="flex items-center gap-2">
+            <button onClick={next} disabled={saving} className={`${btnSecondary} px-5 py-2.5`}>
+              {saving ? 'Saving...' : 'Continue'}
+            </button>
+            <button
+              onClick={async () => {
+                const saved = await save();
+                if (saved) {
+                  localStorage.removeItem('onboarding_step');
+                  navigate('/binder-review');
+                }
+              }}
+              disabled={saving}
+              className={`${btnPrimary} px-6 py-2.5`}
+            >
+              {saving ? 'Saving...' : 'Save & Return to Review'}
+            </button>
+          </div>
+        ) : step < TOTAL_STEPS - 1 ? (
           <button onClick={next} disabled={saving} className={`${btnPrimary} px-8 py-2.5`}>
             {saving ? 'Saving...' : 'Continue'}
           </button>

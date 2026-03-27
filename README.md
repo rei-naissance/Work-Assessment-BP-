@@ -86,6 +86,7 @@ Key production requirements:
 
 ## Documentation
 
+- [Development Guide](docs/DEVELOPMENT_GUIDE.md) — what was built, how to extend it, all env vars, and service setup
 - [Architecture](docs/ARCHITECTURE.md) — system design and key flows
 - [Repository Structure](docs/REPOSITORY_STRUCTURE.md) — directory guide and conventions
 - [Developer Handoff](docs/DEVELOPER_HANDOFF.md) — orientation for new developers
