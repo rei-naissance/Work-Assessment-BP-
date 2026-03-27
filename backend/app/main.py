@@ -298,7 +298,7 @@ async def health_detailed(request: Request):
         results["components"]["redis"] = "ok"
     except Exception as exc:
         logger.warning("Redis health check failed: %s", exc)
-        results["components"]["redis"] = "error"
+        results["components"]["redis"] = f"error: {exc}"
         results["status"] = "degraded"
         status_code = 503
 

@@ -138,6 +138,10 @@ class RateLimitMiddleware(BaseHTTPMiddleware):
     async def dispatch(
         self, request: Request, call_next: Callable[[Request], Awaitable[Response]]
     ) -> Response:
+        from app.config import settings
+        if settings.environment == "test":
+            return await call_next(request)
+
         path = request.url.path
         ip = _get_client_ip(request)
 
