@@ -378,7 +378,7 @@ export default function Dashboard() {
     try {
       if (hasChanges) {
         await api.put('/profile/', profile);
-        setHasChanges(false);
+        setSavedProfile(profile);
       }
       const tier = binders[0]?.tier || 'premium';
       setGenerationStatus('Generating AI content (30-90 sec)...');
