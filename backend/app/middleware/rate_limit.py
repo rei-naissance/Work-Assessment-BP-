@@ -139,7 +139,7 @@ class RateLimitMiddleware(BaseHTTPMiddleware):
         self, request: Request, call_next: Callable[[Request], Awaitable[Response]]
     ) -> Response:
         from app.config import settings
-        if settings.environment == "test":
+        if settings.environment not in ("production", "staging"):
             return await call_next(request)
 
         path = request.url.path
