@@ -13,7 +13,7 @@ module.exports = {
     {
       name: 'backend',
       cwd: './backend',
-      script: '.venv/bin/uvicorn',
+      script: 'venv/bin/uvicorn',
       args: `app.main:app --host 0.0.0.0 --port ${BACKEND_PORT} --workers ${WEB_CONCURRENCY} --proxy-headers --forwarded-allow-ips=*`,
       interpreter: 'none',
       env: {
